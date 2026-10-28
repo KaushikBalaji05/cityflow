@@ -1,0 +1,56 @@
+services:
+  # Spatial Database: PostgreSQL 16 with PostGIS 3.4
+  postgis:
+    image: postgis/postgis:16-3.4-alpine
+    container_name: cityflow-postgis
+    environment:
+      POSTGRES_DB: cityflow_db
+      POSTGRES_USER: cityflow
+      POSTGRES_PASSWORD: cityflow_dev_secret
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgis_data:/var/lib/postgresql/data
+      - ./backend/migrations:/docker-entrypoint-initdb.d:ro
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U cityflow -d cityflow_db"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    restart: unless-stopped
+
+  # Backend: FastAPI Routing & Mobility Intelligence
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: cityflow-backend
+    environment:
+      ENVIRONMENT: development
+      DATABASE_URL: postgresql://cityflow:cityflow_dev_secret@postgis:5432/cityflow_db
+      API_HOST: 0.0.0.0
+      API_PORT: 8000
+    ports:
+      - "8000:8000"
+    depends_on:
+      postgis:
+        condition: service_healthy
+    restart: unless-stopped
+
+  # Frontend: Next.js + MapLibre Web Application
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    container_name: cityflow-frontend
+    environment:
+      NEXT_PUBLIC_API_URL: http://localhost:8000
+    ports:
+      - "3000:3000"
+    depends_on:
+      - backend
+    restart: unless-stopped
+
+volumes:
+  postgis_data:
+    driver: local

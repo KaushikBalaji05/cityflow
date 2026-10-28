@@ -1,0 +1,94 @@
+# CityFlow Git Ignore
+
+# Operating System Files
+Thumbs.db
+Desktop.ini
+.DS_Store
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+venv/
+.venv/
+env/
+ENV/
+env.bak/
+venv.bak/
+
+# Testing & Coverage
+.pytest_cache/
+.coverage
+.coverage.*
+htmlcov/
+*.cover
+*.pyo
+nosetests.xml
+coverage.xml
+*.lcov
+.hypothesis/
+
+# Node & Frontend
+node_modules/
+.next/
+out/
+build/
+dist/
+.pnp
+.pnp.js
+*.tsbuildinfo
+next-env.d.ts
+
+# Spark & Kafka runtime
+metastore_db/
+derby.log
+checkpoint/
+spark-warehouse/
+/tmp/
+*.parquet
+*.crc
+
+# Environment variables and secrets
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+*.pem
+*.key
+*.cert
+*.p12
+
+# Database & Docker volumes
+pgdata/
+data/raw/
+data/cache/
+*.sqlite3
+*.db
+
+# IDE & Editor
+.vscode/
+.idea/
+*.swp
+*.swo
+*.sublime-project
+*.sublime-workspace

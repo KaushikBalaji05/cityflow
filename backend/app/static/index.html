@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CityFlow — Multimodal Urban Journey Planner (Bengaluru)</title>
+  <!-- MapLibre GL CSS & JS -->
+  <link href="https://unpkg.com/maplibre-gl@3.6.2/dist/maplibre-gl.css" rel="stylesheet" />
+  <script src="https://unpkg.com/maplibre-gl@3.6.2/dist/maplibre-gl.js"></script>
+  <!-- Tailwind CSS via CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Inter', sans-serif; }
+    .maplibregl-popup-content { border-radius: 8px; padding: 12px; }
+  </style>
+</head>
+<body class="bg-slate-900 text-slate-100 min-h-screen flex flex-col">
+  <!-- Top Navigation Bar -->
+  <header class="border-b border-slate-800 bg-slate-950/80 backdrop-blur sticky top-0 z-50 px-6 py-3 flex items-center justify-between">
+    <div class="flex items-center space-x-3">
+      <div class="w-9 h-9 rounded-xl bg-gradient-to-tr from-indigo-600 to-emerald-500 flex items-center justify-center font-black text-xl shadow-lg shadow-indigo-500/20">
+        CF
+      </div>
+      <div>
+        <h1 class="text-lg font-bold tracking-tight text-white flex items-center space-x-2">
+          <span>CityFlow</span>
+          <span class="text-xs font-semibold px-2 py-0.5 rounded-full bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">Bengaluru MVP</span>
+        </h1>
+        <p class="text-xs text-slate-400">Multimodal Journey Planner & Mobility Intelligence</p>
+      </div>
+    </div>
+    <div class="flex items-center space-x-4">
+      <span id="healthBadge" class="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-medium bg-slate-800 text-slate-300">
+        <span class="w-2 h-2 mr-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
+        Graph Ready (37+ Stops)
+      </span>
+      <a href="/api/v1/docs" target="_blank" class="text-xs text-slate-400 hover:text-white transition">API Docs</a>
+      <a href="https://github.com/kaushikbalaji/cityflow" target="_blank" class="text-xs text-slate-400 hover:text-white transition">GitHub</a>
+    </div>
+  </header>
+
+  <!-- Main Content Layout -->
+  <div class="flex-1 flex flex-col lg:flex-row overflow-hidden relative">
+    <!-- Left Sidebar: Planner Controls & Journey Results -->
+    <aside class="w-full lg:w-[460px] bg-slate-950 border-r border-slate-800 flex flex-col h-[50vh] lg:h-auto overflow-y-auto p-5 space-y-5 z-20 shadow-2xl">
+      
+      <!-- Routing Form Card -->
+      <div class="bg-slate-900/90 rounded-2xl p-4 border border-slate-800 space-y-4">
+        <div class="flex items-center justify-between">
+          <h2 class="text-sm font-semibold text-slate-200 uppercase tracking-wider">Plan Your Journey</h2>
+          <button id="quickPresetBtn" class="text-xs text-indigo-400 hover:text-indigo-300 font-medium">Quick Demo Preset</button>
+        </div>
+
+        <!-- Origin Input -->
+        <div class="space-y-1 relative">
+          <label class="text-xs font-medium text-slate-400 flex items-center space-x-1">
+            <span class="w-2 h-2 rounded-full bg-emerald-400 inline-block"></span>
+            <span>Origin</span>
+          </label>
+          <input id="originInput" type="text" placeholder="Search stop or landmark (e.g. Indiranagar)" 
+            class="w-full bg-slate-800/80 border border-slate-700 rounded-lg px-3 py-2 text-sm text-white placeholder-slate-500 focus:outline-none focus:border-indigo-500 transition">
+          <div id="originSuggestions" class="absolute left-0 right-0 top-full mt-1 bg-slate-800 border border-slate-700 rounded-lg shadow-xl z-30 hidden max-h-48 overflow-y-auto"></div>
+        </div>
+
+        <!-- Destination Input -->
+        <div class="space-y-1 relative">
+          <label class="text-xs font-medium text-slate-400 flex items-center space-x-1">
+            <span class="w-2 h-2 rounded-full bg-rose-400 inline-block"></span>
+            <span>Destination</span>
+          </label>
+          <input id="destInput" type="text" placeholder="Search destination (e.g. Whitefield, Silk Board)" 
+            class="w-full bg-slate-800/80 border border-slate-700 rounded-lg px-3 py-2 text-sm text-white placeholder-slate-500 focus:outline-none focus:border-indigo-500 transition">
+          <div id="destSuggestions" class="absolute left-0 right-0 top-full mt-1 bg-slate-800 border border-slate-700 rounded-lg shadow-xl z-30 hidden max-h-48 overflow-y-auto"></div>
+        </div>
+
+        <!-- Transport Modes -->
+        <div class="space-y-1.5">
+          <label class="text-xs font-medium text-slate-400">Transport Modes</label>
+          <div class="grid grid-cols-4 gap-2">
+            <label class="flex items-center space-x-1.5 text-xs bg-slate-800 px-2 py-1.5 rounded-lg cursor-pointer hover:bg-slate-750 transition border border-slate-700">
+              <input type="checkbox" id="modeMetro" checked class="rounded text-indigo-600 focus:ring-0 bg-slate-900 border-slate-600">
+              <span>🚇 Metro</span>
+            </label>
+            <label class="flex items-center space-x-1.5 text-xs bg-slate-800 px-2 py-1.5 rounded-lg cursor-pointer hover:bg-slate-750 transition border border-slate-700">
+              <input type="checkbox" id="modeBus" checked class="rounded text-indigo-600 focus:ring-0 bg-slate-900 border-slate-600">
+              <span>🚌 BMTC</span>
+            </label>
+            <label class="flex items-center space-x-1.5 text-xs bg-slate-800 px-2 py-1.5 rounded-lg cursor-pointer hover:bg-slate-750 transition border border-slate-700">
+              <input type="checkbox" id="modeWalk" checked class="rounded text-indigo-600 focus:ring-0 bg-slate-900 border-slate-600">
+              <span>🚶 Walk</span>
+            </label>
+            <label class="flex items-center space-x-1.5 text-xs bg-slate-800 px-2 py-1.5 rounded-lg cursor-pointer hover:bg-slate-750 transition border border-slate-700">
+              <input type="checkbox" id="modeDrive" checked class="rounded text-indigo-600 focus:ring-0 bg-slate-900 border-slate-600">
+              <span>🚗 Auto/Cab</span>
+            </label>
+          </div>
+        </div>
+
+        <!-- Objective Preference -->
+        <div class="space-y-1">
+          <label class="text-xs font-medium text-slate-400">Routing Objective</label>
+          <select id="objectiveSelect" class="w-full bg-slate-800 border border-slate-700 rounded-lg px-3 py-2 text-xs text-white focus:outline-none focus:border-indigo-500">
+            <option value="fastest">⚡ Fastest Arrival (Default)</option>
+            <option value="lowest_cost">💰 Lowest Estimated Fare</option>
+            <option value="least_walking">🚶 Least Walking Distance</option>
+            <option value="fewest_transfers">🔄 Fewest Interchanges</option>
+            <option value="balanced">⚖️ Balanced Time & Convenience</option>
+          </select>
+        </div>
+
+        <!-- Action Buttons -->
+        <div class="flex space-x-2 pt-1">
+          <button id="findRoutesBtn" class="flex-1 bg-indigo-600 hover:bg-indigo-500 text-white font-semibold py-2.5 px-4 rounded-xl text-sm transition shadow-lg shadow-indigo-600/30 flex items-center justify-center space-x-2">
+            <span>Find Routes</span>
+          </button>
+          <button id="clickMapModeBtn" class="bg-slate-800 hover:bg-slate-700 text-slate-300 px-3 py-2.5 rounded-xl text-xs font-medium border border-slate-700 transition" title="Click on map to select coordinates">
+            📍 Pick on Map
+          </button>
+        </div>
+      </div>
+
+      <!-- Results Header & Loading / Error States -->
+      <div id="statusMessage" class="hidden p-3 rounded-xl text-xs"></div>
+
+      <!-- Journey Results List -->
+      <div class="space-y-3" id="journeysContainer">
+        <!-- Default State -->
+        <div class="text-center py-10 px-4 space-y-3 bg-slate-900/40 rounded-2xl border border-slate-800/60">
+          <div class="text-4xl">🗺️</div>
+          <h3 class="text-sm font-semibold text-slate-300">Ready to explore Bengaluru transit</h3>
+          <p class="text-xs text-slate-500 max-w-xs mx-auto">Select origin and destination above, or click "Quick Demo Preset" to inspect multimodal route comparisons.</p>
+        </div>
+      </div>
+
+    </aside>
+
+    <!-- Right Side: Interactive Map -->
+    <main class="flex-1 relative h-[50vh] lg:h-auto">
+      <div id="map" class="absolute inset-0 w-full h-full"></div>
+      
+      <!-- Map Legend Overlay -->
+      <div class="absolute bottom-5 right-5 bg-slate-950/90 backdrop-blur border border-slate-800 rounded-xl p-3 text-xs space-y-1.5 shadow-xl pointer-events-auto z-10 hidden sm:block">
+        <div class="font-semibold text-slate-300 pb-1 border-b border-slate-800">Transport Network</div>
+        <div class="flex items-center space-x-2">
+          <span class="w-3 h-3 rounded-full bg-purple-500"></span>
+          <span class="text-slate-400">Metro Purple Line</span>
+        </div>
+        <div class="flex items-center space-x-2">
+          <span class="w-3 h-3 rounded-full bg-emerald-500"></span>
+          <span class="text-slate-400">Metro Green Line</span>
+        </div>
+        <div class="flex items-center space-x-2">
+          <span class="w-3 h-3 rounded-full bg-blue-500"></span>
+          <span class="text-slate-400">BMTC Bus Routes (500-D, 335-E)</span>
+        </div>
+        <div class="flex items-center space-x-2">
+          <span class="w-3 h-3 rounded-full bg-amber-400"></span>
+          <span class="text-slate-400">Road Driving / Auto</span>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <script>
+    // State management
+    let originLocation = { lat: 12.9784, lon: 77.6408, name: "Indiranagar Metro Station" };
+    let destLocation = { lat: 12.9698, lon: 77.7499, name: "Whitefield (Kadugodi) Metro" };
+    let map;
+    let markers = [];
+    let routeLayers = [];
+    let mapClickMode = 'none'; // 'origin' | 'dest' | 'none'
+
+    // Initialize MapLibre GL
+    function initMap() {
+      map = new maplibregl.Map({
+        container: 'map',
+        style: 'https://tiles.openfreemap.org/styles/liberty', // Free open map tiles
+        center: [77.63, 12.97], // Bengaluru center
+        zoom: 11
+      });
+
+      map.addControl(new maplibregl.NavigationControl(), 'top-right');
+
+      map.on('load', () => {
+        loadTransitStops();
+        updateMarkers();
+      });
+
+      map.on('click', (e) => {
+        if (mapClickMode === 'origin') {
+          originLocation = { lat: e.lngLat.lat, lon: e.lngLat.lng, name: `Map Location (${e.lngLat.lat.toFixed(4)}, ${e.lngLat.lng.toFixed(4)})` };
+          document.getElementById('originInput').value = originLocation.name;
+          mapClickMode = 'dest';
+          showStatus('Selected Origin. Now click on map to choose Destination.', 'info');
+          updateMarkers();
+        } else if (mapClickMode === 'dest') {
+          destLocation = { lat: e.lngLat.lat, lon: e.lngLat.lng, name: `Map Location (${e.lngLat.lat.toFixed(4)}, ${e.lngLat.lng.toFixed(4)})` };
+          document.getElementById('destInput').value = destLocation.name;
+          mapClickMode = 'none';
+          showStatus('Selected Origin and Destination! Click Find Routes.', 'success');
+          updateMarkers();
+          fetchRoutes();
+        }
+      });
+    }
+
+    async function loadTransitStops() {
+      try {
+        const res = await fetch('/api/v1/stops');
+        const stops = await res.json();
+        
+        stops.forEach(stop => {
+          const el = document.createElement('div');
+          el.className = 'w-3 h-3 rounded-full border-2 border-white cursor-pointer';
+          el.style.backgroundColor = stop.mode === 'metro' ? '#8b5cf6' : '#3b82f6';
+          el.title = stop.name;
+
+          const popup = new maplibregl.Popup({ offset: 10 }).setHTML(
+            `<div class="text-slate-900 font-medium text-xs">
+              <div class="font-bold text-sm">${stop.name}</div>
+              <div class="text-slate-600">${stop.mode.toUpperCase()} · ${stop.line || ''}</div>
+              <div class="mt-2 flex space-x-2">
+                <button onclick="setAsOrigin('${stop.name}', ${stop.lat}, ${stop.lon})" class="px-2 py-1 bg-emerald-600 text-white rounded text-[10px]">Set Origin</button>
+                <button onclick="setAsDest('${stop.name}', ${stop.lat}, ${stop.lon})" class="px-2 py-1 bg-rose-600 text-white rounded text-[10px]">Set Dest</button>
+              </div>
+            </div>`
+          );
+
+          new maplibregl.Marker({ element: el })
+            .setLngLat([stop.lon, stop.lat])
+            .setPopup(popup)
+            .addTo(map);
+        });
+      } catch (err) {
+        console.error('Failed to load stops:', err);
+      }
+    }
+
+    function setAsOrigin(name, lat, lon) {
+      originLocation = { lat, lon, name };
+      document.getElementById('originInput').value = name;
+      updateMarkers();
+    }
+
+    function setAsDest(name, lat, lon) {
+      destLocation = { lat, lon, name };
+      document.getElementById('destInput').value = name;
+      updateMarkers();
+    }
+
+    function updateMarkers() {
+      markers.forEach(m => m.remove());
+      markers = [];
+
+      if (originLocation) {
+        const oEl = document.createElement('div');
+        oEl.className = 'w-5 h-5 rounded-full bg-emerald-500 border-2 border-white shadow-lg flex items-center justify-center text-[10px] text-white font-bold';
+        oEl.innerText = 'A';
+        const m1 = new maplibregl.Marker({ element: oEl }).setLngLat([originLocation.lon, originLocation.lat]).addTo(map);
+        markers.push(m1);
+      }
+
+      if (destLocation) {
+        const dEl = document.createElement('div');
+        dEl.className = 'w-5 h-5 rounded-full bg-rose-500 border-2 border-white shadow-lg flex items-center justify-center text-[10px] text-white font-bold';
+        dEl.innerText = 'B';
+        const m2 = new maplibregl.Marker({ element: dEl }).setLngLat([destLocation.lon, destLocation.lat]).addTo(map);
+        markers.push(m2);
+      }
+    }
+
+    async function fetchRoutes() {
+      if (!originLocation || !destLocation) {
+        showStatus('Please enter both Origin and Destination.', 'error');
+        return;
+      }
+
+      const allowedModes = [];
+      if (document.getElementById('modeMetro').checked) allowedModes.push('metro');
+      if (document.getElementById('modeBus').checked) allowedModes.push('bus');
+      if (document.getElementById('modeWalk').checked) allowedModes.push('walk');
+      if (document.getElementById('modeDrive').checked) allowedModes.push('drive');
+
+      const objective = document.getElementById('objectiveSelect').value;
+
+      showStatus('Computing multimodal routes across Bengaluru network...', 'info');
+      const container = document.getElementById('journeysContainer');
+      container.innerHTML = `<div class="p-8 text-center text-slate-400 text-xs animate-pulse">Computing optimal paths across bus, metro, and pedestrian graphs...</div>`;
+
+      try {
+        const response = await fetch('/api/v1/plan', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            origin: originLocation,
+            destination: destLocation,
+            allowed_modes: allowedModes,
+            objective: objective
+          })
+        });
+
+        if (!response.ok) {
+          throw new Error(`Routing error: ${response.statusText}`);
+        }
+
+        const data = await response.json();
+        hideStatus();
+        renderJourneys(data.journeys);
+      } catch (err) {
+        showStatus(`Error: ${err.message}`, 'error');
+      }
+    }
+
+    function renderJourneys(journeys) {
+      const container = document.getElementById('journeysContainer');
+      if (!journeys || journeys.length === 0) {
+        container.innerHTML = `
+          <div class="p-6 text-center bg-slate-900 rounded-xl border border-slate-800 space-y-2">
+            <div class="text-2xl">⚠️</div>
+            <div class="text-sm font-semibold text-slate-300">No route found</div>
+            <div class="text-xs text-slate-500">Try enabling more transport modes or expanding search coordinates.</div>
+          </div>`;
+        return;
+      }
+
+      container.innerHTML = '';
+      journeys.forEach((journey, idx) => {
+        const durMin = Math.round(journey.total_duration_sec / 60);
+        const walkMin = Math.round(journey.total_walking_duration_sec / 60);
+        const walkKm = (journey.total_walking_distance_meters / 1000).toFixed(2);
+        const fare = journey.estimated_fare_inr;
+
+        const card = document.createElement('div');
+        card.className = `p-4 rounded-2xl bg-slate-900/90 border ${idx === 0 ? 'border-indigo-500/80 shadow-lg shadow-indigo-500/10' : 'border-slate-800'} space-y-3 cursor-pointer hover:border-slate-700 transition`;
+
+        card.innerHTML = `
+          <div class="flex items-center justify-between">
+            <div class="flex items-center space-x-2">
+              <span class="text-lg font-bold text-white">${durMin} min</span>
+              ${idx === 0 ? `<span class="bg-indigo-500/20 text-indigo-400 text-[10px] font-semibold px-2 py-0.5 rounded-full border border-indigo-500/30">Recommended</span>` : ''}
+            </div>
+            <div class="text-sm font-semibold text-emerald-400">₹${fare.toFixed(0)}</div>
+          </div>
+
+          <div class="text-xs font-medium text-slate-300">${journey.summary}</div>
+
+          <div class="flex items-center space-x-4 text-[11px] text-slate-400 border-y border-slate-800/80 py-2">
+            <div class="flex items-center space-x-1">
+              <span>🚶</span>
+              <span>${walkMin}m (${walkKm} km)</span>
+            </div>
+            <div class="flex items-center space-x-1">
+              <span>🔄</span>
+              <span>${journey.total_transfers} transfers</span>
+            </div>
+            <div class="flex items-center space-x-1">
+              <span>⏳</span>
+              <span>${Math.round(journey.total_waiting_time_sec / 60)}m wait</span>
+            </div>
+          </div>
+
+          <!-- Legs breakdown -->
+          <div class="space-y-1.5 text-xs">
+            ${journey.legs.map((leg, lIdx) => `
+              <div class="flex items-start space-x-2 text-slate-300">
+                <span class="mt-0.5">${getModeIcon(leg.mode)}</span>
+                <div class="flex-1">
+                  <div class="font-medium text-slate-200">${leg.route_name}</div>
+                  <div class="text-[10px] text-slate-500">${leg.from_stop_name} → ${leg.to_stop_name} (${Math.round(leg.duration_sec / 60)} min)</div>
+                </div>
+              </div>
+            `).join('')}
+          </div>
+
+          <!-- Transparent Assumptions Accordion -->
+          <div class="pt-1 text-[10px] text-slate-500 border-t border-slate-800/60">
+            <span class="font-medium text-slate-400">Assumptions:</span> ${journey.assumptions.join(' ')}
+          </div>
+        `;
+
+        card.addEventListener('click', () => {
+          highlightJourneyOnMap(journey);
+        });
+
+        container.appendChild(card);
+      });
+
+      // Highlight the first journey by default
+      highlightJourneyOnMap(journeys[0]);
+    }
+
+    function getModeIcon(mode) {
+      if (mode === 'metro') return '🚇';
+      if (mode === 'bus') return '🚌';
+      if (mode === 'drive') return '🚗';
+      return '🚶';
+    }
+
+    function highlightJourneyOnMap(journey) {
+      // Clear previous route lines
+      routeLayers.forEach(layerId => {
+        if (map.getLayer(layerId)) map.removeLayer(layerId);
+        if (map.getSource(layerId)) map.removeSource(layerId);
+      });
+      routeLayers = [];
+
+      const allCoords = [];
+
+      journey.legs.forEach((leg, idx) => {
+        if (!leg.polyline || leg.polyline.length < 2) return;
+        const layerId = `route-leg-${idx}-${Date.now()}`;
+        routeLayers.push(layerId);
+
+        let color = '#94a3b8'; // walk grey
+        let dash = [2, 2];
+        if (leg.mode === 'metro') {
+          color = leg.route_name.includes('Green') ? '#10b981' : '#a855f7';
+          dash = [1];
+        } else if (leg.mode === 'bus') {
+          color = '#3b82f6';
+          dash = [1];
+        } else if (leg.mode === 'drive') {
+          color = '#f59e0b';
+          dash = [1];
+        }
+
+        map.addSource(layerId, {
+          type: 'geojson',
+          data: {
+            type: 'Feature',
+            geometry: {
+              type: 'LineString',
+              coordinates: leg.polyline
+            }
+          }
+        });
+
+        map.addLayer({
+          id: layerId,
+          type: 'line',
+          source: layerId,
+          paint: {
+            'line-color': color,
+            'line-width': leg.mode === 'walk' ? 3 : 5,
+            'line-opacity': 0.85
+          }
+        });
+
+        leg.polyline.forEach(pt => allCoords.push(pt));
+      });
+
+      if (allCoords.length > 0) {
+        const bounds = allCoords.reduce((bounds, coord) => bounds.extend(coord), new maplibregl.LngLatBounds(allCoords[0], allCoords[0]));
+        map.fitBounds(bounds, { padding: 60, maxZoom: 14 });
+      }
+    }
+
+    function showStatus(text, type) {
+      const el = document.getElementById('statusMessage');
+      el.className = `p-3 rounded-xl text-xs ${type === 'error' ? 'bg-rose-950/80 text-rose-300 border border-rose-800' : 'bg-indigo-950/80 text-indigo-300 border border-indigo-800'}`;
+      el.innerText = text;
+      el.classList.remove('hidden');
+    }
+
+    function hideStatus() {
+      document.getElementById('statusMessage').classList.add('hidden');
+    }
+
+    // Set initial input values and hooks
+    document.addEventListener('DOMContentLoaded', () => {
+      initMap();
+      document.getElementById('originInput').value = originLocation.name;
+      document.getElementById('destInput').value = destLocation.name;
+
+      document.getElementById('findRoutesBtn').addEventListener('click', fetchRoutes);
+      
+      document.getElementById('quickPresetBtn').addEventListener('click', () => {
+        originLocation = { lat: 12.9784, lon: 77.6408, name: "Indiranagar Metro Station" };
+        destLocation = { lat: 12.9698, lon: 77.7499, name: "Whitefield (Kadugodi) Metro" };
+        document.getElementById('originInput').value = originLocation.name;
+        document.getElementById('destInput').value = destLocation.name;
+        updateMarkers();
+        fetchRoutes();
+      });
+
+      document.getElementById('clickMapModeBtn').addEventListener('click', () => {
+        mapClickMode = 'origin';
+        showStatus('Map selection mode: Click on map to set Origin location.', 'info');
+      });
+
+      // Initial route computation
+      setTimeout(fetchRoutes, 800);
+    });
+  </script>
+</body>
+</html>

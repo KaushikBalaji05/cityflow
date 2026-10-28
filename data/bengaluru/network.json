@@ -1,0 +1,667 @@
+{
+  "metadata": {
+    "city": "Bengaluru",
+    "country": "India",
+    "version": "1.0.0",
+    "sources": [
+      {
+        "name": "BMRCL Namma Metro",
+        "type": "Scheduled Transit",
+        "description": "Purple and Green line stations, headways, and alignments",
+        "license": "Public Timetables & OpenCity Data"
+      },
+      {
+        "name": "BMTC Open Transit Data",
+        "type": "Scheduled Bus Routes",
+        "description": "Key trunk, radial, and orbital corridors (500-D, 335-E, 201, 365)",
+        "license": "Open Data Commons / CC-BY 4.0 via OpenCity.in"
+      },
+      {
+        "name": "OpenStreetMap Contributors",
+        "type": "Road and Pedestrian Network",
+        "description": "Pedestrian walking links, road distances, and coordinates",
+        "license": "ODbL 1.0"
+      }
+    ],
+    "assumptions": {
+      "walking_speed_mps": 1.2,
+      "transfer_penalty_sec": 120,
+      "metro_base_fare_inr": 10.0,
+      "bmtc_ordinary_base_fare_inr": 5.0,
+      "bmtc_vajra_base_fare_inr": 20.0,
+      "driving_base_fare_inr": 30.0,
+      "driving_per_km_inr": 18.0
+    }
+  },
+  "stops": [
+    {
+      "id": "metro_whitefield",
+      "name": "Whitefield (Kadugodi) Metro Station",
+      "mode": "metro",
+      "line": "Purple Line",
+      "lat": 12.9698,
+      "lon": 77.7499,
+      "terminal": true
+    },
+    {
+      "id": "metro_hopefarm",
+      "name": "Hopefarm Channasandra Metro",
+      "mode": "metro",
+      "line": "Purple Line",
+      "lat": 12.9840,
+      "lon": 77.7516
+    },
+    {
+      "id": "metro_itpl",
+      "name": "Pattandur Agrahara (ITPL) Metro",
+      "mode": "metro",
+      "line": "Purple Line",
+      "lat": 12.9877,
+      "lon": 77.7378
+    },
+    {
+      "id": "metro_kr_puram",
+      "name": "KR Puram Metro Station",
+      "mode": "metro",
+      "line": "Purple Line",
+      "lat": 12.9982,
+      "lon": 77.6750,
+      "transfer_hub": true
+    },
+    {
+      "id": "metro_baiyappanahalli",
+      "name": "Baiyappanahalli Metro Station",
+      "mode": "metro",
+      "line": "Purple Line",
+      "lat": 12.9907,
+      "lon": 77.6525
+    },
+    {
+      "id": "metro_indiranagar",
+      "name": "Indiranagar Metro Station",
+      "mode": "metro",
+      "line": "Purple Line",
+      "lat": 12.9784,
+      "lon": 77.6408
+    },
+    {
+      "id": "metro_halasuru",
+      "name": "Halasuru Metro Station",
+      "mode": "metro",
+      "line": "Purple Line",
+      "lat": 12.9740,
+      "lon": 77.6256
+    },
+    {
+      "id": "metro_mg_road",
+      "name": "MG Road Metro Station",
+      "mode": "metro",
+      "line": "Purple Line",
+      "lat": 12.9755,
+      "lon": 77.6066
+    },
+    {
+      "id": "metro_cubbon_park",
+      "name": "Cubbon Park Metro Station",
+      "mode": "metro",
+      "line": "Purple Line",
+      "lat": 12.9806,
+      "lon": 77.5973
+    },
+    {
+      "id": "metro_vidhana_soudha",
+      "name": "Vidhana Soudha Metro Station",
+      "mode": "metro",
+      "line": "Purple Line",
+      "lat": 12.9797,
+      "lon": 77.5912
+    },
+    {
+      "id": "metro_majestic",
+      "name": "Nadaprabhu Kempegowda Majestic Metro",
+      "mode": "metro",
+      "line": "Interchange (Purple & Green)",
+      "lat": 12.9756,
+      "lon": 77.5728,
+      "transfer_hub": true
+    },
+    {
+      "id": "metro_city_railway",
+      "name": "Krantivira Sangolli Rayanna Railway Metro",
+      "mode": "metro",
+      "line": "Purple Line",
+      "lat": 12.9781,
+      "lon": 77.5667
+    },
+    {
+      "id": "metro_vijayanagar",
+      "name": "Vijayanagar Metro Station",
+      "mode": "metro",
+      "line": "Purple Line",
+      "lat": 12.9696,
+      "lon": 77.5376
+    },
+    {
+      "id": "metro_yeshwanthpur",
+      "name": "Yeshwanthpur Metro Station",
+      "mode": "metro",
+      "line": "Green Line",
+      "lat": 13.0232,
+      "lon": 77.5500
+    },
+    {
+      "id": "metro_sandal_soap",
+      "name": "Sandal Soap Factory Metro",
+      "mode": "metro",
+      "line": "Green Line",
+      "lat": 13.0145,
+      "lon": 77.5539
+    },
+    {
+      "id": "metro_rajajinagar",
+      "name": "Rajajinagar Metro Station",
+      "mode": "metro",
+      "line": "Green Line",
+      "lat": 12.9986,
+      "lon": 77.5557
+    },
+    {
+      "id": "metro_sampige_road",
+      "name": "Mantri Square Sampige Road Metro",
+      "mode": "metro",
+      "line": "Green Line",
+      "lat": 12.9908,
+      "lon": 77.5710
+    },
+    {
+      "id": "metro_chickpete",
+      "name": "Chickpete Metro Station",
+      "mode": "metro",
+      "line": "Green Line",
+      "lat": 12.9664,
+      "lon": 77.5746
+    },
+    {
+      "id": "metro_kr_market",
+      "name": "KR Market Metro Station",
+      "mode": "metro",
+      "line": "Green Line",
+      "lat": 12.9604,
+      "lon": 77.5748
+    },
+    {
+      "id": "metro_national_college",
+      "name": "National College Metro Station",
+      "mode": "metro",
+      "line": "Green Line",
+      "lat": 12.9504,
+      "lon": 77.5731
+    },
+    {
+      "id": "metro_lalbagh",
+      "name": "Lalbagh Metro Station",
+      "mode": "metro",
+      "line": "Green Line",
+      "lat": 12.9460,
+      "lon": 77.5800
+    },
+    {
+      "id": "metro_jayanagar",
+      "name": "Jayanagar Metro Station",
+      "mode": "metro",
+      "line": "Green Line",
+      "lat": 12.9304,
+      "lon": 77.5801
+    },
+    {
+      "id": "metro_banashankari",
+      "name": "Banashankari Metro Station",
+      "mode": "metro",
+      "line": "Green Line",
+      "lat": 12.9155,
+      "lon": 77.5736,
+      "transfer_hub": true
+    },
+    {
+      "id": "metro_jp_nagar",
+      "name": "JP Nagar Metro Station",
+      "mode": "metro",
+      "line": "Green Line",
+      "lat": 12.9073,
+      "lon": 77.5735
+    },
+    {
+      "id": "metro_silk_institute",
+      "name": "Silk Institute Metro Station",
+      "mode": "metro",
+      "line": "Green Line",
+      "lat": 12.8625,
+      "lon": 77.5458,
+      "terminal": true
+    },
+    {
+      "id": "bus_majestic_kbs",
+      "name": "Kempegowda Bus Station (Majestic KBS)",
+      "mode": "bus",
+      "line": "BMTC Hub",
+      "lat": 12.9772,
+      "lon": 77.5713,
+      "transfer_hub": true
+    },
+    {
+      "id": "bus_corporation",
+      "name": "Corporation Circle BMTC",
+      "mode": "bus",
+      "line": "Trunk Bus",
+      "lat": 12.9678,
+      "lon": 77.5898
+    },
+    {
+      "id": "bus_richmond_circle",
+      "name": "Richmond Circle Bus Stop",
+      "mode": "bus",
+      "line": "Trunk Bus",
+      "lat": 12.9698,
+      "lon": 77.5986
+    },
+    {
+      "id": "bus_domlur_ttmc",
+      "name": "Domlur TTMC Bus Station",
+      "mode": "bus",
+      "line": "Feeder & Radial Hub",
+      "lat": 12.9610,
+      "lon": 77.6387,
+      "transfer_hub": true
+    },
+    {
+      "id": "bus_indiranagar_100ft",
+      "name": "Indiranagar 100ft Road Bus Stop",
+      "mode": "bus",
+      "line": "Trunk Bus",
+      "lat": 12.9745,
+      "lon": 77.6415
+    },
+    {
+      "id": "bus_marathahalli_bridge",
+      "name": "Marathahalli Bridge Bus Stop",
+      "mode": "bus",
+      "line": "Outer Ring Road Hub",
+      "lat": 12.9562,
+      "lon": 77.7011,
+      "transfer_hub": true
+    },
+    {
+      "id": "bus_bellandur_ecospace",
+      "name": "Bellandur Ecospace Bus Stop",
+      "mode": "bus",
+      "line": "Outer Ring Road Hub",
+      "lat": 12.9260,
+      "lon": 77.6845
+    },
+    {
+      "id": "bus_hsr_layout_bd6",
+      "name": "HSR Layout BDA Complex Bus Stop",
+      "mode": "bus",
+      "line": "Trunk Bus",
+      "lat": 12.9115,
+      "lon": 77.6388
+    },
+    {
+      "id": "bus_central_silk_board",
+      "name": "Central Silk Board Bus Interchange",
+      "mode": "bus",
+      "line": "Outer Ring Road & Hosur Rd Hub",
+      "lat": 12.9172,
+      "lon": 77.6227,
+      "transfer_hub": true
+    },
+    {
+      "id": "bus_btm_layout_water_tank",
+      "name": "BTM Layout Water Tank Bus Stop",
+      "mode": "bus",
+      "line": "Trunk Bus",
+      "lat": 12.9166,
+      "lon": 77.6101
+    },
+    {
+      "id": "bus_jayadeva_hospital",
+      "name": "Jayadeva Hospital Bus Stop",
+      "mode": "bus",
+      "line": "Radial Bus",
+      "lat": 12.9181,
+      "lon": 77.5979
+    },
+    {
+      "id": "bus_banashankari_ttmc",
+      "name": "Banashankari TTMC Bus Station",
+      "mode": "bus",
+      "line": "BMTC TTMC Hub",
+      "lat": 12.9158,
+      "lon": 77.5739,
+      "transfer_hub": true
+    },
+    {
+      "id": "bus_hebbal_flyover",
+      "name": "Hebbal Flyover Bus Station",
+      "mode": "bus",
+      "line": "Outer Ring Road Hub",
+      "lat": 13.0358,
+      "lon": 77.5970,
+      "transfer_hub": true
+    },
+    {
+      "id": "bus_kr_puram_railway",
+      "name": "KR Puram Railway Station Bus Stop",
+      "mode": "bus",
+      "line": "Trunk Bus",
+      "lat": 12.9995,
+      "lon": 77.6765
+    },
+    {
+      "id": "bus_tin_factory",
+      "name": "Tin Factory (Kasturinagar) Bus Stop",
+      "mode": "bus",
+      "line": "Trunk Bus",
+      "lat": 12.9930,
+      "lon": 77.6660
+    },
+    {
+      "id": "bus_whitefield_ttmc",
+      "name": "Whitefield TTMC Bus Station",
+      "mode": "bus",
+      "line": "Trunk Bus",
+      "lat": 12.9695,
+      "lon": 77.7505
+    }
+  ],
+  "transit_routes": [
+    {
+      "id": "metro_purple_eastbound",
+      "name": "Namma Metro Purple Line (Eastbound)",
+      "mode": "metro",
+      "agency": "BMRCL",
+      "headway_seconds": 300,
+      "fare_tier": "metro_standard",
+      "stops": [
+        "metro_city_railway",
+        "metro_majestic",
+        "metro_vidhana_soudha",
+        "metro_cubbon_park",
+        "metro_mg_road",
+        "metro_halasuru",
+        "metro_indiranagar",
+        "metro_baiyappanahalli",
+        "metro_kr_puram",
+        "metro_itpl",
+        "metro_hopefarm",
+        "metro_whitefield"
+      ],
+      "segment_travel_times": [120, 150, 110, 130, 140, 150, 180, 240, 200, 160, 150]
+    },
+    {
+      "id": "metro_purple_westbound",
+      "name": "Namma Metro Purple Line (Westbound)",
+      "mode": "metro",
+      "agency": "BMRCL",
+      "headway_seconds": 300,
+      "fare_tier": "metro_standard",
+      "stops": [
+        "metro_whitefield",
+        "metro_hopefarm",
+        "metro_itpl",
+        "metro_kr_puram",
+        "metro_baiyappanahalli",
+        "metro_indiranagar",
+        "metro_halasuru",
+        "metro_mg_road",
+        "metro_cubbon_park",
+        "metro_vidhana_soudha",
+        "metro_majestic",
+        "metro_city_railway"
+      ],
+      "segment_travel_times": [150, 160, 200, 240, 180, 150, 140, 130, 110, 150, 120]
+    },
+    {
+      "id": "metro_green_southbound",
+      "name": "Namma Metro Green Line (Southbound)",
+      "mode": "metro",
+      "agency": "BMRCL",
+      "headway_seconds": 360,
+      "fare_tier": "metro_standard",
+      "stops": [
+        "metro_yeshwanthpur",
+        "metro_sandal_soap",
+        "metro_rajajinagar",
+        "metro_sampige_road",
+        "metro_majestic",
+        "metro_chickpete",
+        "metro_kr_market",
+        "metro_national_college",
+        "metro_lalbagh",
+        "metro_jayanagar",
+        "metro_banashankari",
+        "metro_jp_nagar",
+        "metro_silk_institute"
+      ],
+      "segment_travel_times": [110, 140, 130, 160, 120, 110, 130, 120, 150, 160, 140, 320]
+    },
+    {
+      "id": "metro_green_northbound",
+      "name": "Namma Metro Green Line (Northbound)",
+      "mode": "metro",
+      "agency": "BMRCL",
+      "headway_seconds": 360,
+      "fare_tier": "metro_standard",
+      "stops": [
+        "metro_silk_institute",
+        "metro_jp_nagar",
+        "metro_banashankari",
+        "metro_jayanagar",
+        "metro_lalbagh",
+        "metro_national_college",
+        "metro_kr_market",
+        "metro_chickpete",
+        "metro_majestic",
+        "metro_sampige_road",
+        "metro_rajajinagar",
+        "metro_sandal_soap",
+        "metro_yeshwanthpur"
+      ],
+      "segment_travel_times": [320, 140, 160, 150, 120, 130, 110, 120, 160, 130, 140, 110]
+    },
+    {
+      "id": "bmtc_500d_southbound",
+      "name": "BMTC Route 500-D (Hebbal to Silk Board)",
+      "mode": "bus",
+      "agency": "BMTC",
+      "headway_seconds": 420,
+      "fare_tier": "bmtc_ordinary",
+      "stops": [
+        "bus_hebbal_flyover",
+        "bus_tin_factory",
+        "bus_kr_puram_railway",
+        "bus_marathahalli_bridge",
+        "bus_bellandur_ecospace",
+        "bus_hsr_layout_bd6",
+        "bus_central_silk_board"
+      ],
+      "segment_travel_times": [600, 300, 650, 550, 480, 420]
+    },
+    {
+      "id": "bmtc_500d_northbound",
+      "name": "BMTC Route 500-D (Silk Board to Hebbal)",
+      "mode": "bus",
+      "agency": "BMTC",
+      "headway_seconds": 420,
+      "fare_tier": "bmtc_ordinary",
+      "stops": [
+        "bus_central_silk_board",
+        "bus_hsr_layout_bd6",
+        "bus_bellandur_ecospace",
+        "bus_marathahalli_bridge",
+        "bus_kr_puram_railway",
+        "bus_tin_factory",
+        "bus_hebbal_flyover"
+      ],
+      "segment_travel_times": [420, 480, 550, 650, 300, 600]
+    },
+    {
+      "id": "bmtc_335e_eastbound",
+      "name": "BMTC Route 335-E (Majestic to Whitefield)",
+      "mode": "bus",
+      "agency": "BMTC",
+      "headway_seconds": 600,
+      "fare_tier": "bmtc_vajra",
+      "stops": [
+        "bus_majestic_kbs",
+        "bus_corporation",
+        "bus_richmond_circle",
+        "bus_domlur_ttmc",
+        "bus_marathahalli_bridge",
+        "bus_whitefield_ttmc"
+      ],
+      "segment_travel_times": [450, 350, 650, 900, 750]
+    },
+    {
+      "id": "bmtc_335e_westbound",
+      "name": "BMTC Route 335-E (Whitefield to Majestic)",
+      "mode": "bus",
+      "agency": "BMTC",
+      "headway_seconds": 600,
+      "fare_tier": "bmtc_vajra",
+      "stops": [
+        "bus_whitefield_ttmc",
+        "bus_marathahalli_bridge",
+        "bus_domlur_ttmc",
+        "bus_richmond_circle",
+        "bus_corporation",
+        "bus_majestic_kbs"
+      ],
+      "segment_travel_times": [750, 900, 650, 350, 450]
+    },
+    {
+      "id": "bmtc_201_eastbound",
+      "name": "BMTC Route 201 (Banashankari to Indiranagar)",
+      "mode": "bus",
+      "agency": "BMTC",
+      "headway_seconds": 720,
+      "fare_tier": "bmtc_ordinary",
+      "stops": [
+        "bus_banashankari_ttmc",
+        "bus_jayadeva_hospital",
+        "bus_btm_layout_water_tank",
+        "bus_central_silk_board",
+        "bus_domlur_ttmc",
+        "bus_indiranagar_100ft"
+      ],
+      "segment_travel_times": [450, 350, 380, 720, 480]
+    },
+    {
+      "id": "bmtc_201_westbound",
+      "name": "BMTC Route 201 (Indiranagar to Banashankari)",
+      "mode": "bus",
+      "agency": "BMTC",
+      "headway_seconds": 720,
+      "fare_tier": "bmtc_ordinary",
+      "stops": [
+        "bus_indiranagar_100ft",
+        "bus_domlur_ttmc",
+        "bus_central_silk_board",
+        "bus_btm_layout_water_tank",
+        "bus_jayadeva_hospital",
+        "bus_banashankari_ttmc"
+      ],
+      "segment_travel_times": [480, 720, 380, 350, 450]
+    },
+    {
+      "id": "bmtc_365_southbound",
+      "name": "BMTC Route 365 (Majestic to Jayadeva)",
+      "mode": "bus",
+      "agency": "BMTC",
+      "headway_seconds": 480,
+      "fare_tier": "bmtc_ordinary",
+      "stops": [
+        "bus_majestic_kbs",
+        "bus_corporation",
+        "bus_jayadeva_hospital"
+      ],
+      "segment_travel_times": [450, 750]
+    },
+    {
+      "id": "bmtc_365_northbound",
+      "name": "BMTC Route 365 (Jayadeva to Majestic)",
+      "mode": "bus",
+      "agency": "BMTC",
+      "headway_seconds": 480,
+      "fare_tier": "bmtc_ordinary",
+      "stops": [
+        "bus_jayadeva_hospital",
+        "bus_corporation",
+        "bus_majestic_kbs"
+      ],
+      "segment_travel_times": [750, 450]
+    }
+  ],
+  "transfer_edges": [
+    {
+      "from_stop": "metro_majestic",
+      "to_stop": "bus_majestic_kbs",
+      "distance_meters": 220,
+      "walking_duration_sec": 183
+    },
+    {
+      "from_stop": "bus_majestic_kbs",
+      "to_stop": "metro_majestic",
+      "distance_meters": 220,
+      "walking_duration_sec": 183
+    },
+    {
+      "from_stop": "metro_indiranagar",
+      "to_stop": "bus_indiranagar_100ft",
+      "distance_meters": 450,
+      "walking_duration_sec": 375
+    },
+    {
+      "from_stop": "bus_indiranagar_100ft",
+      "to_stop": "metro_indiranagar",
+      "distance_meters": 450,
+      "walking_duration_sec": 375
+    },
+    {
+      "from_stop": "metro_kr_puram",
+      "to_stop": "bus_kr_puram_railway",
+      "distance_meters": 180,
+      "walking_duration_sec": 150
+    },
+    {
+      "from_stop": "bus_kr_puram_railway",
+      "to_stop": "metro_kr_puram",
+      "distance_meters": 180,
+      "walking_duration_sec": 150
+    },
+    {
+      "from_stop": "metro_banashankari",
+      "to_stop": "bus_banashankari_ttmc",
+      "distance_meters": 90,
+      "walking_duration_sec": 75
+    },
+    {
+      "from_stop": "bus_banashankari_ttmc",
+      "to_stop": "metro_banashankari",
+      "distance_meters": 90,
+      "walking_duration_sec": 75
+    },
+    {
+      "from_stop": "metro_whitefield",
+      "to_stop": "bus_whitefield_ttmc",
+      "distance_meters": 80,
+      "walking_duration_sec": 67
+    },
+    {
+      "from_stop": "bus_whitefield_ttmc",
+      "to_stop": "metro_whitefield",
+      "distance_meters": 80,
+      "walking_duration_sec": 67
+    }
+  ]
+}

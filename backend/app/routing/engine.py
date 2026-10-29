@@ -383,7 +383,7 @@ class MultimodalRoutingEngine:
         total_walk_dur = o_walk_dur + d_walk_dur
 
         return Journey(
-            journey_id=f"single_{route_info['id'][:10]}_{o_stop['id']}",
+            journey_id=f"single_{route_info['id'][:8]}_{o_stop['id']}_{d_stop['id']}_{str(uuid.uuid4())[:6]}",
             objective=RoutingObjective.FEWEST_TRANSFERS,
             summary=f"{route_info['mode'].title()}: {route_info['name']}",
             total_duration_sec=current_offset,
@@ -627,7 +627,7 @@ class MultimodalRoutingEngine:
         used_modes = list({TransportMode.WALK, TransportMode(r1_info["mode"]), TransportMode(r2_info["mode"])})
 
         return Journey(
-            journey_id=f"transfer_{r1_info['id'][:8]}_{r2_info['id'][:8]}",
+            journey_id=f"trans_{r1_info['id'][:6]}_{r2_info['id'][:6]}_{o_stop['id']}_{d_stop['id']}_{str(uuid.uuid4())[:6]}",
             objective=RoutingObjective.FASTEST,
             summary=f"{r1_info['mode'].title()} + {r2_info['mode'].title()} (via {hub_stop1['name']})",
             total_duration_sec=current_offset,

@@ -418,7 +418,7 @@ export default function HomePage() {
 
               return (
                 <div
-                  key={journey.journey_id || idx}
+                  key={`${journey.journey_id || 'journey'}-${idx}`}
                   onClick={() => setSelectedJourneyIndex(idx)}
                   className={`p-4 rounded-3xl border transition cursor-pointer space-y-3 shadow-xl ${
                     isSelected

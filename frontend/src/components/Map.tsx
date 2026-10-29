@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import maplibregl from 'maplibre-gl';
 import { Journey, Location, StopItem } from '@/types/journey';
 
@@ -23,6 +23,8 @@ export default function Map({
 }: MapProps) {
   const mapContainerRef = useRef<HTMLDivElement>(null);
   const mapRef = useRef<maplibregl.Map | null>(null);
+  const [mapLoaded, setMapLoaded] = useState(false);
+
   const markersRef = useRef<maplibregl.Marker[]>([]);
   const originMarkerRef = useRef<maplibregl.Marker | null>(null);
   const destMarkerRef = useRef<maplibregl.Marker | null>(null);
@@ -41,6 +43,10 @@ export default function Map({
 
     map.addControl(new maplibregl.NavigationControl({ showCompass: true }), 'top-right');
 
+    map.on('load', () => {
+      setMapLoaded(true);
+    });
+
     map.on('click', (e) => {
       if (!pickingMode) return;
       const newLoc: Location = {
@@ -56,10 +62,11 @@ export default function Map({
     return () => {
       map.remove();
       mapRef.current = null;
+      setMapLoaded(false);
     };
   }, [pickingMode, onSelectCoordinate]);
 
-  // 2. Render Transit Stops Markers
+  // 2. Render Transit Stops Markers (DOM markers, safe once map exists)
   useEffect(() => {
     const map = mapRef.current;
     if (!map) return;
@@ -70,7 +77,8 @@ export default function Map({
 
     stops.forEach((stop) => {
       const el = document.createElement('div');
-      el.className = 'w-3 h-3 rounded-full border-2 border-white shadow-md cursor-pointer transition-transform hover:scale-150';
+      el.className =
+        'w-3 h-3 rounded-full border-2 border-white shadow-md cursor-pointer transition-transform hover:scale-150';
       el.style.backgroundColor = stop.mode === 'metro' ? '#a855f7' : '#3b82f6';
       el.title = stop.name;
 
@@ -117,7 +125,7 @@ export default function Map({
     });
   }, [stops, onSelectCoordinate]);
 
-  // 3. Render Origin & Destination Markers
+  // 3. Render Origin & Destination Pin Markers
   useEffect(() => {
     const map = mapRef.current;
     if (!map) return;
@@ -125,7 +133,8 @@ export default function Map({
     if (origin) {
       if (!originMarkerRef.current) {
         const el = document.createElement('div');
-        el.className = 'w-7 h-7 rounded-full bg-emerald-500 border-2 border-white shadow-xl flex items-center justify-center font-bold text-xs text-white';
+        el.className =
+          'w-7 h-7 rounded-full bg-emerald-500 border-2 border-white shadow-xl flex items-center justify-center font-bold text-xs text-white';
         el.innerText = 'A';
         originMarkerRef.current = new maplibregl.Marker({ element: el })
           .setLngLat([origin.lon, origin.lat])
@@ -141,7 +150,8 @@ export default function Map({
     if (destination) {
       if (!destMarkerRef.current) {
         const el = document.createElement('div');
-        el.className = 'w-7 h-7 rounded-full bg-rose-500 border-2 border-white shadow-xl flex items-center justify-center font-bold text-xs text-white';
+        el.className =
+          'w-7 h-7 rounded-full bg-rose-500 border-2 border-white shadow-xl flex items-center justify-center font-bold text-xs text-white';
         el.innerText = 'B';
         destMarkerRef.current = new maplibregl.Marker({ element: el })
           .setLngLat([destination.lon, destination.lat])
@@ -155,76 +165,94 @@ export default function Map({
     }
   }, [origin, destination]);
 
-  // 4. Render Selected Journey Geometry
+  // 4. Render Selected Journey Geometry (Guarded against style loading)
   useEffect(() => {
     const map = mapRef.current;
-    if (!map) return;
+    if (!map || !mapLoaded || !map.isStyleLoaded()) return;
 
-    // Remove existing route layers
-    routeLayersRef.current.forEach((layerId) => {
-      if (map.getLayer(layerId)) map.removeLayer(layerId);
-      if (map.getSource(layerId)) map.removeSource(layerId);
-    });
-    routeLayersRef.current = [];
+    const renderPolylines = () => {
+      if (!map.isStyleLoaded()) return;
 
-    if (!selectedJourney) return;
+      // Clean up previous route layers & sources
+      routeLayersRef.current.forEach((layerId) => {
+        try {
+          if (map.getLayer(layerId)) map.removeLayer(layerId);
+          if (map.getSource(layerId)) map.removeSource(layerId);
+        } catch (e) {
+          // ignore cleanup errors
+        }
+      });
+      routeLayersRef.current = [];
 
-    const allCoords: [number, number][] = [];
+      if (!selectedJourney) return;
 
-    selectedJourney.legs.forEach((leg, index) => {
-      if (!leg.polyline || leg.polyline.length < 2) return;
+      const allCoords: [number, number][] = [];
 
-      const layerId = `leg-layer-${index}-${Date.now()}`;
-      routeLayersRef.current.push(layerId);
+      selectedJourney.legs.forEach((leg, index) => {
+        if (!leg.polyline || leg.polyline.length < 2) return;
 
-      let color = '#94a3b8'; // Walk grey
-      if (leg.mode === 'metro') {
-        color = leg.route_name.toLowerCase().includes('green') ? '#10b981' : '#a855f7';
-      } else if (leg.mode === 'bus') {
-        color = '#3b82f6';
-      } else if (leg.mode === 'drive') {
-        color = '#f59e0b';
+        const layerId = `route-leg-${index}-${Date.now()}`;
+        routeLayersRef.current.push(layerId);
+
+        let color = '#94a3b8'; // Walk grey
+        if (leg.mode === 'metro') {
+          color = leg.route_name.toLowerCase().includes('green') ? '#10b981' : '#a855f7';
+        } else if (leg.mode === 'bus') {
+          color = '#3b82f6';
+        } else if (leg.mode === 'drive') {
+          color = '#f59e0b';
+        }
+
+        try {
+          map.addSource(layerId, {
+            type: 'geojson',
+            data: {
+              type: 'Feature',
+              properties: {},
+              geometry: {
+                type: 'LineString',
+                coordinates: leg.polyline,
+              },
+            },
+          });
+
+          map.addLayer({
+            id: layerId,
+            type: 'line',
+            source: layerId,
+            layout: {
+              'line-join': 'round',
+              'line-cap': 'round',
+            },
+            paint: {
+              'line-color': color,
+              'line-width': leg.mode === 'walk' ? 4 : 6,
+              'line-opacity': 0.9,
+              ...(leg.mode === 'walk' ? { 'line-dasharray': [2, 2] } : {}),
+            },
+          });
+
+          leg.polyline.forEach((coord) => allCoords.push(coord));
+        } catch (err) {
+          console.warn('Failed to add layer to map:', err);
+        }
+      });
+
+      if (allCoords.length > 0) {
+        try {
+          const bounds = allCoords.reduce(
+            (b, c) => b.extend(c),
+            new maplibregl.LngLatBounds(allCoords[0], allCoords[0])
+          );
+          map.fitBounds(bounds, { padding: 60, maxZoom: 14, duration: 800 });
+        } catch (e) {
+          // ignore bounds calculation errors
+        }
       }
+    };
 
-      map.addSource(layerId, {
-        type: 'geojson',
-        data: {
-          type: 'Feature',
-          properties: {},
-          geometry: {
-            type: 'LineString',
-            coordinates: leg.polyline,
-          },
-        },
-      });
-
-      map.addLayer({
-        id: layerId,
-        type: 'line',
-        source: layerId,
-        layout: {
-          'line-join': 'round',
-          'line-cap': 'round',
-        },
-        paint: {
-          'line-color': color,
-          'line-width': leg.mode === 'walk' ? 4 : 6,
-          'line-opacity': 0.9,
-          ...(leg.mode === 'walk' ? { 'line-dasharray': [2, 2] } : {}),
-        },
-      });
-
-      leg.polyline.forEach((coord) => allCoords.push(coord));
-    });
-
-    if (allCoords.length > 0) {
-      const bounds = allCoords.reduce(
-        (b, c) => b.extend(c),
-        new maplibregl.LngLatBounds(allCoords[0], allCoords[0])
-      );
-      map.fitBounds(bounds, { padding: 60, maxZoom: 14, duration: 1000 });
-    }
-  }, [selectedJourney]);
+    renderPolylines();
+  }, [selectedJourney, mapLoaded]);
 
   return (
     <div className="relative w-full h-full rounded-3xl overflow-hidden shadow-2xl border border-slate-800">

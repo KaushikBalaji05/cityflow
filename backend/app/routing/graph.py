@@ -60,12 +60,15 @@ class TransitNetwork:
         self,
         lat: float,
         lon: float,
-        max_distance_meters: float = 2000.0,
+        max_distance_meters: float = 2500.0,
         allowed_modes: Optional[List[str]] = None,
-        limit: int = 5
+        limit: int = 6
     ) -> List[Tuple[Dict[str, Any], float]]:
         """
         Finds the nearest transit stops to a coordinate within max_distance_meters.
+        When multiple transit modes are requested (e.g. ['bus', 'metro']), guarantees
+        balanced representation of the closest stops for each mode so dense bus networks
+        do not crowd out nearby rail/metro stations.
         Returns a list of tuples: (stop_dict, distance_in_meters), sorted ascending by distance.
         """
         results = []
@@ -76,11 +79,37 @@ class TransitNetwork:
             results.append((stop, dist))
 
         results.sort(key=lambda x: x[1])
-        
         filtered = [item for item in results if item[1] <= max_distance_meters]
-        if not filtered and results:
-            # Fallback to closest 2 stops if nothing within threshold
+
+        if not filtered:
+            # Fallback to closest 2 stops if nothing is within the radius
             return results[:2]
+
+        # If multiple modes are requested, ensure balanced representation
+        if allowed_modes and len(allowed_modes) > 1:
+            selected = []
+            selected_ids = set()
+            quota_per_mode = max(2, limit // len(allowed_modes))
+
+            # Select closest stops per mode within threshold
+            for mode in allowed_modes:
+                mode_stops = [
+                    item for item in filtered if item[0].get("mode") == mode
+                ]
+                for item in mode_stops[:quota_per_mode]:
+                    if item[0]["id"] not in selected_ids:
+                        selected.append(item)
+                        selected_ids.add(item[0]["id"])
+
+            # Fill remaining slots up to limit with the closest remaining stops
+            for item in filtered:
+                if item[0]["id"] not in selected_ids and len(selected) < limit:
+                    selected.append(item)
+                    selected_ids.add(item[0]["id"])
+
+            selected.sort(key=lambda x: x[1])
+            return selected
+
         return filtered[:limit]
 
     def set_dynamic_delay(self, from_stop_id: str, to_stop_id: str, route_id: str, delay_sec: int):

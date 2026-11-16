@@ -78,9 +78,11 @@ def build_multimodal_graph_from_network(network: TransitNetwork) -> MultimodalGr
             graph.add_edge(edge)
 
     # 3. Add transfer edges between nearby stops
+    existing_transfers = set()
     for edge_data in network.transfer_edges:
         from_id = edge_data["from_stop"]
         to_id = edge_data["to_stop"]
+        existing_transfers.add((from_id, to_id))
         if from_id in network.stops and to_id in network.stops:
             from_stop = network.get_stop(from_id)
             to_stop = network.get_stop(to_id)
@@ -99,7 +101,35 @@ def build_multimodal_graph_from_network(network: TransitNetwork) -> MultimodalGr
             )
             graph.add_edge(edge)
 
-    # 4. Copy any existing dynamic delays
+    # 4. Automatic pedestrian interchange generation between close cross-modal stops (<= 350m)
+    stop_items = list(network.stops.values())
+    for i in range(len(stop_items)):
+        for j in range(i + 1, len(stop_items)):
+            s1 = stop_items[i]
+            s2 = stop_items[j]
+            if s1["mode"] != s2["mode"] or s1.get("transfer_hub") or s2.get("transfer_hub"):
+                dist_m = haversine_distance_meters(s1["lat"], s1["lon"], s2["lat"], s2["lon"])
+                if dist_m <= 350.0:
+                    for u, v in [(s1, s2), (s2, s1)]:
+                        if (u["id"], v["id"]) not in existing_transfers:
+                            existing_transfers.add((u["id"], v["id"]))
+                            actual_walk = round(dist_m * 1.20, 1)
+                            walk_sec = max(30, int(actual_walk / 1.2))
+                            graph.add_edge(GraphEdge(
+                                edge_id=f"auto_transfer_{u['id']}_{v['id']}",
+                                from_node=u["id"],
+                                to_node=v["id"],
+                                edge_type=EdgeType.TRANSFER,
+                                mode="walk",
+                                distance_meters=actual_walk,
+                                base_duration_sec=walk_sec,
+                                base_fare_inr=0.0,
+                                route_name="Interchange Walk",
+                                headway_sec=0,
+                                polyline=[[u["lon"], u["lat"]], [v["lon"], v["lat"]]]
+                            ))
+
+    # 5. Copy any existing dynamic delays
     for (u, v, route_id), delay in network.dynamic_delays.items():
         graph.set_dynamic_delay(u, v, route_id, delay)
 

@@ -247,18 +247,22 @@ class MultimodalRoutingEngine:
         ))
 
         # Connect origin to nearby stops
+        # Urban pedestrian circuity factor (ratio of street walking distance to straight-line haversine)
+        PEDESTRIAN_CIRCUITY = 1.20
+
         origin_stops = self.network.find_nearest_stops(
-            origin.lat, origin.lon, max_distance_meters=3000.0, allowed_modes=list(allowed_transit_modes), limit=5
+            origin.lat, origin.lon, max_distance_meters=3000.0, allowed_modes=list(allowed_transit_modes), limit=6
         )
         for stop, dist_m in origin_stops:
-            walk_dur = int(dist_m / self.walk_speed)
+            actual_walk_m = round(dist_m * PEDESTRIAN_CIRCUITY, 1)
+            walk_dur = int(actual_walk_m / self.walk_speed)
             search_graph.add_edge(GraphEdge(
                 edge_id=f"walk_orig_{stop['id']}",
                 from_node=origin_node_id,
                 to_node=stop["id"],
                 edge_type=EdgeType.WALK,
                 mode="walk",
-                distance_meters=dist_m,
+                distance_meters=actual_walk_m,
                 base_duration_sec=walk_dur,
                 base_fare_inr=0.0,
                 route_name="Walk to Station/Stop",
@@ -267,17 +271,18 @@ class MultimodalRoutingEngine:
 
         # Connect nearby stops to destination
         dest_stops = self.network.find_nearest_stops(
-            destination.lat, destination.lon, max_distance_meters=3000.0, allowed_modes=list(allowed_transit_modes), limit=5
+            destination.lat, destination.lon, max_distance_meters=3000.0, allowed_modes=list(allowed_transit_modes), limit=6
         )
         for stop, dist_m in dest_stops:
-            walk_dur = int(dist_m / self.walk_speed)
+            actual_walk_m = round(dist_m * PEDESTRIAN_CIRCUITY, 1)
+            walk_dur = int(actual_walk_m / self.walk_speed)
             search_graph.add_edge(GraphEdge(
                 edge_id=f"walk_{stop['id']}_dest",
                 from_node=stop["id"],
                 to_node=dest_node_id,
                 edge_type=EdgeType.WALK,
                 mode="walk",
-                distance_meters=dist_m,
+                distance_meters=actual_walk_m,
                 base_duration_sec=walk_dur,
                 base_fare_inr=0.0,
                 route_name="Walk to Destination",

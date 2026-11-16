@@ -149,3 +149,89 @@ def test_objective_ranking():
     top_cost_fare = res_cost.journeys[0].estimated_fare_inr
     for j in res_cost.journeys:
         assert top_cost_fare <= j.estimated_fare_inr or j.total_duration_sec > res_cost.journeys[0].total_duration_sec
+
+
+# =====================================================================
+# Routing Accuracy & Locality Regression Tests
+# =====================================================================
+
+def test_murugeshpalya_routing_accuracy():
+    """
+    Regression test for reported issue:
+    Origin at Murugeshpalya (12.9581, 77.6572) must board at the nearby
+    Murugeshpalya Bus Stop (< 150m walk), NEVER Domlur TTMC (2.1 km away).
+    """
+    req = PlanRequest(
+        origin=Location(lat=12.9581, lon=77.6572, name="Murugeshpalya, Bengaluru"),
+        destination=Location(lat=12.9698, lon=77.7499, name="Whitefield"),
+        allowed_modes=[TransportMode.WALK, TransportMode.BUS],
+        objective=RoutingObjective.FASTEST
+    )
+    res = plan_journey_post(req)
+    assert len(res.journeys) >= 1
+
+    top_journey = res.journeys[0]
+    bus_leg = next((l for l in top_journey.legs if l.mode == TransportMode.BUS), None)
+    assert bus_leg is not None, "Should recommend a bus journey"
+    assert "Murugeshpalya" in bus_leg.from_stop_name, (
+        f"Expected boarding at Murugeshpalya Bus Stop, but got {bus_leg.from_stop_name}"
+    )
+    # Walking distance to boarding point must be under 150m
+    access_walk_leg = top_journey.legs[0]
+    assert access_walk_leg.mode == TransportMode.WALK
+    assert access_walk_leg.distance_meters < 150.0, (
+        f"Walk to boarding stop must be < 150m, got {access_walk_leg.distance_meters}m"
+    )
+    # Domlur TTMC must NOT be the boarding point
+    assert "Domlur TTMC" not in bus_leg.from_stop_name
+
+
+def test_multiple_bengaluru_localities_routing():
+    """
+    Verifies that the routing engine generalizes accurately across key Bengaluru localities:
+    Domlur, Indiranagar, Marathahalli, Silk Board, Majestic, and Whitefield.
+    """
+    localities = [
+        ("Domlur", 12.9610, 77.6387, "Majestic", 12.9772, 77.5713),
+        ("Indiranagar", 12.9784, 77.6408, "Whitefield", 12.9698, 77.7499),
+        ("Marathahalli", 12.9562, 77.7011, "Silk Board", 12.9172, 77.6227),
+        ("Silk Board", 12.9172, 77.6227, "Hebbal", 13.0358, 77.5970),
+        ("Majestic", 12.9772, 77.5713, "Whitefield", 12.9698, 77.7499),
+        ("Whitefield", 12.9698, 77.7499, "Indiranagar", 12.9784, 77.6408),
+    ]
+
+    for orig_name, orig_lat, orig_lon, dest_name, dest_lat, dest_lon in localities:
+        req = PlanRequest(
+            origin=Location(lat=orig_lat, lon=orig_lon, name=orig_name),
+            destination=Location(lat=dest_lat, lon=dest_lon, name=dest_name),
+            allowed_modes=[TransportMode.WALK, TransportMode.BUS, TransportMode.METRO],
+            objective=RoutingObjective.FASTEST
+        )
+        res = plan_journey_post(req)
+        assert len(res.journeys) >= 1, f"Failed to compute journey for {orig_name} -> {dest_name}"
+        best = res.journeys[0]
+        assert best.total_duration_sec > 0
+        assert len(best.legs) >= 1
+        # Walking distance to transit boarding point should be reasonable (< 1500m for key hubs)
+        first_leg = best.legs[0]
+        if first_leg.mode == TransportMode.WALK and len(best.legs) > 1:
+            assert first_leg.distance_meters <= 1500.0, (
+                f"Excessive initial walk from {orig_name}: {first_leg.distance_meters}m"
+            )
+
+
+def test_unreachable_destination_handling():
+    """
+    Isolated / unreachable destination far outside the transit network should return
+    either a direct walk (if within walkable bounds) or a graceful response without 500 error.
+    """
+    req = PlanRequest(
+        origin=Location(lat=12.9784, lon=77.6408, name="Indiranagar"),
+        destination=Location(lat=13.5000, lon=78.5000, name="Remote Outpost"),
+        allowed_modes=[TransportMode.WALK, TransportMode.BUS, TransportMode.METRO],
+        objective=RoutingObjective.FASTEST
+    )
+    res = plan_journey_post(req)
+    # The API must not crash; either direct walk or empty/fallback candidate
+    assert isinstance(res.journeys, list)
+

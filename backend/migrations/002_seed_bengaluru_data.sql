@@ -45,7 +45,26 @@ INSERT INTO transit_stops (id, name, mode, line_name, location, is_transfer_hub)
 ('bus_hebbal_flyover', 'Hebbal Flyover Bus Station', 'bus', 'ORR Hub', ST_SetSRID(ST_MakePoint(77.5970, 13.0358), 4326), TRUE),
 ('bus_kr_puram_railway', 'KR Puram Railway Station Bus Stop', 'bus', 'Trunk Bus', ST_SetSRID(ST_MakePoint(77.6765, 12.9995), 4326), FALSE),
 ('bus_tin_factory', 'Tin Factory (Kasturinagar) Bus Stop', 'bus', 'Trunk Bus', ST_SetSRID(ST_MakePoint(77.6660, 12.9930), 4326), FALSE),
-('bus_whitefield_ttmc', 'Whitefield TTMC Bus Station', 'bus', 'Trunk Bus', ST_SetSRID(ST_MakePoint(77.7505, 12.9695), 4326), FALSE)
+('bus_whitefield_ttmc', 'Whitefield TTMC Bus Station', 'bus', 'Trunk Bus', ST_SetSRID(ST_MakePoint(77.7505, 12.9695), 4326), FALSE),
+('bus_mayo_hall', 'Mayo Hall / Brigade Road Bus Stop', 'bus', 'Old Airport Road Trunk', ST_SetSRID(ST_MakePoint(77.6080, 12.9738), 4326), FALSE),
+('bus_kodihalli', 'Kodihalli (Manipal Hospital) Bus Stop', 'bus', 'Old Airport Road Trunk', ST_SetSRID(ST_MakePoint(77.6480, 12.9592), 4326), FALSE),
+('bus_murugeshpalya', 'Murugeshpalya Bus Stop', 'bus', 'Old Airport Road Trunk', ST_SetSRID(ST_MakePoint(77.6575, 12.9585), 4326), FALSE),
+('bus_rajeshwari_theater', 'Rajeshwari Theater (NAL) Bus Stop', 'bus', 'Old Airport Road Trunk', ST_SetSRID(ST_MakePoint(77.6645, 12.9576), 4326), FALSE),
+('bus_hal_main_gate', 'HAL Main Gate Bus Stop', 'bus', 'Old Airport Road Trunk', ST_SetSRID(ST_MakePoint(77.6770, 12.9568), 4326), FALSE),
+('bus_vimanapura', 'Vimanapura (ISRO) Bus Stop', 'bus', 'Old Airport Road Trunk', ST_SetSRID(ST_MakePoint(77.6885, 12.9560), 4326), FALSE),
+('bus_kundalahalli_gate', 'Kundalahalli Gate Bus Stop', 'bus', 'Whitefield Road Trunk', ST_SetSRID(ST_MakePoint(77.7145, 12.9648), 4326), FALSE),
+('bus_graphite_india', 'Graphite India Bus Stop', 'bus', 'Whitefield Road Trunk', ST_SetSRID(ST_MakePoint(77.7230, 12.9752), 4326), FALSE),
+('bus_itpl_main_gate', 'Pattandur Agrahara (ITPL) Bus Stop', 'bus', 'Whitefield Road Trunk', ST_SetSRID(ST_MakePoint(77.7375, 12.9875), 4326), TRUE),
+('bus_hopefarm', 'Hopefarm Channasandra Bus Stop', 'bus', 'Whitefield Road Trunk', ST_SetSRID(ST_MakePoint(77.7516, 12.9840), 4326), TRUE),
+('bus_manyata_tech_park', 'Manyata Tech Park (Nagawara) Bus Stop', 'bus', 'Outer Ring Road Trunk', ST_SetSRID(ST_MakePoint(77.6200, 13.0450), 4326), FALSE),
+('bus_kalyan_nagar', 'Kalyan Nagar (Babusapalya) Bus Stop', 'bus', 'Outer Ring Road Trunk', ST_SetSRID(ST_MakePoint(77.6450, 13.0200), 4326), FALSE),
+('bus_mahadevapura', 'Mahadevapura (Doddanekundi) Bus Stop', 'bus', 'Outer Ring Road Trunk', ST_SetSRID(ST_MakePoint(77.6950, 12.9860), 4326), FALSE),
+('bus_kadubeesanahalli', 'Kadubeesanahalli Bus Stop', 'bus', 'Outer Ring Road Trunk', ST_SetSRID(ST_MakePoint(77.6940, 12.9385), 4326), FALSE),
+('bus_iblur_junction', 'Iblur Junction Bus Stop', 'bus', 'Outer Ring Road Trunk', ST_SetSRID(ST_MakePoint(77.6680, 12.9205), 4326), FALSE),
+('bus_agara_junction', 'Agara Junction Bus Stop', 'bus', 'Outer Ring Road Trunk', ST_SetSRID(ST_MakePoint(77.6515, 12.9190), 4326), FALSE),
+('bus_domlur_flyover', 'Domlur Flyover / Doopanahalli Bus Stop', 'bus', 'Radial Feeder', ST_SetSRID(ST_MakePoint(77.6400, 12.9640), 4326), FALSE),
+('bus_koramangala_water_tank', 'Koramangala Sony World / Water Tank Bus Stop', 'bus', 'Radial Feeder', ST_SetSRID(ST_MakePoint(77.6280, 12.9340), 4326), FALSE),
+('bus_st_johns_hospital', 'St. Johns Hospital Bus Stop', 'bus', 'Radial Feeder', ST_SetSRID(ST_MakePoint(77.6190, 12.9280), 4326), FALSE)
 ON CONFLICT (id) DO NOTHING;
 
 -- 2. Insert Routes

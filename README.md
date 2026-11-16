@@ -25,7 +25,7 @@
 - **Multi-Objective Optimization:** Compare journeys by fastest arrival, lowest cost (₹ INR), fewest transfers, or least walking.
 - **Realistic Transfer Logic:** Station ingress/egress penalties, waiting-time estimations, and platform interchange delays.
 - **Dynamic Streaming Intelligence:** Real-time road congestion and transit delay events ingested through **Apache Kafka** and aggregated using **PySpark Structured Streaming**.
-- **Transparent Assumptions:** Clear labeling of scheduled timetables, walking speeds (1.2 m/s), and simulated delay factors.
+- **Transparent Assumptions:** Clear labeling of scheduled timetables, walking speeds (1.2 m/s), urban pedestrian circuity factors (1.20x street distance), and simulated delay factors.
 
 ---
 

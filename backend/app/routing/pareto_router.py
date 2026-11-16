@@ -124,10 +124,16 @@ class ParetoDijkstraRouter:
                 # Edge dynamic delay
                 dyn_delay = self.graph.get_dynamic_delay(edge.from_node, edge.to_node, edge.route_id)
 
-                # Headway wait time calculation
+                # Headway wait time calculation: only incurred upon initial boarding or transfer to a different route.
+                # Continuing on the same vehicle through consecutive stops incurs 0 waiting time.
+                is_continuing_same_vehicle = (
+                    prev_edge is not None
+                    and prev_edge.edge_type == EdgeType.TRANSIT
+                    and prev_edge.route_id == edge.route_id
+                )
                 current_time = current.time_sec + transfer_penalty
                 wait_time = 0
-                if edge.edge_type == EdgeType.TRANSIT and edge.headway_sec > 0:
+                if not is_continuing_same_vehicle and edge.edge_type == EdgeType.TRANSIT and edge.headway_sec > 0:
                     wait_time = (edge.headway_sec - (current_time % edge.headway_sec)) % edge.headway_sec
 
                 edge_duration = wait_time + edge.base_duration_sec + dyn_delay

@@ -48,7 +48,7 @@
       "name": "Hopefarm Channasandra Metro",
       "mode": "metro",
       "line": "Purple Line",
-      "lat": 12.9840,
+      "lat": 12.984,
       "lon": 77.7516
     },
     {
@@ -65,7 +65,7 @@
       "mode": "metro",
       "line": "Purple Line",
       "lat": 12.9982,
-      "lon": 77.6750,
+      "lon": 77.675,
       "transfer_hub": true
     },
     {
@@ -89,7 +89,7 @@
       "name": "Halasuru Metro Station",
       "mode": "metro",
       "line": "Purple Line",
-      "lat": 12.9740,
+      "lat": 12.974,
       "lon": 77.6256
     },
     {
@@ -147,7 +147,7 @@
       "mode": "metro",
       "line": "Green Line",
       "lat": 13.0232,
-      "lon": 77.5500
+      "lon": 77.55
     },
     {
       "id": "metro_sandal_soap",
@@ -171,7 +171,7 @@
       "mode": "metro",
       "line": "Green Line",
       "lat": 12.9908,
-      "lon": 77.5710
+      "lon": 77.571
     },
     {
       "id": "metro_chickpete",
@@ -202,8 +202,8 @@
       "name": "Lalbagh Metro Station",
       "mode": "metro",
       "line": "Green Line",
-      "lat": 12.9460,
-      "lon": 77.5800
+      "lat": 12.946,
+      "lon": 77.58
     },
     {
       "id": "metro_jayanagar",
@@ -269,7 +269,7 @@
       "name": "Domlur TTMC Bus Station",
       "mode": "bus",
       "line": "Feeder & Radial Hub",
-      "lat": 12.9610,
+      "lat": 12.961,
       "lon": 77.6387,
       "transfer_hub": true
     },
@@ -295,7 +295,7 @@
       "name": "Bellandur Ecospace Bus Stop",
       "mode": "bus",
       "line": "Outer Ring Road Hub",
-      "lat": 12.9260,
+      "lat": 12.926,
       "lon": 77.6845
     },
     {
@@ -346,7 +346,7 @@
       "mode": "bus",
       "line": "Outer Ring Road Hub",
       "lat": 13.0358,
-      "lon": 77.5970,
+      "lon": 77.597,
       "transfer_hub": true
     },
     {
@@ -362,8 +362,8 @@
       "name": "Tin Factory (Kasturinagar) Bus Stop",
       "mode": "bus",
       "line": "Trunk Bus",
-      "lat": 12.9930,
-      "lon": 77.6660
+      "lat": 12.993,
+      "lon": 77.666
     },
     {
       "id": "bus_whitefield_ttmc",
@@ -372,6 +372,177 @@
       "line": "Trunk Bus",
       "lat": 12.9695,
       "lon": 77.7505
+    },
+    {
+      "id": "bus_mayo_hall",
+      "name": "Mayo Hall / Brigade Road Bus Stop",
+      "mode": "bus",
+      "line": "Old Airport Road Trunk",
+      "lat": 12.9738,
+      "lon": 77.608,
+      "transfer_hub": false
+    },
+    {
+      "id": "bus_kodihalli",
+      "name": "Kodihalli (Manipal Hospital) Bus Stop",
+      "mode": "bus",
+      "line": "Old Airport Road Trunk",
+      "lat": 12.9592,
+      "lon": 77.648,
+      "transfer_hub": false
+    },
+    {
+      "id": "bus_murugeshpalya",
+      "name": "Murugeshpalya Bus Stop",
+      "mode": "bus",
+      "line": "Old Airport Road Trunk",
+      "lat": 12.9585,
+      "lon": 77.6575,
+      "transfer_hub": false
+    },
+    {
+      "id": "bus_rajeshwari_theater",
+      "name": "Rajeshwari Theater (NAL) Bus Stop",
+      "mode": "bus",
+      "line": "Old Airport Road Trunk",
+      "lat": 12.9576,
+      "lon": 77.6645,
+      "transfer_hub": false
+    },
+    {
+      "id": "bus_hal_main_gate",
+      "name": "HAL Main Gate Bus Stop",
+      "mode": "bus",
+      "line": "Old Airport Road Trunk",
+      "lat": 12.9568,
+      "lon": 77.677,
+      "transfer_hub": false
+    },
+    {
+      "id": "bus_vimanapura",
+      "name": "Vimanapura (ISRO) Bus Stop",
+      "mode": "bus",
+      "line": "Old Airport Road Trunk",
+      "lat": 12.956,
+      "lon": 77.6885,
+      "transfer_hub": false
+    },
+    {
+      "id": "bus_kundalahalli_gate",
+      "name": "Kundalahalli Gate Bus Stop",
+      "mode": "bus",
+      "line": "Whitefield Road Trunk",
+      "lat": 12.9648,
+      "lon": 77.7145,
+      "transfer_hub": false
+    },
+    {
+      "id": "bus_graphite_india",
+      "name": "Graphite India Bus Stop",
+      "mode": "bus",
+      "line": "Whitefield Road Trunk",
+      "lat": 12.9752,
+      "lon": 77.723,
+      "transfer_hub": false
+    },
+    {
+      "id": "bus_itpl_main_gate",
+      "name": "Pattandur Agrahara (ITPL) Bus Stop",
+      "mode": "bus",
+      "line": "Whitefield Road Trunk",
+      "lat": 12.9875,
+      "lon": 77.7375,
+      "transfer_hub": true
+    },
+    {
+      "id": "bus_hopefarm",
+      "name": "Hopefarm Channasandra Bus Stop",
+      "mode": "bus",
+      "line": "Whitefield Road Trunk",
+      "lat": 12.984,
+      "lon": 77.7516,
+      "transfer_hub": true
+    },
+    {
+      "id": "bus_manyata_tech_park",
+      "name": "Manyata Tech Park (Nagawara) Bus Stop",
+      "mode": "bus",
+      "line": "Outer Ring Road Trunk",
+      "lat": 13.045,
+      "lon": 77.62,
+      "transfer_hub": false
+    },
+    {
+      "id": "bus_kalyan_nagar",
+      "name": "Kalyan Nagar (Babusapalya) Bus Stop",
+      "mode": "bus",
+      "line": "Outer Ring Road Trunk",
+      "lat": 13.02,
+      "lon": 77.645,
+      "transfer_hub": false
+    },
+    {
+      "id": "bus_mahadevapura",
+      "name": "Mahadevapura (Doddanekundi) Bus Stop",
+      "mode": "bus",
+      "line": "Outer Ring Road Trunk",
+      "lat": 12.986,
+      "lon": 77.695,
+      "transfer_hub": false
+    },
+    {
+      "id": "bus_kadubeesanahalli",
+      "name": "Kadubeesanahalli Bus Stop",
+      "mode": "bus",
+      "line": "Outer Ring Road Trunk",
+      "lat": 12.9385,
+      "lon": 77.694,
+      "transfer_hub": false
+    },
+    {
+      "id": "bus_iblur_junction",
+      "name": "Iblur Junction Bus Stop",
+      "mode": "bus",
+      "line": "Outer Ring Road Trunk",
+      "lat": 12.9205,
+      "lon": 77.668,
+      "transfer_hub": false
+    },
+    {
+      "id": "bus_agara_junction",
+      "name": "Agara Junction Bus Stop",
+      "mode": "bus",
+      "line": "Outer Ring Road Trunk",
+      "lat": 12.919,
+      "lon": 77.6515,
+      "transfer_hub": false
+    },
+    {
+      "id": "bus_domlur_flyover",
+      "name": "Domlur Flyover / Doopanahalli Bus Stop",
+      "mode": "bus",
+      "line": "Radial Feeder",
+      "lat": 12.964,
+      "lon": 77.64,
+      "transfer_hub": false
+    },
+    {
+      "id": "bus_koramangala_water_tank",
+      "name": "Koramangala Sony World / Water Tank Bus Stop",
+      "mode": "bus",
+      "line": "Radial Feeder",
+      "lat": 12.934,
+      "lon": 77.628,
+      "transfer_hub": false
+    },
+    {
+      "id": "bus_st_johns_hospital",
+      "name": "St. Johns Hospital Bus Stop",
+      "mode": "bus",
+      "line": "Radial Feeder",
+      "lat": 12.928,
+      "lon": 77.619,
+      "transfer_hub": false
     }
   ],
   "transit_routes": [
@@ -396,7 +567,19 @@
         "metro_hopefarm",
         "metro_whitefield"
       ],
-      "segment_travel_times": [120, 150, 110, 130, 140, 150, 180, 240, 200, 160, 150]
+      "segment_travel_times": [
+        120,
+        150,
+        110,
+        130,
+        140,
+        150,
+        180,
+        240,
+        200,
+        160,
+        150
+      ]
     },
     {
       "id": "metro_purple_westbound",
@@ -419,7 +602,19 @@
         "metro_majestic",
         "metro_city_railway"
       ],
-      "segment_travel_times": [150, 160, 200, 240, 180, 150, 140, 130, 110, 150, 120]
+      "segment_travel_times": [
+        150,
+        160,
+        200,
+        240,
+        180,
+        150,
+        140,
+        130,
+        110,
+        150,
+        120
+      ]
     },
     {
       "id": "metro_green_southbound",
@@ -443,7 +638,20 @@
         "metro_jp_nagar",
         "metro_silk_institute"
       ],
-      "segment_travel_times": [110, 140, 130, 160, 120, 110, 130, 120, 150, 160, 140, 320]
+      "segment_travel_times": [
+        110,
+        140,
+        130,
+        160,
+        120,
+        110,
+        130,
+        120,
+        150,
+        160,
+        140,
+        320
+      ]
     },
     {
       "id": "metro_green_northbound",
@@ -467,7 +675,20 @@
         "metro_sandal_soap",
         "metro_yeshwanthpur"
       ],
-      "segment_travel_times": [320, 140, 160, 150, 120, 130, 110, 120, 160, 130, 140, 110]
+      "segment_travel_times": [
+        320,
+        140,
+        160,
+        150,
+        120,
+        130,
+        110,
+        120,
+        160,
+        130,
+        140,
+        110
+      ]
     },
     {
       "id": "bmtc_500d_southbound",
@@ -478,14 +699,33 @@
       "fare_tier": "bmtc_ordinary",
       "stops": [
         "bus_hebbal_flyover",
+        "bus_manyata_tech_park",
+        "bus_kalyan_nagar",
         "bus_tin_factory",
         "bus_kr_puram_railway",
+        "bus_mahadevapura",
         "bus_marathahalli_bridge",
+        "bus_kadubeesanahalli",
         "bus_bellandur_ecospace",
+        "bus_iblur_junction",
+        "bus_agara_junction",
         "bus_hsr_layout_bd6",
         "bus_central_silk_board"
       ],
-      "segment_travel_times": [600, 300, 650, 550, 480, 420]
+      "segment_travel_times": [
+        598,
+        844,
+        820,
+        319,
+        558,
+        740,
+        477,
+        398,
+        431,
+        412,
+        373,
+        424
+      ]
     },
     {
       "id": "bmtc_500d_northbound",
@@ -497,13 +737,32 @@
       "stops": [
         "bus_central_silk_board",
         "bus_hsr_layout_bd6",
+        "bus_agara_junction",
+        "bus_iblur_junction",
         "bus_bellandur_ecospace",
+        "bus_kadubeesanahalli",
         "bus_marathahalli_bridge",
+        "bus_mahadevapura",
         "bus_kr_puram_railway",
         "bus_tin_factory",
+        "bus_kalyan_nagar",
+        "bus_manyata_tech_park",
         "bus_hebbal_flyover"
       ],
-      "segment_travel_times": [420, 480, 550, 650, 300, 600]
+      "segment_travel_times": [
+        424,
+        373,
+        412,
+        431,
+        398,
+        477,
+        740,
+        558,
+        319,
+        820,
+        844,
+        598
+      ]
     },
     {
       "id": "bmtc_335e_eastbound",
@@ -516,11 +775,37 @@
         "bus_majestic_kbs",
         "bus_corporation",
         "bus_richmond_circle",
+        "bus_mayo_hall",
         "bus_domlur_ttmc",
+        "bus_kodihalli",
+        "bus_murugeshpalya",
+        "bus_rajeshwari_theater",
+        "bus_hal_main_gate",
+        "bus_vimanapura",
         "bus_marathahalli_bridge",
+        "bus_kundalahalli_gate",
+        "bus_graphite_india",
+        "bus_itpl_main_gate",
+        "bus_hopefarm",
         "bus_whitefield_ttmc"
       ],
-      "segment_travel_times": [450, 350, 650, 900, 750]
+      "segment_travel_times": [
+        508,
+        242,
+        270,
+        789,
+        252,
+        253,
+        198,
+        321,
+        298,
+        322,
+        400,
+        346,
+        471,
+        366,
+        374
+      ]
     },
     {
       "id": "bmtc_335e_westbound",
@@ -531,13 +816,39 @@
       "fare_tier": "bmtc_vajra",
       "stops": [
         "bus_whitefield_ttmc",
+        "bus_hopefarm",
+        "bus_itpl_main_gate",
+        "bus_graphite_india",
+        "bus_kundalahalli_gate",
         "bus_marathahalli_bridge",
+        "bus_vimanapura",
+        "bus_hal_main_gate",
+        "bus_rajeshwari_theater",
+        "bus_murugeshpalya",
+        "bus_kodihalli",
         "bus_domlur_ttmc",
+        "bus_mayo_hall",
         "bus_richmond_circle",
         "bus_corporation",
         "bus_majestic_kbs"
       ],
-      "segment_travel_times": [750, 900, 650, 350, 450]
+      "segment_travel_times": [
+        374,
+        366,
+        471,
+        346,
+        400,
+        322,
+        298,
+        321,
+        198,
+        253,
+        252,
+        789,
+        270,
+        242,
+        508
+      ]
     },
     {
       "id": "bmtc_201_eastbound",
@@ -551,10 +862,22 @@
         "bus_jayadeva_hospital",
         "bus_btm_layout_water_tank",
         "bus_central_silk_board",
+        "bus_st_johns_hospital",
+        "bus_koramangala_water_tank",
         "bus_domlur_ttmc",
+        "bus_domlur_flyover",
         "bus_indiranagar_100ft"
       ],
-      "segment_travel_times": [450, 350, 380, 720, 480]
+      "segment_travel_times": [
+        581,
+        316,
+        323,
+        302,
+        284,
+        706,
+        115,
+        284
+      ]
     },
     {
       "id": "bmtc_201_westbound",
@@ -565,13 +888,25 @@
       "fare_tier": "bmtc_ordinary",
       "stops": [
         "bus_indiranagar_100ft",
+        "bus_domlur_flyover",
         "bus_domlur_ttmc",
+        "bus_koramangala_water_tank",
+        "bus_st_johns_hospital",
         "bus_central_silk_board",
         "bus_btm_layout_water_tank",
         "bus_jayadeva_hospital",
         "bus_banashankari_ttmc"
       ],
-      "segment_travel_times": [480, 720, 380, 350, 450]
+      "segment_travel_times": [
+        284,
+        115,
+        706,
+        284,
+        302,
+        323,
+        316,
+        581
+      ]
     },
     {
       "id": "bmtc_365_southbound",
@@ -585,7 +920,10 @@
         "bus_corporation",
         "bus_jayadeva_hospital"
       ],
-      "segment_travel_times": [450, 750]
+      "segment_travel_times": [
+        450,
+        750
+      ]
     },
     {
       "id": "bmtc_365_northbound",
@@ -599,7 +937,10 @@
         "bus_corporation",
         "bus_majestic_kbs"
       ],
-      "segment_travel_times": [750, 450]
+      "segment_travel_times": [
+        750,
+        450
+      ]
     }
   ],
   "transfer_edges": [
@@ -662,6 +1003,42 @@
       "to_stop": "metro_whitefield",
       "distance_meters": 80,
       "walking_duration_sec": 67
+    },
+    {
+      "from_stop": "metro_itpl",
+      "to_stop": "bus_itpl_main_gate",
+      "distance_meters": 60,
+      "walking_duration_sec": 50
+    },
+    {
+      "from_stop": "bus_itpl_main_gate",
+      "to_stop": "metro_itpl",
+      "distance_meters": 60,
+      "walking_duration_sec": 50
+    },
+    {
+      "from_stop": "metro_hopefarm",
+      "to_stop": "bus_hopefarm",
+      "distance_meters": 60,
+      "walking_duration_sec": 50
+    },
+    {
+      "from_stop": "bus_hopefarm",
+      "to_stop": "metro_hopefarm",
+      "distance_meters": 60,
+      "walking_duration_sec": 50
+    },
+    {
+      "from_stop": "metro_mg_road",
+      "to_stop": "bus_mayo_hall",
+      "distance_meters": 350,
+      "walking_duration_sec": 292
+    },
+    {
+      "from_stop": "bus_mayo_hall",
+      "to_stop": "metro_mg_road",
+      "distance_meters": 350,
+      "walking_duration_sec": 292
     }
   ]
 }

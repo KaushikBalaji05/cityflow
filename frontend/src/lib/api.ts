@@ -14,6 +14,10 @@ const FALLBACK_STOPS: StopItem[] = [
   { id: 'bus_central_silk_board', name: 'Central Silk Board Interchange', mode: 'bus', line: 'ORR Hub', lat: 12.9172, lon: 77.6227, transfer_hub: true },
   { id: 'bus_bellandur_ecospace', name: 'Bellandur Ecospace Bus Stop', mode: 'bus', line: 'ORR Hub', lat: 12.9260, lon: 77.6845, transfer_hub: false },
   { id: 'bus_hebbal_flyover', name: 'Hebbal Flyover Bus Station', mode: 'bus', line: 'ORR Hub', lat: 13.0358, lon: 77.5970, transfer_hub: true },
+  { id: 'bus_murugeshpalya', name: 'Murugeshpalya Bus Stop', mode: 'bus', line: 'Old Airport Road Trunk', lat: 12.9585, lon: 77.6575, transfer_hub: false },
+  { id: 'bus_domlur_ttmc', name: 'Domlur TTMC Bus Station', mode: 'bus', line: 'Old Airport Road Trunk', lat: 12.9610, lon: 77.6387, transfer_hub: true },
+  { id: 'bus_marathahalli_bridge', name: 'Marathahalli Bridge Bus Stop', mode: 'bus', line: 'ORR Hub', lat: 12.9562, lon: 77.7011, transfer_hub: true },
+  { id: 'bus_whitefield_ttmc', name: 'Whitefield TTMC Bus Station', mode: 'bus', line: 'Whitefield Trunk', lat: 12.9695, lon: 77.7505, transfer_hub: true },
 ];
 
 function getApiUrls(path: string): string[] {

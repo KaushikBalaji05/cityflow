@@ -17,6 +17,11 @@ const Map = dynamic(() => import('@/components/Map'), {
 
 const PRESETS = [
   {
+    name: 'Murugeshpalya ➔ Whitefield (Direct Bus 335-E)',
+    origin: { lat: 12.9581, lon: 77.6572, name: 'Murugeshpalya, Bengaluru' },
+    dest: { lat: 12.9698, lon: 77.7499, name: 'Whitefield (Kadugodi) Metro' },
+  },
+  {
     name: 'Indiranagar ➔ Whitefield (Tech Hub)',
     origin: { lat: 12.9784, lon: 77.6408, name: 'Indiranagar Metro Station' },
     dest: { lat: 12.9698, lon: 77.7499, name: 'Whitefield (Kadugodi) Metro' },

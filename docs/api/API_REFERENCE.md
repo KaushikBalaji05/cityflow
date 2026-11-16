@@ -139,7 +139,59 @@ Computes and ranks feasible multimodal journeys between an origin and destinatio
 
 ---
 
-## 4. Error Handling
+## 4. Live Mobility & Kafka Event Streaming (Stage 4)
+
+CityFlow ingests streaming traffic telemetry and public transit delay events using single-node **Apache Kafka in KRaft mode**.
+
+### Kafka Topics:
+- `bengaluru.traffic.events.v1` (3 partitions): Real-time road speeds, free-flow speeds, congestion levels, and multipliers.
+- `bengaluru.transit.delays.v1` (3 partitions): Dynamic vehicle delay events, causes, and route/stop identifiers.
+
+### `GET /api/v1/live/corridors`
+Returns real-time mobility health index (0–100 scale), average observed speeds, congestion classification, and active transit delay seconds for key Bengaluru arterial corridors (Outer Ring Road, Whitefield ITPL, Hosur Road / Silk Board, Old Madras Road, Hebbal Flyover, and Central CBD).
+
+**Response:** `200 OK`
+```json
+[
+  {
+    "corridor_name": "Outer Ring Road (Silk Board to Marathahalli)",
+    "health_index": 44.4,
+    "avg_speed_kmh": 20.0,
+    "free_flow_speed_kmh": 45.0,
+    "congestion_level": "HIGH",
+    "active_transit_delays_sec": 750,
+    "impacted_routes": ["BMTC Route 500-D (Hebbal to Silk Board)"],
+    "last_updated": "2026-11-16T09:20:00Z"
+  }
+]
+```
+
+### `GET /api/v1/live/events/traffic`
+Retrieves recent road segment traffic events from the event ring buffer.
+- Query Parameter: `limit` (int, default: 50, max: 200)
+
+### `GET /api/v1/live/events/delays`
+Retrieves recent public transit delay events from the event ring buffer.
+- Query Parameter: `limit` (int, default: 50, max: 200)
+
+### `POST /api/v1/live/simulate/tick`
+Generates simulated traffic events and public transit delays for Bengaluru corridors and dynamically synchronizes delay weights into the multimodal routing graph.
+
+**Request Body:**
+```json
+{
+  "ticks": 1,
+  "scenario": "peak_evening"
+}
+```
+*Supported Scenarios:* `"normal"`, `"peak_evening"`, `"silk_board_gridlock"`, `"monsoon_rain"`.
+
+### `POST /api/v1/live/reset`
+Clears all simulated delays, resets corridor speeds to free-flow baseline, and synchronizes the routing graph.
+
+---
+
+## 5. Error Handling
 The API follows standard RFC 7807 error responses:
 - `400 Bad Request`: Invalid coordinates or missing mandatory fields.
 - `422 Unprocessable Entity`: Schema validation errors (handled automatically by Pydantic).

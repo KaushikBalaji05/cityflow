@@ -79,3 +79,15 @@ export interface StopItem {
   lon: number;
   transfer_hub: boolean;
 }
+
+export interface CorridorMetric {
+  corridor_name: string;
+  health_index: number;
+  avg_speed_kmh: number;
+  free_flow_speed_kmh: number;
+  congestion_level: 'LOW' | 'MODERATE' | 'HIGH' | 'SEVERE';
+  active_transit_delays_sec: number;
+  impacted_routes: string[];
+  last_updated: string;
+}
+

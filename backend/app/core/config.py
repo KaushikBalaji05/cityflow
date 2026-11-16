@@ -30,5 +30,12 @@ class Settings(BaseModel):
     WALKING_SPEED_MPS: float = float(os.getenv("WALKING_SPEED_MPS", "1.2"))  # ~4.32 km/h
     TRANSFER_PENALTY_SEC: int = int(os.getenv("TRANSFER_PENALTY_SEC", "120"))  # 2 minutes
 
+    # Kafka & Streaming Configuration
+    KAFKA_BOOTSTRAP_SERVERS: str = os.getenv("KAFKA_BOOTSTRAP_SERVERS", "localhost:9092")
+    KAFKA_TRAFFIC_TOPIC: str = os.getenv("KAFKA_TRAFFIC_TOPIC", "bengaluru.traffic.events.v1")
+    KAFKA_TRANSIT_DELAY_TOPIC: str = os.getenv("KAFKA_TRANSIT_DELAY_TOPIC", "bengaluru.transit.delays.v1")
+    KAFKA_CLIENT_ID: str = "cityflow-backend-producer"
+    STREAMING_BUFFER_MAX_SIZE: int = int(os.getenv("STREAMING_BUFFER_MAX_SIZE", "500"))
+
 
 settings = Settings()

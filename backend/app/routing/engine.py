@@ -430,6 +430,14 @@ class MultimodalRoutingEngine:
         summary_modes = [m.value.title() for m in modes_used if m != TransportMode.WALK]
         summary = " + ".join(summary_modes) if summary_modes else "Walking Route"
 
+        has_live_delays = len(self.network.dynamic_delays) > 0
+        assumptions = [
+            f"Multi-objective Pareto-optimal route ({state.transfers} transfer(s)).",
+            f"Total waiting & interchange delay: {int(total_wait_sec/60)} min."
+        ]
+        if has_live_delays:
+            assumptions.append("Adjusted for live streaming delays on affected corridors.")
+
         return Journey(
             journey_id=f"pareto_{str(uuid.uuid4())[:8]}",
             objective=RoutingObjective.FASTEST,
@@ -442,11 +450,8 @@ class MultimodalRoutingEngine:
             estimated_fare_inr=round(state.fare_inr, 1),
             modes_used=modes_used,
             legs=legs,
-            is_live_adjusted=False,
-            assumptions=[
-                f"Multi-objective Pareto-optimal route ({state.transfers} transfer(s)).",
-                f"Total waiting & interchange delay: {int(total_wait_sec/60)} min."
-            ]
+            is_live_adjusted=has_live_delays,
+            assumptions=assumptions
         )
 
     def _rank_journeys(self, journeys: List[Journey], objective: RoutingObjective) -> List[Journey]:

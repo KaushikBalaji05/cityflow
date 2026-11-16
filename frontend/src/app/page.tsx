@@ -2,8 +2,8 @@
 
 import React, { useState, useEffect, useMemo } from 'react';
 import dynamic from 'next/dynamic';
-import { Journey, Location, RoutingObjective, StopItem, TransportMode } from '@/types/journey';
-import { planJourney, fetchHealth, fetchStops } from '@/lib/api';
+import { CorridorMetric, Journey, Location, RoutingObjective, StopItem, TransportMode } from '@/types/journey';
+import { planJourney, fetchHealth, fetchStops, fetchLiveCorridors, triggerSimulationTick, resetSimulationDelays } from '@/lib/api';
 
 // Dynamically import Map component to avoid SSR window issues
 const Map = dynamic(() => import('@/components/Map'), {
@@ -54,10 +54,19 @@ export default function HomePage() {
   const [stops, setStops] = useState<StopItem[]>([]);
   const [apiHealth, setApiHealth] = useState<any>(null);
   const [pickingMode, setPickingMode] = useState<'origin' | 'destination' | null>(null);
+  const [corridors, setCorridors] = useState<CorridorMetric[]>([]);
+  const [isSimulating, setIsSimulating] = useState<boolean>(false);
+  const [activeScenario, setActiveScenario] = useState<string>('normal');
 
   // Suggestions state
   const [showOriginSuggestions, setShowOriginSuggestions] = useState(false);
   const [showDestSuggestions, setShowDestSuggestions] = useState(false);
+
+  const loadCorridors = () => {
+    fetchLiveCorridors()
+      .then(setCorridors)
+      .catch((err) => console.error('Failed to load corridors:', err));
+  };
 
   // Load health & stops on mount
   useEffect(() => {
@@ -68,7 +77,28 @@ export default function HomePage() {
     fetchStops()
       .then(setStops)
       .catch((err) => console.error('Failed to load stops:', err));
+
+    loadCorridors();
   }, []);
+
+  const handleRunSimulation = async (scenario: string) => {
+    setIsSimulating(true);
+    setActiveScenario(scenario);
+    try {
+      if (scenario === 'reset') {
+        await resetSimulationDelays();
+      } else {
+        await triggerSimulationTick(scenario);
+      }
+      loadCorridors();
+      // Recalculate journeys with live delay state
+      setTimeout(handleSearch, 150);
+    } catch (err: any) {
+      console.error('Simulation error:', err);
+    } finally {
+      setIsSimulating(false);
+    }
+  };
 
   // Compute suggestions
   const originSuggestions = useMemo(() => {
@@ -394,6 +424,102 @@ export default function HomePage() {
                 <span>Compute Routes ({journeys.length} Options)</span>
               )}
             </button>
+          </div>
+
+          {/* Stage 4: Live Mobility Intelligence & Kafka Simulator */}
+          <div className="bg-slate-900/90 border border-slate-800 rounded-2xl p-3.5 space-y-3">
+            <div className="flex items-center justify-between">
+              <div className="flex items-center space-x-2">
+                <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
+                <span className="text-xs font-bold text-slate-200">Live Mobility & Kafka Streaming</span>
+              </div>
+              <span className="text-[10px] text-slate-400 font-mono">
+                {apiHealth?.streaming?.connected_to_kafka ? 'Kafka KRaft' : 'In-Memory Stream'}
+              </span>
+            </div>
+
+            {/* Simulation Scenario Buttons */}
+            <div>
+              <div className="text-[10px] text-slate-400 uppercase font-semibold tracking-wider mb-1.5">
+                Simulate Corridor Stress / Incidents
+              </div>
+              <div className="grid grid-cols-2 gap-1.5 text-[11px]">
+                <button
+                  disabled={isSimulating}
+                  onClick={() => handleRunSimulation('peak_evening')}
+                  className={`py-1.5 px-2 rounded-lg font-medium border text-left transition ${
+                    activeScenario === 'peak_evening'
+                      ? 'bg-amber-600/30 border-amber-500/80 text-amber-200'
+                      : 'bg-slate-800 border-slate-700/80 text-slate-300 hover:bg-slate-700'
+                  }`}
+                >
+                  ⚡ Evening Rush
+                </button>
+                <button
+                  disabled={isSimulating}
+                  onClick={() => handleRunSimulation('silk_board_gridlock')}
+                  className={`py-1.5 px-2 rounded-lg font-medium border text-left transition ${
+                    activeScenario === 'silk_board_gridlock'
+                      ? 'bg-rose-600/30 border-rose-500/80 text-rose-200'
+                      : 'bg-slate-800 border-slate-700/80 text-slate-300 hover:bg-slate-700'
+                  }`}
+                >
+                  🚨 Silk Board Jam
+                </button>
+                <button
+                  disabled={isSimulating}
+                  onClick={() => handleRunSimulation('monsoon_rain')}
+                  className={`py-1.5 px-2 rounded-lg font-medium border text-left transition ${
+                    activeScenario === 'monsoon_rain'
+                      ? 'bg-cyan-600/30 border-cyan-500/80 text-cyan-200'
+                      : 'bg-slate-800 border-slate-700/80 text-slate-300 hover:bg-slate-700'
+                  }`}
+                >
+                  🌧️ Monsoon Rain
+                </button>
+                <button
+                  disabled={isSimulating}
+                  onClick={() => handleRunSimulation('reset')}
+                  className="py-1.5 px-2 rounded-lg font-medium border border-slate-700 bg-slate-800/80 text-slate-400 hover:text-white transition"
+                >
+                  🔄 Reset (Free Flow)
+                </button>
+              </div>
+            </div>
+
+            {/* Live Corridor Health Bars */}
+            {corridors.length > 0 && (
+              <div className="space-y-1.5 pt-1 border-t border-slate-800/80">
+                <div className="text-[10px] text-slate-400 uppercase font-semibold tracking-wider">
+                  Corridor Health Index
+                </div>
+                <div className="space-y-1.5 max-h-36 overflow-y-auto pr-1">
+                  {corridors.map((c) => (
+                    <div key={c.corridor_name} className="text-[11px] bg-slate-950/60 p-2 rounded-xl border border-slate-800/60">
+                      <div className="flex items-center justify-between text-slate-300">
+                        <span className="font-semibold truncate max-w-[220px]">{c.corridor_name}</span>
+                        <span className="font-mono text-[10px] text-slate-400">{c.avg_speed_kmh} km/h</span>
+                      </div>
+                      <div className="flex items-center space-x-2 mt-1">
+                        <div className="flex-1 bg-slate-800 rounded-full h-1.5 overflow-hidden">
+                          <div
+                            className={`h-full rounded-full transition-all duration-500 ${
+                              c.health_index >= 70
+                                ? 'bg-emerald-400'
+                                : c.health_index >= 45
+                                ? 'bg-amber-400'
+                                : 'bg-rose-500'
+                            }`}
+                            style={{ width: `${c.health_index}%` }}
+                          />
+                        </div>
+                        <span className="text-[10px] font-mono text-slate-400">{c.health_index}%</span>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )}
           </div>
 
           {/* Journey Results Header */}

@@ -6,7 +6,7 @@ from app.core.config import settings
 from app.db.postgis import PostgisStopLookup
 from app.routing.engine import MultimodalRoutingEngine
 from app.routing.graph import TransitNetwork
-from app.schemas.journey import Location, PlanRequest
+from app.schemas.journey import Location, PlanRequest, TransportMode
 
 
 def test_no_stop_beyond_radius_and_no_fabricated_transit():
@@ -71,6 +71,17 @@ def test_live_postgis_migrations_cache_and_nearest_stop(monkeypatch):
     lookup = PostgisStopLookup(network, url)
     assert all(distance <= 3000 for _, distance in results)
     assert lookup(13.2473, 77.7137, 500, ['bus', 'metro']) == []
+    # Coordinate bounds and out-of-region checks
+    assert lookup(float('nan'), 77.6572, 3000, ['bus']) == []
+    assert lookup(91.0, 77.6572, 3000, ['bus']) == []
+    assert lookup(12.9581, 181.0, 3000, ['bus']) == []
+    assert lookup(28.6139, 77.2090, 3000, ['bus']) == []  # New Delhi (out-of-region)
+
+    # Destination nearest-stop lookup
+    dest_results = lookup(12.9698, 77.7499, 3000, ['bus'])
+    assert len(dest_results) > 0
+    assert all(distance <= 3000 for _, distance in dest_results)
+
     request = PlanRequest(origin=Location(lat=12.9581, lon=77.6572),
                           destination=Location(lat=12.9698, lon=77.7499), allowed_modes=['walk', 'bus'])
     response = MultimodalRoutingEngine(network, lookup).plan_journey(request)
@@ -81,7 +92,7 @@ def test_live_postgis_migrations_cache_and_nearest_stop(monkeypatch):
     assert (journey.legs[0].from_lat, journey.legs[0].from_lon) == (request.origin.lat, request.origin.lon)
     assert (journey.legs[-1].to_lat, journey.legs[-1].to_lon) == (request.destination.lat, request.destination.lon)
     monkeypatch.setattr(settings, 'WALKING_RADIUS_METERS', 50)
-    request.allowed_modes = ['bus']
+    request.allowed_modes = [TransportMode.BUS]
     assert MultimodalRoutingEngine(network, lookup).plan_journey(request).journeys == []
     async def cache_checks():
         cache = PostgresCache(url, 60)
@@ -96,3 +107,12 @@ def test_live_postgis_migrations_cache_and_nearest_stop(monkeypatch):
         with psycopg.connect(url) as conn:
             conn.execute("DELETE FROM geocoding_cache WHERE normalized_query='test-only:cache'")
     asyncio.run(cache_checks())
+
+
+def test_postgis_safety_guard_rejects_production_database():
+    import psycopg
+    from unittest.mock import patch
+    production_url = "postgresql://cityflow:secret@localhost:5432/cityflow_db"
+    database = psycopg.conninfo.conninfo_to_dict(production_url).get('dbname', '')
+    assert not database.startswith(('cityflow_test', 'cityflow_geocoding_qa'))
+

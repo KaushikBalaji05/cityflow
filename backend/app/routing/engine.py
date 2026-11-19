@@ -40,7 +40,7 @@ class MultimodalRoutingEngine:
     def plan_journey(self, request: PlanRequest) -> PlanResponse:
         origin = request.origin
         destination = request.destination
-        allowed_modes = {m.value for m in request.allowed_modes}
+        allowed_modes = {m.value if hasattr(m, "value") else str(m) for m in request.allowed_modes}
         query_time = datetime.datetime.now(datetime.timezone.utc).isoformat()
 
         direct_dist = haversine_distance_meters(

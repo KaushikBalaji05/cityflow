@@ -16,7 +16,16 @@ class PostgisStopLookup:
         self.url = url.replace("postgresql+asyncpg://", "postgresql://")
 
     def __call__(self, lat, lon, max_distance_meters, allowed_modes, limit=6):
+        import math
         import psycopg
+        if (
+            not isinstance(lat, (int, float))
+            or not isinstance(lon, (int, float))
+            or math.isnan(lat)
+            or math.isnan(lon)
+            or not (-90.0 <= lat <= 90.0 and -180.0 <= lon <= 180.0)
+        ):
+            return []
         # Do not silently expand radius or substitute different coordinates.
         with psycopg.connect(self.url, connect_timeout=3) as conn:
             conn.execute("SET LOCAL statement_timeout = '3000ms'")

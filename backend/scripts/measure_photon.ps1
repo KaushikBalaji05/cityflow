@@ -5,6 +5,11 @@ param(
 $ErrorActionPreference = 'Stop'
 $repoRoot = (Resolve-Path (Join-Path $PSScriptRoot '../..')).Path
 $reportPath = Join-Path $repoRoot 'data/geocoding/qa/photon-resources.json'
+if (-not (Get-Command docker -ErrorAction SilentlyContinue)) {
+    if (Test-Path "$env:LOCALAPPDATA\Programs\DockerDesktop\resources\bin\docker.exe") {
+        $env:Path = "$env:LOCALAPPDATA\Programs\DockerDesktop\resources\bin;$env:Path"
+    }
+}
 Get-Command docker -ErrorAction Stop | Out-Null
 $report = [ordered]@{
     measured_at_utc = [DateTime]::UtcNow.ToString('o')
@@ -32,7 +37,7 @@ try {
     $deadline = [DateTime]::UtcNow.AddMinutes(5)
     while ([DateTime]::UtcNow -lt $deadline) {
         try {
-            $health = Invoke-WebRequest 'http://127.0.0.1:2322/status' -TimeoutSec 3
+            $health = Invoke-WebRequest 'http://127.0.0.1:2322/status' -UseBasicParsing -TimeoutSec 3
             if ($health.StatusCode -eq 200) { $ready = $true; break }
         } catch { }
         Start-Sleep -Seconds 2
@@ -50,7 +55,7 @@ try {
     $report.index_size_kib = [long](($size -split '\s+')[0])
     foreach ($query in @('PES University', 'Murugeshpalya', 'Devanahalli')) {
         $timer = [Diagnostics.Stopwatch]::StartNew()
-        $response = Invoke-WebRequest ("http://127.0.0.1:2322/api?q=" + [Uri]::EscapeDataString($query) + '&bbox=77.15,12.6,78,13.5&limit=3') -TimeoutSec 10
+        $response = Invoke-WebRequest ("http://127.0.0.1:2322/api?q=" + [Uri]::EscapeDataString($query) + '&bbox=77.15,12.6,78,13.5&limit=3') -UseBasicParsing -TimeoutSec 10
         $timer.Stop()
         $report.search_latency_ms += [ordered]@{ query = $query; status_code = $response.StatusCode; elapsed_ms = $timer.Elapsed.TotalMilliseconds }
     }

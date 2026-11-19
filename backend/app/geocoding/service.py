@@ -2,7 +2,7 @@ import asyncio
 import logging
 from app.geocoding.models import SearchMeta, SearchResponse
 from app.geocoding.providers import ProviderError
-from app.geocoding.relevance import normalize, rank_unique, suitable
+from app.geocoding.relevance import normalize, query_variants, rank_unique, suitable
 
 logger = logging.getLogger(__name__)
 
@@ -70,6 +70,11 @@ class GeocodingService:
         if fallback_triggered:
             try:
                 candidates.extend(await self._call(self.fallback, query))
+                for variant in query_variants(query):
+                    try:
+                        candidates.extend(await self._call(self.fallback, variant))
+                    except ProviderError:
+                        pass
             except ProviderError:
                 failed += 1
                 logger.warning("Fallback geocoder unavailable")

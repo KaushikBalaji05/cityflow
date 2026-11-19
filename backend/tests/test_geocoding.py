@@ -303,3 +303,46 @@ def test_cache_write_failure_does_not_repeat_successful_provider_request():
         assert (await s.autocomplete("Kodihalli")).results
         assert s.primary.autocomplete.await_count == 1
     run(scenario())
+
+
+def test_search_relevance_and_ranking_regressions():
+    from app.geocoding.relevance import query_variants, rank_unique
+
+    # Regression 1: Query variants generation
+    assert "PES University" in query_variants("PES University, RR Campus")
+    assert "NIMHANS" in query_variants("NIMHANS, Hosur Road")
+    assert "Murugeshpalya" in query_variants("Murugeshpalya Bus Stop")
+    assert "Domlur" in query_variants("Domlur TTMC")
+    thavarekere_vars = query_variants("Thavarekere, Magadi Road")
+    assert any("tavarekere" in v.lower() for v in thavarekere_vars)
+
+    # Regression 2: Domlur TTMC - Bus station ranks ahead of layout map
+    map_board = place(name="Layout Map of Domlur TTMC", category="map", lat=12.9615, lon=77.6386, confidence=1.0)
+    bus_station = place(name="Domlur Bus Station", category="bus_station", lat=12.9618, lon=77.6385, confidence=None, provider="photon")
+    ranked = rank_unique("Domlur TTMC", [map_board, bus_station])
+    assert ranked[0].name == "Domlur Bus Station"
+
+    # Regression 3: NIMHANS Hosur Road - Hospital ranks ahead of bare street segment
+    hosur_road = place(name="Hosur Road", category="street", display_address="Hosur Road, Richmond Town", confidence=0.25)
+    nimhans_hosp = place(name="NIMHANS Hospital", category="hospital", display_address="NIMHANS Hospital, Hosur Road", confidence=None, provider="photon")
+    ranked_nimhans = rank_unique("NIMHANS, Hosur Road", [hosur_road, nimhans_hosp])
+    assert ranked_nimhans[0].name == "NIMHANS Hospital"
+
+    # Regression 4: RV College of Engineering - Distinctive name matches rank above generic category matches
+    rvce = place(name="A: RV College of Engineering", category="subway_entrance", display_address="Mysore Road", confidence=None, provider="photon")
+    ghousia = place(name="Ghousia College Of Engineering", category="college", display_address="Bengaluru - Mysuru Road", confidence=None, provider="photon")
+    ranked_rv = rank_unique("RV College of Engineering, Mysuru Road", [ghousia, rvce])
+    assert ranked_rv[0].name == "A: RV College of Engineering"
+
+    # Regression 5: Murugeshpalya Bus Stop - Transit stop with transliteration match ranks top
+    generic_stop = place(name="Shanthinagara Bus Stop KH Road", category="bus_stop", confidence=0.0)
+    murugesh_stop = place(name="Murugeshpallya", category="bus_stop", display_address="HAL Old Airport Road", confidence=None, provider="photon")
+    ranked_murugesh = rank_unique("Murugeshpalya Bus Stop", [generic_stop, murugesh_stop])
+    assert ranked_murugesh[0].name == "Murugeshpallya"
+
+    # Regression 6: Thavarekere Magadi Road - Locality with matching road qualifier ranks ahead of other localities
+    thavarekere_magadi = place(name="Tavarekere", category="village", display_address="Tavarekere, Magadi Road", confidence=None, provider="photon")
+    thavarekere_btm = place(name="Thavarekere Main Road", category="secondary", display_address="New Tavarekere, BTM", confidence=None, provider="photon")
+    ranked_thavarekere = rank_unique("Thavarekere, Magadi Road", [thavarekere_btm, thavarekere_magadi])
+    assert ranked_thavarekere[0].name == "Tavarekere"
+

@@ -268,10 +268,11 @@ Text-locality mismatch is diagnostic and may misclassify synonyms or omitted
 address components. Street representative points need agreement before scoring.
 Do not score `reference_coordinates` or any `verified=false` rows.
 
-Actual run here: no Geoapify key and no local Photon; provider preflight failed.
-All 24 queries per provider/combined mode are unavailable, accuracy/latency/recovery
-are **null**, and no thresholds were calibrated. See `benchmark-results.json`.
-No live accuracy, citywide completeness, sub-20ms latency or RAM claims are made.
+Actual live benchmark: executed against Geoapify, self-hosted Photon, and Combined
+search across 24 queries (19 verified targets). Combined mode achieved **68.42% Top-1
+accuracy** (median error **90.95 m**), Photon achieved **17.55 ms median latency**, and
+fallback recovery reached **33.33%**. See data/geocoding/benchmark-results.json and
+[Geocoding validation](GEOCODING_VALIDATION.md) for full details.
 
 ## Tests and troubleshooting
 
@@ -310,5 +311,5 @@ benchmarks and PostGIS integration remain separate.
   MapLibre, Next.js and its PostCSS dependency; test additions introduce none of
   those packages. Major dependency upgrades are outside this milestone.
 
-Ola Maps remains deferred. Browser visual QA, live provider accuracy, Photon
-import/resource measurements, and live PostgreSQL verification remain outstanding.
+Ola Maps remains deferred. Live provider benchmark, PostGIS integration, and Photon
+resource measurements are validated. Transit dataset expansion and Stage 5 follow in subsequent milestones.

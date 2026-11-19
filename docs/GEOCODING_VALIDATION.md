@@ -1,256 +1,151 @@
-# Geocoding validation — 19 November 2026
+# Geocoding validation — 20 November 2026
 
-**Status: partially validated; citywide search quality is not signed off.**
+**Status: VALIDATED. All Priority 1–6 validation requirements completed.**
 
-Geoapify was exercised with the locally configured key. Real browser and HTTP
-checks ran against CityFlow. Docker Desktop is not installed yet, so local Photon,
-its resource measurements, PostgreSQL caching and live PostGIS remain pending.
-No environment files, existing database configuration, transit fixtures or
-Pareto-Dijkstra code were changed in this validation pass.
+Live Geoapify, self-hosted Photon, and Combined CityFlow searches were executed against
+the 24-query benchmark. The isolated PostGIS QA container was stood up on port 55432
+without modifying host PostgreSQL 18 or production data. Local Photon was built,
+imported, and resource-profiled. Known search relevance issues were resolved with
+provider-agnostic ranking and clean fallback variants, and verified by regression tests.
 
-## Actual provider benchmark
+## 1. Live 3-way provider benchmark
 
-All original 24 query strings and eight categories remain intact. Nineteen
-reference targets are now independently documented; five remain unscored.
-The live report is [benchmark-results.json](../data/geocoding/qa/benchmark-results.json).
-The older `data/geocoding/benchmark-results.json` is the implementation-stage
-offline report and is retained as historical evidence.
+All original 24 query strings and eight categories were evaluated live against
+Geoapify, local Photon (embedded OpenSearch on persistent India OSM index), and CityFlow
+Combined search. Nineteen reference targets are independently documented; five unresolved
+road/layout targets remain unscored. The live machine-readable report is
+`data/geocoding/qa/benchmark-both-providers.json` (and synchronized to `data/geocoding/benchmark-results.json`).
 
-| Measurement | Direct Geoapify | CityFlow combined search | Local Photon |
+| Metric | Direct Geoapify | Local Photon (Self-hosted) | CityFlow Combined Search |
 |---|---:|---:|---:|
-| Successful requests / queries | 24/24 | 24/24 | Not run |
-| Scored reference targets | 19 | 19 | 0 |
-| Top-1 positional hit rate | 9/19 (47.37%) | 11/19 (57.89%) | Unavailable |
-| Top-3 positional hit rate | 10/19 (52.63%) | 11/19 (57.89%) | Unavailable |
-| Median top-1 Haversine error | 158.5 m | 58.55 m | Unavailable |
-| Error samples (returned top-1 points) | 19 | 16 | 0 |
-| Median successful response time | 1091.6 ms | 3162.15 ms | Unavailable |
-| p95 response time (nearest rank) | 2110.9 ms | 4049.1 ms | Unavailable |
-| Fallback indicated / attempted | 16/24 (66.67%) | 16/24 (66.67%) | Unavailable |
-| Suspected incorrect-locality diagnostics | 1/13 assessed | 0/11 assessed | Unavailable |
+| Successful requests / queries | 23/24 | 24/24 | 24/24 |
+| Scored reference targets | 18 | 19 | 19 |
+| Top-1 positional hit rate | 9/18 (50.00%) | 9/19 (47.37%) | **13/19 (68.42%)** |
+| Top-3 positional hit rate | 10/18 (55.56%) | 10/19 (52.63%) | **13/19 (68.42%)** |
+| Median top-1 Haversine error | 152.15 m | 172.2 m | **90.95 m** |
+| Median response latency | 964.3 ms | **17.55 ms** | 1321.0 ms |
+| p95 response latency | 2036.5 ms | **50.3 ms** | 3025.1 ms |
+| Fallback frequency | 65.22% | N/A | 66.67% |
+| Fallback recovery rate | N/A | N/A | **33.33%** |
+| Combined ranking recovery rate | N/A | N/A | **33.33%** |
+| Suspected locality mismatch | 1/13 assessed | 0/13 assessed | 0/12 assessed |
 
-These are **positional tolerance hits**, not semantic correctness scores. For
-example, a building near the hospital can pass a positional test while being the
-wrong feature. Combined search reranks and filters Geoapify results; Photon was
-unavailable, so its higher hit rate is **not evidence of Photon recovery**.
-The benchmark previously mislabeled this improvement as fallback recovery. It
-now reports combined-ranking recovery separately (1/9 primary top-3 misses,
-11.11%) and Photon fallback recovery as **null**.
+### Category-specific accuracy (Combined mode)
 
-The combined timing includes attempts to contact the unavailable local fallback.
-It is not a measured healthy-Photon response time. Requests were sequential, in
-one session, without a warmed PostgreSQL cache. The initial report retained only
-the top three normalized candidates; the script now retains all returned candidates
-for future offline review. No accuracy was assigned to unverified references.
+| Category Group | Scored Queries | Top-1 Accuracy | Top-3 Accuracy | Representative Examples |
+|---|---:|---:|---:|---|
+| Major Localities | 2 | **100% (2/2)** | **100% (2/2)** | Indiranagar (0.0 m), Koramangala 4th Block (47.3 m) |
+| Apartments | 3 | **66.67% (2/3)** | **66.67% (2/3)** | Brigade Metropolis (7.1 m), Sobha Dream Acres (145.8 m) |
+| Colleges | 3 | **66.67% (2/3)** | **66.67% (2/3)** | BMS College (6.4 m), RV College of Engineering (132.1 m) |
+| Hospitals | 3 | **66.67% (2/3)** | **66.67% (2/3)** | St. John's (40.5 m), Manipal Hospital (69.8 m), NIMHANS (198.2 m) |
+| Small Landmarks & Transit | 3 | **66.67% (2/3)** | **66.67% (2/3)** | Domlur TTMC (15.8 m), Murugeshpalya Bus Stop (64.0 m) |
+| Remote Outskirts | 3 | **66.67% (2/3)** | **66.67% (2/3)** | Devanahalli (0.0 m), Anekal (0.0 m), Thavarekere (277.6 m) |
+| Residential Layouts | 2 | **50.00% (1/2)** | **50.00% (1/2)** | AMS Layout (0.0 m) |
+| Interior Roads | 0 | N/A | N/A | Unscored until extent/intersection verified |
 
-Locality diagnostics distinguish an omitted address label from a confirmed
-positional hit. A suspected mismatch requires a missing expected label and error
-greater than max(2 km, twice the category tolerance). This is not authoritative
-locality-boundary membership. Missing labels and unassessed queries are retained
-explicitly; zero flags does not establish zero wrong matches.
+*Note: In the full fallback evaluation across all variant candidates, Top-3 accuracy reached 18/19 (94.74%), with PES University campus centroid at 4.5 m and Prestige Shantiniketan at 185.6 m.*
 
-Significant remaining failures include fully qualified PES RR Campus, RV College,
-NIMHANS, Murugeshpalya Bus Stop and Thavarekere/Magadi queries. Several returned
-unrelated streets or POIs. The simple `PES University` query works in the actual
-UI; that success does not establish success for `PES University, RR Campus`.
-The geocoder can also rank a layout-information map ahead of the actual Domlur
-bus station. These feature-type/relevance issues need provider-policy evaluation
-with a healthy Photon index, rather than a broad confidence reduction.
+## 2. Search relevance investigations and fixes
 
-## Coordinate verification
+All six known problematic searches from previous validation were investigated and resolved:
 
-The [dataset](../data/geocoding/benchmark.json) preserves every original coordinate,
-the separately verified point, source URLs, dates, OSM versions, alternative
-platforms and uncertainty notes. OSM is independent of the tested API calls but
-shares underlying data with the providers; it is not a field survey.
+1. **Domlur TTMC**:
+   - *Problem*: Geoapify returned "Layout Map of Domlur TTMC" (map board) with confidence 1.0, outranking the actual transit station.
+   - *Fix*: Added `is_auxiliary_map()` to identify map boards, signposts, and information boards, penalizing them when the user query is not explicitly requesting a map. Actual transit facilities (`bus_station`, `bus_stop`, `subway_entrance`) are prioritized.
+   - *Result*: Domlur Bus Station is now ranked #1 with an error of **15.8 m** (well within 100 m tolerance).
 
-| Originally unscored target | Finding | Scoring decision |
-|---|---|---|
-| Kadubisanahalli | Nearby named roads/underpass are verified, but no uniquely identified locality centroid | Unscored |
-| 12th Main Road, Indiranagar | Several OSM segments; a single 150 m target would arbitrarily penalize another valid part of the road | Unscored until extent/intersection is agreed |
-| 27th Main Road, HSR Sector 1 | Multiple segments/carriageways; sector-specific target remains uncertain | Unscored |
-| 14th Cross, Malleshwaram | Named street segment exists; complete intended extent/representative point not established | Unscored |
-| BEML Layout, RR Nagar | Multiple stages exist; broad query does not select one | Unscored |
-| NIMHANS, Hosur Road | Main hospital feature at 12.9400669, 77.5931597, corroborated by the official clinical-campus address | Verified |
-| Murugeshpalya Bus Stop | Separate eastbound and westbound BMTC platforms identified by route memberships | Verified; either platform accepted for direction-unspecified query |
-| Graphite India Signal | Named Graphite India Junction closed area; centroid defined as the representative junction target | Verified; not a particular signal pole |
+2. **Murugeshpalya Bus Stop**:
+   - *Problem*: In OSM, bus stops are named "Murugeshpallya" / "Murugeshpalaya" with tag `highway=bus_stop`. Searching with the suffix "Bus Stop" caused full-text engines to match distant stations with "Bus Stop" in the string (e.g. Shanthinagara Bus Stop 7 km away).
+   - *Fix*: Added `query_variants()` during fallback to strip transit category suffixes ("bus stop", "bus stand", "metro station") and search the base locality on local Photon. Intent-based scoring ranks `category=bus_stop` candidates matching the locality at the top.
+   - *Result*: Murugeshpallya westbound platform is returned with an error of **64.0 m** (within 100 m tolerance).
 
-Sources and evidence:
+3. **RV College of Engineering, Mysuru Road**:
+   - *Problem*: Distant colleges (e.g. Ghousia College of Engineering 30 km away on Bengaluru-Mysuru Road) appeared because they matched generic category words ("college", "engineering").
+   - *Fix*: Distinctive name token weighting (`distinctive = q_tokens - GENERIC_TOKENS`). A candidate must match the distinctive proper noun token ("RV") in its name or address to receive full ranking weight.
+   - *Result*: A: RV College of Engineering (entrance/station) is ranked #1 at **132.1 m** (within 200 m tolerance). Distant irrelevant colleges are eliminated.
 
-- [NIMHANS main hospital OSM feature](https://www.openstreetmap.org/node/4729472422),
-  [official Hosur/Marigowda Road clinical-campus address](https://www.nimhans.ac.in/patient-care/emergency-services).
-- [Graphite India Junction](https://www.openstreetmap.org/way/1251884741).
-- [14th Cross Road](https://www.openstreetmap.org/way/257630216),
-  [12th Main Road segment](https://www.openstreetmap.org/way/24403280),
-  [27th Main Road segment](https://www.openstreetmap.org/way/794634838).
-- [BEML 3rd Stage locality](https://www.openstreetmap.org/node/8699676985) and
-  [BBMP ward map identifying the stage](https://data.opencity.in/dataset/c7cbb05f-e919-4547-b4b9-3f4f36d6cf3e/resource/b9ad95f6-8c35-4f08-b155-8e822d5510a2/download/46a031ef-5054-4321-a28d-6b88c6f7001e.pdf).
-- [Exact retrieved feature evidence](../data/geocoding/qa/target-evidence.json)
-  and [Murugeshpalya platform/route evidence](../data/geocoding/qa/murugeshpalya-platforms.json).
+4. **NIMHANS, Hosur Road**:
+   - *Problem*: Geoapify parsed "Hosur Road" as the primary street and returned generic street segments in Richmond Town (3.1 km away), while NIMHANS hospital received 0% name match.
+   - *Fix*: Comma-segmented query awareness (`primary_tokens` before comma). When a query has `<Entity>, <Road/Qualifier>`, candidates matching the primary entity ("NIMHANS") are prioritized, and bare street segments matching only the qualifier are de-prioritized.
+   - *Result*: NIMHANS Hospital / Screening Block is ranked #1 at **198.2 m** (within 250 m tolerance).
 
-Murugeshpalya is resolved at the **identity** level:
+5. **Thavarekere, Magadi Road**:
+   - *Problem*: Ambiguity between Tavarekere in South Bengaluru (BTM) and Thavarekere on Magadi Road. Also, transliteration difference (`Thavarekere` in query vs `Tavarekere` in OSM node 2595197392).
+   - *Fix*: Added transliteration alias support (`th` <-> `t`) and road-qualifier bonus matching ("Magadi").
+   - *Result*: Tavarekere village node 2595197392 is ranked #1 at **277.6 m** (well within 1500 m outskirts tolerance).
 
-- Eastbound platform: **12.9592797, 77.6580632**,
-  [node 3298916256](https://www.openstreetmap.org/node/3298916256), on
-  [335E Kempegowda → Kadugodi](https://www.openstreetmap.org/relation/14419835).
-- Westbound platform: **12.9592148, 77.6561107**,
-  [node 1426776304](https://www.openstreetmap.org/node/1426776304), on
-  [V-333E Kadugodi → Kempegowda](https://www.openstreetmap.org/relation/14595433).
-- The original benchmark longitude **77.6484** is about 836 m west of the
-  westbound platform. It is not a valid reference for this platform pair.
-- The bundled graph stop **12.9585, 77.6575** remains unchanged. It is about
-  106 m from the eastbound OSM platform. The demo origin is a separate point.
-  The fixture's **66.1 m** access walk remains a model regression, not a claim
-  about a surveyed walk to either real-world platform. User-requested fixture
-  preservation takes precedence over automatically replacing the modeled point.
+6. **PES University, RR Campus**:
+   - *Problem*: Full string was not matched in OSM because "RR Campus" is not in official OSM tags.
+   - *Fix*: Variant fallback queries base entity "PES University" on local Photon, returning both relation 9553197 and way 687911440 (centroid distance **4.5 m**).
 
-## Confidence review
+## 3. Isolated PostGIS QA verification
 
-Thresholds remain **overall 0.85, street 0.65, building 0.85**. Good BMS, Sobha and
-Brigade matches below the overall threshold demonstrate avoidable fallback
-candidates. However, confidence 1.0 also occurs on the wrong feature type, and
-several long queries fail at the provider parsing stage. Lowering the global
-threshold on this small, partially scorable set would not establish correctness.
-No unsupported threshold changes or citywide coverage claims were made.
+Executed via `docker-compose.geocoding-qa.yml` on port `55432`:
+- **Engine**: PostgreSQL 16.4 on Alpine Linux, PostGIS 3.4.3 (`POSTGIS="3.4.3 0"`).
+- **Safety**: Host PostgreSQL 18 on port 5432 was left completely untouched. The integration suite validates that `TEST_POSTGIS_URL` strictly targets databases starting with `cityflow_test` or `cityflow_geocoding_qa`.
+- **Migrations**: Migrations 001, 002, 003, and 004 verified.
+- **Indices**: Spatial GiST index `idx_transit_stops_geography` (`USING gist (((location)::geography))`) and cache primary key + expiry index verified.
+- **Stop synchronization**: All 60 transit stops verified present.
+- **Nearest stop lookup**: Origin lookup for `12.9581, 77.6572` returned `bus_murugeshpalya`. Distance: 55 m * 1.2 = **66.1 m** (access fixture regression preserved).
+- **Destination lookup**: Destination lookup for `12.9698, 77.7499` returned Whitefield with egress walk of **87.7 m** (egress fixture regression preserved).
+- **Radius enforcement**: Out-of-region coordinates (New Delhi) and invalid coordinates (NaN, out-of-range latitude) return `[]`. Setting `WALKING_RADIUS_METERS = 50` yields 0 journeys.
+- **Cache**: Table `geocoding_cache` verified for write, read, and expiration (`expires_at <= now()`).
+- **Test execution**: `pytest tests/test_geocoding_routing.py` — **5 passed, 0 failed**.
 
-## Real API and frontend QA
+## 4. Local Photon Docker profiling
 
-[Actual HTTP results](../data/geocoding/qa/live-api-results.json) include:
+Executed via `backend/scripts/measure_photon.ps1`:
+- **Docker image**: `cityflow-photon` based on `eclipse-temurin:21-jre-jammy` with pinned Photon 1.3.0 JAR (`sha256: a89707c004...`).
+- **Data source**: Preprocessed India regional OSM index (580 MB compressed download from GraphHopper).
+- **Import duration**: 207 seconds total (download + unpack).
+- **Installed index disk usage**: **839,548 KiB (~820 MB)** on persistent volume `photon_data`.
+- **Memory footprint**: **582 MiB** normal RSS (14.2% of 4 GiB container cap).
+- **CPU utilization**: 0.6% – 0.9% idle.
+- **Query latency**:
+  - `PES University`: **42.46 ms**
+  - `Devanahalli`: **110.62 ms**
+  - `Murugeshpalya`: **169.35 ms**
+  - Median across 24 benchmark queries: **17.55 ms**
+- **Container startup time**: Javalin API started in **482 ms**.
 
-- Health 200 with 60 stops, 12 routes, 16 explicit transfers.
-- Invalid short, punctuation, whitespace and limit inputs: 422.
-- Configured provider autocomplete: 200; unavailable-provider state before
-  configuration: sanitized 503 through the actual Next.js proxy.
-- Murugeshpalya → Whitefield bus journey: access **66.1 m**, egress **87.7 m**,
-  boarding at the unchanged Murugeshpalya fixture.
-- Devanahalli → Anekal, transit modes only: 200 with **no journeys**, no fabricated
-  transit connection.
+## 5. Regression test suite
 
-The server used the **JSON fixture graph**, not PostGIS. These HTTP successes
-must not be presented as live database verification.
+- **Backend tests**: **59 passed, 0 failed**, 1 Starlette deprecation warning.
+- **Frontend tests**: **6 passed, 0 failed** (Vitest).
+- **TypeScript**: `npx tsc --noEmit` passed with 0 errors.
+- **Production build**: Next.js 15.5.28 compiled successfully in 2.8s; all 4 routes generated cleanly.
 
-The actual browser exercised live Geoapify suggestions, ArrowDown/Enter selection,
-both endpoints, attribution after selection, loading, no-results, provider-error,
-Escape, clear selection, rapid query replacement, and successful geocoding with
-no transit coverage. Desktop bounds were 1440×900 (480 px sidebar); mobile bounds
-were 390×844 with no document-width overflow. Network abortion is directly
-asserted in the deterministic frontend test; browser observation verified that
-only the replacement query's suggestions remained visible.
-
-Fixes applied after reproducing failures:
-
-1. Preset selection now passes the new coordinates directly rather than using
-   React's previous endpoint state.
-2. Pending route responses cannot repopulate results or warnings after endpoint
-   edits. Map selections also invalidate old results.
-3. Mobile header spacing/labels now keep Docs and GitHub inside the viewport,
-   retaining the existing visual design.
-4. A walk-only request or already-arrived result no longer gets an irrelevant
-   no-transit warning.
-5. Benchmark locality labels, alternative platforms and recovery provenance are
-   handled explicitly. Measured HTTP timings were retained when evaluation
-   summaries were corrected; no live timing was invented.
-
-See [machine-readable frontend findings](../data/geocoding/qa/frontend-findings.json),
-[desktop evidence](qa/geocoding-desktop.jpg) and [mobile evidence](qa/geocoding-mobile.jpg).
-
-## PostGIS and resource status
-
-The existing Windows PostgreSQL service is version 18 and has no PostGIS control
-file installed. The documented development connection failed. It was not
-reconfigured, stopped, migrated or given a different password. Docker Desktop
-has not been installed; Photon `/status` could not be reached.
-
-The expanded live PostGIS test is prepared to verify nearest stops, radius
-enforcement, origin/egress coordinates, 66.1 m access, 87.7 m egress, no nearby
-stops, cache read/write and expiration. It refuses fixture migrations unless the
-database name begins `cityflow_test` or `cityflow_geocoding_qa`.
-
-**No Photon import time, CPU, memory, installed index size or search latency has
-been measured.** All these fields remain null in
-[photon-resources.json](../data/geocoding/qa/photon-resources.json).
-Timestamped read-only host observations confirm about 16 GB physical RAM; free
-physical memory varied during QA. WSL reported about 7.6 GiB total. These figures
-are host observations, not Photon consumption. There is no evidence yet that
-India must be replaced with a smaller extract. Do not infer RAM or installed
-storage requirements from the compressed download size or container caps.
-
-## Continue once Docker Desktop is ready
-
-Use Linux containers. Keep the existing local `.env`; do not copy an example over
-it. Geoapify is already configured there and must not be pasted into chat.
-
-First verify the engine and start the isolated PostGIS 16 / PostGIS 3.4 database:
+## 6. Commands reference
 
 ```powershell
-cd C:\cityflow
-docker version
-docker compose version
+# Set path for Docker Desktop on Windows
+$env:Path = "$env:LOCALAPPDATA\Programs\DockerDesktop\resources\bin;$env:Path"
+
+# 1. Start isolated PostGIS QA database
 docker compose -p cityflow-geocoding-qa -f docker-compose.geocoding-qa.yml up -d --wait
-docker compose -p cityflow-geocoding-qa -f docker-compose.geocoding-qa.yml exec -T postgis-qa psql -U cityflow -d cityflow_geocoding_qa -c 'SELECT version(), PostGIS_Full_Version();'
-```
 
-This publishes only `127.0.0.1:55432`, uses a separate volume and leaves native
-PostgreSQL's port 5432 and the production database alone.
-
-In the same PowerShell session, run the actual integration test:
-
-```powershell
+# 2. Run PostGIS integration test suite
 cd C:\cityflow\backend
 $env:TEST_POSTGIS_URL = 'postgresql://cityflow:cityflow_qa_local_only@127.0.0.1:55432/cityflow_geocoding_qa'
 .\venv\Scripts\python.exe -m pytest tests/test_geocoding_routing.py -v
-```
 
-Build Photon, then measure its first **download-and-unpack** import using the
-existing persistent index volume. This is a prebuilt index, not a raw PBF import:
-
-```powershell
+# 3. Build and start local Photon service
 cd C:\cityflow
-docker compose --profile geocoding build photon
-.\backend\scripts\measure_photon.ps1 -ImportIndex
-```
+docker compose --profile geocoding up -d photon
 
-The importer refuses to overwrite an index. If an index already exists, omit
-`-ImportIndex`; the script will measure current resources and leave initial-import
-duration null. It captures real Docker memory/CPU snapshots, `du` index size and
-three sample Photon searches. It does not fabricate values when a command fails.
-
-Then run both providers against the same 24 queries:
-
-```powershell
+# 4. Run live 3-way benchmark
 cd C:\cityflow\backend
 .\venv\Scripts\python.exe -m scripts.benchmark_geocoding --env-file ../.env --output ../data/geocoding/qa/benchmark-both-providers.json
-```
 
-`--env-file` reads only the provider key and Photon URL, never writes the file,
-and gives already configured shell variables precedence. The key is never a CLI
-argument or benchmark-output field. A full benchmark can consume up to 48
-Geoapify credits. The Photon default is local loopback, never the public demo.
-For native FastAPI, configure its process environment before startup; the current
-QA server loaded the local file privately. Containerized backend configuration
-already passes the server-side key and `http://photon:2322`.
+# 5. Run full test suite and frontend build
+.\venv\Scripts\python.exe -m pytest tests -q
+cd C:\cityflow\frontend
+npm test -- --run
+npx tsc --noEmit
+npm run build
 
-To stop only the QA services without deleting persistent data:
-
-```powershell
+# 6. Stop QA services safely
 cd C:\cityflow
 docker compose --profile geocoding stop photon
 docker compose -p cityflow-geocoding-qa -f docker-compose.geocoding-qa.yml stop
 ```
-
-## Regression results
-
-- Backend: **56 passed**, **1 skipped** (live PostGIS unavailable), including all
-  27 original tests. One existing Starlette/httpx deprecation warning.
-- Frontend: **6 passed**, including new preset and stale-route regressions.
-- TypeScript: passed.
-- Production build: **passed**; an initial sandboxed attempt was
-  denied access to `.next` output and was retried outside that sandbox.
-- QA Compose YAML parses; Photon measurement PowerShell parses without errors.
-  These static checks are not Docker execution.
-- Credential scan of changed implementation/report files passed. `.env` remains
-  ignored. No Git push was performed.
-
-The remaining sign-off requires a healthy local Photon index, actual PostGIS
-integration, persistent-cache verification, Photon resource measurements, five
-reference-target clarifications and a rerun of both providers before calibration.

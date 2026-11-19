@@ -1,0 +1,2693 @@
+{
+  "attribution": "OpenStreetMap contributors, ODbL https://www.openstreetmap.org/copyright",
+  "retrieved": "2026-11-19",
+  "method": "OSM map API around original reference; way coordinates are arithmetic mean of vertices and need manual feature review.",
+  "queries": [
+    {
+      "query": "Indiranagar, Bengaluru",
+      "candidates": [
+        {
+          "name": "Indiranagar",
+          "lat": 12.9783079,
+          "lon": 77.6386592,
+          "source": "https://www.openstreetmap.org/node/850782880",
+          "tags": {
+            "public_transport": "stop_position"
+          }
+        },
+        {
+          "name": "Indiranagar",
+          "lat": 12.9783526,
+          "lon": 77.638658,
+          "source": "https://www.openstreetmap.org/node/5760197792",
+          "tags": {
+            "public_transport": "stop_position"
+          }
+        },
+        {
+          "name": "Indiranagar",
+          "lat": 12.9783325,
+          "lon": 77.6386612,
+          "source": "https://www.openstreetmap.org/node/6400857551",
+          "tags": {
+            "public_transport": "station"
+          }
+        }
+      ]
+    },
+    {
+      "query": "Koramangala 4th Block",
+      "candidates": [
+        {
+          "name": "16th B Road, 4th Block",
+          "lat": 12.933195610000002,
+          "lon": 77.62549184,
+          "source": "https://www.openstreetmap.org/way/28125800",
+          "tags": {
+            "highway": "residential"
+          }
+        },
+        {
+          "name": "Koramangala 4th Block",
+          "lat": 12.932493359090909,
+          "lon": 77.62950301818181,
+          "source": "https://www.openstreetmap.org/way/1066116298",
+          "tags": {
+            "place": "neighbourhood"
+          }
+        }
+      ]
+    },
+    {
+      "query": "Kadubisanahalli",
+      "candidates": [
+        {
+          "name": "Kadubeesanahalli Underpass",
+          "lat": 12.9394213,
+          "lon": 77.6951897,
+          "source": "https://www.openstreetmap.org/node/1614318567",
+          "tags": {}
+        },
+        {
+          "name": "Embassy Tech Village Kadubeesanahalli (u/c)",
+          "lat": 12.9322086,
+          "lon": 77.687553,
+          "source": "https://www.openstreetmap.org/node/9918955258",
+          "tags": {}
+        },
+        {
+          "name": "Kadubisanahalli Main Road",
+          "lat": 12.931087283333333,
+          "lon": 77.69644956666667,
+          "source": "https://www.openstreetmap.org/way/1062341299",
+          "tags": {
+            "highway": "primary"
+          }
+        },
+        {
+          "name": "Kadubisanahalli Main Road",
+          "lat": 12.930802400000001,
+          "lon": 77.69836555,
+          "source": "https://www.openstreetmap.org/way/1066848420",
+          "tags": {
+            "highway": "primary"
+          }
+        },
+        {
+          "name": "Kadubeesanahalli Underpass",
+          "lat": 12.939436457142858,
+          "lon": 77.6950822,
+          "source": "https://www.openstreetmap.org/way/1302220812",
+          "tags": {}
+        },
+        {
+          "name": "Kadubeesanahalli Underpass",
+          "lat": 12.9394422,
+          "lon": 77.69532421428572,
+          "source": "https://www.openstreetmap.org/way/1302220813",
+          "tags": {}
+        },
+        {
+          "name": "Kadubisanahalli Main Road",
+          "lat": 12.931236433333334,
+          "lon": 77.69514743333333,
+          "source": "https://www.openstreetmap.org/way/1314826747",
+          "tags": {
+            "highway": "primary"
+          }
+        },
+        {
+          "name": "Kadubisanahalli Main Road",
+          "lat": 12.9309595,
+          "lon": 77.6976163,
+          "source": "https://www.openstreetmap.org/way/1314826752",
+          "tags": {
+            "highway": "primary"
+          }
+        },
+        {
+          "name": "Kadubisanahalli Main Road",
+          "lat": 12.93124875,
+          "lon": 77.69505665,
+          "source": "https://www.openstreetmap.org/way/1314826760",
+          "tags": {
+            "highway": "primary"
+          }
+        }
+      ]
+    },
+    {
+      "query": "12th Main Road, Indiranagar",
+      "candidates": [
+        {
+          "name": "Indiranagar 12th Main",
+          "lat": 12.9699181,
+          "lon": 77.6413837,
+          "source": "https://www.openstreetmap.org/node/2396434084",
+          "tags": {
+            "highway": "bus_stop",
+            "public_transport": "platform"
+          }
+        },
+        {
+          "name": "Indiranagar 12th Main",
+          "lat": 12.9699165,
+          "lon": 77.6413516,
+          "source": "https://www.openstreetmap.org/node/12328481702",
+          "tags": {
+            "public_transport": "stop_position"
+          }
+        },
+        {
+          "name": "12th Main Road",
+          "lat": 12.97021295,
+          "lon": 77.641531625,
+          "source": "https://www.openstreetmap.org/way/24403280",
+          "tags": {
+            "highway": "tertiary"
+          }
+        },
+        {
+          "name": "12th Main Road",
+          "lat": 12.970146866666667,
+          "lon": 77.64043903333334,
+          "source": "https://www.openstreetmap.org/way/112994259",
+          "tags": {
+            "highway": "tertiary"
+          }
+        },
+        {
+          "name": "12th Main Road",
+          "lat": 12.97020285,
+          "lon": 77.6412862,
+          "source": "https://www.openstreetmap.org/way/543470394",
+          "tags": {
+            "highway": "tertiary"
+          }
+        },
+        {
+          "name": "12th Main Road",
+          "lat": 12.970269866666667,
+          "lon": 77.64277700000001,
+          "source": "https://www.openstreetmap.org/way/691155642",
+          "tags": {
+            "highway": "tertiary"
+          }
+        },
+        {
+          "name": "12th Main Road",
+          "lat": 12.97017605,
+          "lon": 77.6408481,
+          "source": "https://www.openstreetmap.org/way/691155643",
+          "tags": {
+            "highway": "tertiary"
+          }
+        },
+        {
+          "name": "12th Main Road",
+          "lat": 12.970264066666667,
+          "lon": 77.6415473,
+          "source": "https://www.openstreetmap.org/way/691155644",
+          "tags": {
+            "highway": "tertiary"
+          }
+        },
+        {
+          "name": "12th Main Road",
+          "lat": 12.970363816666667,
+          "lon": 77.64493792500001,
+          "source": "https://www.openstreetmap.org/way/691155645",
+          "tags": {
+            "highway": "tertiary"
+          }
+        },
+        {
+          "name": "12th Main Road",
+          "lat": 12.970309333333333,
+          "lon": 77.64275450000001,
+          "source": "https://www.openstreetmap.org/way/691155646",
+          "tags": {
+            "highway": "tertiary"
+          }
+        },
+        {
+          "name": "12th Main Road",
+          "lat": 12.9701973,
+          "lon": 77.64046160000001,
+          "source": "https://www.openstreetmap.org/way/691155647",
+          "tags": {
+            "highway": "tertiary"
+          }
+        },
+        {
+          "name": "12th Main Road",
+          "lat": 12.9699788,
+          "lon": 77.6379693125,
+          "source": "https://www.openstreetmap.org/way/691158150",
+          "tags": {
+            "highway": "tertiary"
+          }
+        },
+        {
+          "name": "12th Main Road",
+          "lat": 12.969824275,
+          "lon": 77.63604825,
+          "source": "https://www.openstreetmap.org/way/691158151",
+          "tags": {
+            "highway": "tertiary"
+          }
+        },
+        {
+          "name": "12th Main Road",
+          "lat": 12.970232325,
+          "lon": 77.64104222499999,
+          "source": "https://www.openstreetmap.org/way/1151934208",
+          "tags": {
+            "highway": "tertiary"
+          }
+        },
+        {
+          "name": "12th Main Road",
+          "lat": 12.970248,
+          "lon": 77.641284,
+          "source": "https://www.openstreetmap.org/way/1151934210",
+          "tags": {
+            "highway": "tertiary"
+          }
+        },
+        {
+          "name": "12th Main Road",
+          "lat": 12.970196066666666,
+          "lon": 77.6411595,
+          "source": "https://www.openstreetmap.org/way/1227746102",
+          "tags": {
+            "highway": "tertiary"
+          }
+        },
+        {
+          "name": "12th Main Road",
+          "lat": 12.969850399999999,
+          "lon": 77.6363073,
+          "source": "https://www.openstreetmap.org/way/1296033437",
+          "tags": {
+            "highway": "tertiary"
+          }
+        },
+        {
+          "name": "12th Main Road",
+          "lat": 12.97016125,
+          "lon": 77.6402047,
+          "source": "https://www.openstreetmap.org/way/1543213603",
+          "tags": {
+            "highway": "tertiary"
+          }
+        },
+        {
+          "name": "12th Main Road",
+          "lat": 12.970136100000001,
+          "lon": 77.64020585,
+          "source": "https://www.openstreetmap.org/way/1543213604",
+          "tags": {
+            "highway": "tertiary"
+          }
+        }
+      ]
+    },
+    {
+      "query": "27th Main Road, HSR Layout Sector 1",
+      "candidates": [
+        {
+          "name": "27th Main 13th Cross HSR Layout",
+          "lat": 12.9159969,
+          "lon": 77.6517866,
+          "source": "https://www.openstreetmap.org/node/9904143773",
+          "tags": {
+            "public_transport": "stop_position"
+          }
+        },
+        {
+          "name": "27th Main 13th Cross HSR Layout",
+          "lat": 12.9159916,
+          "lon": 77.6518272,
+          "source": "https://www.openstreetmap.org/node/9904143774",
+          "tags": {
+            "highway": "bus_stop",
+            "public_transport": "platform"
+          }
+        },
+        {
+          "name": "27th Main",
+          "lat": 12.9230786,
+          "lon": 77.651575,
+          "source": "https://www.openstreetmap.org/node/11099858521",
+          "tags": {
+            "public_transport": "stop_position"
+          }
+        },
+        {
+          "name": "27th Main",
+          "lat": 12.9230934,
+          "lon": 77.6515362,
+          "source": "https://www.openstreetmap.org/node/11099858522",
+          "tags": {
+            "highway": "bus_stop",
+            "public_transport": "platform"
+          }
+        },
+        {
+          "name": "27th Main",
+          "lat": 12.9234287,
+          "lon": 77.6516294,
+          "source": "https://www.openstreetmap.org/node/11417676431",
+          "tags": {
+            "public_transport": "stop_position"
+          }
+        },
+        {
+          "name": "27th Main",
+          "lat": 12.9234202,
+          "lon": 77.6516783,
+          "source": "https://www.openstreetmap.org/node/11417676432",
+          "tags": {
+            "highway": "bus_stop",
+            "public_transport": "platform"
+          }
+        },
+        {
+          "name": "27th Main Road",
+          "lat": 12.9197429,
+          "lon": 77.65163175,
+          "source": "https://www.openstreetmap.org/way/27936616",
+          "tags": {
+            "highway": "secondary"
+          }
+        },
+        {
+          "name": "27th Main Road",
+          "lat": 12.903662500000001,
+          "lon": 77.65024603333335,
+          "source": "https://www.openstreetmap.org/way/735053112",
+          "tags": {
+            "highway": "tertiary"
+          }
+        },
+        {
+          "name": "27th Main Road",
+          "lat": 12.903719333333333,
+          "lon": 77.65024366666667,
+          "source": "https://www.openstreetmap.org/way/735053113",
+          "tags": {
+            "highway": "tertiary"
+          }
+        },
+        {
+          "name": "27th Main Road",
+          "lat": 12.903928920000002,
+          "lon": 77.65062364,
+          "source": "https://www.openstreetmap.org/way/735053114",
+          "tags": {
+            "highway": "tertiary"
+          }
+        },
+        {
+          "name": "27th Main Road",
+          "lat": 12.903946025,
+          "lon": 77.6505777,
+          "source": "https://www.openstreetmap.org/way/735053115",
+          "tags": {
+            "highway": "tertiary"
+          }
+        },
+        {
+          "name": "27th Main Road",
+          "lat": 12.903582366666667,
+          "lon": 77.64948733333334,
+          "source": "https://www.openstreetmap.org/way/735053117",
+          "tags": {
+            "highway": "tertiary"
+          }
+        },
+        {
+          "name": "27th Main Road",
+          "lat": 12.91567605,
+          "lon": 77.651713925,
+          "source": "https://www.openstreetmap.org/way/794634837",
+          "tags": {
+            "highway": "secondary"
+          }
+        },
+        {
+          "name": "27th Main Road",
+          "lat": 12.91252355,
+          "lon": 77.6518494,
+          "source": "https://www.openstreetmap.org/way/794634838",
+          "tags": {
+            "highway": "secondary"
+          }
+        },
+        {
+          "name": "27th Main Road",
+          "lat": 12.915612424999999,
+          "lon": 77.65178895,
+          "source": "https://www.openstreetmap.org/way/794634839",
+          "tags": {
+            "highway": "secondary"
+          }
+        },
+        {
+          "name": "27th Main Road",
+          "lat": 12.911669975,
+          "lon": 77.651890225,
+          "source": "https://www.openstreetmap.org/way/794634840",
+          "tags": {
+            "highway": "tertiary"
+          }
+        },
+        {
+          "name": "27th Main Road",
+          "lat": 12.906386275,
+          "lon": 77.65137373125,
+          "source": "https://www.openstreetmap.org/way/794634841",
+          "tags": {
+            "highway": "tertiary"
+          }
+        },
+        {
+          "name": "27th Main Road",
+          "lat": 12.911709116666666,
+          "lon": 77.6518388,
+          "source": "https://www.openstreetmap.org/way/794634842",
+          "tags": {
+            "highway": "tertiary"
+          }
+        },
+        {
+          "name": "27th Main Road",
+          "lat": 12.92412285,
+          "lon": 77.65175719999999,
+          "source": "https://www.openstreetmap.org/way/1167253341",
+          "tags": {
+            "highway": "secondary"
+          }
+        },
+        {
+          "name": "27th Main Road",
+          "lat": 12.923527285714286,
+          "lon": 77.6516536857143,
+          "source": "https://www.openstreetmap.org/way/1182179245",
+          "tags": {
+            "highway": "secondary"
+          }
+        },
+        {
+          "name": "27th Main Road",
+          "lat": 12.91848845,
+          "lon": 77.6516708,
+          "source": "https://www.openstreetmap.org/way/1182179246",
+          "tags": {
+            "highway": "secondary"
+          }
+        },
+        {
+          "name": "27th Main Road",
+          "lat": 12.9122862,
+          "lon": 77.651831,
+          "source": "https://www.openstreetmap.org/way/1196120519",
+          "tags": {
+            "highway": "secondary"
+          }
+        },
+        {
+          "name": "27th Main Road",
+          "lat": 12.919108233333333,
+          "lon": 77.65164963333334,
+          "source": "https://www.openstreetmap.org/way/1200850298",
+          "tags": {
+            "highway": "secondary"
+          }
+        },
+        {
+          "name": "27th Main Road",
+          "lat": 12.9154412,
+          "lon": 77.65174435,
+          "source": "https://www.openstreetmap.org/way/1213822203",
+          "tags": {
+            "highway": "secondary"
+          }
+        },
+        {
+          "name": "27th Main Road",
+          "lat": 12.9161745,
+          "lon": 77.6517174,
+          "source": "https://www.openstreetmap.org/way/1213822204",
+          "tags": {
+            "highway": "secondary"
+          }
+        },
+        {
+          "name": "27th Main Road",
+          "lat": 12.916049075,
+          "lon": 77.651774225,
+          "source": "https://www.openstreetmap.org/way/1227940030",
+          "tags": {
+            "highway": "secondary"
+          }
+        },
+        {
+          "name": "27th Main Road",
+          "lat": 12.915996750000001,
+          "lon": 77.65170284999999,
+          "source": "https://www.openstreetmap.org/way/1227940032",
+          "tags": {
+            "highway": "secondary"
+          }
+        },
+        {
+          "name": "27th Main Road",
+          "lat": 12.9199283,
+          "lon": 77.6516267,
+          "source": "https://www.openstreetmap.org/way/1234788247",
+          "tags": {
+            "highway": "secondary"
+          }
+        },
+        {
+          "name": "27th Main Road",
+          "lat": 12.912320125,
+          "lon": 77.651880825,
+          "source": "https://www.openstreetmap.org/way/1364676160",
+          "tags": {
+            "highway": "secondary"
+          }
+        },
+        {
+          "name": "27th Main Road",
+          "lat": 12.914068485714285,
+          "lon": 77.65180557142857,
+          "source": "https://www.openstreetmap.org/way/1415385667",
+          "tags": {
+            "highway": "secondary"
+          }
+        },
+        {
+          "name": "27th Main Road",
+          "lat": 12.91953365,
+          "lon": 77.6516376,
+          "source": "https://www.openstreetmap.org/way/1447303986",
+          "tags": {
+            "highway": "secondary"
+          }
+        },
+        {
+          "name": "27th Main Road",
+          "lat": 12.92110198,
+          "lon": 77.65158432000001,
+          "source": "https://www.openstreetmap.org/way/1447303987",
+          "tags": {
+            "highway": "secondary"
+          }
+        },
+        {
+          "name": "27th Main Road",
+          "lat": 12.909592833333335,
+          "lon": 77.65187681666667,
+          "source": "https://www.openstreetmap.org/way/1528361054",
+          "tags": {
+            "highway": "tertiary"
+          }
+        },
+        {
+          "name": "27th Main Road",
+          "lat": 12.908676,
+          "lon": 77.65185905,
+          "source": "https://www.openstreetmap.org/way/1528361055",
+          "tags": {
+            "highway": "tertiary"
+          }
+        },
+        {
+          "name": "27th Main Road",
+          "lat": 12.91627525,
+          "lon": 77.65173759999999,
+          "source": "https://www.openstreetmap.org/way/1531594654",
+          "tags": {
+            "highway": "secondary"
+          }
+        },
+        {
+          "name": "27th Main Road",
+          "lat": 12.9163709,
+          "lon": 77.6517375,
+          "source": "https://www.openstreetmap.org/way/1531594656",
+          "tags": {
+            "highway": "secondary"
+          }
+        },
+        {
+          "name": "27th Main Road",
+          "lat": 12.916866599999999,
+          "lon": 77.6517244,
+          "source": "https://www.openstreetmap.org/way/1548813756",
+          "tags": {
+            "highway": "secondary"
+          }
+        },
+        {
+          "name": "27th Main Road",
+          "lat": 12.91769485,
+          "lon": 77.6516994,
+          "source": "https://www.openstreetmap.org/way/1548813757",
+          "tags": {
+            "highway": "secondary"
+          }
+        }
+      ]
+    },
+    {
+      "query": "14th Cross, Malleshwaram",
+      "candidates": [
+        {
+          "name": "14th Cross Road",
+          "lat": 13.004520987500001,
+          "lon": 77.57022905,
+          "source": "https://www.openstreetmap.org/way/257630216",
+          "tags": {
+            "highway": "residential"
+          }
+        }
+      ]
+    },
+    {
+      "query": "BEML Layout, Rajarajeshwari Nagar",
+      "candidates": [
+        {
+          "name": "Double Road BEML Layout",
+          "lat": 12.914526,
+          "lon": 77.5207669,
+          "source": "https://www.openstreetmap.org/node/2418681329",
+          "tags": {
+            "highway": "bus_stop",
+            "public_transport": "platform"
+          }
+        },
+        {
+          "name": "Double Road BEML Layout",
+          "lat": 12.9145208,
+          "lon": 77.5207033,
+          "source": "https://www.openstreetmap.org/node/7124635764",
+          "tags": {
+            "public_transport": "stop_position"
+          }
+        },
+        {
+          "name": "BEML Layout 3rd Stage",
+          "lat": 12.9196528,
+          "lon": 77.5202202,
+          "source": "https://www.openstreetmap.org/node/8699676985",
+          "tags": {
+            "place": "neighbourhood"
+          }
+        }
+      ]
+    },
+    {
+      "query": "AMS Layout, Vidyaranyapura",
+      "candidates": [
+        {
+          "name": "AMS Layout",
+          "lat": 13.0877316,
+          "lon": 77.5585759,
+          "source": "https://www.openstreetmap.org/node/12797123072",
+          "tags": {
+            "place": "neighbourhood"
+          }
+        }
+      ]
+    },
+    {
+      "query": "Dollars Colony, RMV 2nd Stage",
+      "candidates": []
+    },
+    {
+      "query": "Prestige Shantiniketan, Whitefield",
+      "candidates": [
+        {
+          "name": "Prestige Shantiniketan",
+          "lat": 12.9892717,
+          "lon": 77.7266513,
+          "source": "https://www.openstreetmap.org/node/12534145128",
+          "tags": {
+            "highway": "bus_stop"
+          }
+        },
+        {
+          "name": "Prestige Shantiniketan",
+          "lat": 12.9892717,
+          "lon": 77.7266513,
+          "source": "https://www.openstreetmap.org/node/12534184755",
+          "tags": {
+            "highway": "bus_stop"
+          }
+        },
+        {
+          "name": "Prestige Shantiniketan Commercial Complex",
+          "lat": 12.990870531707317,
+          "lon": 77.73052257804878,
+          "source": "https://www.openstreetmap.org/way/91003802",
+          "tags": {
+            "building": "commercial"
+          }
+        },
+        {
+          "name": "Prestige Shantiniketan Outer Road",
+          "lat": 12.990182866666666,
+          "lon": 77.72744873333335,
+          "source": "https://www.openstreetmap.org/way/116117199",
+          "tags": {
+            "highway": "residential"
+          }
+        },
+        {
+          "name": "Prestige Shantiniketan Residential Complex",
+          "lat": 12.992688290909092,
+          "lon": 77.72896863636363,
+          "source": "https://www.openstreetmap.org/way/122737532",
+          "tags": {
+            "landuse": "residential"
+          }
+        },
+        {
+          "name": "Prestige Shantiniketan Outer Road",
+          "lat": 12.9901443,
+          "lon": 77.72727954444444,
+          "source": "https://www.openstreetmap.org/way/150212364",
+          "tags": {
+            "highway": "residential"
+          }
+        },
+        {
+          "name": "Prestige Shantiniketan Outer Road",
+          "lat": 12.989313166666667,
+          "lon": 77.72692401666667,
+          "source": "https://www.openstreetmap.org/way/150212372",
+          "tags": {
+            "highway": "residential"
+          }
+        },
+        {
+          "name": "Prestige Shantiniketan",
+          "lat": 12.988971066666666,
+          "lon": 77.73097816666666,
+          "source": "https://www.openstreetmap.org/way/194740174",
+          "tags": {
+            "building": "commercial"
+          }
+        },
+        {
+          "name": "Prestige Shantiniketan Inner Road",
+          "lat": 12.994073282978723,
+          "lon": 77.72942528085106,
+          "source": "https://www.openstreetmap.org/way/244012928",
+          "tags": {
+            "highway": "residential"
+          }
+        },
+        {
+          "name": "Prestige Shantiniketan Outer Road",
+          "lat": 12.989425033333333,
+          "lon": 77.7271273,
+          "source": "https://www.openstreetmap.org/way/747220489",
+          "tags": {
+            "highway": "residential"
+          }
+        },
+        {
+          "name": "Prestige Shantiniketan Outer Road",
+          "lat": 12.98922935,
+          "lon": 77.72724641666666,
+          "source": "https://www.openstreetmap.org/way/747220490",
+          "tags": {
+            "highway": "residential"
+          }
+        },
+        {
+          "name": "Prestige Shantiniketan Commercial Complex",
+          "lat": 12.991479733333334,
+          "lon": 77.72947641666667,
+          "source": "https://www.openstreetmap.org/way/1084466989",
+          "tags": {
+            "building": "commercial"
+          }
+        },
+        {
+          "name": "Prestige Shantiniketan Substation",
+          "lat": 12.9896659,
+          "lon": 77.72638683333334,
+          "source": "https://www.openstreetmap.org/way/1256756134",
+          "tags": {}
+        },
+        {
+          "name": "Prestige Shantiniketan",
+          "lat": 12.991147642857143,
+          "lon": 77.72856919285714,
+          "source": "https://www.openstreetmap.org/way/1306885067",
+          "tags": {
+            "place": "neighbourhood"
+          }
+        }
+      ]
+    },
+    {
+      "query": "Sobha Dream Acres, Balagere",
+      "candidates": [
+        {
+          "name": "Sobha Dream Acres Rainforest",
+          "lat": 12.935326894871794,
+          "lon": 77.72177935897436,
+          "source": "https://www.openstreetmap.org/way/768730160",
+          "tags": {
+            "addr:street": "Panathur Main Road",
+            "landuse": "residential"
+          }
+        },
+        {
+          "name": "Sobha Dream Acres",
+          "lat": 12.937406491935484,
+          "lon": 77.7244313516129,
+          "source": "https://www.openstreetmap.org/way/963384967",
+          "tags": {
+            "addr:street": "Panathur Main Road",
+            "landuse": "residential"
+          }
+        },
+        {
+          "name": "Sobha Dream Acres Substation",
+          "lat": 12.930994916666668,
+          "lon": 77.7230839,
+          "source": "https://www.openstreetmap.org/way/1182510990",
+          "tags": {}
+        },
+        {
+          "name": "Sobha Dream Acres Oasis",
+          "lat": 12.9387859,
+          "lon": 77.7267243,
+          "source": "https://www.openstreetmap.org/way/1419425222",
+          "tags": {
+            "landuse": "residential"
+          }
+        }
+      ]
+    },
+    {
+      "query": "Brigade Metropolis, Mahadevapura",
+      "candidates": [
+        {
+          "name": "Brigade Metropolis",
+          "lat": 12.991243428,
+          "lon": 77.702749728,
+          "source": "https://www.openstreetmap.org/way/122738032",
+          "tags": {
+            "landuse": "residential"
+          }
+        },
+        {
+          "name": "Brigade Metropolis Cricket Ground",
+          "lat": 12.989035628571429,
+          "lon": 77.70300515714287,
+          "source": "https://www.openstreetmap.org/way/627710064",
+          "tags": {
+            "landuse": "recreation_ground"
+          }
+        }
+      ]
+    },
+    {
+      "query": "PES University, RR Campus",
+      "candidates": [
+        {
+          "name": "PES Food Court",
+          "lat": 12.9336327,
+          "lon": 77.5343127,
+          "source": "https://www.openstreetmap.org/node/2093288411",
+          "tags": {
+            "amenity": "restaurant"
+          }
+        },
+        {
+          "name": "Cafe Coffe Day Express",
+          "lat": 12.9335839,
+          "lon": 77.5344798,
+          "source": "https://www.openstreetmap.org/node/2093290604",
+          "tags": {
+            "amenity": "cafe"
+          }
+        },
+        {
+          "name": "PES College",
+          "lat": 12.9348213,
+          "lon": 77.537064,
+          "source": "https://www.openstreetmap.org/node/2093292636",
+          "tags": {
+            "highway": "bus_stop",
+            "public_transport": "platform"
+          }
+        },
+        {
+          "name": "PES College",
+          "lat": 12.9350701,
+          "lon": 77.5370613,
+          "source": "https://www.openstreetmap.org/node/2401598415",
+          "tags": {
+            "highway": "bus_stop",
+            "public_transport": "platform"
+          }
+        },
+        {
+          "name": "PES Boys Hostel",
+          "lat": 12.9331275,
+          "lon": 77.5345817,
+          "source": "https://www.openstreetmap.org/node/2800820360",
+          "tags": {}
+        },
+        {
+          "name": "PES South Indian Mess",
+          "lat": 12.9333545,
+          "lon": 77.5350149,
+          "source": "https://www.openstreetmap.org/node/4243919621",
+          "tags": {}
+        },
+        {
+          "name": "PES Globe",
+          "lat": 12.9351895,
+          "lon": 77.5354331,
+          "source": "https://www.openstreetmap.org/node/4243928006",
+          "tags": {}
+        },
+        {
+          "name": "PESUACADEMY",
+          "lat": 12.9349831,
+          "lon": 77.5342791,
+          "source": "https://www.openstreetmap.org/node/6449182703",
+          "tags": {}
+        },
+        {
+          "name": "PESU Sports Center",
+          "lat": 12.9341922,
+          "lon": 77.5342788,
+          "source": "https://www.openstreetmap.org/node/6449208761",
+          "tags": {}
+        },
+        {
+          "name": "PES Wall Art - 1",
+          "lat": 12.9339988,
+          "lon": 77.5355529,
+          "source": "https://www.openstreetmap.org/node/6484979982",
+          "tags": {}
+        },
+        {
+          "name": "PES Wall Art 2",
+          "lat": 12.9350751,
+          "lon": 77.5363875,
+          "source": "https://www.openstreetmap.org/node/6484979983",
+          "tags": {}
+        },
+        {
+          "name": "PES College",
+          "lat": 12.9349047,
+          "lon": 77.537061,
+          "source": "https://www.openstreetmap.org/node/6645712423",
+          "tags": {
+            "public_transport": "stop_position"
+          }
+        },
+        {
+          "name": "PES College",
+          "lat": 12.9350315,
+          "lon": 77.5370272,
+          "source": "https://www.openstreetmap.org/node/6899554640",
+          "tags": {
+            "public_transport": "stop_position"
+          }
+        },
+        {
+          "name": "NICE Expressway",
+          "lat": 12.931913285714286,
+          "lon": 77.53147858571428,
+          "source": "https://www.openstreetmap.org/way/70537554",
+          "tags": {
+            "highway": "motorway"
+          }
+        },
+        {
+          "name": "NICE Expressway",
+          "lat": 12.9394437875,
+          "lon": 77.532357925,
+          "source": "https://www.openstreetmap.org/way/172851175",
+          "tags": {
+            "highway": "motorway"
+          }
+        },
+        {
+          "name": "NICE Expressway",
+          "lat": 12.93836997,
+          "lon": 77.53210888,
+          "source": "https://www.openstreetmap.org/way/183869709",
+          "tags": {
+            "highway": "motorway"
+          }
+        },
+        {
+          "name": "PES Boys Hostel",
+          "lat": 12.933227938461538,
+          "lon": 77.5348846,
+          "source": "https://www.openstreetmap.org/way/199316660",
+          "tags": {
+            "building": "residential"
+          }
+        },
+        {
+          "name": "PES Lawn",
+          "lat": 12.93527048,
+          "lon": 77.53546198500001,
+          "source": "https://www.openstreetmap.org/way/425055796",
+          "tags": {
+            "landuse": "grass"
+          }
+        },
+        {
+          "name": "NICE Expressway",
+          "lat": 12.935637466666668,
+          "lon": 77.5315623,
+          "source": "https://www.openstreetmap.org/way/492214417",
+          "tags": {
+            "highway": "motorway"
+          }
+        },
+        {
+          "name": "NICE Expressway",
+          "lat": 12.936557966666667,
+          "lon": 77.53172143333335,
+          "source": "https://www.openstreetmap.org/way/492214418",
+          "tags": {
+            "highway": "motorway"
+          }
+        },
+        {
+          "name": "NICE Expressway",
+          "lat": 12.936643533333333,
+          "lon": 77.53119063333334,
+          "source": "https://www.openstreetmap.org/way/492214419",
+          "tags": {
+            "highway": "motorway"
+          }
+        },
+        {
+          "name": "NICE Expressway",
+          "lat": 12.935892966666666,
+          "lon": 77.53120946666667,
+          "source": "https://www.openstreetmap.org/way/492214420",
+          "tags": {
+            "highway": "motorway"
+          }
+        },
+        {
+          "name": "PES University Cricket Ground",
+          "lat": 12.934375390476191,
+          "lon": 77.53206905714285,
+          "source": "https://www.openstreetmap.org/way/687910153",
+          "tags": {
+            "landuse": "recreation_ground"
+          }
+        },
+        {
+          "name": "PES University",
+          "lat": 12.934776068421053,
+          "lon": 77.53216524210526,
+          "source": "https://www.openstreetmap.org/way/687911440",
+          "tags": {
+            "amenity": "university"
+          }
+        },
+        {
+          "name": "NICE Expressway",
+          "lat": 12.931296119999999,
+          "lon": 77.53163706000001,
+          "source": "https://www.openstreetmap.org/way/687911443",
+          "tags": {
+            "highway": "motorway"
+          }
+        },
+        {
+          "name": "NICE Expressway",
+          "lat": 12.93366235,
+          "lon": 77.53146035,
+          "source": "https://www.openstreetmap.org/way/687911444",
+          "tags": {
+            "highway": "motorway"
+          }
+        },
+        {
+          "name": "NICE Expressway",
+          "lat": 12.93434135,
+          "lon": 77.53130200000001,
+          "source": "https://www.openstreetmap.org/way/687911445",
+          "tags": {
+            "highway": "motorway"
+          }
+        },
+        {
+          "name": "NICE Expressway",
+          "lat": 12.933639975,
+          "lon": 77.53134427500001,
+          "source": "https://www.openstreetmap.org/way/687911446",
+          "tags": {
+            "highway": "motorway"
+          }
+        },
+        {
+          "name": "PES Boys Hostel",
+          "lat": 12.932863575,
+          "lon": 77.534531675,
+          "source": "https://www.openstreetmap.org/way/1182315667",
+          "tags": {
+            "building": "residential"
+          }
+        },
+        {
+          "name": "NICE Expressway",
+          "lat": 12.93748406,
+          "lon": 77.53145712,
+          "source": "https://www.openstreetmap.org/way/1287465037",
+          "tags": {
+            "highway": "motorway"
+          }
+        },
+        {
+          "name": "NICE Expressway",
+          "lat": 12.9383522,
+          "lon": 77.5318118,
+          "source": "https://www.openstreetmap.org/way/1287465038",
+          "tags": {
+            "highway": "motorway"
+          }
+        }
+      ]
+    },
+    {
+      "query": "RV College of Engineering, Mysuru Road",
+      "candidates": [
+        {
+          "name": "RV College",
+          "lat": 12.9253246,
+          "lon": 77.4991719,
+          "source": "https://www.openstreetmap.org/node/248677023",
+          "tags": {
+            "highway": "bus_stop",
+            "public_transport": "platform"
+          }
+        },
+        {
+          "name": "RV College",
+          "lat": 12.9253978,
+          "lon": 77.4995421,
+          "source": "https://www.openstreetmap.org/node/699704227",
+          "tags": {
+            "highway": "bus_stop",
+            "public_transport": "platform"
+          }
+        },
+        {
+          "name": "RV College",
+          "lat": 12.925426,
+          "lon": 77.4995152,
+          "source": "https://www.openstreetmap.org/node/5558684066",
+          "tags": {
+            "public_transport": "stop_position"
+          }
+        },
+        {
+          "name": "RV College",
+          "lat": 12.9254906,
+          "lon": 77.4993812,
+          "source": "https://www.openstreetmap.org/node/6226329977",
+          "tags": {
+            "highway": "bus_stop",
+            "public_transport": "platform"
+          }
+        },
+        {
+          "name": "RV College",
+          "lat": 12.9253252,
+          "lon": 77.4992746,
+          "source": "https://www.openstreetmap.org/node/7132418216",
+          "tags": {
+            "public_transport": "stop_position"
+          }
+        },
+        {
+          "name": "A: RV College of Engineering",
+          "lat": 12.924066,
+          "lon": 77.4982484,
+          "source": "https://www.openstreetmap.org/node/9199245472",
+          "tags": {}
+        },
+        {
+          "name": "RV College",
+          "lat": 12.9265769,
+          "lon": 77.4997278,
+          "source": "https://www.openstreetmap.org/node/10124169615",
+          "tags": {}
+        }
+      ]
+    },
+    {
+      "query": "BMS College of Engineering, Basavanagudi",
+      "candidates": [
+        {
+          "name": "Melton Room - BMS Campus",
+          "lat": 12.940687,
+          "lon": 77.5660654,
+          "source": "https://www.openstreetmap.org/node/2408446625",
+          "tags": {}
+        },
+        {
+          "name": "BMS Katte",
+          "lat": 12.941257,
+          "lon": 77.5661124,
+          "source": "https://www.openstreetmap.org/node/3455342558",
+          "tags": {}
+        },
+        {
+          "name": "BMS Hostel Auditorium",
+          "lat": 12.9401894,
+          "lon": 77.5656135,
+          "source": "https://www.openstreetmap.org/node/12944464149",
+          "tags": {
+            "amenity": "community_centre"
+          }
+        },
+        {
+          "name": "BMS Hostel Mess",
+          "lat": 12.9399801,
+          "lon": 77.5654125,
+          "source": "https://www.openstreetmap.org/node/12944464150",
+          "tags": {
+            "amenity": "fixme"
+          }
+        },
+        {
+          "name": "BMS College Hostel",
+          "lat": 12.9399255,
+          "lon": 77.5647425,
+          "source": "https://www.openstreetmap.org/node/12944464151",
+          "tags": {
+            "amenity": "student_accommodation"
+          }
+        },
+        {
+          "name": "BMS College Hostel",
+          "lat": 12.9402769,
+          "lon": 77.5647965,
+          "source": "https://www.openstreetmap.org/node/12944464152",
+          "tags": {
+            "amenity": "student_accommodation"
+          }
+        },
+        {
+          "name": "BMS College International Hostel",
+          "lat": 12.9394935,
+          "lon": 77.5654169,
+          "source": "https://www.openstreetmap.org/node/12944464153",
+          "tags": {
+            "amenity": "student_accommodation"
+          }
+        },
+        {
+          "name": "BMS College Of Architecture",
+          "lat": 12.942314255555555,
+          "lon": 77.56668243333333,
+          "source": "https://www.openstreetmap.org/way/133117440",
+          "tags": {
+            "amenity": "library",
+            "building": "yes"
+          }
+        },
+        {
+          "name": "BMS Women's College",
+          "lat": 12.943944746551724,
+          "lon": 77.56976998793104,
+          "source": "https://www.openstreetmap.org/way/133260533",
+          "tags": {
+            "building": "yes"
+          }
+        },
+        {
+          "name": "BMS College Parking",
+          "lat": 12.94134896,
+          "lon": 77.56649774,
+          "source": "https://www.openstreetmap.org/way/162389318",
+          "tags": {
+            "amenity": "parking"
+          }
+        },
+        {
+          "name": "BMS College of Engineering",
+          "lat": 12.941629423076924,
+          "lon": 77.5658515923077,
+          "source": "https://www.openstreetmap.org/way/172845845",
+          "tags": {
+            "amenity": "college"
+          }
+        },
+        {
+          "name": "BMS Hospital",
+          "lat": 12.941403959999999,
+          "lon": 77.56755318,
+          "source": "https://www.openstreetmap.org/way/687319732",
+          "tags": {
+            "amenity": "hospital"
+          }
+        }
+      ]
+    },
+    {
+      "query": "Manipal Hospital, Old Airport Road",
+      "candidates": [
+        {
+          "name": "Manipal Hospital",
+          "lat": 12.9596781,
+          "lon": 77.6492376,
+          "source": "https://www.openstreetmap.org/node/2401266124",
+          "tags": {
+            "highway": "bus_stop",
+            "public_transport": "platform"
+          }
+        },
+        {
+          "name": "Manipal Hospital",
+          "lat": 12.9598458,
+          "lon": 77.6492142,
+          "source": "https://www.openstreetmap.org/node/2401266125",
+          "tags": {
+            "highway": "bus_stop",
+            "public_transport": "platform"
+          }
+        },
+        {
+          "name": "Manipal Global Education Services",
+          "lat": 12.9604266,
+          "lon": 77.6458019,
+          "source": "https://www.openstreetmap.org/node/3781004947",
+          "tags": {}
+        },
+        {
+          "name": "NAL Manipal Hospital",
+          "lat": 12.9597158,
+          "lon": 77.65052,
+          "source": "https://www.openstreetmap.org/node/4307391440",
+          "tags": {
+            "highway": "bus_stop",
+            "public_transport": "platform"
+          }
+        },
+        {
+          "name": "Manipal Hospital Transfusion Services Blood Bank",
+          "lat": 12.9587377,
+          "lon": 77.6490927,
+          "source": "https://www.openstreetmap.org/node/6886594716",
+          "tags": {
+            "amenity": "blood_bank"
+          }
+        },
+        {
+          "name": "NAL Manipal Hospital",
+          "lat": 12.95966,
+          "lon": 77.6505169,
+          "source": "https://www.openstreetmap.org/node/7133498149",
+          "tags": {
+            "public_transport": "stop_position"
+          }
+        },
+        {
+          "name": "Manipal Hospital, Bengaluru Urban",
+          "lat": 12.9588078,
+          "lon": 77.64901985862069,
+          "source": "https://www.openstreetmap.org/way/133061664",
+          "tags": {
+            "amenity": "hospital",
+            "building": "hospital"
+          }
+        },
+        {
+          "name": "Manipal Hospital",
+          "lat": 12.958367123809523,
+          "lon": 77.6481215047619,
+          "source": "https://www.openstreetmap.org/way/135262255",
+          "tags": {
+            "amenity": "hospital"
+          }
+        },
+        {
+          "name": "Manipal Hospital Junction",
+          "lat": 12.959843183333334,
+          "lon": 77.6491076,
+          "source": "https://www.openstreetmap.org/way/1460202632",
+          "tags": {}
+        }
+      ]
+    },
+    {
+      "query": "NIMHANS, Hosur Road",
+      "candidates": [
+        {
+          "name": "NIMHANS Hospital",
+          "lat": 12.9388385,
+          "lon": 77.5981785,
+          "source": "https://www.openstreetmap.org/node/308922692",
+          "tags": {
+            "highway": "bus_stop",
+            "public_transport": "platform"
+          }
+        },
+        {
+          "name": "NIMHANS Screening block",
+          "lat": 12.9387115,
+          "lon": 77.5937737,
+          "source": "https://www.openstreetmap.org/node/1474472488",
+          "tags": {
+            "amenity": "hospital"
+          }
+        },
+        {
+          "name": "NIMHANS OPD",
+          "lat": 12.9388056,
+          "lon": 77.5942994,
+          "source": "https://www.openstreetmap.org/node/1474472859",
+          "tags": {
+            "amenity": "hospital"
+          }
+        },
+        {
+          "name": "NIMHANS Hospital",
+          "lat": 12.9396636,
+          "lon": 77.5978852,
+          "source": "https://www.openstreetmap.org/node/2177268803",
+          "tags": {
+            "highway": "bus_stop",
+            "public_transport": "platform"
+          }
+        },
+        {
+          "name": "NIMHANS - Ashwini Block",
+          "lat": 12.9397588,
+          "lon": 77.59445,
+          "source": "https://www.openstreetmap.org/node/4680014207",
+          "tags": {
+            "amenity": "hospital"
+          }
+        },
+        {
+          "name": "NIMHANS - Neuro Centre",
+          "lat": 12.9396877,
+          "lon": 77.5937741,
+          "source": "https://www.openstreetmap.org/node/4680181149",
+          "tags": {}
+        },
+        {
+          "name": "National Institute of Mental Health and Neuro Sciences",
+          "lat": 12.9400669,
+          "lon": 77.5931597,
+          "source": "https://www.openstreetmap.org/node/4729472422",
+          "tags": {
+            "amenity": "hospital"
+          }
+        },
+        {
+          "name": "Bakery Nimhans",
+          "lat": 12.9392324,
+          "lon": 77.5949154,
+          "source": "https://www.openstreetmap.org/node/4843100436",
+          "tags": {}
+        },
+        {
+          "name": "Emergency Block , NIMHANS",
+          "lat": 12.9403849,
+          "lon": 77.5945391,
+          "source": "https://www.openstreetmap.org/node/5265649228",
+          "tags": {
+            "amenity": "hospital"
+          }
+        },
+        {
+          "name": "NIMHANS",
+          "lat": 12.9419823,
+          "lon": 77.5971531,
+          "source": "https://www.openstreetmap.org/node/10219972647",
+          "tags": {}
+        },
+        {
+          "name": "NIMHANS Brain Museum",
+          "lat": 12.9406685,
+          "lon": 77.5987087,
+          "source": "https://www.openstreetmap.org/node/10238264069",
+          "tags": {}
+        },
+        {
+          "name": "NIMHANS Hospital",
+          "lat": 12.9387406,
+          "lon": 77.5982333,
+          "source": "https://www.openstreetmap.org/node/10855128077",
+          "tags": {
+            "highway": "bus_stop",
+            "public_transport": "platform"
+          }
+        },
+        {
+          "name": "NIMHANS Hospital",
+          "lat": 12.9388025,
+          "lon": 77.5982554,
+          "source": "https://www.openstreetmap.org/node/10855128078",
+          "tags": {
+            "public_transport": "stop_position"
+          }
+        },
+        {
+          "name": "NIMHANS Department Of Psychiatric and Neuro Rehabilitation",
+          "lat": 12.9400516,
+          "lon": 77.5954768,
+          "source": "https://www.openstreetmap.org/node/11295071515",
+          "tags": {
+            "amenity": "hospital"
+          }
+        },
+        {
+          "name": "Nimhans Mr-pet Center",
+          "lat": 12.9396498,
+          "lon": 77.5967825,
+          "source": "https://www.openstreetmap.org/node/11295217457",
+          "tags": {
+            "amenity": "hospital"
+          }
+        },
+        {
+          "name": "NIMHANS surgical store",
+          "lat": 12.9400321,
+          "lon": 77.5950052,
+          "source": "https://www.openstreetmap.org/node/11295245074",
+          "tags": {}
+        },
+        {
+          "name": "NIMHANS Physiotherapy Center",
+          "lat": 12.9402037,
+          "lon": 77.5954721,
+          "source": "https://www.openstreetmap.org/node/11295246682",
+          "tags": {
+            "amenity": "hospital"
+          }
+        },
+        {
+          "name": "NIMHANS Heritage Museum",
+          "lat": 12.9399469,
+          "lon": 77.5951106,
+          "source": "https://www.openstreetmap.org/node/11295254832",
+          "tags": {}
+        },
+        {
+          "name": "NIMHANS Pharmacy",
+          "lat": 12.9406356,
+          "lon": 77.5948929,
+          "source": "https://www.openstreetmap.org/node/11295265923",
+          "tags": {
+            "amenity": "pharmacy"
+          }
+        },
+        {
+          "name": "NIMHANS Police Outpost",
+          "lat": 12.9406149,
+          "lon": 77.5949214,
+          "source": "https://www.openstreetmap.org/node/11295829642",
+          "tags": {
+            "amenity": "police"
+          }
+        },
+        {
+          "name": "NIMHANS Hospital",
+          "lat": 12.9387912,
+          "lon": 77.5982355,
+          "source": "https://www.openstreetmap.org/node/12168378238",
+          "tags": {
+            "public_transport": "stop_position"
+          }
+        },
+        {
+          "name": "NIMHANS Underpass",
+          "lat": 12.941206999999999,
+          "lon": 77.5975095,
+          "source": "https://www.openstreetmap.org/way/239738418",
+          "tags": {
+            "highway": "service"
+          }
+        },
+        {
+          "name": "NIMHANS Quarters",
+          "lat": 12.9345047375,
+          "lon": 77.59419334583333,
+          "source": "https://www.openstreetmap.org/way/264880585",
+          "tags": {
+            "highway": "service"
+          }
+        },
+        {
+          "name": "NIMHANS De-Addiction Centre",
+          "lat": 12.941202800000001,
+          "lon": 77.59485575454545,
+          "source": "https://www.openstreetmap.org/way/334493068",
+          "tags": {
+            "building": "yes"
+          }
+        },
+        {
+          "name": "Central Library of NIMHANS",
+          "lat": 12.93991514736842,
+          "lon": 77.59873401578947,
+          "source": "https://www.openstreetmap.org/way/347534358",
+          "tags": {
+            "amenity": "library",
+            "building": "yes"
+          }
+        },
+        {
+          "name": "NIMHANS Quarters",
+          "lat": 12.938963233333332,
+          "lon": 77.59581909999999,
+          "source": "https://www.openstreetmap.org/way/1111696144",
+          "tags": {
+            "highway": "service"
+          }
+        },
+        {
+          "name": "Nimhans Convention Center",
+          "lat": 12.943130307407408,
+          "lon": 77.5964644361111,
+          "source": "https://www.openstreetmap.org/way/1219285692",
+          "tags": {
+            "amenity": "events_venue",
+            "building": "yes"
+          }
+        },
+        {
+          "name": "NIMHANS",
+          "lat": 12.9422885,
+          "lon": 77.5971519,
+          "source": "https://www.openstreetmap.org/way/1545396735",
+          "tags": {}
+        }
+      ]
+    },
+    {
+      "query": "St. John's Medical College Hospital",
+      "candidates": [
+        {
+          "name": "St Johns Post Office",
+          "lat": 12.9298186,
+          "lon": 77.6214543,
+          "source": "https://www.openstreetmap.org/node/363758557",
+          "tags": {
+            "amenity": "post_office"
+          }
+        },
+        {
+          "name": "St. John's Hospital",
+          "lat": 12.9293446,
+          "lon": 77.6158906,
+          "source": "https://www.openstreetmap.org/node/1070361680",
+          "tags": {
+            "highway": "bus_stop",
+            "public_transport": "platform"
+          }
+        },
+        {
+          "name": "St. John's Hospital",
+          "lat": 12.9295407,
+          "lon": 77.6160059,
+          "source": "https://www.openstreetmap.org/node/2473602003",
+          "tags": {
+            "highway": "bus_stop",
+            "public_transport": "platform"
+          }
+        },
+        {
+          "name": "St.John's Utility Complex",
+          "lat": 12.9308168,
+          "lon": 77.6180438,
+          "source": "https://www.openstreetmap.org/node/4563420692",
+          "tags": {}
+        },
+        {
+          "name": "St Johns opticians and hearing aid",
+          "lat": 12.9306558,
+          "lon": 77.6179004,
+          "source": "https://www.openstreetmap.org/node/4805856923",
+          "tags": {}
+        },
+        {
+          "name": "St. John's Hospital",
+          "lat": 12.9295966,
+          "lon": 77.6158565,
+          "source": "https://www.openstreetmap.org/node/6140712974",
+          "tags": {
+            "highway": "bus_stop",
+            "public_transport": "platform"
+          }
+        },
+        {
+          "name": "St John's Hospital KSRTC Bus Stop",
+          "lat": 12.9296619,
+          "lon": 77.6156616,
+          "source": "https://www.openstreetmap.org/node/6871418644",
+          "tags": {
+            "highway": "bus_stop",
+            "public_transport": "platform"
+          }
+        },
+        {
+          "name": "St. John ' Medical College Blood Bank",
+          "lat": 12.9292434,
+          "lon": 77.6201463,
+          "source": "https://www.openstreetmap.org/node/6882713314",
+          "tags": {
+            "amenity": "blood_bank"
+          }
+        },
+        {
+          "name": "St. John's Hospital",
+          "lat": 12.9294716,
+          "lon": 77.6160012,
+          "source": "https://www.openstreetmap.org/node/7277381435",
+          "tags": {
+            "public_transport": "stop_position"
+          }
+        },
+        {
+          "name": "St. John's Hospital",
+          "lat": 12.9295048,
+          "lon": 77.6161149,
+          "source": "https://www.openstreetmap.org/node/7277381436",
+          "tags": {
+            "highway": "bus_stop",
+            "public_transport": "platform"
+          }
+        },
+        {
+          "name": "St. Johns hospital Emergency ward",
+          "lat": 12.9305937,
+          "lon": 77.6186159,
+          "source": "https://www.openstreetmap.org/node/8428403226",
+          "tags": {
+            "amenity": "hospital"
+          }
+        },
+        {
+          "name": "St. John's Hospital",
+          "lat": 12.9289585,
+          "lon": 77.6156476,
+          "source": "https://www.openstreetmap.org/node/10043935991",
+          "tags": {
+            "highway": "bus_stop",
+            "public_transport": "platform"
+          }
+        },
+        {
+          "name": "St. John's Hospital",
+          "lat": 12.9294046,
+          "lon": 77.6159128,
+          "source": "https://www.openstreetmap.org/node/10855128081",
+          "tags": {
+            "public_transport": "stop_position"
+          }
+        },
+        {
+          "name": "Faculty Car Parking, St.John's Hospital",
+          "lat": 12.93195086,
+          "lon": 77.61810446,
+          "source": "https://www.openstreetmap.org/way/342013038",
+          "tags": {
+            "amenity": "parking"
+          }
+        },
+        {
+          "name": "St. John's Auditorium",
+          "lat": 12.931596205882352,
+          "lon": 77.62180434117647,
+          "source": "https://www.openstreetmap.org/way/347446544",
+          "tags": {
+            "amenity": "theatre",
+            "building": "yes"
+          }
+        },
+        {
+          "name": "St. Johns Residential Quarters",
+          "lat": 12.928289269999999,
+          "lon": 77.61405554000001,
+          "source": "https://www.openstreetmap.org/way/389341674",
+          "tags": {
+            "landuse": "residential"
+          }
+        },
+        {
+          "name": "St. John's Grounds",
+          "lat": 12.927622585714285,
+          "lon": 77.61707415000001,
+          "source": "https://www.openstreetmap.org/way/389344289",
+          "tags": {}
+        },
+        {
+          "name": "Saint Johns Junction",
+          "lat": 12.929537669230768,
+          "lon": 77.61514323076923,
+          "source": "https://www.openstreetmap.org/way/1458676534",
+          "tags": {}
+        }
+      ]
+    },
+    {
+      "query": "Domlur TTMC",
+      "candidates": [
+        {
+          "name": "Domlur Flyover",
+          "lat": 12.9604628,
+          "lon": 77.6435762,
+          "source": "https://www.openstreetmap.org/node/298815411",
+          "tags": {
+            "public_transport": "stop_position"
+          }
+        },
+        {
+          "name": "Domlur Post office",
+          "lat": 12.9608935,
+          "lon": 77.6359498,
+          "source": "https://www.openstreetmap.org/node/312599850",
+          "tags": {
+            "amenity": "post_office"
+          }
+        },
+        {
+          "name": "Domlur",
+          "lat": 12.9624669,
+          "lon": 77.6381958,
+          "source": "https://www.openstreetmap.org/node/347261886",
+          "tags": {
+            "place": "quarter"
+          }
+        },
+        {
+          "name": "Domlur 1st Stage",
+          "lat": 12.959142,
+          "lon": 77.6377909,
+          "source": "https://www.openstreetmap.org/node/513652499",
+          "tags": {
+            "place": "neighbourhood"
+          }
+        },
+        {
+          "name": "Domlur Club",
+          "lat": 12.9643756,
+          "lon": 77.6371873,
+          "source": "https://www.openstreetmap.org/node/710095029",
+          "tags": {
+            "amenity": "bar"
+          }
+        },
+        {
+          "name": "Domlur 2nd Stage",
+          "lat": 12.9640664,
+          "lon": 77.6383676,
+          "source": "https://www.openstreetmap.org/node/710722699",
+          "tags": {
+            "place": "neighbourhood"
+          }
+        },
+        {
+          "name": "Domlur Bridge",
+          "lat": 12.9583971,
+          "lon": 77.6413321,
+          "source": "https://www.openstreetmap.org/node/1282881207",
+          "tags": {
+            "highway": "bus_stop",
+            "public_transport": "platform"
+          }
+        },
+        {
+          "name": "Domlur Village",
+          "lat": 12.9624344,
+          "lon": 77.635802,
+          "source": "https://www.openstreetmap.org/node/1420058875",
+          "tags": {
+            "place": "neighbourhood"
+          }
+        },
+        {
+          "name": "Domlur",
+          "lat": 12.9611214,
+          "lon": 77.6369984,
+          "source": "https://www.openstreetmap.org/node/2268515064",
+          "tags": {
+            "highway": "bus_stop",
+            "public_transport": "platform"
+          }
+        },
+        {
+          "name": "Domlur Bridge",
+          "lat": 12.9634429,
+          "lon": 77.6382454,
+          "source": "https://www.openstreetmap.org/node/2396435308",
+          "tags": {
+            "highway": "bus_stop"
+          }
+        },
+        {
+          "name": "Domlur Flyover",
+          "lat": 12.956961,
+          "lon": 77.6412963,
+          "source": "https://www.openstreetmap.org/node/2455703300",
+          "tags": {
+            "highway": "bus_stop",
+            "public_transport": "platform"
+          }
+        },
+        {
+          "name": "Domlur BDA Layout",
+          "lat": 12.9644251,
+          "lon": 77.6349677,
+          "source": "https://www.openstreetmap.org/node/3198681423",
+          "tags": {
+            "place": "neighbourhood"
+          }
+        },
+        {
+          "name": "Domlur (Towards HAL)",
+          "lat": 12.9611661,
+          "lon": 77.6379762,
+          "source": "https://www.openstreetmap.org/node/3299039166",
+          "tags": {
+            "highway": "bus_stop",
+            "public_transport": "platform"
+          }
+        },
+        {
+          "name": "Domlur Bridge",
+          "lat": 12.9604082,
+          "lon": 77.642206,
+          "source": "https://www.openstreetmap.org/node/3304142858",
+          "tags": {
+            "highway": "bus_stop",
+            "public_transport": "platform"
+          }
+        },
+        {
+          "name": "Domlur Flyover",
+          "lat": 12.9569623,
+          "lon": 77.641363,
+          "source": "https://www.openstreetmap.org/node/6631824071",
+          "tags": {
+            "public_transport": "stop_position"
+          }
+        },
+        {
+          "name": "Domlur (Towards HAL)",
+          "lat": 12.9610913,
+          "lon": 77.637966,
+          "source": "https://www.openstreetmap.org/node/6645712421",
+          "tags": {
+            "public_transport": "stop_position"
+          }
+        },
+        {
+          "name": "Domlur Bridge",
+          "lat": 12.9579831,
+          "lon": 77.6414602,
+          "source": "https://www.openstreetmap.org/node/10068685437",
+          "tags": {
+            "highway": "bus_stop",
+            "public_transport": "platform"
+          }
+        },
+        {
+          "name": "Domlur Mahila Samaj",
+          "lat": 12.9582862,
+          "lon": 77.6412063,
+          "source": "https://www.openstreetmap.org/node/11780249445",
+          "tags": {}
+        },
+        {
+          "name": "Domlur Flyover",
+          "lat": 12.956858,
+          "lon": 77.6412959,
+          "source": "https://www.openstreetmap.org/node/12067366797",
+          "tags": {
+            "highway": "bus_stop",
+            "public_transport": "platform"
+          }
+        },
+        {
+          "name": "Layout Map of Domlur TTMC",
+          "lat": 12.9615855,
+          "lon": 77.6386388,
+          "source": "https://www.openstreetmap.org/node/12507390925",
+          "tags": {}
+        },
+        {
+          "name": "Domlur",
+          "lat": 12.9611561,
+          "lon": 77.6369865,
+          "source": "https://www.openstreetmap.org/node/13394452120",
+          "tags": {
+            "public_transport": "stop_position"
+          }
+        },
+        {
+          "name": "Domlur",
+          "lat": 12.9611294,
+          "lon": 77.6369418,
+          "source": "https://www.openstreetmap.org/node/13913736294",
+          "tags": {
+            "highway": "bus_stop",
+            "public_transport": "platform"
+          }
+        },
+        {
+          "name": "Domlur Bridge",
+          "lat": 12.9604999,
+          "lon": 77.6422097,
+          "source": "https://www.openstreetmap.org/node/13922877950",
+          "tags": {
+            "public_transport": "stop_position"
+          }
+        },
+        {
+          "name": "Domlur Flyover",
+          "lat": 12.9606542875,
+          "lon": 77.6417027,
+          "source": "https://www.openstreetmap.org/way/15802887",
+          "tags": {
+            "highway": "primary"
+          }
+        },
+        {
+          "name": "Domlur Flyover",
+          "lat": 12.96219555,
+          "lon": 77.641642,
+          "source": "https://www.openstreetmap.org/way/23217833",
+          "tags": {
+            "highway": "primary"
+          }
+        },
+        {
+          "name": "Domlur Flyover Ramp",
+          "lat": 12.9605603,
+          "lon": 77.64159473333332,
+          "source": "https://www.openstreetmap.org/way/26179360",
+          "tags": {
+            "highway": "primary_link"
+          }
+        },
+        {
+          "name": "Domlur Flyover",
+          "lat": 12.960300166666668,
+          "lon": 77.6416147,
+          "source": "https://www.openstreetmap.org/way/27227541",
+          "tags": {
+            "highway": "primary"
+          }
+        },
+        {
+          "name": "Domlur Flyover Ramp",
+          "lat": 12.960978422222222,
+          "lon": 77.64277831111112,
+          "source": "https://www.openstreetmap.org/way/28451872",
+          "tags": {
+            "highway": "primary_link"
+          }
+        },
+        {
+          "name": "Domlur Flyover Ramp",
+          "lat": 12.961073885714285,
+          "lon": 77.64015620714285,
+          "source": "https://www.openstreetmap.org/way/31228639",
+          "tags": {
+            "highway": "primary_link"
+          }
+        },
+        {
+          "name": "Domlur Flyover Ramp",
+          "lat": 12.961446099999998,
+          "lon": 77.6404448,
+          "source": "https://www.openstreetmap.org/way/31228643",
+          "tags": {
+            "highway": "primary_link"
+          }
+        },
+        {
+          "name": "Domlur Flyover Ramp",
+          "lat": 12.960716766666666,
+          "lon": 77.64220586666666,
+          "source": "https://www.openstreetmap.org/way/31229962",
+          "tags": {
+            "highway": "primary_link"
+          }
+        },
+        {
+          "name": "Domlur Flyover Ramp",
+          "lat": 12.960820025,
+          "lon": 77.6410186,
+          "source": "https://www.openstreetmap.org/way/31229978",
+          "tags": {
+            "highway": "primary_link"
+          }
+        },
+        {
+          "name": "Government PU College,Domlur",
+          "lat": 12.95940598,
+          "lon": 77.64032128,
+          "source": "https://www.openstreetmap.org/way/31231510",
+          "tags": {
+            "amenity": "school"
+          }
+        },
+        {
+          "name": "Domlur Service Road",
+          "lat": 12.960898733333332,
+          "lon": 77.637046,
+          "source": "https://www.openstreetmap.org/way/31231534",
+          "tags": {
+            "highway": "tertiary"
+          }
+        },
+        {
+          "name": "Domlur Bus Station",
+          "lat": 12.9618064375,
+          "lon": 77.6386009125,
+          "source": "https://www.openstreetmap.org/way/31231545",
+          "tags": {
+            "amenity": "bus_station",
+            "public_transport": "station"
+          }
+        },
+        {
+          "name": "Domlur Double Road",
+          "lat": 12.961652399999998,
+          "lon": 77.63777189999999,
+          "source": "https://www.openstreetmap.org/way/106360544",
+          "tags": {
+            "highway": "residential"
+          }
+        },
+        {
+          "name": "Domlur Water Tank Road",
+          "lat": 12.9612572,
+          "lon": 77.63812225,
+          "source": "https://www.openstreetmap.org/way/106360547",
+          "tags": {
+            "highway": "residential"
+          }
+        },
+        {
+          "name": "Domlur Flyover Ramp",
+          "lat": 12.960619666666666,
+          "lon": 77.64193576666666,
+          "source": "https://www.openstreetmap.org/way/112994281",
+          "tags": {
+            "highway": "primary_link"
+          }
+        },
+        {
+          "name": "Domlur BDA Complex",
+          "lat": 12.962213918181817,
+          "lon": 77.63728987272727,
+          "source": "https://www.openstreetmap.org/way/128510748",
+          "tags": {
+            "landuse": "commercial"
+          }
+        },
+        {
+          "name": "Domlur Water Tower",
+          "lat": 12.961307925,
+          "lon": 77.63829038,
+          "source": "https://www.openstreetmap.org/way/132191819",
+          "tags": {}
+        },
+        {
+          "name": "Domlur Club",
+          "lat": 12.96459102,
+          "lon": 77.63697804,
+          "source": "https://www.openstreetmap.org/way/166560438",
+          "tags": {
+            "amenity": "community_centre"
+          }
+        },
+        {
+          "name": "Domlur Flyover Ramp",
+          "lat": 12.960951541666667,
+          "lon": 77.64256925,
+          "source": "https://www.openstreetmap.org/way/217565206",
+          "tags": {
+            "highway": "primary_link"
+          }
+        },
+        {
+          "name": "Domlur Flyover Ramp",
+          "lat": 12.96122661111111,
+          "lon": 77.6420181,
+          "source": "https://www.openstreetmap.org/way/217565207",
+          "tags": {
+            "highway": "primary_link"
+          }
+        },
+        {
+          "name": "Domlur SAARC Park",
+          "lat": 12.961267183333334,
+          "lon": 77.639262675,
+          "source": "https://www.openstreetmap.org/way/217565867",
+          "tags": {}
+        },
+        {
+          "name": "Domlur Club Swimming Pool",
+          "lat": 12.96405578,
+          "lon": 77.63758242,
+          "source": "https://www.openstreetmap.org/way/313927907",
+          "tags": {}
+        },
+        {
+          "name": "Domlur Burial Ground",
+          "lat": 12.95779906923077,
+          "lon": 77.64195303076923,
+          "source": "https://www.openstreetmap.org/way/344100105",
+          "tags": {
+            "landuse": "cemetery"
+          }
+        },
+        {
+          "name": "Domlur Flyover",
+          "lat": 12.9621973,
+          "lon": 77.64171715,
+          "source": "https://www.openstreetmap.org/way/423269031",
+          "tags": {
+            "highway": "primary"
+          }
+        },
+        {
+          "name": "Domlur Flyover",
+          "lat": 12.958903150000001,
+          "lon": 77.64141145,
+          "source": "https://www.openstreetmap.org/way/464465650",
+          "tags": {
+            "highway": "primary"
+          }
+        },
+        {
+          "name": "Domlur Service Road",
+          "lat": 12.960372833333333,
+          "lon": 77.6416964,
+          "source": "https://www.openstreetmap.org/way/476640627",
+          "tags": {
+            "highway": "tertiary"
+          }
+        },
+        {
+          "name": "Domlur Service Road",
+          "lat": 12.960514100000001,
+          "lon": 77.6407260375,
+          "source": "https://www.openstreetmap.org/way/737232317",
+          "tags": {
+            "highway": "tertiary"
+          }
+        },
+        {
+          "name": "Domlur Flyover",
+          "lat": 12.961335264285713,
+          "lon": 77.64167997142856,
+          "source": "https://www.openstreetmap.org/way/1073331702",
+          "tags": {}
+        },
+        {
+          "name": "Domlur Flyover Ramp",
+          "lat": 12.96059165,
+          "lon": 77.64112165,
+          "source": "https://www.openstreetmap.org/way/1286537523",
+          "tags": {
+            "highway": "primary_link"
+          }
+        },
+        {
+          "name": "Domlur Flyover Ramp",
+          "lat": 12.9613129,
+          "lon": 77.6408065,
+          "source": "https://www.openstreetmap.org/way/1286537524",
+          "tags": {
+            "highway": "primary_link"
+          }
+        },
+        {
+          "name": "Domlur Flyover Ramp",
+          "lat": 12.962298066666667,
+          "lon": 77.64159146666667,
+          "source": "https://www.openstreetmap.org/way/1286537525",
+          "tags": {
+            "highway": "primary_link"
+          }
+        },
+        {
+          "name": "Domlur Flyover",
+          "lat": 12.9583344,
+          "lon": 77.64135205,
+          "source": "https://www.openstreetmap.org/way/1286537527",
+          "tags": {
+            "highway": "primary"
+          }
+        },
+        {
+          "name": "Domlur Flyover",
+          "lat": 12.95889485,
+          "lon": 77.64149165,
+          "source": "https://www.openstreetmap.org/way/1286537528",
+          "tags": {
+            "highway": "primary"
+          }
+        },
+        {
+          "name": "Domlur Flyover",
+          "lat": 12.960092821052632,
+          "lon": 77.64160684210526,
+          "source": "https://www.openstreetmap.org/way/1286537529",
+          "tags": {}
+        },
+        {
+          "name": "Domlur Flyover",
+          "lat": 12.96250985,
+          "lon": 77.641701,
+          "source": "https://www.openstreetmap.org/way/1286537540",
+          "tags": {
+            "highway": "primary"
+          }
+        },
+        {
+          "name": "Domlur Flyover",
+          "lat": 12.962507033333333,
+          "lon": 77.64162073333334,
+          "source": "https://www.openstreetmap.org/way/1286537541",
+          "tags": {
+            "highway": "primary"
+          }
+        },
+        {
+          "name": "Domlur Flyover",
+          "lat": 12.9583221,
+          "lon": 77.64143530000001,
+          "source": "https://www.openstreetmap.org/way/1302988906",
+          "tags": {
+            "highway": "primary"
+          }
+        },
+        {
+          "name": "Domlur Flyover Ramp",
+          "lat": 12.960983899999999,
+          "lon": 77.64089010000001,
+          "source": "https://www.openstreetmap.org/way/1314297632",
+          "tags": {
+            "highway": "primary_link"
+          }
+        },
+        {
+          "name": "Domlur Flyover Ramp",
+          "lat": 12.961487725,
+          "lon": 77.64090265,
+          "source": "https://www.openstreetmap.org/way/1314297633",
+          "tags": {
+            "highway": "primary_link"
+          }
+        },
+        {
+          "name": "Domlur Flyover Ramp",
+          "lat": 12.961642459999998,
+          "lon": 77.64142483,
+          "source": "https://www.openstreetmap.org/way/1314297634",
+          "tags": {
+            "highway": "primary_link"
+          }
+        },
+        {
+          "name": "Domlur Flyover Ramp",
+          "lat": 12.960902475,
+          "lon": 77.64036785,
+          "source": "https://www.openstreetmap.org/way/1314297635",
+          "tags": {
+            "highway": "primary_link"
+          }
+        },
+        {
+          "name": "Domlur Flyover",
+          "lat": 12.9614914,
+          "lon": 77.64168655,
+          "source": "https://www.openstreetmap.org/way/1458672911",
+          "tags": {
+            "highway": "primary"
+          }
+        },
+        {
+          "name": "Domlur Water Tank",
+          "lat": 12.961001592307692,
+          "lon": 77.63866803846155,
+          "source": "https://www.openstreetmap.org/way/1460212280",
+          "tags": {}
+        },
+        {
+          "name": "Domlur Service Road",
+          "lat": 12.960748599999999,
+          "lon": 77.6386365,
+          "source": "https://www.openstreetmap.org/way/1474400870",
+          "tags": {
+            "highway": "tertiary"
+          }
+        },
+        {
+          "name": "Domlur BDA Flats",
+          "lat": 12.96173494,
+          "lon": 77.63788372,
+          "source": "https://www.openstreetmap.org/way/1528840876",
+          "tags": {
+            "landuse": "residential"
+          }
+        }
+      ]
+    },
+    {
+      "query": "Murugeshpalya Bus Stop",
+      "candidates": [
+        {
+          "name": "Air Force Camp - Murugeshpalaya",
+          "lat": 12.957108864864864,
+          "lon": 77.65122535675677,
+          "source": "https://www.openstreetmap.org/way/30800447",
+          "tags": {
+            "landuse": "military"
+          }
+        }
+      ]
+    },
+    {
+      "query": "Graphite India Signal, Whitefield",
+      "candidates": [
+        {
+          "name": "Graphite India",
+          "lat": 12.9768724,
+          "lon": 77.7101792,
+          "source": "https://www.openstreetmap.org/node/825452795",
+          "tags": {
+            "highway": "bus_stop",
+            "public_transport": "platform"
+          }
+        },
+        {
+          "name": "Graphite India",
+          "lat": 12.9782357,
+          "lon": 77.7103731,
+          "source": "https://www.openstreetmap.org/node/1000885798",
+          "tags": {
+            "highway": "bus_stop",
+            "public_transport": "platform"
+          }
+        },
+        {
+          "name": "Graphite India",
+          "lat": 12.9781942,
+          "lon": 77.7114064,
+          "source": "https://www.openstreetmap.org/node/2600915519",
+          "tags": {
+            "highway": "bus_stop",
+            "public_transport": "platform"
+          }
+        },
+        {
+          "name": "Graphite India Ltd",
+          "lat": 12.9784564,
+          "lon": 77.708794,
+          "source": "https://www.openstreetmap.org/node/4489728551",
+          "tags": {
+            "addr:street": "Whitefield Road, Vishueswaraya Industrial Area"
+          }
+        },
+        {
+          "name": "Graphite India Road",
+          "lat": 12.988960333333333,
+          "lon": 77.70697096333333,
+          "source": "https://www.openstreetmap.org/way/29502606",
+          "tags": {
+            "highway": "primary"
+          }
+        },
+        {
+          "name": "Graphite India Junction",
+          "lat": 12.978324113333334,
+          "lon": 77.70978507333332,
+          "source": "https://www.openstreetmap.org/way/1251884741",
+          "tags": {}
+        }
+      ]
+    },
+    {
+      "query": "Devanahalli",
+      "candidates": [
+        {
+          "name": "Devanahalli",
+          "lat": 13.2483502,
+          "lon": 77.7134377,
+          "source": "https://www.openstreetmap.org/node/282777706",
+          "tags": {
+            "place": "town"
+          }
+        },
+        {
+          "name": "Devanahalli",
+          "lat": 13.2475421,
+          "lon": 77.7054075,
+          "source": "https://www.openstreetmap.org/node/1282829831",
+          "tags": {
+            "public_transport": "station"
+          }
+        },
+        {
+          "name": "Devanahalli",
+          "lat": 13.2475508,
+          "lon": 77.7052429,
+          "source": "https://www.openstreetmap.org/node/6071990666",
+          "tags": {
+            "public_transport": "stop_position"
+          }
+        }
+      ]
+    },
+    {
+      "query": "Anekal",
+      "candidates": [
+        {
+          "name": "Anekal",
+          "lat": 12.7086373,
+          "lon": 77.6993972,
+          "source": "https://www.openstreetmap.org/node/245609200",
+          "tags": {
+            "place": "town"
+          }
+        },
+        {
+          "name": "Anekal",
+          "lat": 12.7092931,
+          "lon": 77.6964243,
+          "source": "https://www.openstreetmap.org/node/2417394349",
+          "tags": {
+            "highway": "bus_stop",
+            "public_transport": "platform"
+          }
+        },
+        {
+          "name": "Anekal",
+          "lat": 12.7094054,
+          "lon": 77.696433,
+          "source": "https://www.openstreetmap.org/node/13019237631",
+          "tags": {
+            "public_transport": "stop_position"
+          }
+        }
+      ]
+    },
+    {
+      "query": "Thavarekere, Magadi Road",
+      "candidates": [
+        {
+          "name": "Tavarekere",
+          "lat": 12.9658432,
+          "lon": 77.4001213,
+          "source": "https://www.openstreetmap.org/node/2417487970",
+          "tags": {
+            "highway": "bus_stop",
+            "public_transport": "platform"
+          }
+        },
+        {
+          "name": "Tavarekere",
+          "lat": 12.963694,
+          "lon": 77.4014239,
+          "source": "https://www.openstreetmap.org/node/2595197392",
+          "tags": {
+            "place": "village"
+          }
+        },
+        {
+          "name": "Tavarekere",
+          "lat": 12.9658,
+          "lon": 77.4001418,
+          "source": "https://www.openstreetmap.org/node/12462646824",
+          "tags": {
+            "public_transport": "stop_position"
+          }
+        },
+        {
+          "name": "BWSSB Tavarekere",
+          "lat": 12.9701448,
+          "lon": 77.3993098,
+          "source": "https://www.openstreetmap.org/node/12462646825",
+          "tags": {
+            "public_transport": "stop_position"
+          }
+        },
+        {
+          "name": "Tavarekere",
+          "lat": 12.9656976,
+          "lon": 77.3998979,
+          "source": "https://www.openstreetmap.org/node/12989264934",
+          "tags": {
+            "public_transport": "stop_position"
+          }
+        },
+        {
+          "name": "Tavarekere",
+          "lat": 12.9656579,
+          "lon": 77.3999141,
+          "source": "https://www.openstreetmap.org/node/12989264935",
+          "tags": {
+            "highway": "bus_stop",
+            "public_transport": "platform"
+          }
+        },
+        {
+          "name": "Tavarekere kengeri Road",
+          "lat": 12.954407804705882,
+          "lon": 77.41749789529412,
+          "source": "https://www.openstreetmap.org/way/135416913",
+          "tags": {
+            "highway": "secondary"
+          }
+        }
+      ]
+    }
+  ]
+}

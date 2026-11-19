@@ -1,7 +1,8 @@
 'use client';
 
-import React, { useState, useEffect, useMemo } from 'react';
+import React, { useState, useEffect } from 'react';
 import dynamic from 'next/dynamic';
+import LocationSearch from '@/components/LocationSearch';
 import { CorridorMetric, Journey, Location, RoutingObjective, StopItem, TransportMode } from '@/types/journey';
 import { planJourney, fetchHealth, fetchStops, fetchLiveCorridors, triggerSimulationTick, resetSimulationDelays } from '@/lib/api';
 
@@ -44,8 +45,8 @@ const PRESETS = [
 ];
 
 export default function HomePage() {
-  const [origin, setOrigin] = useState<Location>(PRESETS[0].origin);
-  const [destination, setDestination] = useState<Location>(PRESETS[0].dest);
+  const [origin, setOrigin] = useState<Location | null>(PRESETS[0].origin);
+  const [destination, setDestination] = useState<Location | null>(PRESETS[0].dest);
   const [originQuery, setOriginQuery] = useState(PRESETS[0].origin.name || '');
   const [destQuery, setDestQuery] = useState(PRESETS[0].dest.name || '');
 
@@ -63,9 +64,6 @@ export default function HomePage() {
   const [isSimulating, setIsSimulating] = useState<boolean>(false);
   const [activeScenario, setActiveScenario] = useState<string>('normal');
 
-  // Suggestions state
-  const [showOriginSuggestions, setShowOriginSuggestions] = useState(false);
-  const [showDestSuggestions, setShowDestSuggestions] = useState(false);
 
   const loadCorridors = () => {
     fetchLiveCorridors()
@@ -105,19 +103,6 @@ export default function HomePage() {
     }
   };
 
-  // Compute suggestions
-  const originSuggestions = useMemo(() => {
-    if (!originQuery.trim()) return stops.slice(0, 6);
-    const q = originQuery.toLowerCase();
-    return stops.filter((s) => s.name.toLowerCase().includes(q) || (s.line && s.line.toLowerCase().includes(q))).slice(0, 6);
-  }, [originQuery, stops]);
-
-  const destSuggestions = useMemo(() => {
-    if (!destQuery.trim()) return stops.slice(0, 6);
-    const q = destQuery.toLowerCase();
-    return stops.filter((s) => s.name.toLowerCase().includes(q) || (s.line && s.line.toLowerCase().includes(q))).slice(0, 6);
-  }, [destQuery, stops]);
-
   // Initial search
   useEffect(() => {
     handleSearch();
@@ -138,6 +123,9 @@ export default function HomePage() {
         objective,
       });
       setJourneys(res.journeys);
+      if (!res.journeys.some(j => j.modes_used.includes('bus') || j.modes_used.includes('metro'))) {
+        setError('No transit journey found within current coverage and walking radius. Any walking or driving options shown are estimates.');
+      }
       setSelectedJourneyIndex(0);
     } catch (err: any) {
       setError(err.message || 'Routing computation failed');
@@ -170,8 +158,6 @@ export default function HomePage() {
     setOriginQuery(preset.origin.name);
     setDestination(preset.dest);
     setDestQuery(preset.dest.name);
-    setShowOriginSuggestions(false);
-    setShowDestSuggestions(false);
     // trigger auto search
     setTimeout(handleSearch, 100);
   };
@@ -271,39 +257,9 @@ export default function HomePage() {
                 </button>
               </label>
 
-              <input
-                type="text"
-                value={originQuery}
-                onChange={(e) => {
-                  setOriginQuery(e.target.value);
-                  setShowOriginSuggestions(true);
-                }}
-                onFocus={() => setShowOriginSuggestions(true)}
-                placeholder="Search Metro station or bus stop..."
-                className="w-full bg-slate-800/90 border border-slate-700 rounded-xl px-3.5 py-2.5 text-sm text-white placeholder-slate-500 focus:outline-none focus:border-indigo-500 transition shadow-inner"
-              />
-
-              {showOriginSuggestions && (
-                <div className="absolute left-0 right-0 top-full mt-1.5 bg-slate-900 border border-slate-700 rounded-2xl shadow-2xl z-40 max-h-52 overflow-y-auto divide-y divide-slate-800">
-                  {originSuggestions.map((s) => (
-                    <div
-                      key={s.id}
-                      onClick={() => {
-                        setOrigin({ lat: s.lat, lon: s.lon, name: s.name });
-                        setOriginQuery(s.name);
-                        setShowOriginSuggestions(false);
-                      }}
-                      className="px-3.5 py-2.5 hover:bg-slate-800 cursor-pointer flex items-center justify-between text-xs transition"
-                    >
-                      <div>
-                        <div className="font-semibold text-slate-200">{s.name}</div>
-                        <div className="text-[10px] text-slate-400">{s.mode.toUpperCase()} · {s.line || 'Corridor'}</div>
-                      </div>
-                      <span className="text-[10px] px-2 py-0.5 rounded-full bg-slate-800 border border-slate-700 text-slate-400">Select</span>
-                    </div>
-                  ))}
-                </div>
-              )}
+              <LocationSearch label="Origin" value={originQuery} selected={origin}
+                onChange={text => { setOriginQuery(text); setOrigin(null); setJourneys([]); }}
+                onSelect={loc => { setOrigin(loc); setOriginQuery(loc.name || ''); }} />
             </div>
 
             {/* Destination Input */}
@@ -326,39 +282,9 @@ export default function HomePage() {
                 </button>
               </label>
 
-              <input
-                type="text"
-                value={destQuery}
-                onChange={(e) => {
-                  setDestQuery(e.target.value);
-                  setShowDestSuggestions(true);
-                }}
-                onFocus={() => setShowDestSuggestions(true)}
-                placeholder="Search Metro station or bus stop..."
-                className="w-full bg-slate-800/90 border border-slate-700 rounded-xl px-3.5 py-2.5 text-sm text-white placeholder-slate-500 focus:outline-none focus:border-indigo-500 transition shadow-inner"
-              />
-
-              {showDestSuggestions && (
-                <div className="absolute left-0 right-0 top-full mt-1.5 bg-slate-900 border border-slate-700 rounded-2xl shadow-2xl z-40 max-h-52 overflow-y-auto divide-y divide-slate-800">
-                  {destSuggestions.map((s) => (
-                    <div
-                      key={s.id}
-                      onClick={() => {
-                        setDestination({ lat: s.lat, lon: s.lon, name: s.name });
-                        setDestQuery(s.name);
-                        setShowDestSuggestions(false);
-                      }}
-                      className="px-3.5 py-2.5 hover:bg-slate-800 cursor-pointer flex items-center justify-between text-xs transition"
-                    >
-                      <div>
-                        <div className="font-semibold text-slate-200">{s.name}</div>
-                        <div className="text-[10px] text-slate-400">{s.mode.toUpperCase()} · {s.line || 'Corridor'}</div>
-                      </div>
-                      <span className="text-[10px] px-2 py-0.5 rounded-full bg-slate-800 border border-slate-700 text-slate-400">Select</span>
-                    </div>
-                  ))}
-                </div>
-              )}
+              <LocationSearch label="Destination" value={destQuery} selected={destination}
+                onChange={text => { setDestQuery(text); setDestination(null); setJourneys([]); }}
+                onSelect={loc => { setDestination(loc); setDestQuery(loc.name || ''); }} />
             </div>
 
             {/* Transport Modes Pills */}

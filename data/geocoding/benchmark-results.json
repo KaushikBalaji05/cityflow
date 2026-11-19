@@ -1,0 +1,743 @@
+{
+  "dataset_status": "24 original queries in eight categories; only independently verified references are scorable.",
+  "query_count": 24,
+  "executed_at_utc": "2026-11-19T17:43:53.295280+00:00",
+  "ground_truth_verified_count": 16,
+  "thresholds_calibrated": false,
+  "runs": [
+    {
+      "query": "Indiranagar, Bengaluru",
+      "provider": "geoapify",
+      "status": "unavailable",
+      "scored": false,
+      "latency_ms": null,
+      "reason": "Provider not configured or local health check failed; no search issued"
+    },
+    {
+      "query": "Indiranagar, Bengaluru",
+      "provider": "photon",
+      "status": "unavailable",
+      "scored": false,
+      "latency_ms": null,
+      "reason": "Provider not configured or local health check failed; no search issued"
+    },
+    {
+      "query": "Indiranagar, Bengaluru",
+      "provider": "combined",
+      "status": "unavailable",
+      "scored": false,
+      "latency_ms": null,
+      "reason": "Provider not configured or local health check failed; no search issued"
+    },
+    {
+      "query": "Koramangala 4th Block",
+      "provider": "geoapify",
+      "status": "unavailable",
+      "scored": false,
+      "latency_ms": null,
+      "reason": "Provider not configured or local health check failed; no search issued"
+    },
+    {
+      "query": "Koramangala 4th Block",
+      "provider": "photon",
+      "status": "unavailable",
+      "scored": false,
+      "latency_ms": null,
+      "reason": "Provider not configured or local health check failed; no search issued"
+    },
+    {
+      "query": "Koramangala 4th Block",
+      "provider": "combined",
+      "status": "unavailable",
+      "scored": false,
+      "latency_ms": null,
+      "reason": "Provider not configured or local health check failed; no search issued"
+    },
+    {
+      "query": "Kadubisanahalli",
+      "provider": "geoapify",
+      "status": "unavailable",
+      "scored": false,
+      "latency_ms": null,
+      "reason": "Provider not configured or local health check failed; no search issued"
+    },
+    {
+      "query": "Kadubisanahalli",
+      "provider": "photon",
+      "status": "unavailable",
+      "scored": false,
+      "latency_ms": null,
+      "reason": "Provider not configured or local health check failed; no search issued"
+    },
+    {
+      "query": "Kadubisanahalli",
+      "provider": "combined",
+      "status": "unavailable",
+      "scored": false,
+      "latency_ms": null,
+      "reason": "Provider not configured or local health check failed; no search issued"
+    },
+    {
+      "query": "12th Main Road, Indiranagar",
+      "provider": "geoapify",
+      "status": "unavailable",
+      "scored": false,
+      "latency_ms": null,
+      "reason": "Provider not configured or local health check failed; no search issued"
+    },
+    {
+      "query": "12th Main Road, Indiranagar",
+      "provider": "photon",
+      "status": "unavailable",
+      "scored": false,
+      "latency_ms": null,
+      "reason": "Provider not configured or local health check failed; no search issued"
+    },
+    {
+      "query": "12th Main Road, Indiranagar",
+      "provider": "combined",
+      "status": "unavailable",
+      "scored": false,
+      "latency_ms": null,
+      "reason": "Provider not configured or local health check failed; no search issued"
+    },
+    {
+      "query": "27th Main Road, HSR Layout Sector 1",
+      "provider": "geoapify",
+      "status": "unavailable",
+      "scored": false,
+      "latency_ms": null,
+      "reason": "Provider not configured or local health check failed; no search issued"
+    },
+    {
+      "query": "27th Main Road, HSR Layout Sector 1",
+      "provider": "photon",
+      "status": "unavailable",
+      "scored": false,
+      "latency_ms": null,
+      "reason": "Provider not configured or local health check failed; no search issued"
+    },
+    {
+      "query": "27th Main Road, HSR Layout Sector 1",
+      "provider": "combined",
+      "status": "unavailable",
+      "scored": false,
+      "latency_ms": null,
+      "reason": "Provider not configured or local health check failed; no search issued"
+    },
+    {
+      "query": "14th Cross, Malleshwaram",
+      "provider": "geoapify",
+      "status": "unavailable",
+      "scored": false,
+      "latency_ms": null,
+      "reason": "Provider not configured or local health check failed; no search issued"
+    },
+    {
+      "query": "14th Cross, Malleshwaram",
+      "provider": "photon",
+      "status": "unavailable",
+      "scored": false,
+      "latency_ms": null,
+      "reason": "Provider not configured or local health check failed; no search issued"
+    },
+    {
+      "query": "14th Cross, Malleshwaram",
+      "provider": "combined",
+      "status": "unavailable",
+      "scored": false,
+      "latency_ms": null,
+      "reason": "Provider not configured or local health check failed; no search issued"
+    },
+    {
+      "query": "BEML Layout, Rajarajeshwari Nagar",
+      "provider": "geoapify",
+      "status": "unavailable",
+      "scored": false,
+      "latency_ms": null,
+      "reason": "Provider not configured or local health check failed; no search issued"
+    },
+    {
+      "query": "BEML Layout, Rajarajeshwari Nagar",
+      "provider": "photon",
+      "status": "unavailable",
+      "scored": false,
+      "latency_ms": null,
+      "reason": "Provider not configured or local health check failed; no search issued"
+    },
+    {
+      "query": "BEML Layout, Rajarajeshwari Nagar",
+      "provider": "combined",
+      "status": "unavailable",
+      "scored": false,
+      "latency_ms": null,
+      "reason": "Provider not configured or local health check failed; no search issued"
+    },
+    {
+      "query": "AMS Layout, Vidyaranyapura",
+      "provider": "geoapify",
+      "status": "unavailable",
+      "scored": false,
+      "latency_ms": null,
+      "reason": "Provider not configured or local health check failed; no search issued"
+    },
+    {
+      "query": "AMS Layout, Vidyaranyapura",
+      "provider": "photon",
+      "status": "unavailable",
+      "scored": false,
+      "latency_ms": null,
+      "reason": "Provider not configured or local health check failed; no search issued"
+    },
+    {
+      "query": "AMS Layout, Vidyaranyapura",
+      "provider": "combined",
+      "status": "unavailable",
+      "scored": false,
+      "latency_ms": null,
+      "reason": "Provider not configured or local health check failed; no search issued"
+    },
+    {
+      "query": "Dollars Colony, RMV 2nd Stage",
+      "provider": "geoapify",
+      "status": "unavailable",
+      "scored": false,
+      "latency_ms": null,
+      "reason": "Provider not configured or local health check failed; no search issued"
+    },
+    {
+      "query": "Dollars Colony, RMV 2nd Stage",
+      "provider": "photon",
+      "status": "unavailable",
+      "scored": false,
+      "latency_ms": null,
+      "reason": "Provider not configured or local health check failed; no search issued"
+    },
+    {
+      "query": "Dollars Colony, RMV 2nd Stage",
+      "provider": "combined",
+      "status": "unavailable",
+      "scored": false,
+      "latency_ms": null,
+      "reason": "Provider not configured or local health check failed; no search issued"
+    },
+    {
+      "query": "Prestige Shantiniketan, Whitefield",
+      "provider": "geoapify",
+      "status": "unavailable",
+      "scored": false,
+      "latency_ms": null,
+      "reason": "Provider not configured or local health check failed; no search issued"
+    },
+    {
+      "query": "Prestige Shantiniketan, Whitefield",
+      "provider": "photon",
+      "status": "unavailable",
+      "scored": false,
+      "latency_ms": null,
+      "reason": "Provider not configured or local health check failed; no search issued"
+    },
+    {
+      "query": "Prestige Shantiniketan, Whitefield",
+      "provider": "combined",
+      "status": "unavailable",
+      "scored": false,
+      "latency_ms": null,
+      "reason": "Provider not configured or local health check failed; no search issued"
+    },
+    {
+      "query": "Sobha Dream Acres, Balagere",
+      "provider": "geoapify",
+      "status": "unavailable",
+      "scored": false,
+      "latency_ms": null,
+      "reason": "Provider not configured or local health check failed; no search issued"
+    },
+    {
+      "query": "Sobha Dream Acres, Balagere",
+      "provider": "photon",
+      "status": "unavailable",
+      "scored": false,
+      "latency_ms": null,
+      "reason": "Provider not configured or local health check failed; no search issued"
+    },
+    {
+      "query": "Sobha Dream Acres, Balagere",
+      "provider": "combined",
+      "status": "unavailable",
+      "scored": false,
+      "latency_ms": null,
+      "reason": "Provider not configured or local health check failed; no search issued"
+    },
+    {
+      "query": "Brigade Metropolis, Mahadevapura",
+      "provider": "geoapify",
+      "status": "unavailable",
+      "scored": false,
+      "latency_ms": null,
+      "reason": "Provider not configured or local health check failed; no search issued"
+    },
+    {
+      "query": "Brigade Metropolis, Mahadevapura",
+      "provider": "photon",
+      "status": "unavailable",
+      "scored": false,
+      "latency_ms": null,
+      "reason": "Provider not configured or local health check failed; no search issued"
+    },
+    {
+      "query": "Brigade Metropolis, Mahadevapura",
+      "provider": "combined",
+      "status": "unavailable",
+      "scored": false,
+      "latency_ms": null,
+      "reason": "Provider not configured or local health check failed; no search issued"
+    },
+    {
+      "query": "PES University, RR Campus",
+      "provider": "geoapify",
+      "status": "unavailable",
+      "scored": false,
+      "latency_ms": null,
+      "reason": "Provider not configured or local health check failed; no search issued"
+    },
+    {
+      "query": "PES University, RR Campus",
+      "provider": "photon",
+      "status": "unavailable",
+      "scored": false,
+      "latency_ms": null,
+      "reason": "Provider not configured or local health check failed; no search issued"
+    },
+    {
+      "query": "PES University, RR Campus",
+      "provider": "combined",
+      "status": "unavailable",
+      "scored": false,
+      "latency_ms": null,
+      "reason": "Provider not configured or local health check failed; no search issued"
+    },
+    {
+      "query": "RV College of Engineering, Mysuru Road",
+      "provider": "geoapify",
+      "status": "unavailable",
+      "scored": false,
+      "latency_ms": null,
+      "reason": "Provider not configured or local health check failed; no search issued"
+    },
+    {
+      "query": "RV College of Engineering, Mysuru Road",
+      "provider": "photon",
+      "status": "unavailable",
+      "scored": false,
+      "latency_ms": null,
+      "reason": "Provider not configured or local health check failed; no search issued"
+    },
+    {
+      "query": "RV College of Engineering, Mysuru Road",
+      "provider": "combined",
+      "status": "unavailable",
+      "scored": false,
+      "latency_ms": null,
+      "reason": "Provider not configured or local health check failed; no search issued"
+    },
+    {
+      "query": "BMS College of Engineering, Basavanagudi",
+      "provider": "geoapify",
+      "status": "unavailable",
+      "scored": false,
+      "latency_ms": null,
+      "reason": "Provider not configured or local health check failed; no search issued"
+    },
+    {
+      "query": "BMS College of Engineering, Basavanagudi",
+      "provider": "photon",
+      "status": "unavailable",
+      "scored": false,
+      "latency_ms": null,
+      "reason": "Provider not configured or local health check failed; no search issued"
+    },
+    {
+      "query": "BMS College of Engineering, Basavanagudi",
+      "provider": "combined",
+      "status": "unavailable",
+      "scored": false,
+      "latency_ms": null,
+      "reason": "Provider not configured or local health check failed; no search issued"
+    },
+    {
+      "query": "Manipal Hospital, Old Airport Road",
+      "provider": "geoapify",
+      "status": "unavailable",
+      "scored": false,
+      "latency_ms": null,
+      "reason": "Provider not configured or local health check failed; no search issued"
+    },
+    {
+      "query": "Manipal Hospital, Old Airport Road",
+      "provider": "photon",
+      "status": "unavailable",
+      "scored": false,
+      "latency_ms": null,
+      "reason": "Provider not configured or local health check failed; no search issued"
+    },
+    {
+      "query": "Manipal Hospital, Old Airport Road",
+      "provider": "combined",
+      "status": "unavailable",
+      "scored": false,
+      "latency_ms": null,
+      "reason": "Provider not configured or local health check failed; no search issued"
+    },
+    {
+      "query": "NIMHANS, Hosur Road",
+      "provider": "geoapify",
+      "status": "unavailable",
+      "scored": false,
+      "latency_ms": null,
+      "reason": "Provider not configured or local health check failed; no search issued"
+    },
+    {
+      "query": "NIMHANS, Hosur Road",
+      "provider": "photon",
+      "status": "unavailable",
+      "scored": false,
+      "latency_ms": null,
+      "reason": "Provider not configured or local health check failed; no search issued"
+    },
+    {
+      "query": "NIMHANS, Hosur Road",
+      "provider": "combined",
+      "status": "unavailable",
+      "scored": false,
+      "latency_ms": null,
+      "reason": "Provider not configured or local health check failed; no search issued"
+    },
+    {
+      "query": "St. John's Medical College Hospital",
+      "provider": "geoapify",
+      "status": "unavailable",
+      "scored": false,
+      "latency_ms": null,
+      "reason": "Provider not configured or local health check failed; no search issued"
+    },
+    {
+      "query": "St. John's Medical College Hospital",
+      "provider": "photon",
+      "status": "unavailable",
+      "scored": false,
+      "latency_ms": null,
+      "reason": "Provider not configured or local health check failed; no search issued"
+    },
+    {
+      "query": "St. John's Medical College Hospital",
+      "provider": "combined",
+      "status": "unavailable",
+      "scored": false,
+      "latency_ms": null,
+      "reason": "Provider not configured or local health check failed; no search issued"
+    },
+    {
+      "query": "Domlur TTMC",
+      "provider": "geoapify",
+      "status": "unavailable",
+      "scored": false,
+      "latency_ms": null,
+      "reason": "Provider not configured or local health check failed; no search issued"
+    },
+    {
+      "query": "Domlur TTMC",
+      "provider": "photon",
+      "status": "unavailable",
+      "scored": false,
+      "latency_ms": null,
+      "reason": "Provider not configured or local health check failed; no search issued"
+    },
+    {
+      "query": "Domlur TTMC",
+      "provider": "combined",
+      "status": "unavailable",
+      "scored": false,
+      "latency_ms": null,
+      "reason": "Provider not configured or local health check failed; no search issued"
+    },
+    {
+      "query": "Murugeshpalya Bus Stop",
+      "provider": "geoapify",
+      "status": "unavailable",
+      "scored": false,
+      "latency_ms": null,
+      "reason": "Provider not configured or local health check failed; no search issued"
+    },
+    {
+      "query": "Murugeshpalya Bus Stop",
+      "provider": "photon",
+      "status": "unavailable",
+      "scored": false,
+      "latency_ms": null,
+      "reason": "Provider not configured or local health check failed; no search issued"
+    },
+    {
+      "query": "Murugeshpalya Bus Stop",
+      "provider": "combined",
+      "status": "unavailable",
+      "scored": false,
+      "latency_ms": null,
+      "reason": "Provider not configured or local health check failed; no search issued"
+    },
+    {
+      "query": "Graphite India Signal, Whitefield",
+      "provider": "geoapify",
+      "status": "unavailable",
+      "scored": false,
+      "latency_ms": null,
+      "reason": "Provider not configured or local health check failed; no search issued"
+    },
+    {
+      "query": "Graphite India Signal, Whitefield",
+      "provider": "photon",
+      "status": "unavailable",
+      "scored": false,
+      "latency_ms": null,
+      "reason": "Provider not configured or local health check failed; no search issued"
+    },
+    {
+      "query": "Graphite India Signal, Whitefield",
+      "provider": "combined",
+      "status": "unavailable",
+      "scored": false,
+      "latency_ms": null,
+      "reason": "Provider not configured or local health check failed; no search issued"
+    },
+    {
+      "query": "Devanahalli",
+      "provider": "geoapify",
+      "status": "unavailable",
+      "scored": false,
+      "latency_ms": null,
+      "reason": "Provider not configured or local health check failed; no search issued"
+    },
+    {
+      "query": "Devanahalli",
+      "provider": "photon",
+      "status": "unavailable",
+      "scored": false,
+      "latency_ms": null,
+      "reason": "Provider not configured or local health check failed; no search issued"
+    },
+    {
+      "query": "Devanahalli",
+      "provider": "combined",
+      "status": "unavailable",
+      "scored": false,
+      "latency_ms": null,
+      "reason": "Provider not configured or local health check failed; no search issued"
+    },
+    {
+      "query": "Anekal",
+      "provider": "geoapify",
+      "status": "unavailable",
+      "scored": false,
+      "latency_ms": null,
+      "reason": "Provider not configured or local health check failed; no search issued"
+    },
+    {
+      "query": "Anekal",
+      "provider": "photon",
+      "status": "unavailable",
+      "scored": false,
+      "latency_ms": null,
+      "reason": "Provider not configured or local health check failed; no search issued"
+    },
+    {
+      "query": "Anekal",
+      "provider": "combined",
+      "status": "unavailable",
+      "scored": false,
+      "latency_ms": null,
+      "reason": "Provider not configured or local health check failed; no search issued"
+    },
+    {
+      "query": "Thavarekere, Magadi Road",
+      "provider": "geoapify",
+      "status": "unavailable",
+      "scored": false,
+      "latency_ms": null,
+      "reason": "Provider not configured or local health check failed; no search issued"
+    },
+    {
+      "query": "Thavarekere, Magadi Road",
+      "provider": "photon",
+      "status": "unavailable",
+      "scored": false,
+      "latency_ms": null,
+      "reason": "Provider not configured or local health check failed; no search issued"
+    },
+    {
+      "query": "Thavarekere, Magadi Road",
+      "provider": "combined",
+      "status": "unavailable",
+      "scored": false,
+      "latency_ms": null,
+      "reason": "Provider not configured or local health check failed; no search issued"
+    }
+  ],
+  "preflight": {
+    "geoapify": false,
+    "photon": false,
+    "combined": false
+  },
+  "summary": {
+    "geoapify": {
+      "available_queries": 0,
+      "unavailable_queries": 24,
+      "top1_accuracy": null,
+      "top3_accuracy": null,
+      "category_accuracy": {
+        "Apartments": {
+          "scored_queries": 0,
+          "top1_accuracy": null,
+          "top3_accuracy": null
+        },
+        "Colleges": {
+          "scored_queries": 0,
+          "top1_accuracy": null,
+          "top3_accuracy": null
+        },
+        "Hospitals": {
+          "scored_queries": 0,
+          "top1_accuracy": null,
+          "top3_accuracy": null
+        },
+        "Interior Roads": {
+          "scored_queries": 0,
+          "top1_accuracy": null,
+          "top3_accuracy": null
+        },
+        "Major Localities": {
+          "scored_queries": 0,
+          "top1_accuracy": null,
+          "top3_accuracy": null
+        },
+        "Remote Outskirts": {
+          "scored_queries": 0,
+          "top1_accuracy": null,
+          "top3_accuracy": null
+        },
+        "Residential Layouts": {
+          "scored_queries": 0,
+          "top1_accuracy": null,
+          "top3_accuracy": null
+        },
+        "Small Landmarks & Transit": {
+          "scored_queries": 0,
+          "top1_accuracy": null,
+          "top3_accuracy": null
+        }
+      },
+      "fallback_frequency": null,
+      "median_success_latency_ms": null
+    },
+    "photon": {
+      "available_queries": 0,
+      "unavailable_queries": 24,
+      "top1_accuracy": null,
+      "top3_accuracy": null,
+      "category_accuracy": {
+        "Apartments": {
+          "scored_queries": 0,
+          "top1_accuracy": null,
+          "top3_accuracy": null
+        },
+        "Colleges": {
+          "scored_queries": 0,
+          "top1_accuracy": null,
+          "top3_accuracy": null
+        },
+        "Hospitals": {
+          "scored_queries": 0,
+          "top1_accuracy": null,
+          "top3_accuracy": null
+        },
+        "Interior Roads": {
+          "scored_queries": 0,
+          "top1_accuracy": null,
+          "top3_accuracy": null
+        },
+        "Major Localities": {
+          "scored_queries": 0,
+          "top1_accuracy": null,
+          "top3_accuracy": null
+        },
+        "Remote Outskirts": {
+          "scored_queries": 0,
+          "top1_accuracy": null,
+          "top3_accuracy": null
+        },
+        "Residential Layouts": {
+          "scored_queries": 0,
+          "top1_accuracy": null,
+          "top3_accuracy": null
+        },
+        "Small Landmarks & Transit": {
+          "scored_queries": 0,
+          "top1_accuracy": null,
+          "top3_accuracy": null
+        }
+      },
+      "fallback_frequency": null,
+      "median_success_latency_ms": null
+    },
+    "combined": {
+      "available_queries": 0,
+      "unavailable_queries": 24,
+      "top1_accuracy": null,
+      "top3_accuracy": null,
+      "category_accuracy": {
+        "Apartments": {
+          "scored_queries": 0,
+          "top1_accuracy": null,
+          "top3_accuracy": null
+        },
+        "Colleges": {
+          "scored_queries": 0,
+          "top1_accuracy": null,
+          "top3_accuracy": null
+        },
+        "Hospitals": {
+          "scored_queries": 0,
+          "top1_accuracy": null,
+          "top3_accuracy": null
+        },
+        "Interior Roads": {
+          "scored_queries": 0,
+          "top1_accuracy": null,
+          "top3_accuracy": null
+        },
+        "Major Localities": {
+          "scored_queries": 0,
+          "top1_accuracy": null,
+          "top3_accuracy": null
+        },
+        "Remote Outskirts": {
+          "scored_queries": 0,
+          "top1_accuracy": null,
+          "top3_accuracy": null
+        },
+        "Residential Layouts": {
+          "scored_queries": 0,
+          "top1_accuracy": null,
+          "top3_accuracy": null
+        },
+        "Small Landmarks & Transit": {
+          "scored_queries": 0,
+          "top1_accuracy": null,
+          "top3_accuracy": null
+        }
+      },
+      "fallback_frequency": null,
+      "median_success_latency_ms": null
+    }
+  },
+  "fallback_recovery_rate": null
+}

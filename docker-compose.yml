@@ -75,6 +75,13 @@ services:
       KAFKA_BOOTSTRAP_SERVERS: kafka:9092
       API_HOST: 0.0.0.0
       API_PORT: 8000
+      GEOAPIFY_API_KEY: ${GEOAPIFY_API_KEY:-}
+      PHOTON_URL: http://photon:2322
+      USE_POSTGIS: "true"
+      NETWORK_DATA_PATH: /data/bengaluru/network.json
+      WALKING_RADIUS_METERS: ${WALKING_RADIUS_METERS:-3000}
+    volumes:
+      - ./data/bengaluru:/data/bengaluru:ro
     ports:
       - "8000:8000"
     depends_on:
@@ -82,6 +89,24 @@ services:
         condition: service_healthy
       kafka:
         condition: service_healthy
+    restart: unless-stopped
+
+  # Optional regional geocoder; embedded OpenSearch, no separate search cluster.
+  photon:
+    profiles: [geocoding]
+    build: ./docker/photon
+    ports:
+      - "127.0.0.1:2322:2322"
+    volumes:
+      - photon_data:/data
+    mem_limit: 4g
+    cpus: 2
+    healthcheck:
+      test: ["CMD", "curl", "-fsS", "http://localhost:2322/status"]
+      interval: 30s
+      timeout: 5s
+      retries: 5
+      start_period: 90s
     restart: unless-stopped
 
   # Frontend: Next.js + MapLibre Web Application
@@ -99,5 +124,6 @@ services:
     restart: unless-stopped
 
 volumes:
+  photon_data:
   postgis_data:
     driver: local

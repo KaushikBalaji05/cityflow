@@ -82,8 +82,7 @@ class TransitNetwork:
         filtered = [item for item in results if item[1] <= max_distance_meters]
 
         if not filtered:
-            # Fallback to closest 2 stops if nothing is within the radius
-            return results[:2]
+            return []
 
         # If multiple modes are requested, ensure balanced representation
         if allowed_modes and len(allowed_modes) > 1:

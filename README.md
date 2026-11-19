@@ -85,6 +85,9 @@ Open `http://localhost:3000` in your browser.
 
 ## 🧪 Testing
 
+For arbitrary-location search, provider setup, Photon import, database migrations,
+benchmark provenance, and current verification limits, see [Geocoding engine](docs/GEOCODING.md).
+
 ```bash
 # Run backend & routing engine test suite
 cd backend

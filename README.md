@@ -87,6 +87,8 @@ Open `http://localhost:3000` in your browser.
 
 For arbitrary-location search, provider setup, Photon import, database migrations,
 benchmark provenance, and current verification limits, see [Geocoding engine](docs/GEOCODING.md).
+Actual provider/browser QA findings and remaining validation steps are recorded in
+[Geocoding validation](docs/GEOCODING_VALIDATION.md).
 
 ```bash
 # Run backend & routing engine test suite

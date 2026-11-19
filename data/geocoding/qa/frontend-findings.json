@@ -1,0 +1,80 @@
+{
+  "desktop_1440x900": {
+    "viewport_width": 1440,
+    "document_width": 1440,
+    "sidebar_width": 480,
+    "outcome": "pass"
+  },
+  "mobile_390x844": {
+    "viewport_width": 390,
+    "document_width": 390,
+    "header_links_right_edge_max": 378.4,
+    "outcome": "pass_after_header_fix"
+  },
+  "live_suggestions": {
+    "query": "PES University",
+    "provider": "geoapify",
+    "visible_results": 3,
+    "outcome": "pass"
+  },
+  "keyboard_selection": {
+    "keys": [
+      "ArrowDown",
+      "Enter"
+    ],
+    "origin": "PES University",
+    "destination": "Devanahalli",
+    "attribution_retained": true,
+    "outcome": "pass"
+  },
+  "no_transit_coverage": {
+    "origin": "PES University",
+    "destination": "Devanahalli",
+    "transit_journeys": 0,
+    "existing_estimated_walk_drive_options": 2,
+    "warning_shown": true
+  },
+  "outage_error_state": {
+    "provider_configured_at_test": false,
+    "http_status": 503,
+    "visible_message": "Location search unavailable. Please try again.",
+    "outcome": "pass"
+  },
+  "loading_state": {
+    "visible_message": "Searching...",
+    "outcome": "pass"
+  },
+  "no_results": {
+    "query": "zzxqvnonexistentplace",
+    "visible_message": "No locations found in the Bengaluru search region",
+    "outcome": "pass"
+  },
+  "rapid_query_replacement": {
+    "from": "PES University RR Campus",
+    "to": "Anekal",
+    "final_suggestions": [
+      "Anekal",
+      "Anekal"
+    ],
+    "stale_suggestions_seen": false,
+    "network_abort_verified_in": "deterministic frontend test; browser observation verifies final UI only"
+  },
+  "escape": {
+    "aria_expanded_after": false,
+    "outcome": "pass"
+  },
+  "clear": {
+    "input_after_clear": "",
+    "outcome": "pass"
+  },
+  "preset_after_edit": {
+    "before_fix": "Fields showed preset but Please select both Origin and Destination appeared because stale null origin was used",
+    "after_fix": "Indiranagar -> Whitefield generated six journeys",
+    "outcome": "pass_after_fix"
+  },
+  "routing_backend": "json fixture graph; live PostGIS pending Docker",
+  "screenshots": [
+    "docs/qa/geocoding-desktop.jpg",
+    "docs/qa/geocoding-mobile.jpg"
+  ]
+}

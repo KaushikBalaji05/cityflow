@@ -1,5 +1,5 @@
 {
-  "status": "24 original queries in eight categories; only independently verified references are scorable.",
+  "status": "24 original queries in eight categories; 19 verified representative targets, five unresolved road/locality targets remain unscored. Original references preserved.",
   "attribution": "Independent OSM-derived benchmark coordinates: OpenStreetMap contributors, ODbL https://www.openstreetmap.org/copyright . Original references supplied by user.",
   "queries": [
     {
@@ -417,11 +417,14 @@
         "lat": 12.9432,
         "lon": 77.5969
       },
-      "ground_truth": null,
-      "source": null,
-      "verified": false,
+      "ground_truth": {
+        "lat": 12.9400669,
+        "lon": 77.5931597
+      },
+      "source": "https://www.openstreetmap.org/node/4729472422",
+      "verified": true,
       "expected_locality": null,
-      "verification_notes": "NIMHANS has several clinical blocks, museum and campuses. Need an agreed hospital entrance or campus area; museum and bus stop are unsuitable substitutes.",
+      "verification_notes": "Benchmark target explicitly defined as the mapped main NIMHANS hospital feature (amenity=hospital, short_name=NIMHANS, source=OpenGovernmentData). Official NIMHANS site confirms the Hosur/Marigowda Road clinical campus. This target is neither the Brain Museum nor the bus stop; individual departments and entrances are not interchangeable.",
       "candidate_sources": [
         "https://www.openstreetmap.org/node/308922692",
         "https://www.openstreetmap.org/node/1474472488",
@@ -431,7 +434,10 @@
         "https://www.openstreetmap.org/node/4680181149",
         "https://www.openstreetmap.org/node/4729472422",
         "https://www.openstreetmap.org/node/4843100436"
-      ]
+      ],
+      "verified_on": "2026-11-19",
+      "osm_version": 5,
+      "corroborating_source": "https://www.nimhans.ac.in/patient-care/emergency-services"
     },
     {
       "query": "St. John's Medical College Hospital",
@@ -501,15 +507,29 @@
         "lat": 12.9592,
         "lon": 77.6484
       },
-      "ground_truth": null,
-      "source": null,
-      "verified": false,
+      "ground_truth": {
+        "lat": 12.9592797,
+        "lon": 77.6580632
+      },
+      "source": "https://www.openstreetmap.org/node/3298916256",
+      "verified": true,
       "expected_locality": null,
-      "verification_notes": "OSM platform node 1426776304 is at 12.9592148,77.6561107. Original reference 12.9592,77.6484 differs by about 836m. Bundled graph stop 12.9585,77.6575 and demo origin 12.9581,77.6572 are separate points. Direction/platform identity unresolved; preserve the approximately 66m synthetic graph regression, do not score the benchmark stop yet.",
+      "verification_notes": "Resolved as two direction-specific BMTC platforms. Primary target node 3298916256 belongs to route 335E Kempegowda => Kadugodi (relation 14419835); alternative node 1426776304 belongs to citybound V-333E (relation 14595433). Because the original query specifies no direction, either verified platform is accepted, using minimum Haversine distance. Original 77.6484 reference is about 836m west of the westbound platform. The bundled 12.9585,77.6575 fixture is retained as a separately modeled access point; approximately 66m remains a graph regression, not a surveyed walk.",
       "candidate_sources": [
         "https://www.openstreetmap.org/node/1426776304",
         "https://www.openstreetmap.org/way/30800447"
-      ]
+      ],
+      "verified_on": "2026-11-19",
+      "ground_truth_candidates": [
+        {
+          "lat": 12.9592148,
+          "lon": 77.6561107,
+          "source": "https://www.openstreetmap.org/node/1426776304",
+          "verified": true,
+          "direction": "westbound / citybound"
+        }
+      ],
+      "corroborating_source": "https://www.openstreetmap.org/relation/14419835"
     },
     {
       "query": "Graphite India Signal, Whitefield",
@@ -520,11 +540,14 @@
         "lat": 12.9765,
         "lon": 77.713
       },
-      "ground_truth": null,
-      "source": null,
-      "verified": false,
+      "ground_truth": {
+        "lat": 12.9782519,
+        "lon": 77.7098094
+      },
+      "source": "https://www.openstreetmap.org/way/1251884741",
+      "verified": true,
       "expected_locality": null,
-      "verification_notes": "Graphite India Junction area and several bus platforms located. Need an agreed traffic-signal intersection point; do not substitute a factory or bus platform.",
+      "verification_notes": "Target explicitly defined as the centroid of the named Graphite India Junction closed area (junction=yes, area=yes). This resolves the colloquial Signal as the junction, not the nearby factory, road or bus platforms. Individual traffic-light poles are not the benchmark target.",
       "candidate_sources": [
         "https://www.openstreetmap.org/node/825452795",
         "https://www.openstreetmap.org/node/1000885798",
@@ -532,7 +555,9 @@
         "https://www.openstreetmap.org/node/4489728551",
         "https://www.openstreetmap.org/way/29502606",
         "https://www.openstreetmap.org/way/1251884741"
-      ]
+      ],
+      "verified_on": "2026-11-19",
+      "osm_version": 1
     },
     {
       "query": "Devanahalli",
@@ -599,7 +624,7 @@
       },
       "source": "https://www.openstreetmap.org/node/2595197392",
       "verified": true,
-      "expected_locality": null,
+      "expected_locality": "Tavarekere",
       "verification_notes": "Exact OSM feature Tavarekere; named locality node; independent of tested APIs, not independent of their underlying OSM data.",
       "osm_version": 3,
       "verified_on": "2026-11-19",
@@ -611,6 +636,9 @@
         "https://www.openstreetmap.org/node/12989264934",
         "https://www.openstreetmap.org/node/12989264935",
         "https://www.openstreetmap.org/way/135416913"
+      ],
+      "expected_locality_aliases": [
+        "Thavarekere"
       ]
     }
   ]

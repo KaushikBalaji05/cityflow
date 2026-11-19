@@ -1,0 +1,25 @@
+{
+  "status": "blocked_pending_docker_desktop",
+  "docker_installed": false,
+  "photon": {
+    "initial_import_seconds": null,
+    "memory_bytes": null,
+    "cpu_percent": null,
+    "index_storage_bytes": null,
+    "search_latency_ms": null
+  },
+  "host_observation": {
+    "total_physical_memory_bytes": 16802910208,
+    "total_visible_memory_kib": 16409092,
+    "free_physical_memory_kib": 2836312,
+    "source": "Read-only Win32_ComputerSystem and Win32_OperatingSystem queries; point-in-time values, not Photon consumption"
+  },
+  "wsl_observation": {
+    "distribution": "Ubuntu",
+    "memory_total_mib": 7763,
+    "memory_available_mib": 7241,
+    "source": "free -m in existing Ubuntu distribution; no software installed or configuration changed"
+  },
+  "limitations": "Photon has not run. India index suitability and a smaller-region need cannot be established from caps or compressed download size.",
+  "measured_at_utc": "2026-11-19T18:18:47.7757734Z"
+}

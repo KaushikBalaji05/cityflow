@@ -1,0 +1,265 @@
+{
+  "attribution": "OpenStreetMap contributors; ODbL https://www.openstreetmap.org/copyright",
+  "retrieved": "2026-11-19",
+  "platforms": [
+    {
+      "id": 1426776304,
+      "lat": 12.9592148,
+      "lon": 77.6561107,
+      "tags": {
+        "bench": "yes",
+        "bin": "no",
+        "bus": "yes",
+        "highway": "bus_stop",
+        "kerb": "raised",
+        "kerb:approach_aid": "no",
+        "lit": "no",
+        "loc_name": "Murgeshpallya",
+        "name": "Murugeshpallya",
+        "name:en": "Murugeshpallya",
+        "name:kn": "\u0cae\u0cc1\u0cb0\u0cc1\u0c97\u0cc7\u0cb6\u0caa\u0cbe\u0cb2\u0caf\u0cbe",
+        "passenger_information_display": "no",
+        "public_transport": "platform",
+        "shelter": "yes",
+        "tactile_paving": "no"
+      },
+      "source": "https://www.openstreetmap.org/node/1426776304",
+      "routes": [
+        {
+          "id": 14595433,
+          "tags": {
+            "fee": "yes",
+            "from": "Kadugodi Bus Station",
+            "name": "Bus V-333E: Kadugodi Bus Station => Kempegowda Bus Station",
+            "network": "BMTC",
+            "network:wikidata": "Q3345039",
+            "network:wikipedia": "en:Bengaluru Metropolitan Transport Corporation",
+            "operator": "BMTC",
+            "public_transport:version": "2",
+            "ref": "V-333E",
+            "route": "bus",
+            "to": "Kempegowda Bus Station",
+            "type": "route",
+            "via": "Whitefield;Marathahalli;Domlur",
+            "wheelchair": "yes"
+          },
+          "role": [
+            "platform"
+          ]
+        },
+        {
+          "id": 14655113,
+          "tags": {
+            "fee": "yes",
+            "from": "Kadugodi Bus Stand",
+            "name": "SBS1I: Kadugodi Bus Station => Shivajinagara Bus Station",
+            "network": "BMTC",
+            "network:wikidata": "Q3345039",
+            "network:wikipedia": "en:Bengaluru Metropolitan Transport Corporation",
+            "operator": "BMTC",
+            "public_transport:version": "2",
+            "ref": "SBS1I",
+            "route": "bus",
+            "to": "Shivajinagara Bus Station",
+            "type": "route",
+            "via": "Marathahalli;Domlur;Hope Farm;ITPB"
+          },
+          "role": [
+            "platform"
+          ]
+        },
+        {
+          "id": 15339899,
+          "tags": {
+            "from": "Kadugodi Bus Station",
+            "name": "331: Kadugodi Bus Station => Shivajinagara Bus Station",
+            "network": "BMTC",
+            "network:wikidata": "Q3345039",
+            "network:wikipedia": "en:Bengaluru Metropolitan Transport Corporation",
+            "operator": "BMTC",
+            "public_transport:version": "2",
+            "route": "bus",
+            "to": "Shivajinagara Bus Station",
+            "type": "route",
+            "via": "Varthur Kodi;Domlur"
+          },
+          "role": [
+            "platform"
+          ]
+        },
+        {
+          "id": 15541455,
+          "tags": {
+            "from": "Kadugodi Bus Station",
+            "name": "V-331A: Kadugodi Bus Station => Cantonement Railway Station",
+            "network": "BMTC",
+            "network:wikidata": "Q3345039",
+            "network:wikipedia": "en:Bengaluru Metropolitan Transport Corporation",
+            "operator": "BMTC",
+            "public_transport:version": "2",
+            "ref": "V-331A",
+            "route": "bus",
+            "to": "Cantonement Railway Station",
+            "type": "route",
+            "via": "Graphite India;Kundalahalli Gate;Marathahalli",
+            "wheelchair": "yes"
+          },
+          "role": [
+            "platform"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 3298916256,
+      "lat": 12.9592797,
+      "lon": 77.6580632,
+      "tags": {
+        "bench": "yes",
+        "bin": "yes",
+        "bus": "yes",
+        "highway": "bus_stop",
+        "kerb": "raised",
+        "kerb:approach_aid": "no",
+        "lit": "no",
+        "name": "Murugeshpalaya",
+        "name:en": "Murugeshpalaya",
+        "name:kn": "\u0cae\u0cc1\u0cb0\u0cc1\u0c97\u0cc7\u0cb6\u0caa\u0cbe\u0cb3\u0ccd\u0caf",
+        "network": "BMTC",
+        "network:wikidata": "Q3345039",
+        "network:wikipedia": "en:Bengaluru Metropolitan Transport Corporation",
+        "operator": "BMTC",
+        "passenger_information_display": "yes",
+        "passenger_information_display:speech_output": "no",
+        "public_transport": "platform",
+        "shelter": "yes",
+        "tactile_paving": "no",
+        "wheelchair": "no"
+      },
+      "source": "https://www.openstreetmap.org/node/3298916256",
+      "routes": [
+        {
+          "id": 9740060,
+          "tags": {
+            "from": "Shivajinagara Bus Station",
+            "name": "331: Shivajinagara Bus Station => Kadugodi Bus Station",
+            "name:kn": "\u0ce9\u0ce9\u0ce7",
+            "network": "BMTC",
+            "network:wikidata": "Q3345039",
+            "network:wikipedia": "en:Bengaluru Metropolitan Transport Corporation",
+            "operator": "BMTC",
+            "public_transport:version": "2",
+            "ref": "331",
+            "route": "bus",
+            "to": "Kadugodi Bus Station",
+            "type": "route"
+          },
+          "role": [
+            "platform"
+          ]
+        },
+        {
+          "id": 10591795,
+          "tags": {
+            "name": "333: Kempegowda Bus Station => Marathahalli Bridge",
+            "name:kn": "\u0ce9\u0ce9\u0ce9",
+            "network": "BMTC",
+            "network:wikidata": "Q3345039",
+            "network:wikipedia": "en:Bengaluru Metropolitan Transport Corporation",
+            "operator": "BMTC",
+            "public_transport:version": "2",
+            "ref": "333",
+            "route": "bus",
+            "second_hand": "Kempegowda Bus Station",
+            "to": "Marathahalli Bridge",
+            "type": "route"
+          },
+          "role": [
+            "platform"
+          ]
+        },
+        {
+          "id": 14419835,
+          "tags": {
+            "from": "Kempegowda Bus Station",
+            "name": "Bus 335E: Kempegowda Bus Station => Kadugodi Bus Station",
+            "network": "BMTC",
+            "network:wikidata": "Q3345039",
+            "network:wikipedia": "en:Bengaluru Metropolitan Transport Corporation",
+            "operator": "BMTC",
+            "public_transport:version": "2",
+            "ref": "335E",
+            "route": "bus",
+            "to": "Kadugodi Bus Station",
+            "type": "route",
+            "via": "Marathahalli"
+          },
+          "role": [
+            "platform"
+          ]
+        },
+        {
+          "id": 14599353,
+          "tags": {
+            "fee": "yes",
+            "from": "Kempegowda Bus Station",
+            "name": "Bus V-333E: Kempegowda Bus Station => Kadugodi Bus Station",
+            "network": "BMTC",
+            "network:wikidata": "Q3345039",
+            "network:wikipedia": "en:Bengaluru Metropolitan Transport Corporation",
+            "operator": "BMTC",
+            "public_transport:version": "2",
+            "ref": "V-333E",
+            "route": "bus",
+            "to": "Kadugodi Bus Station",
+            "type": "route",
+            "via": "Marathahalli;Whitefield",
+            "wheelchair": "yes"
+          },
+          "role": [
+            "platform"
+          ]
+        },
+        {
+          "id": 14656535,
+          "tags": {
+            "fee": "yes",
+            "from": "Shivajinagara Bus Station",
+            "name": "SBS1I: Shivajinagara Bus Station => Kadugodi Bus Station",
+            "network": "BMTC",
+            "network:wikidata": "Q3345039",
+            "network:wikipedia": "en:Bengaluru Metropolitan Transport Corporation",
+            "operator": "BMTC",
+            "public_transport:version": "2",
+            "ref": "SBS1I",
+            "route": "bus",
+            "to": "Kadugodi",
+            "type": "route",
+            "via": "Domlur;Marathahalli;ITPB"
+          },
+          "role": [
+            "platform"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 7133498148,
+      "lat": 12.9591927,
+      "lon": 77.6580586,
+      "tags": {
+        "bus": "yes",
+        "name": "Murugeshpalaya",
+        "name:en": "Murugeshpalaya",
+        "name:kn": "\u0cae\u0cc1\u0cb0\u0cc1\u0c97\u0cc7\u0cb6\u0caa\u0cbe\u0cb3\u0ccd\u0caf",
+        "network": "BMTC",
+        "network:wikidata": "Q3345039",
+        "network:wikipedia": "en:Bengaluru Metropolitan Transport Corporation",
+        "operator": "BMTC",
+        "public_transport": "stop_position"
+      },
+      "source": "https://www.openstreetmap.org/node/7133498148",
+      "routes": []
+    }
+  ]
+}

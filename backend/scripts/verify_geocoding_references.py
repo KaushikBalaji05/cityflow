@@ -15,7 +15,8 @@ MAPPINGS = {0: ("node", 448991617), 1: ("way", 1066116298), 7: ("node", 12797123
             8: ("node", 1232839896), 9: ("way", 122737532), 10: ("way", 963384967),
             11: ("way", 122738032), 12: ("way", 687911440), 14: ("way", 172845845),
             15: ("way", 135262255), 18: ("way", 31231545), 21: ("node", 282777706),
-            22: ("node", 245609200), 23: ("node", 2595197392)}
+            22: ("node", 245609200), 23: ("node", 2595197392),
+            16: ("node", 4729472422), 19: ("node", 3298916256), 20: ("way", 1251884741)}
 
 
 def centroid(points):
@@ -49,12 +50,15 @@ def main():
             else:
                 nodes = {e["id"]: (e["lon"], e["lat"]) for e in elements if e["type"] == "node"}
                 lon, lat = centroid([nodes[n] for n in feature["nodes"]])
+            original_notes = row.get("verification_notes")
             row.update(ground_truth={"lat": round(lat, 7), "lon": round(lon, 7)},
                        source=f"https://www.openstreetmap.org/{kind}/{osm_id}", verified=True,
                        verification_notes=f"Exact OSM feature {feature.get('tags', {}).get('name', '')}; " +
-                       ("named locality node" if kind == "node" else "centroid of named closed area; not a gate or entrance") +
+                       ("exact named point feature" if kind == "node" else "centroid of named closed area; not a gate or entrance") +
                        "; independent of tested APIs, not independent of their underlying OSM data.",
                        osm_version=feature.get("version"), verified_on=today)
+            if i in (16, 19, 20):
+                row['verification_notes'] = original_notes
             print(i, row["query"], row["ground_truth"])
     # Official institution explicitly publishes DMS coordinates.
     dataset["queries"][13].update(ground_truth={"lat": round(12+55/60+23/3600, 7),

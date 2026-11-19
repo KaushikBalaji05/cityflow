@@ -3,6 +3,11 @@
 Implementation audit and verification: 19 November 2026. Code remains MIT; external
 geographic data retains its own attribution and licenses.
 
+For the subsequent real-provider and browser QA results, coordinate corrections,
+remaining blockers and safe continuation commands, see
+[Geocoding validation](GEOCODING_VALIDATION.md). The original offline benchmark
+below is historical; the live QA report is `data/geocoding/qa/benchmark-results.json`.
+
 ```mermaid
 flowchart LR
   UI[Next.js origin / destination combobox] -->|300ms debounce + abort| API[FastAPI autocomplete]
@@ -78,7 +83,7 @@ From `C:\cityflow`, configure shell environment variables. Python does not
 automatically load `.env`. Docker Compose does read the root `.env`.
 
 ```powershell
-Copy-Item .env.example .env
+if (-not (Test-Path .env)) { Copy-Item .env.example .env }
 cd backend
 .\venv\Scripts\python.exe -m pip install -r requirements.txt
 $env:GEOAPIFY_API_KEY = '<your project key>'
@@ -160,7 +165,7 @@ do not substitute incompatible database dumps. Both providers may share OSM
 omissions. Test coverage after every index update.
 
 Resource settings are initial caps: 2 CPUs, 4 GiB container limit, Java heap
-512 MiBÃ¢â‚¬â€œ2 GiB, persistent index. They are not observed requirements. Docker
+512 MiB–2 GiB, persistent index. They are not observed requirements. Docker
 was unavailable on this machine; import time, disk expansion, RSS and latency
 could not be measured. On a 16 GB Windows host, measure alongside Kafka,
 PostGIS and Next.js before increasing limits. No second OpenSearch service is added.
@@ -169,8 +174,8 @@ PostGIS and Next.js before increasing limits. No second OpenSearch service is ad
 
 `GET /api/v1/geocode/autocomplete?q=Kodihalli&limit=6`
 
-`q`: 3Ã¢â‚¬â€œ200 characters, at least three searchable characters after Unicode-aware
-normalization. Kannada vowel marks are preserved. `limit`: 1Ã¢â‚¬â€œ10. Invalid input
+`q`: 3–200 characters, at least three searchable characters after Unicode-aware
+normalization. Kannada vowel marks are preserved. `limit`: 1–10. Invalid input
 returns 422; both upstream providers unavailable returns sanitized 503. Successful
 empty searches return 200 with an empty results array; partial outages set
 `meta.degraded=true`.
@@ -180,12 +185,12 @@ empty searches return 200 with an empty results array; partial outages set
 "display_address":"Bengaluru, Karnataka","lat":12.96,"lon":77.65,
 "category":"street","confidence":0.96,"street_confidence":0.9,
 "building_confidence":null,"provider":"geoapify",
-"attribution":"Powered by Geoapify; Ã‚Â© OpenStreetMap contributors (ODbL)",
+"attribution":"Powered by Geoapify; © OpenStreetMap contributors (ODbL)",
 "datasource":{}}],"meta":{"query":"Example","cache_hit":false,
 "fallback_triggered":false,"degraded":false}}
 ```
 
-Both adapters filter to longitude 77.15Ã¢â‚¬â€œ78.00, latitude 12.60Ã¢â‚¬â€œ13.50 and validate
+Both adapters filter to longitude 77.15–78.00, latitude 12.60–13.50 and validate
 coordinates. Geoapify receives rectangle filtering/proximity bias; Photon receives
 bbox/country/focus parameters. This envelope includes the intended metro outskirts,
 but it does not guarantee data completeness or transit coverage.

@@ -1,0 +1,3315 @@
+{
+  "dataset_status": "24 original queries in eight categories; 19 verified representative targets, five unresolved road/locality targets remain unscored. Original references preserved.",
+  "query_count": 24,
+  "executed_at_utc": "2026-11-19T18:06:09.092134+00:00",
+  "ground_truth_verified_count": 19,
+  "thresholds_calibrated": false,
+  "runs": [
+    {
+      "query": "Indiranagar, Bengaluru",
+      "provider": "geoapify",
+      "status": "ok",
+      "fallback_triggered": false,
+      "scored": true,
+      "tolerance_m": 500,
+      "top1_correct": true,
+      "top3_correct": true,
+      "positional_error_m": [
+        0.0,
+        593.7,
+        604.8
+      ],
+      "geographic_relevance": [
+        true,
+        true,
+        true
+      ],
+      "incorrect_locality": false,
+      "results": [
+        {
+          "place_id": "geoapify:51498a236afd6853405970f6bd3c53f22940f00103f9018111c31a00000000c0020592030b496e646972616e61676172",
+          "name": "Indiranagar",
+          "display_address": "Indiranagar, Bengaluru, Bengaluru Central City Corporation, India",
+          "lat": 12.9732913,
+          "lon": 77.6404672,
+          "category": "populated_place",
+          "confidence": 1.0,
+          "street_confidence": null,
+          "building_confidence": null,
+          "provider": "geoapify",
+          "attribution": "Powered by Geoapify; \u00a9 OpenStreetMap contributors (ODbL); \u00a9 OpenStreetMap contributors",
+          "datasource": {
+            "sourcename": "openstreetmap",
+            "attribution": "\u00a9 OpenStreetMap contributors",
+            "license": "Open Database License",
+            "url": "https://www.openstreetmap.org/copyright"
+          }
+        },
+        {
+          "place_id": "geoapify:5158ce39d3df68534059543a58ffe7f42940f00103f901cf55857d01000000c0020192030b496e646972616e61676172",
+          "name": "Indiranagar",
+          "display_address": "Indiranagar, Chinmaya Mission Hospital Road, Hoysala Nagara Central, Indiranagar 1st Stage, Bengaluru Central City Corporation, Bengaluru - 560038, KA, India",
+          "lat": 12.9783325,
+          "lon": 77.6386612,
+          "category": "amenity",
+          "confidence": 1.0,
+          "street_confidence": null,
+          "building_confidence": null,
+          "provider": "geoapify",
+          "attribution": "Powered by Geoapify; \u00a9 OpenStreetMap contributors (ODbL); \u00a9 OpenStreetMap contributors",
+          "datasource": {
+            "sourcename": "openstreetmap",
+            "attribution": "\u00a9 OpenStreetMap contributors",
+            "license": "Open Database License",
+            "url": "https://www.openstreetmap.org/copyright"
+          }
+        },
+        {
+          "place_id": "geoapify:51efaf79b02069534059ccbee1f4e4f42940f00103f9013a3c923703000000c0020192032d4865616c696e672048616e647320436c696e6963202d20496e646972616e616761722c2042656e67616c757275e203246f70656e7374726565746d61703a76656e75653a6e6f64652f3133383137323332343432",
+          "name": "Healing Hands Clinic - Indiranagar, Bengaluru",
+          "display_address": "Healing Hands Clinic - Indiranagar, Bengaluru, Healing Hands Clinic - Indiranagar, 3rd Floor Krishvi Aspire, #516, Chinmaya Mission Hospital Road, Indiranagar, Bengaluru Central City Corporation, Bengaluru - 560038, KA, India",
+          "lat": 12.9783093,
+          "lon": 77.6426202,
+          "category": "healthcare.hospital",
+          "confidence": 1.0,
+          "street_confidence": null,
+          "building_confidence": null,
+          "provider": "geoapify",
+          "attribution": "Powered by Geoapify; \u00a9 OpenStreetMap contributors (ODbL); \u00a9 OpenStreetMap contributors",
+          "datasource": {
+            "sourcename": "openstreetmap",
+            "attribution": "\u00a9 OpenStreetMap contributors",
+            "license": "Open Database License",
+            "url": "https://www.openstreetmap.org/copyright"
+          }
+        }
+      ],
+      "latency_ms": 1484.4,
+      "locality_label_mismatch": false
+    },
+    {
+      "query": "Indiranagar, Bengaluru",
+      "provider": "photon",
+      "status": "unavailable",
+      "scored": false,
+      "latency_ms": null,
+      "reason": "Provider not configured or local health check failed; no search issued"
+    },
+    {
+      "query": "Indiranagar, Bengaluru",
+      "provider": "combined",
+      "status": "ok",
+      "fallback_triggered": false,
+      "scored": true,
+      "tolerance_m": 500,
+      "top1_correct": true,
+      "top3_correct": true,
+      "positional_error_m": [
+        0.0,
+        593.7,
+        604.8
+      ],
+      "geographic_relevance": [
+        true,
+        true,
+        true
+      ],
+      "incorrect_locality": false,
+      "results": [
+        {
+          "place_id": "geoapify:51498a236afd6853405970f6bd3c53f22940f00103f9018111c31a00000000c0020592030b496e646972616e61676172",
+          "name": "Indiranagar",
+          "display_address": "Indiranagar, Bengaluru, Bengaluru Central City Corporation, India",
+          "lat": 12.9732913,
+          "lon": 77.6404672,
+          "category": "populated_place",
+          "confidence": 1.0,
+          "street_confidence": null,
+          "building_confidence": null,
+          "provider": "geoapify",
+          "attribution": "Powered by Geoapify; \u00a9 OpenStreetMap contributors (ODbL); \u00a9 OpenStreetMap contributors",
+          "datasource": {
+            "sourcename": "openstreetmap",
+            "attribution": "\u00a9 OpenStreetMap contributors",
+            "license": "Open Database License",
+            "url": "https://www.openstreetmap.org/copyright"
+          }
+        },
+        {
+          "place_id": "geoapify:5158ce39d3df68534059543a58ffe7f42940f00103f901cf55857d01000000c0020192030b496e646972616e61676172",
+          "name": "Indiranagar",
+          "display_address": "Indiranagar, Chinmaya Mission Hospital Road, Hoysala Nagara Central, Indiranagar 1st Stage, Bengaluru Central City Corporation, Bengaluru - 560038, KA, India",
+          "lat": 12.9783325,
+          "lon": 77.6386612,
+          "category": "amenity",
+          "confidence": 1.0,
+          "street_confidence": null,
+          "building_confidence": null,
+          "provider": "geoapify",
+          "attribution": "Powered by Geoapify; \u00a9 OpenStreetMap contributors (ODbL); \u00a9 OpenStreetMap contributors",
+          "datasource": {
+            "sourcename": "openstreetmap",
+            "attribution": "\u00a9 OpenStreetMap contributors",
+            "license": "Open Database License",
+            "url": "https://www.openstreetmap.org/copyright"
+          }
+        },
+        {
+          "place_id": "geoapify:51efaf79b02069534059ccbee1f4e4f42940f00103f9013a3c923703000000c0020192032d4865616c696e672048616e647320436c696e6963202d20496e646972616e616761722c2042656e67616c757275e203246f70656e7374726565746d61703a76656e75653a6e6f64652f3133383137323332343432",
+          "name": "Healing Hands Clinic - Indiranagar, Bengaluru",
+          "display_address": "Healing Hands Clinic - Indiranagar, Bengaluru, Healing Hands Clinic - Indiranagar, 3rd Floor Krishvi Aspire, #516, Chinmaya Mission Hospital Road, Indiranagar, Bengaluru Central City Corporation, Bengaluru - 560038, KA, India",
+          "lat": 12.9783093,
+          "lon": 77.6426202,
+          "category": "healthcare.hospital",
+          "confidence": 1.0,
+          "street_confidence": null,
+          "building_confidence": null,
+          "provider": "geoapify",
+          "attribution": "Powered by Geoapify; \u00a9 OpenStreetMap contributors (ODbL); \u00a9 OpenStreetMap contributors",
+          "datasource": {
+            "sourcename": "openstreetmap",
+            "attribution": "\u00a9 OpenStreetMap contributors",
+            "license": "Open Database License",
+            "url": "https://www.openstreetmap.org/copyright"
+          }
+        }
+      ],
+      "latency_ms": 1154.8,
+      "locality_label_mismatch": false
+    },
+    {
+      "query": "Koramangala 4th Block",
+      "provider": "geoapify",
+      "status": "ok",
+      "fallback_triggered": false,
+      "scored": true,
+      "tolerance_m": 400,
+      "top1_correct": true,
+      "top3_correct": true,
+      "positional_error_m": [
+        47.3
+      ],
+      "geographic_relevance": [
+        true
+      ],
+      "incorrect_locality": false,
+      "results": [
+        {
+          "place_id": "geoapify:51ab7bbf2c4868534059a2de420d95dd2940f00102f901caa48b3f00000000c002059203154b6f72616d616e67616c612034746820426c6f636b",
+          "name": "Koramangala 4th Block",
+          "display_address": "Koramangala 4th Block, Bengaluru, Bengaluru Urban, India",
+          "lat": 12.9327778,
+          "lon": 77.6294052,
+          "category": "populated_place",
+          "confidence": 1.0,
+          "street_confidence": null,
+          "building_confidence": null,
+          "provider": "geoapify",
+          "attribution": "Powered by Geoapify; \u00a9 OpenStreetMap contributors (ODbL); \u00a9 OpenStreetMap contributors",
+          "datasource": {
+            "sourcename": "openstreetmap",
+            "attribution": "\u00a9 OpenStreetMap contributors",
+            "license": "Open Database License",
+            "url": "https://www.openstreetmap.org/copyright"
+          }
+        }
+      ],
+      "latency_ms": 492.1,
+      "locality_label_mismatch": false
+    },
+    {
+      "query": "Koramangala 4th Block",
+      "provider": "photon",
+      "status": "unavailable",
+      "scored": false,
+      "latency_ms": null,
+      "reason": "Provider not configured or local health check failed; no search issued"
+    },
+    {
+      "query": "Koramangala 4th Block",
+      "provider": "combined",
+      "status": "ok",
+      "fallback_triggered": false,
+      "scored": true,
+      "tolerance_m": 400,
+      "top1_correct": true,
+      "top3_correct": true,
+      "positional_error_m": [
+        47.3
+      ],
+      "geographic_relevance": [
+        true
+      ],
+      "incorrect_locality": false,
+      "results": [
+        {
+          "place_id": "geoapify:51ab7bbf2c4868534059a2de420d95dd2940f00102f901caa48b3f00000000c002059203154b6f72616d616e67616c612034746820426c6f636b",
+          "name": "Koramangala 4th Block",
+          "display_address": "Koramangala 4th Block, Bengaluru, Bengaluru Urban, India",
+          "lat": 12.9327778,
+          "lon": 77.6294052,
+          "category": "populated_place",
+          "confidence": 1.0,
+          "street_confidence": null,
+          "building_confidence": null,
+          "provider": "geoapify",
+          "attribution": "Powered by Geoapify; \u00a9 OpenStreetMap contributors (ODbL); \u00a9 OpenStreetMap contributors",
+          "datasource": {
+            "sourcename": "openstreetmap",
+            "attribution": "\u00a9 OpenStreetMap contributors",
+            "license": "Open Database License",
+            "url": "https://www.openstreetmap.org/copyright"
+          }
+        }
+      ],
+      "latency_ms": 628.1,
+      "locality_label_mismatch": false
+    },
+    {
+      "query": "Kadubisanahalli",
+      "provider": "geoapify",
+      "status": "ok",
+      "fallback_triggered": false,
+      "scored": false,
+      "tolerance_m": 500,
+      "top1_correct": null,
+      "top3_correct": null,
+      "positional_error_m": [],
+      "geographic_relevance": [
+        true
+      ],
+      "incorrect_locality": null,
+      "results": [
+        {
+          "place_id": "geoapify:51377b56887d6c5340595dd5a3bacadc2940f00102f901fba95e4e00000000c002049203194b616475626973616e6168616c6c69204d61696e20526f6164",
+          "name": "Kadubisanahalli Main Road",
+          "display_address": "Kadubisanahalli Main Road, Panathur, Bengaluru - 560103, KA, India",
+          "lat": 12.9312342,
+          "lon": 77.6951619,
+          "category": "street",
+          "confidence": 1.0,
+          "street_confidence": 1.0,
+          "building_confidence": null,
+          "provider": "geoapify",
+          "attribution": "Powered by Geoapify; \u00a9 OpenStreetMap contributors (ODbL); \u00a9 OpenStreetMap contributors",
+          "datasource": {
+            "sourcename": "openstreetmap",
+            "attribution": "\u00a9 OpenStreetMap contributors",
+            "license": "Open Database License",
+            "url": "https://www.openstreetmap.org/copyright"
+          }
+        }
+      ],
+      "latency_ms": 958.1,
+      "locality_label_mismatch": false
+    },
+    {
+      "query": "Kadubisanahalli",
+      "provider": "photon",
+      "status": "unavailable",
+      "scored": false,
+      "latency_ms": null,
+      "reason": "Provider not configured or local health check failed; no search issued"
+    },
+    {
+      "query": "Kadubisanahalli",
+      "provider": "combined",
+      "status": "ok",
+      "fallback_triggered": false,
+      "scored": false,
+      "tolerance_m": 500,
+      "top1_correct": null,
+      "top3_correct": null,
+      "positional_error_m": [],
+      "geographic_relevance": [
+        true
+      ],
+      "incorrect_locality": null,
+      "results": [
+        {
+          "place_id": "geoapify:51377b56887d6c5340595dd5a3bacadc2940f00102f901fba95e4e00000000c002049203194b616475626973616e6168616c6c69204d61696e20526f6164",
+          "name": "Kadubisanahalli Main Road",
+          "display_address": "Kadubisanahalli Main Road, Panathur, Bengaluru - 560103, KA, India",
+          "lat": 12.9312342,
+          "lon": 77.6951619,
+          "category": "street",
+          "confidence": 1.0,
+          "street_confidence": 1.0,
+          "building_confidence": null,
+          "provider": "geoapify",
+          "attribution": "Powered by Geoapify; \u00a9 OpenStreetMap contributors (ODbL); \u00a9 OpenStreetMap contributors",
+          "datasource": {
+            "sourcename": "openstreetmap",
+            "attribution": "\u00a9 OpenStreetMap contributors",
+            "license": "Open Database License",
+            "url": "https://www.openstreetmap.org/copyright"
+          }
+        }
+      ],
+      "latency_ms": 1601.1,
+      "locality_label_mismatch": false
+    },
+    {
+      "query": "12th Main Road, Indiranagar",
+      "provider": "geoapify",
+      "status": "ok",
+      "fallback_triggered": false,
+      "scored": false,
+      "tolerance_m": 150,
+      "top1_correct": null,
+      "top3_correct": null,
+      "positional_error_m": [],
+      "geographic_relevance": [
+        true,
+        true,
+        true
+      ],
+      "incorrect_locality": null,
+      "results": [
+        {
+          "place_id": "geoapify:51df26929ed868534059a66a717ca3f02940f00102f901863c322900000000c0020492030e31327468204d61696e20526f6164",
+          "name": "12th Main Road",
+          "display_address": "12th Main Road, Indiranagar, Bengaluru - 560008, KA, India",
+          "lat": 12.9699973,
+          "lon": 77.6382214,
+          "category": "street",
+          "confidence": 1.0,
+          "street_confidence": 1.0,
+          "building_confidence": null,
+          "provider": "geoapify",
+          "attribution": "Powered by Geoapify; \u00a9 OpenStreetMap contributors (ODbL); \u00a9 OpenStreetMap contributors",
+          "datasource": {
+            "sourcename": "openstreetmap",
+            "attribution": "\u00a9 OpenStreetMap contributors",
+            "license": "Open Database License",
+            "url": "https://www.openstreetmap.org/copyright"
+          }
+        },
+        {
+          "place_id": "geoapify:511904b1c71f6953405914090154ccf02940f00102f901be32322900000000c0020492030e31327468204d61696e20526f6164",
+          "name": "12th Main Road",
+          "display_address": "12th Main Road, Indiranagar, Bengaluru - 560038, KA, India",
+          "lat": 12.9703089,
+          "lon": 77.6425647,
+          "category": "street",
+          "confidence": 1.0,
+          "street_confidence": 1.0,
+          "building_confidence": null,
+          "provider": "geoapify",
+          "attribution": "Powered by Geoapify; \u00a9 OpenStreetMap contributors (ODbL); \u00a9 OpenStreetMap contributors",
+          "datasource": {
+            "sourcename": "openstreetmap",
+            "attribution": "\u00a9 OpenStreetMap contributors",
+            "license": "Open Database License",
+            "url": "https://www.openstreetmap.org/copyright"
+          }
+        },
+        {
+          "place_id": "geoapify:5119a9f7544e695340594033880fecf02940f00102f901f72b7c1400000000c00203e203236f70656e7374726565746d61703a616464726573733a7761792f333433363832303339",
+          "name": "611, 12th Main Road,Indiranagar",
+          "display_address": "611, 12th Main Road,Indiranagar, Indiranagar, Bengaluru - 560008, KA, India",
+          "lat": 12.970551,
+          "lon": 77.645406,
+          "category": "building",
+          "confidence": 1.0,
+          "street_confidence": 1.0,
+          "building_confidence": null,
+          "provider": "geoapify",
+          "attribution": "Powered by Geoapify; \u00a9 OpenStreetMap contributors (ODbL); \u00a9 OpenStreetMap contributors",
+          "datasource": {
+            "sourcename": "openstreetmap",
+            "attribution": "\u00a9 OpenStreetMap contributors",
+            "license": "Open Database License",
+            "url": "https://www.openstreetmap.org/copyright"
+          }
+        }
+      ],
+      "latency_ms": 901.6,
+      "locality_label_mismatch": false
+    },
+    {
+      "query": "12th Main Road, Indiranagar",
+      "provider": "photon",
+      "status": "unavailable",
+      "scored": false,
+      "latency_ms": null,
+      "reason": "Provider not configured or local health check failed; no search issued"
+    },
+    {
+      "query": "12th Main Road, Indiranagar",
+      "provider": "combined",
+      "status": "ok",
+      "fallback_triggered": false,
+      "scored": false,
+      "tolerance_m": 150,
+      "top1_correct": null,
+      "top3_correct": null,
+      "positional_error_m": [],
+      "geographic_relevance": [
+        true,
+        true,
+        true
+      ],
+      "incorrect_locality": null,
+      "results": [
+        {
+          "place_id": "geoapify:51df26929ed868534059a66a717ca3f02940f00102f901863c322900000000c0020492030e31327468204d61696e20526f6164",
+          "name": "12th Main Road",
+          "display_address": "12th Main Road, Indiranagar, Bengaluru - 560008, KA, India",
+          "lat": 12.9699973,
+          "lon": 77.6382214,
+          "category": "street",
+          "confidence": 1.0,
+          "street_confidence": 1.0,
+          "building_confidence": null,
+          "provider": "geoapify",
+          "attribution": "Powered by Geoapify; \u00a9 OpenStreetMap contributors (ODbL); \u00a9 OpenStreetMap contributors",
+          "datasource": {
+            "sourcename": "openstreetmap",
+            "attribution": "\u00a9 OpenStreetMap contributors",
+            "license": "Open Database License",
+            "url": "https://www.openstreetmap.org/copyright"
+          }
+        },
+        {
+          "place_id": "geoapify:511904b1c71f6953405914090154ccf02940f00102f901be32322900000000c0020492030e31327468204d61696e20526f6164",
+          "name": "12th Main Road",
+          "display_address": "12th Main Road, Indiranagar, Bengaluru - 560038, KA, India",
+          "lat": 12.9703089,
+          "lon": 77.6425647,
+          "category": "street",
+          "confidence": 1.0,
+          "street_confidence": 1.0,
+          "building_confidence": null,
+          "provider": "geoapify",
+          "attribution": "Powered by Geoapify; \u00a9 OpenStreetMap contributors (ODbL); \u00a9 OpenStreetMap contributors",
+          "datasource": {
+            "sourcename": "openstreetmap",
+            "attribution": "\u00a9 OpenStreetMap contributors",
+            "license": "Open Database License",
+            "url": "https://www.openstreetmap.org/copyright"
+          }
+        },
+        {
+          "place_id": "geoapify:5119a9f7544e695340594033880fecf02940f00102f901f72b7c1400000000c00203e203236f70656e7374726565746d61703a616464726573733a7761792f333433363832303339",
+          "name": "611, 12th Main Road,Indiranagar",
+          "display_address": "611, 12th Main Road,Indiranagar, Indiranagar, Bengaluru - 560008, KA, India",
+          "lat": 12.970551,
+          "lon": 77.645406,
+          "category": "building",
+          "confidence": 1.0,
+          "street_confidence": 1.0,
+          "building_confidence": null,
+          "provider": "geoapify",
+          "attribution": "Powered by Geoapify; \u00a9 OpenStreetMap contributors (ODbL); \u00a9 OpenStreetMap contributors",
+          "datasource": {
+            "sourcename": "openstreetmap",
+            "attribution": "\u00a9 OpenStreetMap contributors",
+            "license": "Open Database License",
+            "url": "https://www.openstreetmap.org/copyright"
+          }
+        }
+      ],
+      "latency_ms": 1164.6,
+      "locality_label_mismatch": false
+    },
+    {
+      "query": "27th Main Road, HSR Layout Sector 1",
+      "provider": "geoapify",
+      "status": "ok",
+      "fallback_triggered": true,
+      "scored": false,
+      "tolerance_m": 150,
+      "top1_correct": null,
+      "top3_correct": null,
+      "positional_error_m": [],
+      "geographic_relevance": [
+        true,
+        true,
+        true
+      ],
+      "incorrect_locality": null,
+      "results": [
+        {
+          "place_id": "geoapify:514e40b8a7506753405949edeafaaad52940f00102f901e53e122700000000c0020492030e32377468204d61696e20526f6164",
+          "name": "27th Main Road",
+          "display_address": "27th Main Road, BTM Layout 1st Stage, Bengaluru - 560068, KA, India",
+          "lat": 12.9173201,
+          "lon": 77.6142978,
+          "category": "street",
+          "confidence": 0.09818181818181819,
+          "street_confidence": 0.162,
+          "building_confidence": null,
+          "provider": "geoapify",
+          "attribution": "Powered by Geoapify; \u00a9 OpenStreetMap contributors (ODbL); \u00a9 OpenStreetMap contributors",
+          "datasource": {
+            "sourcename": "openstreetmap",
+            "attribution": "\u00a9 OpenStreetMap contributors",
+            "license": "Open Database License",
+            "url": "https://www.openstreetmap.org/copyright"
+          }
+        },
+        {
+          "place_id": "geoapify:51433a3c84f1635340593b2bb35252d92940f00102f901958d740200000000c0020492030e32377468204d61696e20526f6164",
+          "name": "27th Main Road",
+          "display_address": "27th Main Road, Banashankari 2nd Stage, Bengaluru - 560070, KA, India",
+          "lat": 12.9244562,
+          "lon": 77.561616,
+          "category": "street",
+          "confidence": 0.025252525252525252,
+          "street_confidence": 0.03333333333333333,
+          "building_confidence": null,
+          "provider": "geoapify",
+          "attribution": "Powered by Geoapify; \u00a9 OpenStreetMap contributors (ODbL); \u00a9 OpenStreetMap contributors",
+          "datasource": {
+            "sourcename": "openstreetmap",
+            "attribution": "\u00a9 OpenStreetMap contributors",
+            "license": "Open Database License",
+            "url": "https://www.openstreetmap.org/copyright"
+          }
+        },
+        {
+          "place_id": "geoapify:5149580a374f6753405993e2e313b2d32940f00102f90134d3ac0100000000c0020492030e32377468204d61696e20526f6164",
+          "name": "27th Main Road",
+          "display_address": "27th Main Road, BTM Layout, Bengaluru - 560076, KA, India",
+          "lat": 12.913468,
+          "lon": 77.6142099,
+          "category": "street",
+          "confidence": 0.1212121212121212,
+          "street_confidence": 0.19999999999999998,
+          "building_confidence": null,
+          "provider": "geoapify",
+          "attribution": "Powered by Geoapify; \u00a9 OpenStreetMap contributors (ODbL); \u00a9 OpenStreetMap contributors",
+          "datasource": {
+            "sourcename": "openstreetmap",
+            "attribution": "\u00a9 OpenStreetMap contributors",
+            "license": "Open Database License",
+            "url": "https://www.openstreetmap.org/copyright"
+          }
+        }
+      ],
+      "latency_ms": 1552.3,
+      "locality_label_mismatch": true
+    },
+    {
+      "query": "27th Main Road, HSR Layout Sector 1",
+      "provider": "photon",
+      "status": "unavailable",
+      "scored": false,
+      "latency_ms": null,
+      "reason": "Provider not configured or local health check failed; no search issued"
+    },
+    {
+      "query": "27th Main Road, HSR Layout Sector 1",
+      "provider": "combined",
+      "status": "ok",
+      "fallback_triggered": true,
+      "scored": false,
+      "tolerance_m": 150,
+      "top1_correct": null,
+      "top3_correct": null,
+      "positional_error_m": [],
+      "geographic_relevance": [
+        true,
+        true,
+        true
+      ],
+      "incorrect_locality": null,
+      "results": [
+        {
+          "place_id": "geoapify:51d355702eb4695340591dde18a7c6d82940f00102f901ad9f764600000000c0020492030e32377468204d61696e20526f6164",
+          "name": "27th Main Road",
+          "display_address": "27th Main Road, HSR Layout, Bengaluru - 560102, KA, India",
+          "lat": 12.9233906,
+          "lon": 77.6516224,
+          "category": "street",
+          "confidence": 0.0,
+          "street_confidence": null,
+          "building_confidence": null,
+          "provider": "geoapify",
+          "attribution": "Powered by Geoapify; \u00a9 OpenStreetMap contributors (ODbL); \u00a9 OpenStreetMap contributors",
+          "datasource": {
+            "sourcename": "openstreetmap",
+            "attribution": "\u00a9 OpenStreetMap contributors",
+            "license": "Open Database License",
+            "url": "https://www.openstreetmap.org/copyright"
+          }
+        },
+        {
+          "place_id": "geoapify:518cd651d50468534059537b116dc7d42940c0020492030d317374204d61696e20526f6164e203266f70656e7374726565746d61703a7374726565743a706f6c796c696e653a3234363932343032",
+          "name": "1st Main Road",
+          "display_address": "1st Main Road, HSR Layout, Bangalore -, KA, India",
+          "lat": 12.915584,
+          "lon": 77.625295,
+          "category": "street",
+          "confidence": 0.0,
+          "street_confidence": null,
+          "building_confidence": null,
+          "provider": "geoapify",
+          "attribution": "Powered by Geoapify; \u00a9 OpenStreetMap contributors (ODbL); \u00a9 OpenStreetMap contributors",
+          "datasource": {
+            "sourcename": "openstreetmap",
+            "attribution": "\u00a9 OpenStreetMap contributors",
+            "license": "Open Database License",
+            "url": "https://www.openstreetmap.org/copyright"
+          }
+        },
+        {
+          "place_id": "geoapify:517841446ada685340597b681f2bf8d52940c0020492030e31347468204d61696e20526f6164e203266f70656e7374726565746d61703a7374726565743a706f6c796c696e653a3332353537303934",
+          "name": "14th Main Road",
+          "display_address": "14th Main Road, HSR Layout, Bangalore -, KA, India",
+          "lat": 12.917909,
+          "lon": 77.638331,
+          "category": "street",
+          "confidence": 0.0,
+          "street_confidence": null,
+          "building_confidence": null,
+          "provider": "geoapify",
+          "attribution": "Powered by Geoapify; \u00a9 OpenStreetMap contributors (ODbL); \u00a9 OpenStreetMap contributors",
+          "datasource": {
+            "sourcename": "openstreetmap",
+            "attribution": "\u00a9 OpenStreetMap contributors",
+            "license": "Open Database License",
+            "url": "https://www.openstreetmap.org/copyright"
+          }
+        }
+      ],
+      "latency_ms": 3848.2,
+      "locality_label_mismatch": false
+    },
+    {
+      "query": "14th Cross, Malleshwaram",
+      "provider": "geoapify",
+      "status": "ok",
+      "fallback_triggered": true,
+      "scored": false,
+      "tolerance_m": 150,
+      "top1_correct": null,
+      "top3_correct": null,
+      "positional_error_m": [],
+      "geographic_relevance": [
+        true,
+        true
+      ],
+      "incorrect_locality": null,
+      "results": [
+        {
+          "place_id": "geoapify:51f689f2bb9f645340595797530262fe2940f00102f9013015310200000000c002049203164d616c6c657368776172616d20556e64657270617373",
+          "name": "Malleshwaram Underpass",
+          "display_address": "Malleshwaram Underpass, Bengaluru - 560003, KA, India",
+          "lat": 12.9968415,
+          "lon": 77.5722494,
+          "category": "street",
+          "confidence": 0.0,
+          "street_confidence": null,
+          "building_confidence": null,
+          "provider": "geoapify",
+          "attribution": "Powered by Geoapify; \u00a9 OpenStreetMap contributors (ODbL); \u00a9 OpenStreetMap contributors",
+          "datasource": {
+            "sourcename": "openstreetmap",
+            "attribution": "\u00a9 OpenStreetMap contributors",
+            "license": "Open Database License",
+            "url": "https://www.openstreetmap.org/copyright"
+          }
+        },
+        {
+          "place_id": "geoapify:51d5eaabab82645340597c821f306afe2940f00102f9015882300200000000c002049203164d616c6c657368776172616d20556e64657270617373",
+          "name": "Malleshwaram Underpass",
+          "display_address": "Malleshwaram Underpass, Malleswaram, Bengaluru - 560003, KA, India",
+          "lat": 12.9969039,
+          "lon": 77.5704755,
+          "category": "street",
+          "confidence": 0.0,
+          "street_confidence": null,
+          "building_confidence": null,
+          "provider": "geoapify",
+          "attribution": "Powered by Geoapify; \u00a9 OpenStreetMap contributors (ODbL); \u00a9 OpenStreetMap contributors",
+          "datasource": {
+            "sourcename": "openstreetmap",
+            "attribution": "\u00a9 OpenStreetMap contributors",
+            "license": "Open Database License",
+            "url": "https://www.openstreetmap.org/copyright"
+          }
+        }
+      ],
+      "latency_ms": 1015.7,
+      "locality_label_mismatch": false
+    },
+    {
+      "query": "14th Cross, Malleshwaram",
+      "provider": "photon",
+      "status": "unavailable",
+      "scored": false,
+      "latency_ms": null,
+      "reason": "Provider not configured or local health check failed; no search issued"
+    },
+    {
+      "query": "14th Cross, Malleshwaram",
+      "provider": "combined",
+      "status": "ok",
+      "fallback_triggered": true,
+      "scored": false,
+      "tolerance_m": 150,
+      "top1_correct": null,
+      "top3_correct": null,
+      "positional_error_m": [],
+      "geographic_relevance": [
+        true,
+        true
+      ],
+      "incorrect_locality": null,
+      "results": [
+        {
+          "place_id": "geoapify:510cc85eef7e645340596654747f50022a40f00102f90108205b0f00000000c0020492030f313474682043726f737320526f6164",
+          "name": "14th Cross Road",
+          "display_address": "14th Cross Road, Malleswaram, Bengaluru - 560003, KA, India",
+          "lat": 13.0045204,
+          "lon": 77.5702475,
+          "category": "street",
+          "confidence": 0.0,
+          "street_confidence": null,
+          "building_confidence": null,
+          "provider": "geoapify",
+          "attribution": "Powered by Geoapify; \u00a9 OpenStreetMap contributors (ODbL); \u00a9 OpenStreetMap contributors",
+          "datasource": {
+            "sourcename": "openstreetmap",
+            "attribution": "\u00a9 OpenStreetMap contributors",
+            "license": "Open Database License",
+            "url": "https://www.openstreetmap.org/copyright"
+          }
+        },
+        {
+          "place_id": "geoapify:51fd35b45c11645340591758117f5e022a40f00102f901fc733a4900000000c002049203113134746820412043726f737320526f6164",
+          "name": "14th A Cross Road",
+          "display_address": "14th A Cross Road, Malleswaram, Bengaluru - 560003, KA, India",
+          "lat": 13.0046272,
+          "lon": 77.5635597,
+          "category": "street",
+          "confidence": 0.0,
+          "street_confidence": null,
+          "building_confidence": null,
+          "provider": "geoapify",
+          "attribution": "Powered by Geoapify; \u00a9 OpenStreetMap contributors (ODbL); \u00a9 OpenStreetMap contributors",
+          "datasource": {
+            "sourcename": "openstreetmap",
+            "attribution": "\u00a9 OpenStreetMap contributors",
+            "license": "Open Database License",
+            "url": "https://www.openstreetmap.org/copyright"
+          }
+        }
+      ],
+      "latency_ms": 3620.6,
+      "locality_label_mismatch": true
+    },
+    {
+      "query": "BEML Layout, Rajarajeshwari Nagar",
+      "provider": "geoapify",
+      "status": "ok",
+      "fallback_triggered": true,
+      "scored": false,
+      "tolerance_m": 400,
+      "top1_correct": null,
+      "top3_correct": null,
+      "positional_error_m": [],
+      "geographic_relevance": [
+        true
+      ],
+      "incorrect_locality": null,
+      "results": [
+        {
+          "place_id": "geoapify:514bebcac23261534059ca9ea97c74df2940f00102f901c3915f4500000000c0020492032752616a6172616a65736877617269204e61676172204172636820466c796f7665722028752f6329",
+          "name": "Rajarajeshwari Nagar Arch Flyover (u/c)",
+          "display_address": "Rajarajeshwari Nagar Arch Flyover (u/c), Bengaluru - 560039, KA, India",
+          "lat": 12.9364356,
+          "lon": 77.5187232,
+          "category": "street",
+          "confidence": 0.008134301020408163,
+          "street_confidence": 0.037960071428571426,
+          "building_confidence": null,
+          "provider": "geoapify",
+          "attribution": "Powered by Geoapify; \u00a9 OpenStreetMap contributors (ODbL); \u00a9 OpenStreetMap contributors",
+          "datasource": {
+            "sourcename": "openstreetmap",
+            "attribution": "\u00a9 OpenStreetMap contributors",
+            "license": "Open Database License",
+            "url": "https://www.openstreetmap.org/copyright"
+          }
+        }
+      ],
+      "latency_ms": 854.9,
+      "locality_label_mismatch": false
+    },
+    {
+      "query": "BEML Layout, Rajarajeshwari Nagar",
+      "provider": "photon",
+      "status": "unavailable",
+      "scored": false,
+      "latency_ms": null,
+      "reason": "Provider not configured or local health check failed; no search issued"
+    },
+    {
+      "query": "BEML Layout, Rajarajeshwari Nagar",
+      "provider": "combined",
+      "status": "ok",
+      "fallback_triggered": true,
+      "scored": false,
+      "tolerance_m": 400,
+      "top1_correct": null,
+      "top3_correct": null,
+      "positional_error_m": [],
+      "geographic_relevance": [
+        true,
+        true,
+        true
+      ],
+      "incorrect_locality": null,
+      "results": [
+        {
+          "place_id": "geoapify:51fd6daa494b61534059835957bbdcd62940f00103f90139898a0602000000c0020592031542454d4c204c61796f757420337264205374616765",
+          "name": "BEML Layout 3rd Stage",
+          "display_address": "Rajarajeshwari Nagar, BEML Layout 3rd Stage, Bengaluru - 560098, KA, India",
+          "lat": 12.9196528,
+          "lon": 77.5202202,
+          "category": "populated_place",
+          "confidence": 0.0,
+          "street_confidence": null,
+          "building_confidence": null,
+          "provider": "geoapify",
+          "attribution": "Powered by Geoapify; \u00a9 OpenStreetMap contributors (ODbL); \u00a9 OpenStreetMap contributors",
+          "datasource": {
+            "sourcename": "openstreetmap",
+            "attribution": "\u00a9 OpenStreetMap contributors",
+            "license": "Open Database License",
+            "url": "https://www.openstreetmap.org/copyright"
+          }
+        },
+        {
+          "place_id": "geoapify:51b715b13e5461534059f3ae7ac03cd42940f00103f901f1252a9000000000c00201920317446f75626c6520526f61642042454d4c204c61796f7574",
+          "name": "Double Road BEML Layout",
+          "display_address": "Double Road BEML Layout, Jawaharlal Nehru Road, Rajarajeshwari Nagar, Bengaluru - 560098, KA, India",
+          "lat": 12.914526,
+          "lon": 77.5207669,
+          "category": "public_transport.bus",
+          "confidence": 0.0,
+          "street_confidence": null,
+          "building_confidence": null,
+          "provider": "geoapify",
+          "attribution": "Powered by Geoapify; \u00a9 OpenStreetMap contributors (ODbL); \u00a9 OpenStreetMap contributors",
+          "datasource": {
+            "sourcename": "openstreetmap",
+            "attribution": "\u00a9 OpenStreetMap contributors",
+            "license": "Open Database License",
+            "url": "https://www.openstreetmap.org/copyright"
+          }
+        },
+        {
+          "place_id": "geoapify:51fb2df0cb4f61534059384e0af31ed72940f00103f90108232a9000000000c0020192030c42454d4c20436f6d706c6578",
+          "name": "BEML Complex",
+          "display_address": "BEML Complex, Jawaharlal Nehru Road, Rajarajeshwari Nagar, Bengaluru - 560098, KA, India",
+          "lat": 12.920158,
+          "lon": 77.5204954,
+          "category": "public_transport.bus",
+          "confidence": 0.0,
+          "street_confidence": null,
+          "building_confidence": null,
+          "provider": "geoapify",
+          "attribution": "Powered by Geoapify; \u00a9 OpenStreetMap contributors (ODbL); \u00a9 OpenStreetMap contributors",
+          "datasource": {
+            "sourcename": "openstreetmap",
+            "attribution": "\u00a9 OpenStreetMap contributors",
+            "license": "Open Database License",
+            "url": "https://www.openstreetmap.org/copyright"
+          }
+        }
+      ],
+      "latency_ms": 3230.9,
+      "locality_label_mismatch": false
+    },
+    {
+      "query": "AMS Layout, Vidyaranyapura",
+      "provider": "geoapify",
+      "status": "ok",
+      "fallback_triggered": true,
+      "scored": true,
+      "tolerance_m": 400,
+      "top1_correct": false,
+      "top3_correct": false,
+      "positional_error_m": [
+        4494.4,
+        3105.0,
+        1113.6
+      ],
+      "geographic_relevance": [
+        true,
+        true,
+        true
+      ],
+      "incorrect_locality": false,
+      "results": [
+        {
+          "place_id": "geoapify:5127c11bd2a863534059dbe275583c182a40f00102f9019c3b210e00000000c00204920313566964796172616e79617075726120526f6164",
+          "name": "Vidyaranyapura Road",
+          "display_address": "Vidyaranyapura Road, Bengaluru - 560013, KA, India",
+          "lat": 13.0473354,
+          "lon": 77.557179,
+          "category": "street",
+          "confidence": 0.040178571428571425,
+          "street_confidence": 0.04591836734693877,
+          "building_confidence": null,
+          "provider": "geoapify",
+          "attribution": "Powered by Geoapify; \u00a9 OpenStreetMap contributors (ODbL); \u00a9 OpenStreetMap contributors",
+          "datasource": {
+            "sourcename": "openstreetmap",
+            "attribution": "\u00a9 OpenStreetMap contributors",
+            "license": "Open Database License",
+            "url": "https://www.openstreetmap.org/copyright"
+          }
+        },
+        {
+          "place_id": "geoapify:517cb5a338c7635340592be56b859f1e2a40f00102f90110ca794500000000c00204920313566964796172616e79617075726120526f6164",
+          "name": "Vidyaranyapura Road",
+          "display_address": "Vidyaranyapura Road, Doddabomasandra, Bengaluru - 560097, KA, India",
+          "lat": 13.0598108,
+          "lon": 77.5590345,
+          "category": "street",
+          "confidence": 0.041666666666666664,
+          "street_confidence": 0.047619047619047616,
+          "building_confidence": null,
+          "provider": "geoapify",
+          "attribution": "Powered by Geoapify; \u00a9 OpenStreetMap contributors (ODbL); \u00a9 OpenStreetMap contributors",
+          "datasource": {
+            "sourcename": "openstreetmap",
+            "attribution": "\u00a9 OpenStreetMap contributors",
+            "license": "Open Database License",
+            "url": "https://www.openstreetmap.org/copyright"
+          }
+        },
+        {
+          "place_id": "geoapify:5108b18e3ec16353405909a93693ca272a40f00102f9013354ac0100000000c00204920313566964796172616e79617075726120526f6164",
+          "name": "Vidyaranyapura Road",
+          "display_address": "Vidyaranyapura Road, Vidyaranyapura, Bengaluru - 560097, KA, India",
+          "lat": 13.0777174,
+          "lon": 77.5586697,
+          "category": "street",
+          "confidence": 0.16874999999999998,
+          "street_confidence": 0.19285714285714284,
+          "building_confidence": null,
+          "provider": "geoapify",
+          "attribution": "Powered by Geoapify; \u00a9 OpenStreetMap contributors (ODbL); \u00a9 OpenStreetMap contributors",
+          "datasource": {
+            "sourcename": "openstreetmap",
+            "attribution": "\u00a9 OpenStreetMap contributors",
+            "license": "Open Database License",
+            "url": "https://www.openstreetmap.org/copyright"
+          }
+        }
+      ],
+      "latency_ms": 718.7,
+      "locality_label_mismatch": false
+    },
+    {
+      "query": "AMS Layout, Vidyaranyapura",
+      "provider": "photon",
+      "status": "unavailable",
+      "scored": false,
+      "latency_ms": null,
+      "reason": "Provider not configured or local health check failed; no search issued"
+    },
+    {
+      "query": "AMS Layout, Vidyaranyapura",
+      "provider": "combined",
+      "status": "ok",
+      "fallback_triggered": true,
+      "scored": true,
+      "tolerance_m": 400,
+      "top1_correct": true,
+      "top3_correct": true,
+      "positional_error_m": [
+        301.7
+      ],
+      "geographic_relevance": [
+        true
+      ],
+      "incorrect_locality": false,
+      "results": [
+        {
+          "place_id": "geoapify:51fd416ed0a863534059b430557ab72b2a40f00102f90180cbbd4d00000000c00204920318566964796172616e796170757261204d61696e20526f6164",
+          "name": "Vidyaranyapura Main Road",
+          "display_address": "Vidyaranyapura Main Road, Attur, Bengaluru - 560097, KA, India",
+          "lat": 13.0853842,
+          "lon": 77.5571786,
+          "category": "street",
+          "confidence": 0.0,
+          "street_confidence": null,
+          "building_confidence": null,
+          "provider": "geoapify",
+          "attribution": "Powered by Geoapify; \u00a9 OpenStreetMap contributors (ODbL); \u00a9 OpenStreetMap contributors",
+          "datasource": {
+            "sourcename": "openstreetmap",
+            "attribution": "\u00a9 OpenStreetMap contributors",
+            "license": "Open Database License",
+            "url": "https://www.openstreetmap.org/copyright"
+          }
+        }
+      ],
+      "latency_ms": 3352.9,
+      "locality_label_mismatch": false
+    },
+    {
+      "query": "Dollars Colony, RMV 2nd Stage",
+      "provider": "geoapify",
+      "status": "ok",
+      "fallback_triggered": true,
+      "scored": true,
+      "tolerance_m": 400,
+      "top1_correct": false,
+      "top3_correct": false,
+      "positional_error_m": [
+        1018.0
+      ],
+      "geographic_relevance": [
+        true
+      ],
+      "incorrect_locality": false,
+      "results": [
+        {
+          "place_id": "geoapify:5161d2ce1f8964534059e69bc827bf102a40f00102f901a7aa4a0d00000000c0020492031b524d5620326e6420537461676520317374204d61696e20526f6164",
+          "name": "RMV 2nd Stage 1st Main Road",
+          "display_address": "RMV 2nd Stage 1st Main Road, Bengaluru - 560094, KA, India",
+          "lat": 13.0327084,
+          "lon": 77.5708694,
+          "category": "street",
+          "confidence": 0.035217391304347825,
+          "street_confidence": 0.03521739130434783,
+          "building_confidence": null,
+          "provider": "geoapify",
+          "attribution": "Powered by Geoapify; \u00a9 OpenStreetMap contributors (ODbL); \u00a9 OpenStreetMap contributors",
+          "datasource": {
+            "sourcename": "openstreetmap",
+            "attribution": "\u00a9 OpenStreetMap contributors",
+            "license": "Open Database License",
+            "url": "https://www.openstreetmap.org/copyright"
+          }
+        }
+      ],
+      "latency_ms": 613.9,
+      "locality_label_mismatch": true
+    },
+    {
+      "query": "Dollars Colony, RMV 2nd Stage",
+      "provider": "photon",
+      "status": "unavailable",
+      "scored": false,
+      "latency_ms": null,
+      "reason": "Provider not configured or local health check failed; no search issued"
+    },
+    {
+      "query": "Dollars Colony, RMV 2nd Stage",
+      "provider": "combined",
+      "status": "ok",
+      "fallback_triggered": true,
+      "scored": true,
+      "tolerance_m": 400,
+      "top1_correct": false,
+      "top3_correct": false,
+      "positional_error_m": [],
+      "geographic_relevance": [],
+      "incorrect_locality": null,
+      "results": [],
+      "latency_ms": 4049.1,
+      "locality_label_mismatch": null
+    },
+    {
+      "query": "Prestige Shantiniketan, Whitefield",
+      "provider": "geoapify",
+      "status": "ok",
+      "fallback_triggered": true,
+      "scored": true,
+      "tolerance_m": 200,
+      "top1_correct": false,
+      "top3_correct": false,
+      "positional_error_m": [
+        2086.2,
+        2050.7,
+        5332.4
+      ],
+      "geographic_relevance": [
+        true,
+        true,
+        true
+      ],
+      "incorrect_locality": false,
+      "results": [
+        {
+          "place_id": "geoapify:5163f261516c6d534059a22aa6d24ffc2940f00102f901e655fd0400000000c0020492030f57686974656669656c6420526f6164",
+          "name": "Whitefield Road",
+          "display_address": "Whitefield Road, Hoodi, Bengaluru - 560048, KA, India",
+          "lat": 12.9927965,
+          "lon": 77.7097362,
+          "category": "street",
+          "confidence": 0.08791208791208792,
+          "street_confidence": 0.08791208791208792,
+          "building_confidence": null,
+          "provider": "geoapify",
+          "attribution": "Powered by Geoapify; \u00a9 OpenStreetMap contributors (ODbL); \u00a9 OpenStreetMap contributors",
+          "datasource": {
+            "sourcename": "openstreetmap",
+            "attribution": "\u00a9 OpenStreetMap contributors",
+            "license": "Open Database License",
+            "url": "https://www.openstreetmap.org/copyright"
+          }
+        },
+        {
+          "place_id": "geoapify:5143514596716d5340591e49939c5dfc2940f00102f901e455fd0400000000c0020492030f57686974656669656c6420526f6164",
+          "name": "Whitefield Road",
+          "display_address": "Whitefield Road, Bengaluru - 560048, KA, India",
+          "lat": 12.9929017,
+          "lon": 77.7100578,
+          "category": "street",
+          "confidence": 0.08791208791208792,
+          "street_confidence": 0.08791208791208792,
+          "building_confidence": null,
+          "provider": "geoapify",
+          "attribution": "Powered by Geoapify; \u00a9 OpenStreetMap contributors (ODbL); \u00a9 OpenStreetMap contributors",
+          "datasource": {
+            "sourcename": "openstreetmap",
+            "attribution": "\u00a9 OpenStreetMap contributors",
+            "license": "Open Database License",
+            "url": "https://www.openstreetmap.org/copyright"
+          }
+        },
+        {
+          "place_id": "geoapify:51671f7585886b5340594da7d0d446002a40f00102f901be53d80100000000c0020492030f57686974656669656c6420526f6164",
+          "name": "Whitefield Road",
+          "display_address": "Whitefield Road, B. Narayanapura, Bengaluru - 560036, KA, India",
+          "lat": 13.0005404,
+          "lon": 77.6802076,
+          "category": "street",
+          "confidence": 0.0,
+          "street_confidence": null,
+          "building_confidence": null,
+          "provider": "geoapify",
+          "attribution": "Powered by Geoapify; \u00a9 OpenStreetMap contributors (ODbL); \u00a9 OpenStreetMap contributors",
+          "datasource": {
+            "sourcename": "openstreetmap",
+            "attribution": "\u00a9 OpenStreetMap contributors",
+            "license": "Open Database License",
+            "url": "https://www.openstreetmap.org/copyright"
+          }
+        }
+      ],
+      "latency_ms": 1017.0,
+      "locality_label_mismatch": false
+    },
+    {
+      "query": "Prestige Shantiniketan, Whitefield",
+      "provider": "photon",
+      "status": "unavailable",
+      "scored": false,
+      "latency_ms": null,
+      "reason": "Provider not configured or local health check failed; no search issued"
+    },
+    {
+      "query": "Prestige Shantiniketan, Whitefield",
+      "provider": "combined",
+      "status": "ok",
+      "fallback_triggered": true,
+      "scored": true,
+      "tolerance_m": 200,
+      "top1_correct": false,
+      "top3_correct": false,
+      "positional_error_m": [
+        575.7
+      ],
+      "geographic_relevance": [
+        true
+      ],
+      "incorrect_locality": false,
+      "results": [
+        {
+          "place_id": "geoapify:5123467474816e53405976b7fcd181fa2940f00103f90168e017eb02000000c002019203165072657374696765205368616e74696e696b6574616e",
+          "name": "Prestige Shantiniketan",
+          "display_address": "Prestige Shantiniketan, Whitefield Road, Hoodi, Bengaluru - 560048, KA, India",
+          "lat": 12.9892717,
+          "lon": 77.7266513,
+          "category": "public_transport.bus",
+          "confidence": 0.6666666666666667,
+          "street_confidence": null,
+          "building_confidence": null,
+          "provider": "geoapify",
+          "attribution": "Powered by Geoapify; \u00a9 OpenStreetMap contributors (ODbL); \u00a9 OpenStreetMap contributors",
+          "datasource": {
+            "sourcename": "openstreetmap",
+            "attribution": "\u00a9 OpenStreetMap contributors",
+            "license": "Open Database License",
+            "url": "https://www.openstreetmap.org/copyright"
+          }
+        }
+      ],
+      "latency_ms": 3437.3,
+      "locality_label_mismatch": false
+    },
+    {
+      "query": "Sobha Dream Acres, Balagere",
+      "provider": "geoapify",
+      "status": "ok",
+      "fallback_triggered": true,
+      "scored": true,
+      "tolerance_m": 200,
+      "top1_correct": true,
+      "top3_correct": true,
+      "positional_error_m": [
+        145.8,
+        364.1,
+        355.3
+      ],
+      "geographic_relevance": [
+        true,
+        true,
+        true
+      ],
+      "incorrect_locality": false,
+      "results": [
+        {
+          "place_id": "geoapify:51c65c0828436e534059d1d2702596df2940f00102f90187166c3900000000c00201920311536f62686120447265616d204163726573",
+          "name": "Sobha Dream Acres",
+          "display_address": "Sobha Dream Acres, Panathur Main Road, Balagere, Balagere, Bengaluru - 560087, KA, India",
+          "lat": 12.9366924,
+          "lon": 77.7228489,
+          "category": "amenity",
+          "confidence": 0.75,
+          "street_confidence": null,
+          "building_confidence": null,
+          "provider": "geoapify",
+          "attribution": "Powered by Geoapify; \u00a9 OpenStreetMap contributors (ODbL); \u00a9 OpenStreetMap contributors",
+          "datasource": {
+            "sourcename": "openstreetmap",
+            "attribution": "\u00a9 OpenStreetMap contributors",
+            "license": "Open Database License",
+            "url": "https://www.openstreetmap.org/copyright"
+          }
+        },
+        {
+          "place_id": "geoapify:51a5619dcf256e534059db15fa6019df2940f00102f90130e4d12d00000000c0020192031c536f62686120447265616d204163726573205261696e666f72657374",
+          "name": "Sobha Dream Acres Rainforest",
+          "display_address": "Sobha Dream Acres Rainforest, Panathur Main Road, Balagere, Bengaluru - 560087, KA, India",
+          "lat": 12.9357405,
+          "lon": 77.7210578,
+          "category": "amenity",
+          "confidence": 0.0,
+          "street_confidence": null,
+          "building_confidence": null,
+          "provider": "geoapify",
+          "attribution": "Powered by Geoapify; \u00a9 OpenStreetMap contributors (ODbL); \u00a9 OpenStreetMap contributors",
+          "datasource": {
+            "sourcename": "openstreetmap",
+            "attribution": "\u00a9 OpenStreetMap contributors",
+            "license": "Open Database License",
+            "url": "https://www.openstreetmap.org/copyright"
+          }
+        },
+        {
+          "place_id": "geoapify:51e6c0bc11276e534059d360bfcc1cdf2940f00103f901bc3e568901000000c0020192031c536f62686120447265616d20416372657320436c756220486f757365",
+          "name": "Sobha Dream Acres Club House",
+          "display_address": "Sobha Dream Acres Club House, 15, Inner Peripheral Ring Road, Balagere, Bengaluru - 560087, KA, India",
+          "lat": 12.9357666,
+          "lon": 77.7211346,
+          "category": "sport.sports_centre",
+          "confidence": 0.0,
+          "street_confidence": null,
+          "building_confidence": null,
+          "provider": "geoapify",
+          "attribution": "Powered by Geoapify; \u00a9 OpenStreetMap contributors (ODbL); \u00a9 OpenStreetMap contributors",
+          "datasource": {
+            "sourcename": "openstreetmap",
+            "attribution": "\u00a9 OpenStreetMap contributors",
+            "license": "Open Database License",
+            "url": "https://www.openstreetmap.org/copyright"
+          }
+        }
+      ],
+      "latency_ms": 970.9,
+      "locality_label_mismatch": false
+    },
+    {
+      "query": "Sobha Dream Acres, Balagere",
+      "provider": "photon",
+      "status": "unavailable",
+      "scored": false,
+      "latency_ms": null,
+      "reason": "Provider not configured or local health check failed; no search issued"
+    },
+    {
+      "query": "Sobha Dream Acres, Balagere",
+      "provider": "combined",
+      "status": "ok",
+      "fallback_triggered": true,
+      "scored": true,
+      "tolerance_m": 200,
+      "top1_correct": true,
+      "top3_correct": true,
+      "positional_error_m": [
+        145.8,
+        364.1,
+        355.3
+      ],
+      "geographic_relevance": [
+        true,
+        true,
+        true
+      ],
+      "incorrect_locality": false,
+      "results": [
+        {
+          "place_id": "geoapify:51c65c0828436e534059d1d2702596df2940f00102f90187166c3900000000c00201920311536f62686120447265616d204163726573",
+          "name": "Sobha Dream Acres",
+          "display_address": "Sobha Dream Acres, Panathur Main Road, Balagere, Balagere, Bengaluru - 560087, KA, India",
+          "lat": 12.9366924,
+          "lon": 77.7228489,
+          "category": "amenity",
+          "confidence": 0.75,
+          "street_confidence": null,
+          "building_confidence": null,
+          "provider": "geoapify",
+          "attribution": "Powered by Geoapify; \u00a9 OpenStreetMap contributors (ODbL); \u00a9 OpenStreetMap contributors",
+          "datasource": {
+            "sourcename": "openstreetmap",
+            "attribution": "\u00a9 OpenStreetMap contributors",
+            "license": "Open Database License",
+            "url": "https://www.openstreetmap.org/copyright"
+          }
+        },
+        {
+          "place_id": "geoapify:51a5619dcf256e534059db15fa6019df2940f00102f90130e4d12d00000000c0020192031c536f62686120447265616d204163726573205261696e666f72657374",
+          "name": "Sobha Dream Acres Rainforest",
+          "display_address": "Sobha Dream Acres Rainforest, Panathur Main Road, Balagere, Bengaluru - 560087, KA, India",
+          "lat": 12.9357405,
+          "lon": 77.7210578,
+          "category": "amenity",
+          "confidence": 0.0,
+          "street_confidence": null,
+          "building_confidence": null,
+          "provider": "geoapify",
+          "attribution": "Powered by Geoapify; \u00a9 OpenStreetMap contributors (ODbL); \u00a9 OpenStreetMap contributors",
+          "datasource": {
+            "sourcename": "openstreetmap",
+            "attribution": "\u00a9 OpenStreetMap contributors",
+            "license": "Open Database License",
+            "url": "https://www.openstreetmap.org/copyright"
+          }
+        },
+        {
+          "place_id": "geoapify:51e6c0bc11276e534059d360bfcc1cdf2940f00103f901bc3e568901000000c0020192031c536f62686120447265616d20416372657320436c756220486f757365",
+          "name": "Sobha Dream Acres Club House",
+          "display_address": "Sobha Dream Acres Club House, 15, Inner Peripheral Ring Road, Balagere, Bengaluru - 560087, KA, India",
+          "lat": 12.9357666,
+          "lon": 77.7211346,
+          "category": "sport.sports_centre",
+          "confidence": 0.0,
+          "street_confidence": null,
+          "building_confidence": null,
+          "provider": "geoapify",
+          "attribution": "Powered by Geoapify; \u00a9 OpenStreetMap contributors (ODbL); \u00a9 OpenStreetMap contributors",
+          "datasource": {
+            "sourcename": "openstreetmap",
+            "attribution": "\u00a9 OpenStreetMap contributors",
+            "license": "Open Database License",
+            "url": "https://www.openstreetmap.org/copyright"
+          }
+        }
+      ],
+      "latency_ms": 3421.1,
+      "locality_label_mismatch": false
+    },
+    {
+      "query": "Brigade Metropolis, Mahadevapura",
+      "provider": "geoapify",
+      "status": "ok",
+      "fallback_triggered": true,
+      "scored": true,
+      "tolerance_m": 200,
+      "top1_correct": true,
+      "top3_correct": true,
+      "positional_error_m": [
+        7.1,
+        205.2,
+        19.7
+      ],
+      "geographic_relevance": [
+        true,
+        true,
+        true
+      ],
+      "incorrect_locality": false,
+      "results": [
+        {
+          "place_id": "geoapify:51ed6e545df66c53405975de10f461fb2940f00102f90170d5500700000000c0020192031242726967616465204d6574726f706f6c6973",
+          "name": "Brigade Metropolis",
+          "display_address": "Brigade Metropolis, Garudachar Palya, Bengaluru, Bangalore East, India",
+          "lat": 12.9909817,
+          "lon": 77.7025369,
+          "category": "amenity",
+          "confidence": 0.6666666666666667,
+          "street_confidence": null,
+          "building_confidence": null,
+          "provider": "geoapify",
+          "attribution": "Powered by Geoapify; \u00a9 OpenStreetMap contributors (ODbL); \u00a9 OpenStreetMap contributors",
+          "datasource": {
+            "sourcename": "openstreetmap",
+            "attribution": "\u00a9 OpenStreetMap contributors",
+            "license": "Open Database License",
+            "url": "https://www.openstreetmap.org/copyright"
+          }
+        },
+        {
+          "place_id": "geoapify:51a939d44afc6c534059225ff8776cfa2940f00102f90170186a2500000000c0020192032142726967616465204d6574726f706f6c697320437269636b65742047726f756e64",
+          "name": "Brigade Metropolis Cricket Ground",
+          "display_address": "Brigade Metropolis Cricket Ground, Garudachar Palya, Bengaluru, Bangalore East, India",
+          "lat": 12.9891088,
+          "lon": 77.7028987,
+          "category": "sport",
+          "confidence": 0.0,
+          "street_confidence": null,
+          "building_confidence": null,
+          "provider": "geoapify",
+          "attribution": "Powered by Geoapify; \u00a9 OpenStreetMap contributors (ODbL); \u00a9 OpenStreetMap contributors",
+          "datasource": {
+            "sourcename": "openstreetmap",
+            "attribution": "\u00a9 OpenStreetMap contributors",
+            "license": "Open Database License",
+            "url": "https://www.openstreetmap.org/copyright"
+          }
+        },
+        {
+          "place_id": "geoapify:51e013eb54f96c534059efe714e467fb2940f00102f90170d5500700000000c00204e203216f70656e7374726565746d61703a76656e75653a7761792f313232373338303332",
+          "name": "Brigade Metropolis",
+          "display_address": "Brigade Metropolis, Garudachar Playa, Bangalore -, KA, India",
+          "lat": 12.991027,
+          "lon": 77.702718,
+          "category": "street",
+          "confidence": 0.0,
+          "street_confidence": null,
+          "building_confidence": null,
+          "provider": "geoapify",
+          "attribution": "Powered by Geoapify; \u00a9 OpenStreetMap contributors (ODbL); \u00a9 OpenStreetMap contributors",
+          "datasource": {
+            "sourcename": "openstreetmap",
+            "attribution": "\u00a9 OpenStreetMap contributors",
+            "license": "Open Database License",
+            "url": "https://www.openstreetmap.org/copyright"
+          }
+        }
+      ],
+      "latency_ms": 1419.6,
+      "locality_label_mismatch": true
+    },
+    {
+      "query": "Brigade Metropolis, Mahadevapura",
+      "provider": "photon",
+      "status": "unavailable",
+      "scored": false,
+      "latency_ms": null,
+      "reason": "Provider not configured or local health check failed; no search issued"
+    },
+    {
+      "query": "Brigade Metropolis, Mahadevapura",
+      "provider": "combined",
+      "status": "ok",
+      "fallback_triggered": true,
+      "scored": true,
+      "tolerance_m": 200,
+      "top1_correct": true,
+      "top3_correct": true,
+      "positional_error_m": [
+        7.1,
+        205.2,
+        896.0
+      ],
+      "geographic_relevance": [
+        true,
+        true,
+        true
+      ],
+      "incorrect_locality": false,
+      "results": [
+        {
+          "place_id": "geoapify:51ed6e545df66c53405975de10f461fb2940f00102f90170d5500700000000c0020192031242726967616465204d6574726f706f6c6973",
+          "name": "Brigade Metropolis",
+          "display_address": "Brigade Metropolis, Garudachar Palya, Bengaluru, Bangalore East, India",
+          "lat": 12.9909817,
+          "lon": 77.7025369,
+          "category": "amenity",
+          "confidence": 0.6666666666666667,
+          "street_confidence": null,
+          "building_confidence": null,
+          "provider": "geoapify",
+          "attribution": "Powered by Geoapify; \u00a9 OpenStreetMap contributors (ODbL); \u00a9 OpenStreetMap contributors",
+          "datasource": {
+            "sourcename": "openstreetmap",
+            "attribution": "\u00a9 OpenStreetMap contributors",
+            "license": "Open Database License",
+            "url": "https://www.openstreetmap.org/copyright"
+          }
+        },
+        {
+          "place_id": "geoapify:51a939d44afc6c534059225ff8776cfa2940f00102f90170186a2500000000c0020192032142726967616465204d6574726f706f6c697320437269636b65742047726f756e64",
+          "name": "Brigade Metropolis Cricket Ground",
+          "display_address": "Brigade Metropolis Cricket Ground, Garudachar Palya, Bengaluru, Bangalore East, India",
+          "lat": 12.9891088,
+          "lon": 77.7028987,
+          "category": "sport",
+          "confidence": 0.0,
+          "street_confidence": null,
+          "building_confidence": null,
+          "provider": "geoapify",
+          "attribution": "Powered by Geoapify; \u00a9 OpenStreetMap contributors (ODbL); \u00a9 OpenStreetMap contributors",
+          "datasource": {
+            "sourcename": "openstreetmap",
+            "attribution": "\u00a9 OpenStreetMap contributors",
+            "license": "Open Database License",
+            "url": "https://www.openstreetmap.org/copyright"
+          }
+        },
+        {
+          "place_id": "geoapify:51061f9441ff6c5340593976f5cf78ff2940f00102f901f693ea1000000000c002019203215468652042726967616465205363686f6f6c2040204d6168616465766170757261",
+          "name": "The Brigade School @ Mahadevapura",
+          "display_address": "The Brigade School @ Mahadevapura, 9, 4th Cross Road, Hoodi, Bengaluru - 560048, KA, India",
+          "lat": 12.9989686,
+          "lon": 77.7030796,
+          "category": "education.school",
+          "confidence": 0.0,
+          "street_confidence": null,
+          "building_confidence": null,
+          "provider": "geoapify",
+          "attribution": "Powered by Geoapify; \u00a9 OpenStreetMap contributors (ODbL); \u00a9 OpenStreetMap contributors",
+          "datasource": {
+            "sourcename": "openstreetmap",
+            "attribution": "\u00a9 OpenStreetMap contributors",
+            "license": "Open Database License",
+            "url": "https://www.openstreetmap.org/copyright"
+          }
+        }
+      ],
+      "latency_ms": 3074.4,
+      "locality_label_mismatch": true
+    },
+    {
+      "query": "PES University, RR Campus",
+      "provider": "geoapify",
+      "status": "ok",
+      "fallback_triggered": true,
+      "scored": true,
+      "tolerance_m": 200,
+      "top1_correct": false,
+      "top3_correct": false,
+      "positional_error_m": [
+        275.8,
+        9663.5
+      ],
+      "geographic_relevance": [
+        true,
+        true
+      ],
+      "incorrect_locality": null,
+      "results": [
+        {
+          "place_id": "geoapify:5132e2a7163662534059e3827d8516df2940f00103f90168a4f4fc00000000c0020192030b43616d707573204d617274",
+          "name": "Campus Mart",
+          "display_address": "Campus Mart, Outer Ring Road, Hosakerehalli, Bengaluru - 560085, KA, India",
+          "lat": 12.9357187,
+          "lon": 77.5345513,
+          "category": "commercial.convenience",
+          "confidence": 0.0,
+          "street_confidence": null,
+          "building_confidence": null,
+          "provider": "geoapify",
+          "attribution": "Powered by Geoapify; \u00a9 OpenStreetMap contributors (ODbL); \u00a9 OpenStreetMap contributors",
+          "datasource": {
+            "sourcename": "openstreetmap",
+            "attribution": "\u00a9 OpenStreetMap contributors",
+            "license": "Open Database License",
+            "url": "https://www.openstreetmap.org/copyright"
+          }
+        },
+        {
+          "place_id": "geoapify:51e79ab80b8360534059c38d4aa077092a40f00102f9016026514700000000c0020192033a4d2e532e2052616d6169616820556e6976657273697479206f66204170706c69656420536369656e6365732c205065656e79612043616d707573",
+          "name": "M.S. Ramaiah University of Applied Sciences, Peenya Campus",
+          "display_address": "M.S. Ramaiah University of Applied Sciences, Peenya Campus, 3rd Main Road, Shivapura, Bengaluru - 560058, KA, India",
+          "lat": 13.0184908,
+          "lon": 77.5079984,
+          "category": "education.college",
+          "confidence": 0.0,
+          "street_confidence": null,
+          "building_confidence": null,
+          "provider": "geoapify",
+          "attribution": "Powered by Geoapify; \u00a9 OpenStreetMap contributors (ODbL); \u00a9 OpenStreetMap contributors",
+          "datasource": {
+            "sourcename": "openstreetmap",
+            "attribution": "\u00a9 OpenStreetMap contributors",
+            "license": "Open Database License",
+            "url": "https://www.openstreetmap.org/copyright"
+          }
+        }
+      ],
+      "latency_ms": 2223.0,
+      "locality_label_mismatch": null
+    },
+    {
+      "query": "PES University, RR Campus",
+      "provider": "photon",
+      "status": "unavailable",
+      "scored": false,
+      "latency_ms": null,
+      "reason": "Provider not configured or local health check failed; no search issued"
+    },
+    {
+      "query": "PES University, RR Campus",
+      "provider": "combined",
+      "status": "ok",
+      "fallback_triggered": true,
+      "scored": true,
+      "tolerance_m": 200,
+      "top1_correct": false,
+      "top3_correct": false,
+      "positional_error_m": [
+        9663.5
+      ],
+      "geographic_relevance": [
+        true
+      ],
+      "incorrect_locality": null,
+      "results": [
+        {
+          "place_id": "geoapify:51e79ab80b8360534059c38d4aa077092a40f00102f9016026514700000000c0020192033a4d2e532e2052616d6169616820556e6976657273697479206f66204170706c69656420536369656e6365732c205065656e79612043616d707573",
+          "name": "M.S. Ramaiah University of Applied Sciences, Peenya Campus",
+          "display_address": "M.S. Ramaiah University of Applied Sciences, Peenya Campus, 3rd Main Road, Shivapura, Bengaluru - 560058, KA, India",
+          "lat": 13.0184908,
+          "lon": 77.5079984,
+          "category": "education.college",
+          "confidence": 0.0,
+          "street_confidence": null,
+          "building_confidence": null,
+          "provider": "geoapify",
+          "attribution": "Powered by Geoapify; \u00a9 OpenStreetMap contributors (ODbL); \u00a9 OpenStreetMap contributors",
+          "datasource": {
+            "sourcename": "openstreetmap",
+            "attribution": "\u00a9 OpenStreetMap contributors",
+            "license": "Open Database License",
+            "url": "https://www.openstreetmap.org/copyright"
+          }
+        }
+      ],
+      "latency_ms": 4304.0,
+      "locality_label_mismatch": null
+    },
+    {
+      "query": "RV College of Engineering, Mysuru Road",
+      "provider": "geoapify",
+      "status": "ok",
+      "fallback_triggered": true,
+      "scored": true,
+      "tolerance_m": 200,
+      "top1_correct": false,
+      "top3_correct": false,
+      "positional_error_m": [
+        1523.8
+      ],
+      "geographic_relevance": [
+        true
+      ],
+      "incorrect_locality": null,
+      "results": [
+        {
+          "place_id": "geoapify:51040dece7835f534059e6c127e7d5de2940f00103f9012693622402000000c00201920322546865204265737420616c69676e6d656e7420747972657320616e64207475626573e203256f70656e7374726565746d61703a616464726573733a6e6f64652f39323030333734353636",
+          "name": "The Best alignment tyres and tubes",
+          "display_address": "The Best alignment tyres and tubes, 1/5, Ground Floor, Kengeri Main Road, Nagadevanahalli, Bengaluru - 560056, KA, India",
+          "lat": 12.9352257,
+          "lon": 77.4924259,
+          "category": "amenity",
+          "confidence": 0.045454545454545456,
+          "street_confidence": 0.09090909090909091,
+          "building_confidence": null,
+          "provider": "geoapify",
+          "attribution": "Powered by Geoapify; \u00a9 OpenStreetMap contributors (ODbL); \u00a9 OpenStreetMap contributors",
+          "datasource": {
+            "sourcename": "openstreetmap",
+            "attribution": "\u00a9 OpenStreetMap contributors",
+            "license": "Open Database License",
+            "url": "https://www.openstreetmap.org/copyright"
+          }
+        }
+      ],
+      "latency_ms": 1166.2,
+      "locality_label_mismatch": null
+    },
+    {
+      "query": "RV College of Engineering, Mysuru Road",
+      "provider": "photon",
+      "status": "unavailable",
+      "scored": false,
+      "latency_ms": null,
+      "reason": "Provider not configured or local health check failed; no search issued"
+    },
+    {
+      "query": "RV College of Engineering, Mysuru Road",
+      "provider": "combined",
+      "status": "ok",
+      "fallback_triggered": true,
+      "scored": true,
+      "tolerance_m": 200,
+      "top1_correct": false,
+      "top3_correct": false,
+      "positional_error_m": [],
+      "geographic_relevance": [],
+      "incorrect_locality": null,
+      "results": [],
+      "latency_ms": 2695.3,
+      "locality_label_mismatch": null
+    },
+    {
+      "query": "BMS College of Engineering, Basavanagudi",
+      "provider": "geoapify",
+      "status": "ok",
+      "fallback_triggered": true,
+      "scored": true,
+      "tolerance_m": 200,
+      "top1_correct": true,
+      "top3_correct": true,
+      "positional_error_m": [
+        6.4,
+        112.1,
+        94.8
+      ],
+      "geographic_relevance": [
+        true,
+        true,
+        true
+      ],
+      "incorrect_locality": false,
+      "results": [
+        {
+          "place_id": "geoapify:5189d9812939645340594982700514e22940f00102f901156b4d0a00000000c0020192031a424d5320436f6c6c656765206f6620456e67696e656572696e67",
+          "name": "BMS College of Engineering",
+          "display_address": "BMS College of Engineering, Hanumantha Nagar Main Road / 50 Feet Road, Sunkenahalli, Bengaluru - 560019, KA, India",
+          "lat": 12.941559,
+          "lon": 77.5659889,
+          "category": "education.college",
+          "confidence": 0.8,
+          "street_confidence": null,
+          "building_confidence": null,
+          "provider": "geoapify",
+          "attribution": "Powered by Geoapify; \u00a9 OpenStreetMap contributors (ODbL); \u00a9 OpenStreetMap contributors",
+          "datasource": {
+            "sourcename": "openstreetmap",
+            "attribution": "\u00a9 OpenStreetMap contributors",
+            "license": "Open Database License",
+            "url": "https://www.openstreetmap.org/copyright"
+          }
+        },
+        {
+          "place_id": "geoapify:519c4dec46446453405998a3c7ef6de22940f00102f9010036ef0700000000c0020192031b424d5320436f6c6c656765204f6620417263686974656374757265",
+          "name": "BMS College Of Architecture",
+          "display_address": "BMS College Of Architecture, 7th Cross Road, Basavanagudi, Bengaluru - 560019, KA, India",
+          "lat": 12.942245,
+          "lon": 77.5666673,
+          "category": "education.library",
+          "confidence": 0.0,
+          "street_confidence": null,
+          "building_confidence": null,
+          "provider": "geoapify",
+          "attribution": "Powered by Geoapify; \u00a9 OpenStreetMap contributors (ODbL); \u00a9 OpenStreetMap contributors",
+          "datasource": {
+            "sourcename": "openstreetmap",
+            "attribution": "\u00a9 OpenStreetMap contributors",
+            "license": "Open Database License",
+            "url": "https://www.openstreetmap.org/copyright"
+          }
+        },
+        {
+          "place_id": "geoapify:516b195f6a3a64534059728bf9b9a1e12940f00103f901a1fa8d8f00000000c0020192032a53706f72747320436f6d706c65782c20424d5320436f6c6c656765206f6620456e67696e656572696e67",
+          "name": "Sports Complex, BMS College of Engineering",
+          "display_address": "Sports Complex, BMS College of Engineering, 6th Main Road, Sunkenahalli, Bengaluru - 560070, KA, India",
+          "lat": 12.940687,
+          "lon": 77.5660654,
+          "category": "amenity",
+          "confidence": 0.0,
+          "street_confidence": null,
+          "building_confidence": null,
+          "provider": "geoapify",
+          "attribution": "Powered by Geoapify; \u00a9 OpenStreetMap contributors (ODbL); \u00a9 OpenStreetMap contributors",
+          "datasource": {
+            "sourcename": "openstreetmap",
+            "attribution": "\u00a9 OpenStreetMap contributors",
+            "license": "Open Database License",
+            "url": "https://www.openstreetmap.org/copyright"
+          }
+        }
+      ],
+      "latency_ms": 1732.1,
+      "locality_label_mismatch": true
+    },
+    {
+      "query": "BMS College of Engineering, Basavanagudi",
+      "provider": "photon",
+      "status": "unavailable",
+      "scored": false,
+      "latency_ms": null,
+      "reason": "Provider not configured or local health check failed; no search issued"
+    },
+    {
+      "query": "BMS College of Engineering, Basavanagudi",
+      "provider": "combined",
+      "status": "ok",
+      "fallback_triggered": true,
+      "scored": true,
+      "tolerance_m": 200,
+      "top1_correct": true,
+      "top3_correct": true,
+      "positional_error_m": [
+        6.4,
+        112.1,
+        94.8
+      ],
+      "geographic_relevance": [
+        true,
+        true,
+        true
+      ],
+      "incorrect_locality": false,
+      "results": [
+        {
+          "place_id": "geoapify:5189d9812939645340594982700514e22940f00102f901156b4d0a00000000c0020192031a424d5320436f6c6c656765206f6620456e67696e656572696e67",
+          "name": "BMS College of Engineering",
+          "display_address": "BMS College of Engineering, Hanumantha Nagar Main Road / 50 Feet Road, Sunkenahalli, Bengaluru - 560019, KA, India",
+          "lat": 12.941559,
+          "lon": 77.5659889,
+          "category": "education.college",
+          "confidence": 0.8,
+          "street_confidence": null,
+          "building_confidence": null,
+          "provider": "geoapify",
+          "attribution": "Powered by Geoapify; \u00a9 OpenStreetMap contributors (ODbL); \u00a9 OpenStreetMap contributors",
+          "datasource": {
+            "sourcename": "openstreetmap",
+            "attribution": "\u00a9 OpenStreetMap contributors",
+            "license": "Open Database License",
+            "url": "https://www.openstreetmap.org/copyright"
+          }
+        },
+        {
+          "place_id": "geoapify:519c4dec46446453405998a3c7ef6de22940f00102f9010036ef0700000000c0020192031b424d5320436f6c6c656765204f6620417263686974656374757265",
+          "name": "BMS College Of Architecture",
+          "display_address": "BMS College Of Architecture, 7th Cross Road, Basavanagudi, Bengaluru - 560019, KA, India",
+          "lat": 12.942245,
+          "lon": 77.5666673,
+          "category": "education.library",
+          "confidence": 0.0,
+          "street_confidence": null,
+          "building_confidence": null,
+          "provider": "geoapify",
+          "attribution": "Powered by Geoapify; \u00a9 OpenStreetMap contributors (ODbL); \u00a9 OpenStreetMap contributors",
+          "datasource": {
+            "sourcename": "openstreetmap",
+            "attribution": "\u00a9 OpenStreetMap contributors",
+            "license": "Open Database License",
+            "url": "https://www.openstreetmap.org/copyright"
+          }
+        },
+        {
+          "place_id": "geoapify:516b195f6a3a64534059728bf9b9a1e12940f00103f901a1fa8d8f00000000c0020192032a53706f72747320436f6d706c65782c20424d5320436f6c6c656765206f6620456e67696e656572696e67",
+          "name": "Sports Complex, BMS College of Engineering",
+          "display_address": "Sports Complex, BMS College of Engineering, 6th Main Road, Sunkenahalli, Bengaluru - 560070, KA, India",
+          "lat": 12.940687,
+          "lon": 77.5660654,
+          "category": "amenity",
+          "confidence": 0.0,
+          "street_confidence": null,
+          "building_confidence": null,
+          "provider": "geoapify",
+          "attribution": "Powered by Geoapify; \u00a9 OpenStreetMap contributors (ODbL); \u00a9 OpenStreetMap contributors",
+          "datasource": {
+            "sourcename": "openstreetmap",
+            "attribution": "\u00a9 OpenStreetMap contributors",
+            "license": "Open Database License",
+            "url": "https://www.openstreetmap.org/copyright"
+          }
+        }
+      ],
+      "latency_ms": 3619.1,
+      "locality_label_mismatch": true
+    },
+    {
+      "query": "Manipal Hospital, Old Airport Road",
+      "provider": "geoapify",
+      "status": "ok",
+      "fallback_triggered": true,
+      "scored": true,
+      "tolerance_m": 150,
+      "top1_correct": false,
+      "top3_correct": true,
+      "positional_error_m": [
+        1230.9,
+        69.8,
+        628.5
+      ],
+      "geographic_relevance": [
+        true,
+        true,
+        true
+      ],
+      "incorrect_locality": false,
+      "results": [
+        {
+          "place_id": "geoapify:51af8273a1cd685340599c5e73582bec2940f00103f9019899950b01000000c00201920329537269204368616d7564657368776172692053706f727473204c696e6b20416e64204669746e657373e203256f70656e7374726565746d61703a616464726573733a6e6f64652f34343839333230383536",
+          "name": "Sri Chamudeshwari Sports Link And Fitness",
+          "display_address": "Sri Chamudeshwari Sports Link And Fitness, 10, HAL Old Airport Road, Domluru, Bengaluru - 560071, KA, India",
+          "lat": 12.9612682,
+          "lon": 77.6375507,
+          "category": "commercial.outdoor_and_sport",
+          "confidence": 0.45,
+          "street_confidence": 0.9,
+          "building_confidence": null,
+          "provider": "geoapify",
+          "attribution": "Powered by Geoapify; \u00a9 OpenStreetMap contributors (ODbL); \u00a9 OpenStreetMap contributors",
+          "datasource": {
+            "sourcename": "openstreetmap",
+            "attribution": "\u00a9 OpenStreetMap contributors",
+            "license": "Open Database License",
+            "url": "https://www.openstreetmap.org/copyright"
+          }
+        },
+        {
+          "place_id": "geoapify:51d28a6f287c6953405947c66af3ffea2940f00102f9014af00f0800000000c00203e203236f70656e7374726565746d61703a616464726573733a7761792f313335323632323832",
+          "name": "135, Old Airport Road",
+          "display_address": "135, Old Airport Road, Konena Agrahara, Bangalore - 560017, KA, India",
+          "lat": 12.958984,
+          "lon": 77.648203,
+          "category": "building",
+          "confidence": 0.9,
+          "street_confidence": 1.0,
+          "building_confidence": null,
+          "provider": "geoapify",
+          "attribution": "Powered by Geoapify; \u00a9 OpenStreetMap contributors (ODbL); \u00a9 OpenStreetMap contributors",
+          "datasource": {
+            "sourcename": "openstreetmap",
+            "attribution": "\u00a9 OpenStreetMap contributors",
+            "license": "Open Database License",
+            "url": "https://www.openstreetmap.org/copyright"
+          }
+        },
+        {
+          "place_id": "geoapify:51d483dd0b2769534059879e39909aeb2940f00103f901c64b00c800000000c002019203134e415353434f4d20537461727475702031306be203256f70656e7374726565746d61703a616464726573733a6e6f64652f33333535343632353938",
+          "name": "NASSCOM Startup 10k",
+          "display_address": "NASSCOM Startup 10k, 5th Floor, Tower D, Diamond District, HAL Old Airport Road, Kodihalli, Bengaluru - 560017, KA, India",
+          "lat": 12.9601636,
+          "lon": 77.6430082,
+          "category": "amenity",
+          "confidence": 0.45,
+          "street_confidence": 0.9,
+          "building_confidence": null,
+          "provider": "geoapify",
+          "attribution": "Powered by Geoapify; \u00a9 OpenStreetMap contributors (ODbL); \u00a9 OpenStreetMap contributors",
+          "datasource": {
+            "sourcename": "openstreetmap",
+            "attribution": "\u00a9 OpenStreetMap contributors",
+            "license": "Open Database License",
+            "url": "https://www.openstreetmap.org/copyright"
+          }
+        }
+      ],
+      "latency_ms": 676.2,
+      "locality_label_mismatch": false
+    },
+    {
+      "query": "Manipal Hospital, Old Airport Road",
+      "provider": "photon",
+      "status": "unavailable",
+      "scored": false,
+      "latency_ms": null,
+      "reason": "Provider not configured or local health check failed; no search issued"
+    },
+    {
+      "query": "Manipal Hospital, Old Airport Road",
+      "provider": "combined",
+      "status": "ok",
+      "fallback_triggered": true,
+      "scored": true,
+      "tolerance_m": 150,
+      "top1_correct": true,
+      "top3_correct": true,
+      "positional_error_m": [
+        69.8,
+        352.4,
+        1230.9
+      ],
+      "geographic_relevance": [
+        true,
+        true,
+        true
+      ],
+      "incorrect_locality": false,
+      "results": [
+        {
+          "place_id": "geoapify:51d28a6f287c6953405947c66af3ffea2940f00102f9014af00f0800000000c00203e203236f70656e7374726565746d61703a616464726573733a7761792f313335323632323832",
+          "name": "135, Old Airport Road",
+          "display_address": "135, Old Airport Road, Konena Agrahara, Bangalore - 560017, KA, India",
+          "lat": 12.958984,
+          "lon": 77.648203,
+          "category": "building",
+          "confidence": 0.9,
+          "street_confidence": 1.0,
+          "building_confidence": null,
+          "provider": "geoapify",
+          "attribution": "Powered by Geoapify; \u00a9 OpenStreetMap contributors (ODbL); \u00a9 OpenStreetMap contributors",
+          "datasource": {
+            "sourcename": "openstreetmap",
+            "attribution": "\u00a9 OpenStreetMap contributors",
+            "license": "Open Database License",
+            "url": "https://www.openstreetmap.org/copyright"
+          }
+        },
+        {
+          "place_id": "geoapify:5114200a664c695340594d0f0a4ad1ea2940f00103f901c418950b01000000c00203e203256f70656e7374726565746d61703a616464726573733a6e6f64652f34343839323837383736",
+          "name": "617, Karnataka Golf Association Road, HAL Old Airport Rd, Kodihalli",
+          "display_address": "617, Karnataka Golf Association Road, HAL Old Airport Rd, Kodihalli, Konena Agrahara, Bangalore - 560008, KA, India",
+          "lat": 12.958628,
+          "lon": 77.645288,
+          "category": "building",
+          "confidence": 0.531441,
+          "street_confidence": 0.5904900000000001,
+          "building_confidence": null,
+          "provider": "geoapify",
+          "attribution": "Powered by Geoapify; \u00a9 OpenStreetMap contributors (ODbL); \u00a9 OpenStreetMap contributors",
+          "datasource": {
+            "sourcename": "openstreetmap",
+            "attribution": "\u00a9 OpenStreetMap contributors",
+            "license": "Open Database License",
+            "url": "https://www.openstreetmap.org/copyright"
+          }
+        },
+        {
+          "place_id": "geoapify:51af8273a1cd685340599c5e73582bec2940f00103f9019899950b01000000c00201920329537269204368616d7564657368776172692053706f727473204c696e6b20416e64204669746e657373e203256f70656e7374726565746d61703a616464726573733a6e6f64652f34343839333230383536",
+          "name": "Sri Chamudeshwari Sports Link And Fitness",
+          "display_address": "Sri Chamudeshwari Sports Link And Fitness, 10, HAL Old Airport Road, Domluru, Bengaluru - 560071, KA, India",
+          "lat": 12.9612682,
+          "lon": 77.6375507,
+          "category": "commercial.outdoor_and_sport",
+          "confidence": 0.45,
+          "street_confidence": 0.9,
+          "building_confidence": null,
+          "provider": "geoapify",
+          "attribution": "Powered by Geoapify; \u00a9 OpenStreetMap contributors (ODbL); \u00a9 OpenStreetMap contributors",
+          "datasource": {
+            "sourcename": "openstreetmap",
+            "attribution": "\u00a9 OpenStreetMap contributors",
+            "license": "Open Database License",
+            "url": "https://www.openstreetmap.org/copyright"
+          }
+        }
+      ],
+      "latency_ms": 2757.7,
+      "locality_label_mismatch": false
+    },
+    {
+      "query": "NIMHANS, Hosur Road",
+      "provider": "geoapify",
+      "status": "ok",
+      "fallback_triggered": true,
+      "scored": true,
+      "tolerance_m": 250,
+      "top1_correct": false,
+      "top3_correct": false,
+      "positional_error_m": [
+        3188.3,
+        2324.7,
+        2249.8
+      ],
+      "geographic_relevance": [
+        true,
+        true,
+        true
+      ],
+      "incorrect_locality": null,
+      "results": [
+        {
+          "place_id": "geoapify:51c8940f41d5665340594c48b59954ee2940f00102f9013bbc8e2d00000000c0020492030a486f73757220526f6164",
+          "name": "Hosur Road",
+          "display_address": "Hosur Road, Ashok Nagar, Bengaluru - 560025, KA, India",
+          "lat": 12.9654892,
+          "lon": 77.606766,
+          "category": "street",
+          "confidence": 0.15882352941176472,
+          "street_confidence": 0.27,
+          "building_confidence": null,
+          "provider": "geoapify",
+          "attribution": "Powered by Geoapify; \u00a9 OpenStreetMap contributors (ODbL); \u00a9 OpenStreetMap contributors",
+          "datasource": {
+            "sourcename": "openstreetmap",
+            "attribution": "\u00a9 OpenStreetMap contributors",
+            "license": "Open Database License",
+            "url": "https://www.openstreetmap.org/copyright"
+          }
+        },
+        {
+          "place_id": "geoapify:51dc0830d1c566534059d6636c32f4e92940f00102f901f9b0fc5900000000c0020492030a486f73757220526f6164",
+          "name": "Hosur Road",
+          "display_address": "Hosur Road, Richmond Town, Bengaluru - 560025, KA, India",
+          "lat": 12.9569412,
+          "lon": 77.6058238,
+          "category": "street",
+          "confidence": 0.25,
+          "street_confidence": 0.25,
+          "building_confidence": null,
+          "provider": "geoapify",
+          "attribution": "Powered by Geoapify; \u00a9 OpenStreetMap contributors (ODbL); \u00a9 OpenStreetMap contributors",
+          "datasource": {
+            "sourcename": "openstreetmap",
+            "attribution": "\u00a9 OpenStreetMap contributors",
+            "license": "Open Database License",
+            "url": "https://www.openstreetmap.org/copyright"
+          }
+        },
+        {
+          "place_id": "geoapify:519fc48c95bd665340598b89cdc7b5e92940f00102f90163035f0100000000c00204920310486f73757220526f61642043726f7373",
+          "name": "Hosur Road Cross",
+          "display_address": "Hosur Road Cross, Richmond Town, Bengaluru - 560025, KA, India",
+          "lat": 12.956465,
+          "lon": 77.6053213,
+          "category": "street",
+          "confidence": 0.225,
+          "street_confidence": 0.225,
+          "building_confidence": null,
+          "provider": "geoapify",
+          "attribution": "Powered by Geoapify; \u00a9 OpenStreetMap contributors (ODbL); \u00a9 OpenStreetMap contributors",
+          "datasource": {
+            "sourcename": "openstreetmap",
+            "attribution": "\u00a9 OpenStreetMap contributors",
+            "license": "Open Database License",
+            "url": "https://www.openstreetmap.org/copyright"
+          }
+        }
+      ],
+      "latency_ms": 1284.1,
+      "locality_label_mismatch": null
+    },
+    {
+      "query": "NIMHANS, Hosur Road",
+      "provider": "photon",
+      "status": "unavailable",
+      "scored": false,
+      "latency_ms": null,
+      "reason": "Provider not configured or local health check failed; no search issued"
+    },
+    {
+      "query": "NIMHANS, Hosur Road",
+      "provider": "combined",
+      "status": "ok",
+      "fallback_triggered": true,
+      "scored": true,
+      "tolerance_m": 250,
+      "top1_correct": false,
+      "top3_correct": false,
+      "positional_error_m": [
+        498.0,
+        395.3,
+        560.8
+      ],
+      "geographic_relevance": [
+        true,
+        true,
+        true
+      ],
+      "incorrect_locality": null,
+      "results": [
+        {
+          "place_id": "geoapify:516c787aa52c66534059cb42e0ede6e22940f00102f901bcd2ac4800000000c002019203194e696d68616e7320436f6e76656e74696f6e2043656e746572",
+          "name": "Nimhans Convention Center",
+          "display_address": "Nimhans Convention Center, Doctor M H Marigowda Road, Someshwara Nagara, Bengaluru - 560029, KA, India",
+          "lat": 12.9431681,
+          "lon": 77.596475,
+          "category": "amenity",
+          "confidence": 0.0,
+          "street_confidence": null,
+          "building_confidence": null,
+          "provider": "geoapify",
+          "attribution": "Powered by Geoapify; \u00a9 OpenStreetMap contributors (ODbL); \u00a9 OpenStreetMap contributors",
+          "datasource": {
+            "sourcename": "openstreetmap",
+            "attribution": "\u00a9 OpenStreetMap contributors",
+            "license": "Open Database License",
+            "url": "https://www.openstreetmap.org/copyright"
+          }
+        },
+        {
+          "place_id": "geoapify:51cf143aaf3166534059c96251c719e12940f00103f90131573fa102000000c002019203154e696d68616e73204d722d7065742043656e746572",
+          "name": "Nimhans Mr-pet Center",
+          "display_address": "Nimhans Mr-pet Center, Doctor M H Marigowda Road, BHEL Ward, Bengaluru - 560029, KA, India",
+          "lat": 12.9396498,
+          "lon": 77.5967825,
+          "category": "healthcare.hospital",
+          "confidence": 0.0,
+          "street_confidence": null,
+          "building_confidence": null,
+          "provider": "geoapify",
+          "attribution": "Powered by Geoapify; \u00a9 OpenStreetMap contributors (ODbL); \u00a9 OpenStreetMap contributors",
+          "datasource": {
+            "sourcename": "openstreetmap",
+            "attribution": "\u00a9 OpenStreetMap contributors",
+            "license": "Open Database License",
+            "url": "https://www.openstreetmap.org/copyright"
+          }
+        },
+        {
+          "place_id": "geoapify:51e7aa798e48665340598e739b70afe02940f00103f90144c9691200000000c002019203104e494d48414e5320486f73706974616c",
+          "name": "NIMHANS Hospital",
+          "display_address": "NIMHANS Hospital, Doctor M H Marigowda Road, BHEL Ward, Bengaluru - 560029, KA, India",
+          "lat": 12.9388385,
+          "lon": 77.5981785,
+          "category": "public_transport.bus",
+          "confidence": 0.0,
+          "street_confidence": null,
+          "building_confidence": null,
+          "provider": "geoapify",
+          "attribution": "Powered by Geoapify; \u00a9 OpenStreetMap contributors (ODbL); \u00a9 OpenStreetMap contributors",
+          "datasource": {
+            "sourcename": "openstreetmap",
+            "attribution": "\u00a9 OpenStreetMap contributors",
+            "license": "Open Database License",
+            "url": "https://www.openstreetmap.org/copyright"
+          }
+        }
+      ],
+      "latency_ms": 3331.1,
+      "locality_label_mismatch": null
+    },
+    {
+      "query": "St. John's Medical College Hospital",
+      "provider": "geoapify",
+      "status": "ok",
+      "fallback_triggered": false,
+      "scored": true,
+      "tolerance_m": 150,
+      "top1_correct": true,
+      "top3_correct": true,
+      "positional_error_m": [
+        40.5
+      ],
+      "geographic_relevance": [
+        true
+      ],
+      "incorrect_locality": null,
+      "results": [
+        {
+          "place_id": "geoapify:5108ad872f93675340596098a7cefedb2940f00101f9015e76040100000000c0020192032253742e4a6f686e2773204d65646963616c20436f6c6c65676520486f73706974616c",
+          "name": "St.John's Medical College Hospital",
+          "display_address": "St.John's Medical College Hospital, Sarjapur Road, Kormangala West, Bangalore - 560034, KA, India",
+          "lat": 12.9296784,
+          "lon": 77.6183585,
+          "category": "healthcare.hospital",
+          "confidence": 1.0,
+          "street_confidence": null,
+          "building_confidence": null,
+          "provider": "geoapify",
+          "attribution": "Powered by Geoapify; \u00a9 OpenStreetMap contributors (ODbL); \u00a9 OpenStreetMap contributors",
+          "datasource": {
+            "sourcename": "openstreetmap",
+            "attribution": "\u00a9 OpenStreetMap contributors",
+            "license": "Open Database License",
+            "url": "https://www.openstreetmap.org/copyright"
+          }
+        }
+      ],
+      "latency_ms": 2110.9,
+      "locality_label_mismatch": null
+    },
+    {
+      "query": "St. John's Medical College Hospital",
+      "provider": "photon",
+      "status": "unavailable",
+      "scored": false,
+      "latency_ms": null,
+      "reason": "Provider not configured or local health check failed; no search issued"
+    },
+    {
+      "query": "St. John's Medical College Hospital",
+      "provider": "combined",
+      "status": "ok",
+      "fallback_triggered": false,
+      "scored": true,
+      "tolerance_m": 150,
+      "top1_correct": true,
+      "top3_correct": true,
+      "positional_error_m": [
+        40.5
+      ],
+      "geographic_relevance": [
+        true
+      ],
+      "incorrect_locality": null,
+      "results": [
+        {
+          "place_id": "geoapify:5108ad872f93675340596098a7cefedb2940f00101f9015e76040100000000c0020192032253742e4a6f686e2773204d65646963616c20436f6c6c65676520486f73706974616c",
+          "name": "St.John's Medical College Hospital",
+          "display_address": "St.John's Medical College Hospital, Sarjapur Road, Kormangala West, Bangalore - 560034, KA, India",
+          "lat": 12.9296784,
+          "lon": 77.6183585,
+          "category": "healthcare.hospital",
+          "confidence": 1.0,
+          "street_confidence": null,
+          "building_confidence": null,
+          "provider": "geoapify",
+          "attribution": "Powered by Geoapify; \u00a9 OpenStreetMap contributors (ODbL); \u00a9 OpenStreetMap contributors",
+          "datasource": {
+            "sourcename": "openstreetmap",
+            "attribution": "\u00a9 OpenStreetMap contributors",
+            "license": "Open Database License",
+            "url": "https://www.openstreetmap.org/copyright"
+          }
+        }
+      ],
+      "latency_ms": 1039.1,
+      "locality_label_mismatch": null
+    },
+    {
+      "query": "Domlur TTMC",
+      "provider": "geoapify",
+      "status": "ok",
+      "fallback_triggered": false,
+      "scored": true,
+      "tolerance_m": 100,
+      "top1_correct": true,
+      "top3_correct": true,
+      "positional_error_m": [
+        26.3,
+        15.8
+      ],
+      "geographic_relevance": [
+        true,
+        true
+      ],
+      "incorrect_locality": false,
+      "results": [
+        {
+          "place_id": "geoapify:513afd4575df68534059999d45ef54ec2940f00103f901cda37fe902000000c002019203194c61796f7574204d6170206f6620446f6d6c75722054544d43e203246f70656e7374726565746d61703a76656e75653a6e6f64652f3132353037333930393235",
+          "name": "Layout Map of Domlur TTMC",
+          "display_address": "Layout Map of Domlur TTMC, Domlur Water Tank Road, Domluru, Bengaluru - 560071, KA, India",
+          "lat": 12.9615855,
+          "lon": 77.6386388,
+          "category": "amenity",
+          "confidence": 1.0,
+          "street_confidence": null,
+          "building_confidence": null,
+          "provider": "geoapify",
+          "attribution": "Powered by Geoapify; \u00a9 OpenStreetMap contributors (ODbL); \u00a9 OpenStreetMap contributors",
+          "datasource": {
+            "sourcename": "openstreetmap",
+            "attribution": "\u00a9 OpenStreetMap contributors",
+            "license": "Open Database License",
+            "url": "https://www.openstreetmap.org/copyright"
+          }
+        },
+        {
+          "place_id": "geoapify:512fdffab0de68534059de3829cc7bec2940f00101f9013f3e1b0100000000c00201920312446f6d6c7572204275732053746174696f6ee203256f70656e7374726565746d61703a76656e75653a72656c6174696f6e2f3138353632363233",
+          "name": "Domlur Bus Station",
+          "display_address": "Domlur Bus Station, Domluru, Bengaluru - 560071, KA, India",
+          "lat": 12.961882,
+          "lon": 77.638592,
+          "category": "amenity",
+          "confidence": 0.0,
+          "street_confidence": null,
+          "building_confidence": null,
+          "provider": "geoapify",
+          "attribution": "Powered by Geoapify; \u00a9 OpenStreetMap contributors (ODbL); \u00a9 OpenStreetMap contributors",
+          "datasource": {
+            "sourcename": "openstreetmap",
+            "attribution": "\u00a9 OpenStreetMap contributors",
+            "license": "Open Database License",
+            "url": "https://www.openstreetmap.org/copyright"
+          }
+        }
+      ],
+      "latency_ms": 1255.8,
+      "locality_label_mismatch": false
+    },
+    {
+      "query": "Domlur TTMC",
+      "provider": "photon",
+      "status": "unavailable",
+      "scored": false,
+      "latency_ms": null,
+      "reason": "Provider not configured or local health check failed; no search issued"
+    },
+    {
+      "query": "Domlur TTMC",
+      "provider": "combined",
+      "status": "ok",
+      "fallback_triggered": false,
+      "scored": true,
+      "tolerance_m": 100,
+      "top1_correct": true,
+      "top3_correct": true,
+      "positional_error_m": [
+        26.3,
+        15.8
+      ],
+      "geographic_relevance": [
+        true,
+        true
+      ],
+      "incorrect_locality": false,
+      "results": [
+        {
+          "place_id": "geoapify:513afd4575df68534059999d45ef54ec2940f00103f901cda37fe902000000c002019203194c61796f7574204d6170206f6620446f6d6c75722054544d43e203246f70656e7374726565746d61703a76656e75653a6e6f64652f3132353037333930393235",
+          "name": "Layout Map of Domlur TTMC",
+          "display_address": "Layout Map of Domlur TTMC, Domlur Water Tank Road, Domluru, Bengaluru - 560071, KA, India",
+          "lat": 12.9615855,
+          "lon": 77.6386388,
+          "category": "amenity",
+          "confidence": 1.0,
+          "street_confidence": null,
+          "building_confidence": null,
+          "provider": "geoapify",
+          "attribution": "Powered by Geoapify; \u00a9 OpenStreetMap contributors (ODbL); \u00a9 OpenStreetMap contributors",
+          "datasource": {
+            "sourcename": "openstreetmap",
+            "attribution": "\u00a9 OpenStreetMap contributors",
+            "license": "Open Database License",
+            "url": "https://www.openstreetmap.org/copyright"
+          }
+        },
+        {
+          "place_id": "geoapify:512fdffab0de68534059de3829cc7bec2940f00101f9013f3e1b0100000000c00201920312446f6d6c7572204275732053746174696f6ee203256f70656e7374726565746d61703a76656e75653a72656c6174696f6e2f3138353632363233",
+          "name": "Domlur Bus Station",
+          "display_address": "Domlur Bus Station, Domluru, Bengaluru - 560071, KA, India",
+          "lat": 12.961882,
+          "lon": 77.638592,
+          "category": "amenity",
+          "confidence": 0.0,
+          "street_confidence": null,
+          "building_confidence": null,
+          "provider": "geoapify",
+          "attribution": "Powered by Geoapify; \u00a9 OpenStreetMap contributors (ODbL); \u00a9 OpenStreetMap contributors",
+          "datasource": {
+            "sourcename": "openstreetmap",
+            "attribution": "\u00a9 OpenStreetMap contributors",
+            "license": "Open Database License",
+            "url": "https://www.openstreetmap.org/copyright"
+          }
+        }
+      ],
+      "latency_ms": 693.3,
+      "locality_label_mismatch": false
+    },
+    {
+      "query": "Murugeshpalya Bus Stop",
+      "provider": "geoapify",
+      "status": "ok",
+      "fallback_triggered": true,
+      "scored": true,
+      "tolerance_m": 100,
+      "top1_correct": false,
+      "top3_correct": false,
+      "positional_error_m": [
+        6997.8,
+        11233.6,
+        12093.3
+      ],
+      "geographic_relevance": [
+        true,
+        true,
+        true
+      ],
+      "incorrect_locality": null,
+      "results": [
+        {
+          "place_id": "geoapify:51ee653623de65534059a4688aa5ede82940f00103f90129e4d68e00000000c0020192031e5368616e7468696e6167617261204275732053746f70204b4820526f6164",
+          "name": "Shanthinagara Bus Stop KH Road",
+          "display_address": "Shanthinagara Bus Stop KH Road, Kengal Hanumanthaiah Road, SilverJubilee Park Ward, Bengaluru - 560027, KA, India",
+          "lat": 12.9549381,
+          "lon": 77.5916832,
+          "category": "public_transport.bus",
+          "confidence": 0.0,
+          "street_confidence": null,
+          "building_confidence": null,
+          "provider": "geoapify",
+          "attribution": "Powered by Geoapify; \u00a9 OpenStreetMap contributors (ODbL); \u00a9 OpenStreetMap contributors",
+          "datasource": {
+            "sourcename": "openstreetmap",
+            "attribution": "\u00a9 OpenStreetMap contributors",
+            "license": "Open Database License",
+            "url": "https://www.openstreetmap.org/copyright"
+          }
+        },
+        {
+          "place_id": "geoapify:516d2695dfd8635340596f795160a6fe2940f00103f9015ec5a65700000000c0020192031b4861726973686368616e6472612047686174204275732053746f70",
+          "name": "Harishchandra Ghat Bus Stop",
+          "display_address": "Harishchandra Ghat Bus Stop, Mahakavi Kuvempu Road, Gayathri Nagara, Bengaluru - 560021, KA, India",
+          "lat": 12.9973631,
+          "lon": 77.5601119,
+          "category": "public_transport.bus",
+          "confidence": 0.0,
+          "street_confidence": null,
+          "building_confidence": null,
+          "provider": "geoapify",
+          "attribution": "Powered by Geoapify; \u00a9 OpenStreetMap contributors (ODbL); \u00a9 OpenStreetMap contributors",
+          "datasource": {
+            "sourcename": "openstreetmap",
+            "attribution": "\u00a9 OpenStreetMap contributors",
+            "license": "Open Database License",
+            "url": "https://www.openstreetmap.org/copyright"
+          }
+        },
+        {
+          "place_id": "geoapify:51b8f3b3475e6353405944bfb67efaff2940f00103f901aeaac49b00000000c002019203184e617672616e672050726976617465204275732053746f70",
+          "name": "Navrang Private Bus Stop",
+          "display_address": "Navrang Private Bus Stop, Dr. Rajkumar Road, Basaveshwaranagar, Bengaluru - 560010, KA, India",
+          "lat": 12.999958,
+          "lon": 77.5526294,
+          "category": "public_transport.bus",
+          "confidence": 0.0,
+          "street_confidence": null,
+          "building_confidence": null,
+          "provider": "geoapify",
+          "attribution": "Powered by Geoapify; \u00a9 OpenStreetMap contributors (ODbL); \u00a9 OpenStreetMap contributors",
+          "datasource": {
+            "sourcename": "openstreetmap",
+            "attribution": "\u00a9 OpenStreetMap contributors",
+            "license": "Open Database License",
+            "url": "https://www.openstreetmap.org/copyright"
+          }
+        }
+      ],
+      "latency_ms": 1426.6,
+      "locality_label_mismatch": null
+    },
+    {
+      "query": "Murugeshpalya Bus Stop",
+      "provider": "photon",
+      "status": "unavailable",
+      "scored": false,
+      "latency_ms": null,
+      "reason": "Provider not configured or local health check failed; no search issued"
+    },
+    {
+      "query": "Murugeshpalya Bus Stop",
+      "provider": "combined",
+      "status": "ok",
+      "fallback_triggered": true,
+      "scored": true,
+      "tolerance_m": 100,
+      "top1_correct": false,
+      "top3_correct": false,
+      "positional_error_m": [
+        6997.8,
+        11233.6,
+        12093.3
+      ],
+      "geographic_relevance": [
+        true,
+        true,
+        true
+      ],
+      "incorrect_locality": null,
+      "results": [
+        {
+          "place_id": "geoapify:51ee653623de65534059a4688aa5ede82940f00103f90129e4d68e00000000c0020192031e5368616e7468696e6167617261204275732053746f70204b4820526f6164",
+          "name": "Shanthinagara Bus Stop KH Road",
+          "display_address": "Shanthinagara Bus Stop KH Road, Kengal Hanumanthaiah Road, SilverJubilee Park Ward, Bengaluru - 560027, KA, India",
+          "lat": 12.9549381,
+          "lon": 77.5916832,
+          "category": "public_transport.bus",
+          "confidence": 0.0,
+          "street_confidence": null,
+          "building_confidence": null,
+          "provider": "geoapify",
+          "attribution": "Powered by Geoapify; \u00a9 OpenStreetMap contributors (ODbL); \u00a9 OpenStreetMap contributors",
+          "datasource": {
+            "sourcename": "openstreetmap",
+            "attribution": "\u00a9 OpenStreetMap contributors",
+            "license": "Open Database License",
+            "url": "https://www.openstreetmap.org/copyright"
+          }
+        },
+        {
+          "place_id": "geoapify:516d2695dfd8635340596f795160a6fe2940f00103f9015ec5a65700000000c0020192031b4861726973686368616e6472612047686174204275732053746f70",
+          "name": "Harishchandra Ghat Bus Stop",
+          "display_address": "Harishchandra Ghat Bus Stop, Mahakavi Kuvempu Road, Gayathri Nagara, Bengaluru - 560021, KA, India",
+          "lat": 12.9973631,
+          "lon": 77.5601119,
+          "category": "public_transport.bus",
+          "confidence": 0.0,
+          "street_confidence": null,
+          "building_confidence": null,
+          "provider": "geoapify",
+          "attribution": "Powered by Geoapify; \u00a9 OpenStreetMap contributors (ODbL); \u00a9 OpenStreetMap contributors",
+          "datasource": {
+            "sourcename": "openstreetmap",
+            "attribution": "\u00a9 OpenStreetMap contributors",
+            "license": "Open Database License",
+            "url": "https://www.openstreetmap.org/copyright"
+          }
+        },
+        {
+          "place_id": "geoapify:51b8f3b3475e6353405944bfb67efaff2940f00103f901aeaac49b00000000c002019203184e617672616e672050726976617465204275732053746f70",
+          "name": "Navrang Private Bus Stop",
+          "display_address": "Navrang Private Bus Stop, Dr. Rajkumar Road, Basaveshwaranagar, Bengaluru - 560010, KA, India",
+          "lat": 12.999958,
+          "lon": 77.5526294,
+          "category": "public_transport.bus",
+          "confidence": 0.0,
+          "street_confidence": null,
+          "building_confidence": null,
+          "provider": "geoapify",
+          "attribution": "Powered by Geoapify; \u00a9 OpenStreetMap contributors (ODbL); \u00a9 OpenStreetMap contributors",
+          "datasource": {
+            "sourcename": "openstreetmap",
+            "attribution": "\u00a9 OpenStreetMap contributors",
+            "license": "Open Database License",
+            "url": "https://www.openstreetmap.org/copyright"
+          }
+        }
+      ],
+      "latency_ms": 3853.9,
+      "locality_label_mismatch": null
+    },
+    {
+      "query": "Graphite India Signal, Whitefield",
+      "provider": "geoapify",
+      "status": "ok",
+      "fallback_triggered": true,
+      "scored": true,
+      "tolerance_m": 150,
+      "top1_correct": false,
+      "top3_correct": false,
+      "positional_error_m": [
+        158.5,
+        4434.4
+      ],
+      "geographic_relevance": [
+        true,
+        true
+      ],
+      "incorrect_locality": null,
+      "results": [
+        {
+          "place_id": "geoapify:512a937593736d534059e5ba849e28f42940f00103f901fb68333100000000c0020192030e477261706869746520496e646961e203226f70656e7374726565746d61703a76656e75653a6e6f64652f383235343532373935",
+          "name": "Graphite India",
+          "display_address": "Graphite India, Kundalahalli Main Road, EPIP Zone, Bengaluru - 560066, KA, India",
+          "lat": 12.9768724,
+          "lon": 77.7101792,
+          "category": "public_transport.bus",
+          "confidence": 0.5,
+          "street_confidence": null,
+          "building_confidence": null,
+          "provider": "geoapify",
+          "attribution": "Powered by Geoapify; \u00a9 OpenStreetMap contributors (ODbL); \u00a9 OpenStreetMap contributors",
+          "datasource": {
+            "sourcename": "openstreetmap",
+            "attribution": "\u00a9 OpenStreetMap contributors",
+            "license": "Open Database License",
+            "url": "https://www.openstreetmap.org/copyright"
+          }
+        },
+        {
+          "place_id": "geoapify:51453bb885f86f534059b0d1cd59faef2940f00103f9013042a28a01000000c002019203115369676e6174757265204669746e657373",
+          "name": "Signature Fitness",
+          "display_address": "Signature Fitness, Whitefield Main Road, Whitefield, Bengaluru - 560066, KA, India",
+          "lat": 12.9687069,
+          "lon": 77.7495436,
+          "category": "sport.fitness.fitness_centre",
+          "confidence": 0.0,
+          "street_confidence": null,
+          "building_confidence": null,
+          "provider": "geoapify",
+          "attribution": "Powered by Geoapify; \u00a9 OpenStreetMap contributors (ODbL); \u00a9 OpenStreetMap contributors",
+          "datasource": {
+            "sourcename": "openstreetmap",
+            "attribution": "\u00a9 OpenStreetMap contributors",
+            "license": "Open Database License",
+            "url": "https://www.openstreetmap.org/copyright"
+          }
+        }
+      ],
+      "latency_ms": 1412.4,
+      "locality_label_mismatch": null
+    },
+    {
+      "query": "Graphite India Signal, Whitefield",
+      "provider": "photon",
+      "status": "unavailable",
+      "scored": false,
+      "latency_ms": null,
+      "reason": "Provider not configured or local health check failed; no search issued"
+    },
+    {
+      "query": "Graphite India Signal, Whitefield",
+      "provider": "combined",
+      "status": "ok",
+      "fallback_triggered": true,
+      "scored": true,
+      "tolerance_m": 150,
+      "top1_correct": false,
+      "top3_correct": false,
+      "positional_error_m": [
+        158.5,
+        4434.4
+      ],
+      "geographic_relevance": [
+        true,
+        true
+      ],
+      "incorrect_locality": null,
+      "results": [
+        {
+          "place_id": "geoapify:512a937593736d534059e5ba849e28f42940f00103f901fb68333100000000c0020192030e477261706869746520496e646961e203226f70656e7374726565746d61703a76656e75653a6e6f64652f383235343532373935",
+          "name": "Graphite India",
+          "display_address": "Graphite India, Kundalahalli Main Road, EPIP Zone, Bengaluru - 560066, KA, India",
+          "lat": 12.9768724,
+          "lon": 77.7101792,
+          "category": "public_transport.bus",
+          "confidence": 0.5,
+          "street_confidence": null,
+          "building_confidence": null,
+          "provider": "geoapify",
+          "attribution": "Powered by Geoapify; \u00a9 OpenStreetMap contributors (ODbL); \u00a9 OpenStreetMap contributors",
+          "datasource": {
+            "sourcename": "openstreetmap",
+            "attribution": "\u00a9 OpenStreetMap contributors",
+            "license": "Open Database License",
+            "url": "https://www.openstreetmap.org/copyright"
+          }
+        },
+        {
+          "place_id": "geoapify:51453bb885f86f534059b0d1cd59faef2940f00103f9013042a28a01000000c002019203115369676e6174757265204669746e657373",
+          "name": "Signature Fitness",
+          "display_address": "Signature Fitness, Whitefield Main Road, Whitefield, Bengaluru - 560066, KA, India",
+          "lat": 12.9687069,
+          "lon": 77.7495436,
+          "category": "sport.fitness.fitness_centre",
+          "confidence": 0.0,
+          "street_confidence": null,
+          "building_confidence": null,
+          "provider": "geoapify",
+          "attribution": "Powered by Geoapify; \u00a9 OpenStreetMap contributors (ODbL); \u00a9 OpenStreetMap contributors",
+          "datasource": {
+            "sourcename": "openstreetmap",
+            "attribution": "\u00a9 OpenStreetMap contributors",
+            "license": "Open Database License",
+            "url": "https://www.openstreetmap.org/copyright"
+          }
+        }
+      ],
+      "latency_ms": 3462.0,
+      "locality_label_mismatch": null
+    },
+    {
+      "query": "Devanahalli",
+      "provider": "geoapify",
+      "status": "ok",
+      "fallback_triggered": false,
+      "scored": true,
+      "tolerance_m": 1500,
+      "top1_correct": true,
+      "top3_correct": true,
+      "positional_error_m": [
+        0.0
+      ],
+      "geographic_relevance": [
+        true
+      ],
+      "incorrect_locality": false,
+      "results": [
+        {
+          "place_id": "geoapify:51f14e99f6a86d534059fee8e5c1277f2a40f00103f9016ad8da1000000000c0020892030b446576616e6168616c6c69",
+          "name": "Devanahalli",
+          "display_address": "Devanahalli, KA, India",
+          "lat": 13.2483502,
+          "lon": 77.7134377,
+          "category": "populated_place",
+          "confidence": 1.0,
+          "street_confidence": null,
+          "building_confidence": null,
+          "provider": "geoapify",
+          "attribution": "Powered by Geoapify; \u00a9 OpenStreetMap contributors (ODbL); \u00a9 OpenStreetMap contributors",
+          "datasource": {
+            "sourcename": "openstreetmap",
+            "attribution": "\u00a9 OpenStreetMap contributors",
+            "license": "Open Database License",
+            "url": "https://www.openstreetmap.org/copyright"
+          }
+        }
+      ],
+      "latency_ms": 523.5,
+      "locality_label_mismatch": false
+    },
+    {
+      "query": "Devanahalli",
+      "provider": "photon",
+      "status": "unavailable",
+      "scored": false,
+      "latency_ms": null,
+      "reason": "Provider not configured or local health check failed; no search issued"
+    },
+    {
+      "query": "Devanahalli",
+      "provider": "combined",
+      "status": "ok",
+      "fallback_triggered": false,
+      "scored": true,
+      "tolerance_m": 1500,
+      "top1_correct": true,
+      "top3_correct": true,
+      "positional_error_m": [
+        0.0
+      ],
+      "geographic_relevance": [
+        true
+      ],
+      "incorrect_locality": false,
+      "results": [
+        {
+          "place_id": "geoapify:51f14e99f6a86d534059fee8e5c1277f2a40f00103f9016ad8da1000000000c0020892030b446576616e6168616c6c69",
+          "name": "Devanahalli",
+          "display_address": "Devanahalli, KA, India",
+          "lat": 13.2483502,
+          "lon": 77.7134377,
+          "category": "populated_place",
+          "confidence": 1.0,
+          "street_confidence": null,
+          "building_confidence": null,
+          "provider": "geoapify",
+          "attribution": "Powered by Geoapify; \u00a9 OpenStreetMap contributors (ODbL); \u00a9 OpenStreetMap contributors",
+          "datasource": {
+            "sourcename": "openstreetmap",
+            "attribution": "\u00a9 OpenStreetMap contributors",
+            "license": "Open Database License",
+            "url": "https://www.openstreetmap.org/copyright"
+          }
+        }
+      ],
+      "latency_ms": 444.5,
+      "locality_label_mismatch": false
+    },
+    {
+      "query": "Anekal",
+      "provider": "geoapify",
+      "status": "ok",
+      "fallback_triggered": false,
+      "scored": true,
+      "tolerance_m": 1500,
+      "top1_correct": true,
+      "top3_correct": true,
+      "positional_error_m": [
+        0.0,
+        1183.9
+      ],
+      "geographic_relevance": [
+        true,
+        true
+      ],
+      "incorrect_locality": false,
+      "results": [
+        {
+          "place_id": "geoapify:517f3a79ecc26c53405994731882d26a2940f00103f901f0b2a30e00000000c00208920306416e656b616c",
+          "name": "Anekal",
+          "display_address": "Anekal - 562106, KA, India",
+          "lat": 12.7086373,
+          "lon": 77.6993972,
+          "category": "populated_place",
+          "confidence": 1.0,
+          "street_confidence": null,
+          "building_confidence": null,
+          "provider": "geoapify",
+          "attribution": "Powered by Geoapify; \u00a9 OpenStreetMap contributors (ODbL); \u00a9 OpenStreetMap contributors",
+          "datasource": {
+            "sourcename": "openstreetmap",
+            "attribution": "\u00a9 OpenStreetMap contributors",
+            "license": "Open Database License",
+            "url": "https://www.openstreetmap.org/copyright"
+          }
+        },
+        {
+          "place_id": "geoapify:514a5a9654126c534059cbbf9657ae6b2940f00101f901405b0a0100000000c00205920306416e656b616c",
+          "name": "Anekal",
+          "display_address": "Bengaluru Urban, India",
+          "lat": 12.7103145,
+          "lon": 77.6886188,
+          "category": "administrative",
+          "confidence": 1.0,
+          "street_confidence": null,
+          "building_confidence": null,
+          "provider": "geoapify",
+          "attribution": "Powered by Geoapify; \u00a9 OpenStreetMap contributors (ODbL); \u00a9 OpenStreetMap contributors",
+          "datasource": {
+            "sourcename": "openstreetmap",
+            "attribution": "\u00a9 OpenStreetMap contributors",
+            "license": "Open Database License",
+            "url": "https://www.openstreetmap.org/copyright"
+          }
+        }
+      ],
+      "latency_ms": 519.9,
+      "locality_label_mismatch": false
+    },
+    {
+      "query": "Anekal",
+      "provider": "photon",
+      "status": "unavailable",
+      "scored": false,
+      "latency_ms": null,
+      "reason": "Provider not configured or local health check failed; no search issued"
+    },
+    {
+      "query": "Anekal",
+      "provider": "combined",
+      "status": "ok",
+      "fallback_triggered": false,
+      "scored": true,
+      "tolerance_m": 1500,
+      "top1_correct": true,
+      "top3_correct": true,
+      "positional_error_m": [
+        0.0,
+        1183.9
+      ],
+      "geographic_relevance": [
+        true,
+        true
+      ],
+      "incorrect_locality": false,
+      "results": [
+        {
+          "place_id": "geoapify:517f3a79ecc26c53405994731882d26a2940f00103f901f0b2a30e00000000c00208920306416e656b616c",
+          "name": "Anekal",
+          "display_address": "Anekal - 562106, KA, India",
+          "lat": 12.7086373,
+          "lon": 77.6993972,
+          "category": "populated_place",
+          "confidence": 1.0,
+          "street_confidence": null,
+          "building_confidence": null,
+          "provider": "geoapify",
+          "attribution": "Powered by Geoapify; \u00a9 OpenStreetMap contributors (ODbL); \u00a9 OpenStreetMap contributors",
+          "datasource": {
+            "sourcename": "openstreetmap",
+            "attribution": "\u00a9 OpenStreetMap contributors",
+            "license": "Open Database License",
+            "url": "https://www.openstreetmap.org/copyright"
+          }
+        },
+        {
+          "place_id": "geoapify:514a5a9654126c534059cbbf9657ae6b2940f00101f901405b0a0100000000c00205920306416e656b616c",
+          "name": "Anekal",
+          "display_address": "Bengaluru Urban, India",
+          "lat": 12.7103145,
+          "lon": 77.6886188,
+          "category": "administrative",
+          "confidence": 1.0,
+          "street_confidence": null,
+          "building_confidence": null,
+          "provider": "geoapify",
+          "attribution": "Powered by Geoapify; \u00a9 OpenStreetMap contributors (ODbL); \u00a9 OpenStreetMap contributors",
+          "datasource": {
+            "sourcename": "openstreetmap",
+            "attribution": "\u00a9 OpenStreetMap contributors",
+            "license": "Open Database License",
+            "url": "https://www.openstreetmap.org/copyright"
+          }
+        }
+      ],
+      "latency_ms": 436.3,
+      "locality_label_mismatch": false
+    },
+    {
+      "query": "Thavarekere, Magadi Road",
+      "provider": "geoapify",
+      "status": "ok",
+      "fallback_triggered": true,
+      "scored": true,
+      "tolerance_m": 1500,
+      "top1_correct": false,
+      "top3_correct": false,
+      "positional_error_m": [
+        17193.6,
+        16057.7,
+        16049.6
+      ],
+      "geographic_relevance": [
+        true,
+        true,
+        true
+      ],
+      "incorrect_locality": true,
+      "results": [
+        {
+          "place_id": "geoapify:515445a79dd06353405919bcf957a0f32940f00102f901c536300a00000000c0020492030b4d616761646920526f6164",
+          "name": "Magadi Road",
+          "display_address": "Magadi Road, Bengaluru - 560023, KA, India",
+          "lat": 12.9758327,
+          "lon": 77.5596079,
+          "category": "street",
+          "confidence": 0.21428571428571427,
+          "street_confidence": 0.21428571428571427,
+          "building_confidence": null,
+          "provider": "geoapify",
+          "attribution": "Powered by Geoapify; \u00a9 OpenStreetMap contributors (ODbL); \u00a9 OpenStreetMap contributors",
+          "datasource": {
+            "sourcename": "openstreetmap",
+            "attribution": "\u00a9 OpenStreetMap contributors",
+            "license": "Open Database License",
+            "url": "https://www.openstreetmap.org/copyright"
+          }
+        },
+        {
+          "place_id": "geoapify:51f4f34b6922635340592414b6fa45f42940f00102f90186b7b30500000000c0020492031e4d616761646920526f616420546f6c6c6761746520556e64657270617373",
+          "name": "Magadi Road Tollgate Underpass",
+          "display_address": "Magadi Road Tollgate Underpass, Bengaluru - 560023, KA, India",
+          "lat": 12.9770964,
+          "lon": 77.5489753,
+          "category": "street",
+          "confidence": 0.17357142857142857,
+          "street_confidence": 0.17357142857142857,
+          "building_confidence": null,
+          "provider": "geoapify",
+          "attribution": "Powered by Geoapify; \u00a9 OpenStreetMap contributors (ODbL); \u00a9 OpenStreetMap contributors",
+          "datasource": {
+            "sourcename": "openstreetmap",
+            "attribution": "\u00a9 OpenStreetMap contributors",
+            "license": "Open Database License",
+            "url": "https://www.openstreetmap.org/copyright"
+          }
+        },
+        {
+          "place_id": "geoapify:5125f14d2e2163534059831cefe945f42940f00102f901a72d4e0a00000000c0020492031e4d616761646920526f616420546f6c6c6761746520556e64657270617373",
+          "name": "Magadi Road Tollgate Underpass",
+          "display_address": "Magadi Road Tollgate Underpass, Bengaluru - 560010, KA, India",
+          "lat": 12.9770959,
+          "lon": 77.5489002,
+          "category": "street",
+          "confidence": 0.17357142857142857,
+          "street_confidence": 0.17357142857142857,
+          "building_confidence": null,
+          "provider": "geoapify",
+          "attribution": "Powered by Geoapify; \u00a9 OpenStreetMap contributors (ODbL); \u00a9 OpenStreetMap contributors",
+          "datasource": {
+            "sourcename": "openstreetmap",
+            "attribution": "\u00a9 OpenStreetMap contributors",
+            "license": "Open Database License",
+            "url": "https://www.openstreetmap.org/copyright"
+          }
+        }
+      ],
+      "latency_ms": 1283.9,
+      "locality_label_mismatch": true
+    },
+    {
+      "query": "Thavarekere, Magadi Road",
+      "provider": "photon",
+      "status": "unavailable",
+      "scored": false,
+      "latency_ms": null,
+      "reason": "Provider not configured or local health check failed; no search issued"
+    },
+    {
+      "query": "Thavarekere, Magadi Road",
+      "provider": "combined",
+      "status": "ok",
+      "fallback_triggered": true,
+      "scored": true,
+      "tolerance_m": 1500,
+      "top1_correct": false,
+      "top3_correct": false,
+      "positional_error_m": [],
+      "geographic_relevance": [],
+      "incorrect_locality": null,
+      "results": [],
+      "latency_ms": 3093.4,
+      "locality_label_mismatch": null
+    }
+  ],
+  "preflight": {
+    "geoapify": true,
+    "photon": false,
+    "combined": true
+  },
+  "summary": {
+    "geoapify": {
+      "available_queries": 24,
+      "unavailable_queries": 0,
+      "top1_accuracy": 0.47368421052631576,
+      "top3_accuracy": 0.5263157894736842,
+      "category_accuracy": {
+        "Apartments": {
+          "scored_queries": 3,
+          "top1_accuracy": 0.6666666666666666,
+          "top3_accuracy": 0.6666666666666666
+        },
+        "Colleges": {
+          "scored_queries": 3,
+          "top1_accuracy": 0.3333333333333333,
+          "top3_accuracy": 0.3333333333333333
+        },
+        "Hospitals": {
+          "scored_queries": 3,
+          "top1_accuracy": 0.3333333333333333,
+          "top3_accuracy": 0.6666666666666666
+        },
+        "Interior Roads": {
+          "scored_queries": 0,
+          "top1_accuracy": null,
+          "top3_accuracy": null
+        },
+        "Major Localities": {
+          "scored_queries": 2,
+          "top1_accuracy": 1,
+          "top3_accuracy": 1
+        },
+        "Remote Outskirts": {
+          "scored_queries": 3,
+          "top1_accuracy": 0.6666666666666666,
+          "top3_accuracy": 0.6666666666666666
+        },
+        "Residential Layouts": {
+          "scored_queries": 2,
+          "top1_accuracy": 0,
+          "top3_accuracy": 0
+        },
+        "Small Landmarks & Transit": {
+          "scored_queries": 3,
+          "top1_accuracy": 0.3333333333333333,
+          "top3_accuracy": 0.3333333333333333
+        }
+      },
+      "fallback_frequency": 0.6666666666666666,
+      "median_top1_error_m": 158.5,
+      "positional_error_sample_count": 19,
+      "suspected_incorrect_locality_count": 1,
+      "suspected_incorrect_locality_assessed_queries": 13,
+      "median_success_latency_ms": 1091.6,
+      "p95_success_latency_ms": 2110.9
+    },
+    "photon": {
+      "available_queries": 0,
+      "unavailable_queries": 24,
+      "top1_accuracy": null,
+      "top3_accuracy": null,
+      "category_accuracy": {
+        "Apartments": {
+          "scored_queries": 0,
+          "top1_accuracy": null,
+          "top3_accuracy": null
+        },
+        "Colleges": {
+          "scored_queries": 0,
+          "top1_accuracy": null,
+          "top3_accuracy": null
+        },
+        "Hospitals": {
+          "scored_queries": 0,
+          "top1_accuracy": null,
+          "top3_accuracy": null
+        },
+        "Interior Roads": {
+          "scored_queries": 0,
+          "top1_accuracy": null,
+          "top3_accuracy": null
+        },
+        "Major Localities": {
+          "scored_queries": 0,
+          "top1_accuracy": null,
+          "top3_accuracy": null
+        },
+        "Remote Outskirts": {
+          "scored_queries": 0,
+          "top1_accuracy": null,
+          "top3_accuracy": null
+        },
+        "Residential Layouts": {
+          "scored_queries": 0,
+          "top1_accuracy": null,
+          "top3_accuracy": null
+        },
+        "Small Landmarks & Transit": {
+          "scored_queries": 0,
+          "top1_accuracy": null,
+          "top3_accuracy": null
+        }
+      },
+      "fallback_frequency": null,
+      "median_top1_error_m": null,
+      "positional_error_sample_count": 0,
+      "suspected_incorrect_locality_count": null,
+      "suspected_incorrect_locality_assessed_queries": 0,
+      "median_success_latency_ms": null,
+      "p95_success_latency_ms": null
+    },
+    "combined": {
+      "available_queries": 24,
+      "unavailable_queries": 0,
+      "top1_accuracy": 0.5789473684210527,
+      "top3_accuracy": 0.5789473684210527,
+      "category_accuracy": {
+        "Apartments": {
+          "scored_queries": 3,
+          "top1_accuracy": 0.6666666666666666,
+          "top3_accuracy": 0.6666666666666666
+        },
+        "Colleges": {
+          "scored_queries": 3,
+          "top1_accuracy": 0.3333333333333333,
+          "top3_accuracy": 0.3333333333333333
+        },
+        "Hospitals": {
+          "scored_queries": 3,
+          "top1_accuracy": 0.6666666666666666,
+          "top3_accuracy": 0.6666666666666666
+        },
+        "Interior Roads": {
+          "scored_queries": 0,
+          "top1_accuracy": null,
+          "top3_accuracy": null
+        },
+        "Major Localities": {
+          "scored_queries": 2,
+          "top1_accuracy": 1,
+          "top3_accuracy": 1
+        },
+        "Remote Outskirts": {
+          "scored_queries": 3,
+          "top1_accuracy": 0.6666666666666666,
+          "top3_accuracy": 0.6666666666666666
+        },
+        "Residential Layouts": {
+          "scored_queries": 2,
+          "top1_accuracy": 0.5,
+          "top3_accuracy": 0.5
+        },
+        "Small Landmarks & Transit": {
+          "scored_queries": 3,
+          "top1_accuracy": 0.3333333333333333,
+          "top3_accuracy": 0.3333333333333333
+        }
+      },
+      "fallback_frequency": 0.6666666666666666,
+      "median_top1_error_m": 58.55,
+      "positional_error_sample_count": 16,
+      "suspected_incorrect_locality_count": 0,
+      "suspected_incorrect_locality_assessed_queries": 11,
+      "median_success_latency_ms": 3162.15,
+      "p95_success_latency_ms": 4049.1
+    }
+  },
+  "fallback_recovery_rate": null,
+  "evaluation_revision": "QA: alternative verified platforms, locality-label distinction and recovery provenance; original measured HTTP results retained.",
+  "combined_ranking_recovery_rate": 0.1111111111111111,
+  "accuracy_definition": "Positional hit rate within category tolerance; not a semantic feature-type correctness score",
+  "locality_metric_definition": "Suspected mismatch: missing expected text label and positional error > max(2000m, 2*tolerance). Not verified locality-boundary membership.",
+  "saved_result_limit": 3,
+  "provider_request_limit": 10,
+  "combined_response_limit": 6,
+  "thresholds": {
+    "overall": 0.85,
+    "street": 0.65,
+    "building": 0.85
+  }
+}

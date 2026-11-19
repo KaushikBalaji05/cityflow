@@ -254,6 +254,32 @@ def test_benchmark_only_scores_verified_ground_truth():
     assert scored["positional_error_m"] == [0]
 
 
+def test_benchmark_accepts_only_verified_alternative_platforms():
+    from scripts.benchmark_geocoding import score
+    row = {"category": "transit", "verified": True, "source": "https://example.test/main",
+           "ground_truth": {"lat": 12.96, "lon": 77.64},
+           "ground_truth_candidates": [{"lat": 12.96, "lon": 77.65, "source": "https://example.test/platform", "verified": True}]}
+    assert score(row, [place()])["top1_correct"]
+    row['ground_truth_candidates'][0]['verified'] = False
+    assert not score(row, [place()])["top1_correct"]
+
+
+def test_benchmark_does_not_invent_locality_or_photon_recovery():
+    from scripts.benchmark_geocoding import score, summarize
+    row = {'query': 'Kodihalli', 'category': 'locality', 'category_group': 'Major Localities',
+           'ground_truth': {'lat': 12.96, 'lon': 77.65}, 'verified': True,
+           'source': 'https://example.test/reference', 'expected_locality': 'Omitted address label'}
+    measured = score(row, [place()])
+    assert measured['locality_label_mismatch'] is True
+    assert measured['incorrect_locality'] is False
+    report = {'runs': []}
+    for provider in ('geoapify', 'combined'):
+        report['runs'].append({'query': 'Kodihalli', 'provider': provider, 'status': 'ok',
+            'fallback_triggered': True, 'latency_ms': 100, 'results': [place().model_dump()], **measured})
+    summarize(report, {'queries': [row]})
+    assert report['fallback_recovery_rate'] is None
+
+
 def test_postgres_session_locks_commits_and_closes():
     from unittest.mock import patch
     async def scenario():

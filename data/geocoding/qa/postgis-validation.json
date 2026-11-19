@@ -1,0 +1,24 @@
+{
+  "status": "pending_user_docker_setup",
+  "existing_native_installation_major": 18,
+  "existing_native_service_running": true,
+  "native_postgis_control_files_found": false,
+  "documented_cityflow_connection_succeeded": false,
+  "existing_database_configuration_modified": false,
+  "live_integration_test": "skipped: TEST_POSTGIS_URL not configured",
+  "qa_container_executed": false,
+  "prepared_qa_compose_file": "docker-compose.geocoding-qa.yml",
+  "prepared_loopback_host_port": 55432,
+  "prepared_database_name": "cityflow_geocoding_qa",
+  "validated_checks": [],
+  "prepared_checks": [
+    "PostGIS extension/version",
+    "geography nearest-stop discovery",
+    "radius enforcement including no nearby stops",
+    "origin access 66.1m fixture regression",
+    "destination egress 87.7m fixture regression",
+    "origin/destination endpoint coordinates",
+    "PostgreSQL cache read/write/expiry"
+  ],
+  "limitation": "JSON graph HTTP tests passed, but cannot substitute for an actual PostGIS run."
+}

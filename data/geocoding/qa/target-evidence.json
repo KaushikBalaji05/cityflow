@@ -1,0 +1,226 @@
+[
+  {
+    "source": "https://www.openstreetmap.org/node/1426776304",
+    "data": {
+      "version": "0.6",
+      "generator": "openstreetmap-cgimap 2.1.1 (1682900 spike-08.openstreetmap.org)",
+      "copyright": "OpenStreetMap and contributors",
+      "attribution": "http://www.openstreetmap.org/copyright",
+      "license": "http://opendatacommons.org/licenses/odbl/1-0/",
+      "elements": [
+        {
+          "type": "node",
+          "id": 1426776304,
+          "lat": 12.9592148,
+          "lon": 77.6561107,
+          "timestamp": "2024-03-26T03:15:58Z",
+          "version": 11,
+          "tags": {
+            "bench": "yes",
+            "bin": "no",
+            "bus": "yes",
+            "highway": "bus_stop",
+            "kerb": "raised",
+            "kerb:approach_aid": "no",
+            "lit": "no",
+            "loc_name": "Murgeshpallya",
+            "name": "Murugeshpallya",
+            "name:en": "Murugeshpallya",
+            "name:kn": "\u0cae\u0cc1\u0cb0\u0cc1\u0c97\u0cc7\u0cb6\u0caa\u0cbe\u0cb2\u0caf\u0cbe",
+            "passenger_information_display": "no",
+            "public_transport": "platform",
+            "shelter": "yes",
+            "tactile_paving": "no"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "source": "https://www.openstreetmap.org/way/1251884741",
+    "data": {
+      "version": "0.6",
+      "generator": "openstreetmap-cgimap 2.1.1 (1663106 spike-08.openstreetmap.org)",
+      "copyright": "OpenStreetMap and contributors",
+      "attribution": "http://www.openstreetmap.org/copyright",
+      "license": "http://opendatacommons.org/licenses/odbl/1-0/",
+      "elements": [
+        {
+          "type": "node",
+          "id": 11636600964,
+          "lat": 12.9784554,
+          "lon": 77.7094342,
+          "timestamp": "2024-02-18T04:24:50Z",
+          "version": 1
+        },
+        {
+          "type": "node",
+          "id": 11636600965,
+          "lat": 12.9784994,
+          "lon": 77.7095264,
+          "timestamp": "2024-02-18T04:24:50Z",
+          "version": 1
+        },
+        {
+          "type": "node",
+          "id": 11636600966,
+          "lat": 12.9787461,
+          "lon": 77.7094636,
+          "timestamp": "2024-02-18T04:24:50Z",
+          "version": 1
+        },
+        {
+          "type": "node",
+          "id": 11636600967,
+          "lat": 12.9787518,
+          "lon": 77.7095343,
+          "timestamp": "2024-02-18T04:24:50Z",
+          "version": 1
+        },
+        {
+          "type": "node",
+          "id": 11636600968,
+          "lat": 12.9785854,
+          "lon": 77.7096697,
+          "timestamp": "2024-02-18T04:24:50Z",
+          "version": 1
+        },
+        {
+          "type": "node",
+          "id": 11636759769,
+          "lat": 12.9784726,
+          "lon": 77.7098522,
+          "timestamp": "2024-02-18T04:24:50Z",
+          "version": 1
+        },
+        {
+          "type": "node",
+          "id": 11636759770,
+          "lat": 12.9784191,
+          "lon": 77.7099326,
+          "timestamp": "2024-02-18T04:24:50Z",
+          "version": 1
+        },
+        {
+          "type": "node",
+          "id": 11636759771,
+          "lat": 12.9783732,
+          "lon": 77.7100641,
+          "timestamp": "2024-02-18T04:24:50Z",
+          "version": 1
+        },
+        {
+          "type": "node",
+          "id": 11636759772,
+          "lat": 12.9782891,
+          "lon": 77.710331,
+          "timestamp": "2024-02-18T04:24:50Z",
+          "version": 1
+        },
+        {
+          "type": "node",
+          "id": 11636759773,
+          "lat": 12.9781246,
+          "lon": 77.7103683,
+          "timestamp": "2024-02-18T04:24:50Z",
+          "version": 1
+        },
+        {
+          "type": "node",
+          "id": 11636759774,
+          "lat": 12.9780596,
+          "lon": 77.7098934,
+          "timestamp": "2024-02-18T04:24:50Z",
+          "version": 1
+        },
+        {
+          "type": "node",
+          "id": 11636759775,
+          "lat": 12.9780156,
+          "lon": 77.7097953,
+          "timestamp": "2024-02-18T04:24:50Z",
+          "version": 1
+        },
+        {
+          "type": "node",
+          "id": 11636759776,
+          "lat": 12.977834,
+          "lon": 77.7098208,
+          "timestamp": "2024-02-18T04:24:50Z",
+          "version": 1
+        },
+        {
+          "type": "node",
+          "id": 11636759777,
+          "lat": 12.9777804,
+          "lon": 77.709656,
+          "timestamp": "2024-02-18T04:24:50Z",
+          "version": 1
+        },
+        {
+          "type": "way",
+          "id": 1251884741,
+          "timestamp": "2024-02-18T04:24:50Z",
+          "version": 1,
+          "nodes": [
+            11636600964,
+            11636600965,
+            11636600966,
+            11636600967,
+            11636600968,
+            11636759769,
+            11636759770,
+            11636759771,
+            11636759772,
+            11636759773,
+            11636759774,
+            11636759775,
+            11636759776,
+            11636759777,
+            11636600964
+          ],
+          "tags": {
+            "area": "yes",
+            "junction": "yes",
+            "name": "Graphite India Junction",
+            "name:kn": "\u0c97\u0ccd\u0cb0\u0cbe\u0cab\u0cc8\u0c9f\u0ccd \u0c87\u0c82\u0ca1\u0cbf\u0caf \u0c9c\u0c82\u0c95\u0ccd\u0cb7\u0ca8\u0ccd"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "source": "https://www.openstreetmap.org/node/4729472422",
+    "data": {
+      "version": "0.6",
+      "generator": "openstreetmap-cgimap 2.1.1 (1631761 spike-08.openstreetmap.org)",
+      "copyright": "OpenStreetMap and contributors",
+      "attribution": "http://www.openstreetmap.org/copyright",
+      "license": "http://opendatacommons.org/licenses/odbl/1-0/",
+      "elements": [
+        {
+          "type": "node",
+          "id": 4729472422,
+          "lat": 12.9400669,
+          "lon": 77.5931597,
+          "timestamp": "2022-11-07T11:09:31Z",
+          "version": 5,
+          "tags": {
+            "addr:district": "Bangalore",
+            "addr:full": "Lakkasandra, Wilson Garden, Bangalore, Karnataka, India",
+            "addr:postcode": "560029",
+            "addr:state": "Karnataka",
+            "addr:subdistrict": "Bangalore East",
+            "amenity": "hospital",
+            "contact:phone": "08026995201;08026995000;08026995202",
+            "description": "Medical Colleges Hospital",
+            "healthcare": "hospital",
+            "name": "National Institute of Mental Health and Neuro Sciences",
+            "short_name": "NIMHANS",
+            "source": "OpenGovernmentData"
+          }
+        }
+      ]
+    }
+  }
+]

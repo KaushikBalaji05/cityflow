@@ -25,8 +25,9 @@ from app.schemas.journey import (
 
 
 class MultimodalRoutingEngine:
-    def __init__(self, network: TransitNetwork):
+    def __init__(self, network: TransitNetwork, stop_lookup=None):
         self.network = network
+        self.stop_lookup = stop_lookup or network.find_nearest_stops
         self.walk_speed = settings.WALKING_SPEED_MPS
         self.transfer_penalty = settings.TRANSFER_PENALTY_SEC
         self.base_graph = build_multimodal_graph_from_network(network)
@@ -39,7 +40,7 @@ class MultimodalRoutingEngine:
     def plan_journey(self, request: PlanRequest) -> PlanResponse:
         origin = request.origin
         destination = request.destination
-        allowed_modes = {m.value for m in request.allowed_modes}
+        allowed_modes = {m.value if hasattr(m, "value") else str(m) for m in request.allowed_modes}
         query_time = datetime.datetime.now(datetime.timezone.utc).isoformat()
 
         direct_dist = haversine_distance_meters(
@@ -123,6 +124,9 @@ class MultimodalRoutingEngine:
                 "direct_distance_meters": round(direct_dist, 1),
                 "candidate_count": len(ranked_journeys),
                 "objective": request.objective.value,
+                "transit_status": "available" if any(
+                    any(m in (TransportMode.BUS, TransportMode.METRO) for m in j.modes_used)
+                    for j in ranked_journeys) else "no_transit_connection_within_walking_radius",
                 "engine": "ParetoDijkstraRouter-v3"
             }
         )
@@ -250,8 +254,8 @@ class MultimodalRoutingEngine:
         # Urban pedestrian circuity factor (ratio of street walking distance to straight-line haversine)
         PEDESTRIAN_CIRCUITY = 1.20
 
-        origin_stops = self.network.find_nearest_stops(
-            origin.lat, origin.lon, max_distance_meters=3000.0, allowed_modes=list(allowed_transit_modes), limit=6
+        origin_stops = self.stop_lookup(
+            origin.lat, origin.lon, max_distance_meters=settings.WALKING_RADIUS_METERS, allowed_modes=sorted(allowed_transit_modes), limit=6
         )
         for stop, dist_m in origin_stops:
             actual_walk_m = round(dist_m * PEDESTRIAN_CIRCUITY, 1)
@@ -270,8 +274,8 @@ class MultimodalRoutingEngine:
             ))
 
         # Connect nearby stops to destination
-        dest_stops = self.network.find_nearest_stops(
-            destination.lat, destination.lon, max_distance_meters=3000.0, allowed_modes=list(allowed_transit_modes), limit=6
+        dest_stops = self.stop_lookup(
+            destination.lat, destination.lon, max_distance_meters=settings.WALKING_RADIUS_METERS, allowed_modes=sorted(allowed_transit_modes), limit=6
         )
         for stop, dist_m in dest_stops:
             actual_walk_m = round(dist_m * PEDESTRIAN_CIRCUITY, 1)

@@ -1,0 +1,24 @@
+# Isolated QA database. Does not change the native PostgreSQL 18 service,
+# production Compose settings, or production PostgreSQL volume.
+services:
+  postgis-qa:
+    image: postgis/postgis:16-3.4-alpine
+    environment:
+      POSTGRES_DB: cityflow_geocoding_qa
+      POSTGRES_USER: cityflow
+      POSTGRES_PASSWORD: cityflow_qa_local_only
+    ports:
+      - "127.0.0.1:55432:5432"
+    volumes:
+      - geocoding_qa_postgis:/var/lib/postgresql/data
+      - ./backend/migrations:/docker-entrypoint-initdb.d:ro
+    mem_limit: 1g
+    cpus: 1
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U cityflow -d cityflow_geocoding_qa"]
+      interval: 5s
+      timeout: 5s
+      retries: 12
+
+volumes:
+  geocoding_qa_postgis:

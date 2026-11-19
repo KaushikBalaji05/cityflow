@@ -11,6 +11,8 @@ export interface Location {
   lat: number;
   lon: number;
   name?: string;
+  attribution?: string;
+  provider?: string;
 }
 
 export interface RouteLeg {

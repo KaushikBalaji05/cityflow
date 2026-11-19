@@ -1,12 +1,32 @@
 import os
+from contextlib import asynccontextmanager
+import httpx
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.staticfiles import StaticFiles
 from fastapi.responses import FileResponse, RedirectResponse
 from app.core.config import settings
 from app.api.v1.routes import router as api_v1_router
+from app.api.v1.geocode import router as geocode_router
+from app.geocoding.providers import GeoapifyAdapter, PhotonAdapter
+from app.geocoding.cache import NullCache, PostgresCache
+from app.geocoding.service import GeocodingService
+from app.geocoding.logging import protect_http_logs
+
+
+@asynccontextmanager
+async def lifespan(app):
+    protect_http_logs()
+    async with httpx.AsyncClient(timeout=settings.GEOCODING_TIMEOUT_SECONDS) as client:
+        cache = PostgresCache(settings.DATABASE_URL, settings.GEOCODING_CACHE_TTL_SECONDS) if settings.DATABASE_URL else NullCache()
+        app.state.geocoding = GeocodingService(
+            GeoapifyAdapter(client, settings.GEOAPIFY_API_KEY), PhotonAdapter(client, settings.PHOTON_URL),
+            cache, settings.GEOCODING_CONFIDENCE, settings.GEOCODING_STREET_CONFIDENCE,
+            settings.GEOCODING_BUILDING_CONFIDENCE, timeout=settings.GEOCODING_TIMEOUT_SECONDS + 1)
+        yield
 
 app = FastAPI(
+    lifespan=lifespan,
     title=settings.PROJECT_NAME,
     version=settings.VERSION,
     description="Multimodal Urban Journey Planner & Mobility Intelligence Platform for Bengaluru",
@@ -26,6 +46,7 @@ app.add_middleware(
 
 # Mount API routes under /api/v1
 app.include_router(api_v1_router, prefix="/api/v1")
+app.include_router(geocode_router, prefix="/api/v1")
 # Also alias API routes directly under /api and root for convenience
 app.include_router(api_v1_router, prefix="/api")
 

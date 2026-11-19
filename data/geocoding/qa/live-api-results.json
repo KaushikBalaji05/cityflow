@@ -1,0 +1,128 @@
+{
+  "executed_at_utc": "2026-11-19T18:13:55.335386+00:00",
+  "base_url": "http://127.0.0.1:8000",
+  "provider_responses_mocked": false,
+  "routing_backend": "json",
+  "checks": [
+    {
+      "check": "health",
+      "status_code": 200,
+      "elapsed_ms": 7.0,
+      "passed": true,
+      "transit_graph": {
+        "total_stops": 60,
+        "total_routes": 12,
+        "total_transfers": 16
+      }
+    },
+    {
+      "check": "short_query",
+      "status_code": 422,
+      "elapsed_ms": 2.9,
+      "passed": true
+    },
+    {
+      "check": "punctuation_query",
+      "status_code": 422,
+      "elapsed_ms": 1.6,
+      "passed": true
+    },
+    {
+      "check": "whitespace_query",
+      "status_code": 422,
+      "elapsed_ms": 1.6,
+      "passed": true
+    },
+    {
+      "check": "invalid_limit",
+      "status_code": 422,
+      "elapsed_ms": 2.8,
+      "passed": true
+    },
+    {
+      "check": "real_autocomplete",
+      "status_code": 200,
+      "elapsed_ms": 4289.6,
+      "provider_status": "available",
+      "response": {
+        "results": [
+          {
+            "place_id": "geoapify:51e79ab80b8360534059c38d4aa077092a40f00102f9016026514700000000c0020192033a4d2e532e2052616d6169616820556e6976657273697479206f66204170706c69656420536369656e6365732c205065656e79612043616d707573",
+            "name": "M.S. Ramaiah University of Applied Sciences, Peenya Campus",
+            "display_address": "M.S. Ramaiah University of Applied Sciences, Peenya Campus, 3rd Main Road, Shivapura, Bengaluru - 560058, KA, India",
+            "lat": 13.0184908,
+            "lon": 77.5079984,
+            "category": "education.college",
+            "confidence": 0.0,
+            "street_confidence": null,
+            "building_confidence": null,
+            "provider": "geoapify",
+            "attribution": "Powered by Geoapify; © OpenStreetMap contributors (ODbL); © OpenStreetMap contributors",
+            "datasource": {
+              "sourcename": "openstreetmap",
+              "attribution": "© OpenStreetMap contributors",
+              "license": "Open Database License",
+              "url": "https://www.openstreetmap.org/copyright"
+            }
+          }
+        ],
+        "meta": {
+          "query": "PES University, RR Campus",
+          "cache_hit": false,
+          "fallback_triggered": true,
+          "degraded": true
+        }
+      }
+    },
+    {
+      "check": "murugeshpalya_bus_journey",
+      "status_code": 200,
+      "elapsed_ms": 8.1,
+      "passed": true,
+      "access_walk_m": 66.1,
+      "boarding_stop": "Murugeshpalya Bus Stop",
+      "egress_walk_m": 87.7
+    },
+    {
+      "check": "outside_transit_coverage",
+      "status_code": 200,
+      "elapsed_ms": 5.1,
+      "passed": true,
+      "routing_metadata": {
+        "direct_distance_meters": 59668.3,
+        "candidate_count": 0,
+        "objective": "fastest",
+        "transit_status": "no_transit_connection_within_walking_radius",
+        "engine": "ParetoDijkstraRouter-v3"
+      }
+    }
+  ],
+  "production_frontend_proxy_checks": [
+    {
+      "path": "/",
+      "status_code": 200,
+      "elapsed_ms": 83.3
+    },
+    {
+      "path": "/api/v1/health",
+      "status_code": 200,
+      "elapsed_ms": 18.9
+    },
+    {
+      "path": "/api/v1/geocode/autocomplete?q=PES%20University",
+      "status_code": 200,
+      "elapsed_ms": 678.8,
+      "result_names": [
+        "PES University",
+        "PES University",
+        "PES University Cricket Ground"
+      ],
+      "meta": {
+        "query": "PES University",
+        "cache_hit": false,
+        "fallback_triggered": false,
+        "degraded": false
+      }
+    }
+  ]
+}

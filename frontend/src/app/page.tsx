@@ -1,7 +1,8 @@
 'use client';
 
-import React, { useState, useEffect, useMemo } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import dynamic from 'next/dynamic';
+import LocationSearch from '@/components/LocationSearch';
 import { CorridorMetric, Journey, Location, RoutingObjective, StopItem, TransportMode } from '@/types/journey';
 import { planJourney, fetchHealth, fetchStops, fetchLiveCorridors, triggerSimulationTick, resetSimulationDelays } from '@/lib/api';
 
@@ -44,8 +45,8 @@ const PRESETS = [
 ];
 
 export default function HomePage() {
-  const [origin, setOrigin] = useState<Location>(PRESETS[0].origin);
-  const [destination, setDestination] = useState<Location>(PRESETS[0].dest);
+  const [origin, setOrigin] = useState<Location | null>(PRESETS[0].origin);
+  const [destination, setDestination] = useState<Location | null>(PRESETS[0].dest);
   const [originQuery, setOriginQuery] = useState(PRESETS[0].origin.name || '');
   const [destQuery, setDestQuery] = useState(PRESETS[0].dest.name || '');
 
@@ -55,6 +56,13 @@ export default function HomePage() {
   const [selectedJourneyIndex, setSelectedJourneyIndex] = useState<number>(0);
   const [loading, setLoading] = useState<boolean>(false);
   const [error, setError] = useState<string | null>(null);
+  const requestVersion = useRef(0);
+
+  const invalidateJourneys = () => {
+    requestVersion.current += 1;
+    setJourneys([]);
+    setLoading(false);
+  };
 
   const [stops, setStops] = useState<StopItem[]>([]);
   const [apiHealth, setApiHealth] = useState<any>(null);
@@ -63,9 +71,6 @@ export default function HomePage() {
   const [isSimulating, setIsSimulating] = useState<boolean>(false);
   const [activeScenario, setActiveScenario] = useState<string>('normal');
 
-  // Suggestions state
-  const [showOriginSuggestions, setShowOriginSuggestions] = useState(false);
-  const [showDestSuggestions, setShowDestSuggestions] = useState(false);
 
   const loadCorridors = () => {
     fetchLiveCorridors()
@@ -105,26 +110,16 @@ export default function HomePage() {
     }
   };
 
-  // Compute suggestions
-  const originSuggestions = useMemo(() => {
-    if (!originQuery.trim()) return stops.slice(0, 6);
-    const q = originQuery.toLowerCase();
-    return stops.filter((s) => s.name.toLowerCase().includes(q) || (s.line && s.line.toLowerCase().includes(q))).slice(0, 6);
-  }, [originQuery, stops]);
-
-  const destSuggestions = useMemo(() => {
-    if (!destQuery.trim()) return stops.slice(0, 6);
-    const q = destQuery.toLowerCase();
-    return stops.filter((s) => s.name.toLowerCase().includes(q) || (s.line && s.line.toLowerCase().includes(q))).slice(0, 6);
-  }, [destQuery, stops]);
-
   // Initial search
   useEffect(() => {
     handleSearch();
   }, [objective]);
 
-  const handleSearch = async () => {
-    if (!origin || !destination) {
+  const handleSearch = async (selection?: { origin: Location; destination: Location }) => {
+    const from = selection?.origin ?? origin;
+    const to = selection?.destination ?? destination;
+    const version = ++requestVersion.current;
+    if (!from || !to) {
       setError('Please select both Origin and Destination');
       return;
     }
@@ -132,17 +127,23 @@ export default function HomePage() {
     setError(null);
     try {
       const res = await planJourney({
-        origin,
-        destination,
+        origin: from,
+        destination: to,
         allowed_modes: allowedModes,
         objective,
       });
+      if (version !== requestVersion.current) return;
       setJourneys(res.journeys);
+      if (allowedModes.some(m => m === 'bus' || m === 'metro') &&
+          res.journeys.every(j => j.total_duration_sec > 0) &&
+          !res.journeys.some(j => j.modes_used.includes('bus') || j.modes_used.includes('metro'))) {
+        setError('No transit journey found within current coverage and walking radius. Any walking or driving options shown are estimates.');
+      }
       setSelectedJourneyIndex(0);
     } catch (err: any) {
-      setError(err.message || 'Routing computation failed');
+      if (version === requestVersion.current) setError(err.message || 'Routing computation failed');
     } finally {
-      setLoading(false);
+      if (version === requestVersion.current) setLoading(false);
     }
   };
 
@@ -154,6 +155,7 @@ export default function HomePage() {
   };
 
   const handleCoordinateSelected = (loc: Location, type: 'origin' | 'destination') => {
+    invalidateJourneys();
     if (type === 'origin') {
       setOrigin(loc);
       setOriginQuery(loc.name || `(${loc.lat}, ${loc.lon})`);
@@ -170,10 +172,8 @@ export default function HomePage() {
     setOriginQuery(preset.origin.name);
     setDestination(preset.dest);
     setDestQuery(preset.dest.name);
-    setShowOriginSuggestions(false);
-    setShowDestSuggestions(false);
-    // trigger auto search
-    setTimeout(handleSearch, 100);
+    // Pass the new endpoints directly; React state still contains the previous pair.
+    void handleSearch({ origin: preset.origin, destination: preset.dest });
   };
 
   const activeJourney = journeys[selectedJourneyIndex] || null;
@@ -181,46 +181,47 @@ export default function HomePage() {
   return (
     <div className="flex flex-col h-screen w-screen overflow-hidden bg-slate-950 text-slate-100">
       {/* Top Navbar */}
-      <header className="h-16 border-b border-slate-800 bg-slate-900/80 backdrop-blur-md px-6 flex items-center justify-between z-30 shrink-0">
-        <div className="flex items-center space-x-3">
-          <div className="w-10 h-10 rounded-2xl bg-gradient-to-tr from-indigo-600 via-indigo-500 to-emerald-400 flex items-center justify-center font-black text-xl shadow-lg shadow-indigo-500/25 text-white">
+      <header className="h-16 border-b border-slate-800 bg-slate-900/80 backdrop-blur-md px-3 sm:px-6 flex items-center justify-between gap-2 z-30 shrink-0">
+        <div className="flex items-center space-x-2 sm:space-x-3 min-w-0">
+          <div className="w-10 h-10 shrink-0 rounded-2xl bg-gradient-to-tr from-indigo-600 via-indigo-500 to-emerald-400 flex items-center justify-center font-black text-xl shadow-lg shadow-indigo-500/25 text-white">
             CF
           </div>
           <div>
             <div className="flex items-center space-x-2">
               <span className="text-lg font-bold tracking-tight text-white">CityFlow</span>
-              <span className="text-[10px] font-semibold px-2 py-0.5 rounded-full bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 uppercase tracking-wider">
+              <span className="hidden md:inline-flex text-[10px] font-semibold px-2 py-0.5 rounded-full bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 uppercase tracking-wider">
                 Bengaluru Transit
               </span>
             </div>
-            <p className="text-xs text-slate-400">Multimodal Journey Planner & Mobility Intelligence</p>
+            <p className="hidden sm:block text-xs text-slate-400">Multimodal Journey Planner & Mobility Intelligence</p>
           </div>
         </div>
 
-        <div className="flex items-center space-x-4">
-          <span className="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-slate-800/80 border border-slate-700/80 text-slate-300">
+        <div className="flex items-center gap-1 sm:gap-4 shrink-0">
+          <span className="inline-flex items-center whitespace-nowrap px-2 sm:px-3 py-1 rounded-full text-[10px] sm:text-xs font-medium bg-slate-800/80 border border-slate-700/80 text-slate-300">
             <span
               className={`w-2 h-2 mr-2 rounded-full ${
                 apiHealth?.status === 'healthy' ? 'bg-emerald-400 animate-pulse' : 'bg-amber-400'
               }`}
             />
-            {apiHealth?.status === 'healthy'
+            <span className="hidden sm:inline">{apiHealth?.status === 'healthy'
               ? `Graph Ready (${apiHealth.transit_graph.total_stops} Stops)`
-              : 'Connecting Backend...'}
+              : 'Connecting Backend...'}</span>
+            <span className="sm:hidden">{apiHealth?.status === 'healthy' ? `${apiHealth.transit_graph.total_stops} Stops` : 'Offline'}</span>
           </span>
           <a
             href="http://localhost:8000/api/v1/docs"
             target="_blank"
             rel="noreferrer"
-            className="text-xs font-medium text-slate-400 hover:text-white transition px-3 py-1.5 rounded-lg hover:bg-slate-800"
+            className="text-xs whitespace-nowrap font-medium text-slate-400 hover:text-white transition px-1 sm:px-3 py-1.5 rounded-lg hover:bg-slate-800"
           >
-            API Docs
+            <span className="hidden sm:inline">API </span>Docs
           </a>
           <a
             href="https://github.com/KaushikBalaji05/cityflow"
             target="_blank"
             rel="noreferrer"
-            className="text-xs font-medium text-slate-400 hover:text-white transition px-3 py-1.5 rounded-lg hover:bg-slate-800"
+            className="text-xs whitespace-nowrap font-medium text-slate-400 hover:text-white transition px-1 sm:px-3 py-1.5 rounded-lg hover:bg-slate-800"
           >
             GitHub
           </a>
@@ -271,39 +272,9 @@ export default function HomePage() {
                 </button>
               </label>
 
-              <input
-                type="text"
-                value={originQuery}
-                onChange={(e) => {
-                  setOriginQuery(e.target.value);
-                  setShowOriginSuggestions(true);
-                }}
-                onFocus={() => setShowOriginSuggestions(true)}
-                placeholder="Search Metro station or bus stop..."
-                className="w-full bg-slate-800/90 border border-slate-700 rounded-xl px-3.5 py-2.5 text-sm text-white placeholder-slate-500 focus:outline-none focus:border-indigo-500 transition shadow-inner"
-              />
-
-              {showOriginSuggestions && (
-                <div className="absolute left-0 right-0 top-full mt-1.5 bg-slate-900 border border-slate-700 rounded-2xl shadow-2xl z-40 max-h-52 overflow-y-auto divide-y divide-slate-800">
-                  {originSuggestions.map((s) => (
-                    <div
-                      key={s.id}
-                      onClick={() => {
-                        setOrigin({ lat: s.lat, lon: s.lon, name: s.name });
-                        setOriginQuery(s.name);
-                        setShowOriginSuggestions(false);
-                      }}
-                      className="px-3.5 py-2.5 hover:bg-slate-800 cursor-pointer flex items-center justify-between text-xs transition"
-                    >
-                      <div>
-                        <div className="font-semibold text-slate-200">{s.name}</div>
-                        <div className="text-[10px] text-slate-400">{s.mode.toUpperCase()} · {s.line || 'Corridor'}</div>
-                      </div>
-                      <span className="text-[10px] px-2 py-0.5 rounded-full bg-slate-800 border border-slate-700 text-slate-400">Select</span>
-                    </div>
-                  ))}
-                </div>
-              )}
+              <LocationSearch label="Origin" value={originQuery} selected={origin}
+                onChange={text => { setOriginQuery(text); setOrigin(null); invalidateJourneys(); }}
+                onSelect={loc => { setOrigin(loc); setOriginQuery(loc.name || ''); }} />
             </div>
 
             {/* Destination Input */}
@@ -326,39 +297,9 @@ export default function HomePage() {
                 </button>
               </label>
 
-              <input
-                type="text"
-                value={destQuery}
-                onChange={(e) => {
-                  setDestQuery(e.target.value);
-                  setShowDestSuggestions(true);
-                }}
-                onFocus={() => setShowDestSuggestions(true)}
-                placeholder="Search Metro station or bus stop..."
-                className="w-full bg-slate-800/90 border border-slate-700 rounded-xl px-3.5 py-2.5 text-sm text-white placeholder-slate-500 focus:outline-none focus:border-indigo-500 transition shadow-inner"
-              />
-
-              {showDestSuggestions && (
-                <div className="absolute left-0 right-0 top-full mt-1.5 bg-slate-900 border border-slate-700 rounded-2xl shadow-2xl z-40 max-h-52 overflow-y-auto divide-y divide-slate-800">
-                  {destSuggestions.map((s) => (
-                    <div
-                      key={s.id}
-                      onClick={() => {
-                        setDestination({ lat: s.lat, lon: s.lon, name: s.name });
-                        setDestQuery(s.name);
-                        setShowDestSuggestions(false);
-                      }}
-                      className="px-3.5 py-2.5 hover:bg-slate-800 cursor-pointer flex items-center justify-between text-xs transition"
-                    >
-                      <div>
-                        <div className="font-semibold text-slate-200">{s.name}</div>
-                        <div className="text-[10px] text-slate-400">{s.mode.toUpperCase()} · {s.line || 'Corridor'}</div>
-                      </div>
-                      <span className="text-[10px] px-2 py-0.5 rounded-full bg-slate-800 border border-slate-700 text-slate-400">Select</span>
-                    </div>
-                  ))}
-                </div>
-              )}
+              <LocationSearch label="Destination" value={destQuery} selected={destination}
+                onChange={text => { setDestQuery(text); setDestination(null); invalidateJourneys(); }}
+                onSelect={loc => { setDestination(loc); setDestQuery(loc.name || ''); }} />
             </div>
 
             {/* Transport Modes Pills */}
@@ -419,7 +360,7 @@ export default function HomePage() {
 
             {/* Submit Button */}
             <button
-              onClick={handleSearch}
+              onClick={() => void handleSearch()}
               disabled={loading}
               className="w-full bg-gradient-to-r from-indigo-600 to-indigo-500 hover:from-indigo-500 hover:to-indigo-400 text-white font-bold py-3 px-4 rounded-2xl text-sm transition shadow-lg shadow-indigo-600/30 disabled:opacity-50 flex items-center justify-center space-x-2"
             >

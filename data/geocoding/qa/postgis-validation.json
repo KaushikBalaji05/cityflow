@@ -1,0 +1,40 @@
+{
+  "status": "validated",
+  "executed_at_utc": "2026-11-19T18:43:25Z",
+  "existing_native_installation_major": 18,
+  "existing_native_service_running": true,
+  "existing_native_service_port": 5432,
+  "existing_database_configuration_modified": false,
+  "qa_container_executed": true,
+  "qa_container_image": "postgis/postgis:16-3.4-alpine",
+  "qa_compose_file": "docker-compose.geocoding-qa.yml",
+  "qa_container_host_port": 55432,
+  "database_name": "cityflow_geocoding_qa",
+  "postgresql_version": "PostgreSQL 16.4 on x86_64-pc-linux-musl",
+  "postgis_version": "POSTGIS=\"3.4.3 0\" [EXTENSION] PGSQL=\"160\" GEOS=\"3.12.2-CAPI-1.18.2\" PROJ=\"9.4.0\"",
+  "migrations_applied": [
+    "001_initial_schema.sql",
+    "002_postgis_migration.sql",
+    "003_geocoding_cache.sql",
+    "004_sync_graph_stops.sql"
+  ],
+  "transit_stops_count": 60,
+  "validated_checks": [
+    "PostgreSQL 16 connection on port 55432",
+    "PostGIS 3.4.3 extension active",
+    "Spatial index idx_transit_stops_geography verified",
+    "Origin nearest-stop lookup (Murugeshpalya Bus Stop)",
+    "Origin access walk 66.1m regression preserved",
+    "Destination nearest-stop lookup (Whitefield)",
+    "Destination egress walk 87.7m regression preserved",
+    "Walking radius enforcement (WALKING_RADIUS_METERS=50 yields no transit journeys)",
+    "No nearby transit stops (500m radius check returns empty)",
+    "Out-of-region coordinate rejection (New Delhi returns empty)",
+    "Invalid coordinate rejection (NaN, out-of-range bounds)",
+    "Geocoding cache table geocoding_cache read/write/expiration",
+    "Production database protection guard (blocks non-test/non-qa database names)"
+  ],
+  "live_integration_test": "5 passed, 0 failed, 0 skipped",
+  "murugeshpalya_access_regression_m": 66.1,
+  "whitefield_egress_regression_m": 87.7
+}

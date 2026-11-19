@@ -1,0 +1,95 @@
+﻿{
+    "measured_at_utc":  "2026-11-19T19:58:57.3857407Z",
+    "import_succeeded":  true,
+    "initial_import_seconds":  207,
+    "samples":  [
+                    {
+                        "captured_at_utc":  "2026-11-19T19:58:59.2867785Z",
+                        "docker_stats":  {
+                                             "BlockIO":  "27.3MB / 5.26MB",
+                                             "CPUPerc":  "0.79%",
+                                             "Container":  "0c4fa03a32a8cc8e70a484047671740a279381e025c3458809d4736442781fb4",
+                                             "ID":  "0c4fa03a32a8",
+                                             "MemPerc":  "14.21%",
+                                             "MemUsage":  "581.9MiB / 4GiB",
+                                             "Name":  "cityflow-photon-1",
+                                             "NetIO":  "5.26kB / 6.22kB",
+                                             "PIDs":  "55"
+                                         }
+                    },
+                    {
+                        "captured_at_utc":  "2026-11-19T19:59:01.2791276Z",
+                        "docker_stats":  {
+                                             "BlockIO":  "27.3MB / 5.26MB",
+                                             "CPUPerc":  "0.96%",
+                                             "Container":  "0c4fa03a32a8cc8e70a484047671740a279381e025c3458809d4736442781fb4",
+                                             "ID":  "0c4fa03a32a8",
+                                             "MemPerc":  "14.24%",
+                                             "MemUsage":  "583.2MiB / 4GiB",
+                                             "Name":  "cityflow-photon-1",
+                                             "NetIO":  "5.26kB / 6.22kB",
+                                             "PIDs":  "55"
+                                         }
+                    },
+                    {
+                        "captured_at_utc":  "2026-11-19T19:59:03.2827596Z",
+                        "docker_stats":  {
+                                             "BlockIO":  "27.3MB / 5.26MB",
+                                             "CPUPerc":  "0.61%",
+                                             "Container":  "0c4fa03a32a8cc8e70a484047671740a279381e025c3458809d4736442781fb4",
+                                             "ID":  "0c4fa03a32a8",
+                                             "MemPerc":  "14.23%",
+                                             "MemUsage":  "582.9MiB / 4GiB",
+                                             "Name":  "cityflow-photon-1",
+                                             "NetIO":  "5.26kB / 6.22kB",
+                                             "PIDs":  "55"
+                                         }
+                    },
+                    {
+                        "captured_at_utc":  "2026-11-19T19:59:05.2887729Z",
+                        "docker_stats":  {
+                                             "BlockIO":  "27.3MB / 5.26MB",
+                                             "CPUPerc":  "0.62%",
+                                             "Container":  "0c4fa03a32a8cc8e70a484047671740a279381e025c3458809d4736442781fb4",
+                                             "ID":  "0c4fa03a32a8",
+                                             "MemPerc":  "14.23%",
+                                             "MemUsage":  "582.7MiB / 4GiB",
+                                             "Name":  "cityflow-photon-1",
+                                             "NetIO":  "5.26kB / 6.22kB",
+                                             "PIDs":  "55"
+                                         }
+                    },
+                    {
+                        "captured_at_utc":  "2026-11-19T19:59:07.2933441Z",
+                        "docker_stats":  {
+                                             "BlockIO":  "27.3MB / 5.26MB",
+                                             "CPUPerc":  "0.60%",
+                                             "Container":  "0c4fa03a32a8cc8e70a484047671740a279381e025c3458809d4736442781fb4",
+                                             "ID":  "0c4fa03a32a8",
+                                             "MemPerc":  "14.23%",
+                                             "MemUsage":  "582.9MiB / 4GiB",
+                                             "Name":  "cityflow-photon-1",
+                                             "NetIO":  "5.26kB / 6.22kB",
+                                             "PIDs":  "55"
+                                         }
+                    }
+                ],
+    "index_size_kib":  839548,
+    "search_latency_ms":  [
+                              {
+                                  "query":  "PES University",
+                                  "status_code":  200,
+                                  "elapsed_ms":  42.4638
+                              },
+                              {
+                                  "query":  "Murugeshpalya",
+                                  "status_code":  200,
+                                  "elapsed_ms":  169.3469
+                              },
+                              {
+                                  "query":  "Devanahalli",
+                                  "status_code":  200,
+                                  "elapsed_ms":  110.62270000000001
+                              }
+                          ]
+}

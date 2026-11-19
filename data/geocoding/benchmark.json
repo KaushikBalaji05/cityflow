@@ -1,0 +1,645 @@
+{
+  "status": "24 original queries in eight categories; 19 verified representative targets, five unresolved road/locality targets remain unscored. Original references preserved.",
+  "attribution": "Independent OSM-derived benchmark coordinates: OpenStreetMap contributors, ODbL https://www.openstreetmap.org/copyright . Original references supplied by user.",
+  "queries": [
+    {
+      "query": "Indiranagar, Bengaluru",
+      "category": "locality",
+      "category_group": "Major Localities",
+      "tolerance_m": 500,
+      "reference_coordinates": {
+        "lat": 12.9784,
+        "lon": 77.6408
+      },
+      "ground_truth": {
+        "lat": 12.9732913,
+        "lon": 77.6404672
+      },
+      "source": "https://www.openstreetmap.org/node/448991617",
+      "verified": true,
+      "expected_locality": "Indiranagar",
+      "verification_notes": "Exact OSM feature Indiranagar; named locality node; independent of tested APIs, not independent of their underlying OSM data.",
+      "osm_version": 16,
+      "verified_on": "2026-11-19",
+      "candidate_sources": [
+        "https://www.openstreetmap.org/node/850782880",
+        "https://www.openstreetmap.org/node/5760197792",
+        "https://www.openstreetmap.org/node/6400857551"
+      ]
+    },
+    {
+      "query": "Koramangala 4th Block",
+      "category": "locality",
+      "category_group": "Major Localities",
+      "tolerance_m": 400,
+      "reference_coordinates": {
+        "lat": 12.9352,
+        "lon": 77.6245
+      },
+      "ground_truth": {
+        "lat": 12.9330257,
+        "lon": 77.6290505
+      },
+      "source": "https://www.openstreetmap.org/way/1066116298",
+      "verified": true,
+      "expected_locality": "Koramangala",
+      "verification_notes": "Exact OSM feature Koramangala 4th Block; centroid of named closed area; not a gate or entrance; independent of tested APIs, not independent of their underlying OSM data.",
+      "osm_version": 6,
+      "verified_on": "2026-11-19",
+      "candidate_sources": [
+        "https://www.openstreetmap.org/way/28125800",
+        "https://www.openstreetmap.org/way/1066116298"
+      ]
+    },
+    {
+      "query": "Kadubisanahalli",
+      "category": "locality",
+      "category_group": "Major Localities",
+      "tolerance_m": 500,
+      "reference_coordinates": {
+        "lat": 12.9363,
+        "lon": 77.6946
+      },
+      "ground_truth": null,
+      "source": null,
+      "verified": false,
+      "expected_locality": "Kadubisanahalli",
+      "verification_notes": "No uniquely identified locality feature verified. Nearby OSM records include the underpass and Main Road; do not substitute them for a suburb centroid.",
+      "candidate_sources": [
+        "https://www.openstreetmap.org/node/1614318567",
+        "https://www.openstreetmap.org/node/9918955258",
+        "https://www.openstreetmap.org/way/1062341299",
+        "https://www.openstreetmap.org/way/1066848420",
+        "https://www.openstreetmap.org/way/1302220812",
+        "https://www.openstreetmap.org/way/1302220813",
+        "https://www.openstreetmap.org/way/1314826747",
+        "https://www.openstreetmap.org/way/1314826752"
+      ]
+    },
+    {
+      "query": "12th Main Road, Indiranagar",
+      "category": "road",
+      "category_group": "Interior Roads",
+      "tolerance_m": 150,
+      "reference_coordinates": {
+        "lat": 12.9708,
+        "lon": 77.6387
+      },
+      "ground_truth": null,
+      "source": null,
+      "verified": false,
+      "expected_locality": "Indiranagar",
+      "verification_notes": "Multiple OSM road segments verified by name. Intended road extent or representative intersection is unspecified; point-error score would be arbitrary.",
+      "candidate_sources": [
+        "https://www.openstreetmap.org/node/2396434084",
+        "https://www.openstreetmap.org/node/12328481702",
+        "https://www.openstreetmap.org/way/24403280",
+        "https://www.openstreetmap.org/way/112994259",
+        "https://www.openstreetmap.org/way/543470394",
+        "https://www.openstreetmap.org/way/691155642",
+        "https://www.openstreetmap.org/way/691155643",
+        "https://www.openstreetmap.org/way/691155644"
+      ]
+    },
+    {
+      "query": "27th Main Road, HSR Layout Sector 1",
+      "category": "road",
+      "category_group": "Interior Roads",
+      "tolerance_m": 150,
+      "reference_coordinates": {
+        "lat": 12.9121,
+        "lon": 77.6518
+      },
+      "ground_truth": null,
+      "source": null,
+      "verified": false,
+      "expected_locality": "HSR",
+      "verification_notes": "Multiple carriageways and road segments found. Sector-1 extent and representative intersection require review before a 150m point tolerance is meaningful.",
+      "candidate_sources": [
+        "https://www.openstreetmap.org/node/9904143773",
+        "https://www.openstreetmap.org/node/9904143774",
+        "https://www.openstreetmap.org/node/11099858521",
+        "https://www.openstreetmap.org/node/11099858522",
+        "https://www.openstreetmap.org/node/11417676431",
+        "https://www.openstreetmap.org/node/11417676432",
+        "https://www.openstreetmap.org/way/27936616",
+        "https://www.openstreetmap.org/way/735053112"
+      ]
+    },
+    {
+      "query": "14th Cross, Malleshwaram",
+      "category": "road",
+      "category_group": "Interior Roads",
+      "tolerance_m": 150,
+      "reference_coordinates": {
+        "lat": 13.0035,
+        "lon": 77.5683
+      },
+      "ground_truth": null,
+      "source": null,
+      "verified": false,
+      "expected_locality": "Malleshwaram",
+      "verification_notes": "Named cross-street segment located, but the complete intended street extent is not established.",
+      "candidate_sources": [
+        "https://www.openstreetmap.org/way/257630216"
+      ]
+    },
+    {
+      "query": "BEML Layout, Rajarajeshwari Nagar",
+      "category": "layout",
+      "category_group": "Residential Layouts",
+      "tolerance_m": 400,
+      "reference_coordinates": {
+        "lat": 12.9234,
+        "lon": 77.5186
+      },
+      "ground_truth": null,
+      "source": null,
+      "verified": false,
+      "expected_locality": "Rajarajeshwari",
+      "verification_notes": "OSM identifies BEML Layout 3rd Stage; query does not specify a stage. Do not silently narrow to this stage.",
+      "candidate_sources": [
+        "https://www.openstreetmap.org/node/2418681329",
+        "https://www.openstreetmap.org/node/7124635764",
+        "https://www.openstreetmap.org/node/8699676985"
+      ]
+    },
+    {
+      "query": "AMS Layout, Vidyaranyapura",
+      "category": "layout",
+      "category_group": "Residential Layouts",
+      "tolerance_m": 400,
+      "reference_coordinates": {
+        "lat": 13.0768,
+        "lon": 77.5582
+      },
+      "ground_truth": {
+        "lat": 13.0877316,
+        "lon": 77.5585759
+      },
+      "source": "https://www.openstreetmap.org/node/12797123072",
+      "verified": true,
+      "expected_locality": "Vidyaranyapura",
+      "verification_notes": "Exact OSM feature AMS Layout; named locality node; independent of tested APIs, not independent of their underlying OSM data.",
+      "osm_version": 2,
+      "verified_on": "2026-11-19",
+      "candidate_sources": [
+        "https://www.openstreetmap.org/node/12797123072"
+      ]
+    },
+    {
+      "query": "Dollars Colony, RMV 2nd Stage",
+      "category": "layout",
+      "category_group": "Residential Layouts",
+      "tolerance_m": 400,
+      "reference_coordinates": {
+        "lat": 13.0358,
+        "lon": 77.5754
+      },
+      "ground_truth": {
+        "lat": 13.0413668,
+        "lon": 77.5678155
+      },
+      "source": "https://www.openstreetmap.org/node/1232839896",
+      "verified": true,
+      "expected_locality": "Dollars",
+      "verification_notes": "Exact OSM feature Dollars Colony; named locality node; independent of tested APIs, not independent of their underlying OSM data.",
+      "osm_version": 7,
+      "verified_on": "2026-11-19",
+      "candidate_sources": []
+    },
+    {
+      "query": "Prestige Shantiniketan, Whitefield",
+      "category": "apartment",
+      "category_group": "Apartments",
+      "tolerance_m": 200,
+      "reference_coordinates": {
+        "lat": 12.9897,
+        "lon": 77.7282
+      },
+      "ground_truth": {
+        "lat": 12.9939369,
+        "lon": 77.7289548
+      },
+      "source": "https://www.openstreetmap.org/way/122737532",
+      "verified": true,
+      "expected_locality": "Whitefield",
+      "verification_notes": "Exact OSM feature Prestige Shantiniketan Residential Complex; centroid of named closed area; not a gate or entrance; independent of tested APIs, not independent of their underlying OSM data.",
+      "osm_version": 16,
+      "verified_on": "2026-11-19",
+      "candidate_sources": [
+        "https://www.openstreetmap.org/node/12534145128",
+        "https://www.openstreetmap.org/node/12534184755",
+        "https://www.openstreetmap.org/way/91003802",
+        "https://www.openstreetmap.org/way/116117199",
+        "https://www.openstreetmap.org/way/122737532",
+        "https://www.openstreetmap.org/way/150212364",
+        "https://www.openstreetmap.org/way/150212372",
+        "https://www.openstreetmap.org/way/194740174"
+      ]
+    },
+    {
+      "query": "Sobha Dream Acres, Balagere",
+      "category": "apartment",
+      "category_group": "Apartments",
+      "tolerance_m": 200,
+      "reference_coordinates": {
+        "lat": 12.9392,
+        "lon": 77.7351
+      },
+      "ground_truth": {
+        "lat": 12.9370126,
+        "lon": 77.7241536
+      },
+      "source": "https://www.openstreetmap.org/way/963384967",
+      "verified": true,
+      "expected_locality": "Balagere",
+      "verification_notes": "Exact OSM feature Sobha Dream Acres; centroid of named closed area; not a gate or entrance; independent of tested APIs, not independent of their underlying OSM data.",
+      "osm_version": 14,
+      "verified_on": "2026-11-19",
+      "candidate_sources": [
+        "https://www.openstreetmap.org/way/768730160",
+        "https://www.openstreetmap.org/way/963384967",
+        "https://www.openstreetmap.org/way/1182510990",
+        "https://www.openstreetmap.org/way/1419425222"
+      ]
+    },
+    {
+      "query": "Brigade Metropolis, Mahadevapura",
+      "category": "apartment",
+      "category_group": "Apartments",
+      "tolerance_m": 200,
+      "reference_coordinates": {
+        "lat": 12.9918,
+        "lon": 77.7015
+      },
+      "ground_truth": {
+        "lat": 12.990926,
+        "lon": 77.702569
+      },
+      "source": "https://www.openstreetmap.org/way/122738032",
+      "verified": true,
+      "expected_locality": "Mahadevapura",
+      "verification_notes": "Exact OSM feature Brigade Metropolis; centroid of named closed area; not a gate or entrance; independent of tested APIs, not independent of their underlying OSM data.",
+      "osm_version": 14,
+      "verified_on": "2026-11-19",
+      "candidate_sources": [
+        "https://www.openstreetmap.org/way/122738032",
+        "https://www.openstreetmap.org/way/627710064"
+      ]
+    },
+    {
+      "query": "PES University, RR Campus",
+      "category": "college",
+      "category_group": "Colleges",
+      "tolerance_m": 200,
+      "reference_coordinates": {
+        "lat": 12.9345,
+        "lon": 77.5345
+      },
+      "ground_truth": {
+        "lat": 12.9348386,
+        "lon": 77.5321719
+      },
+      "source": "https://www.openstreetmap.org/way/687911440",
+      "verified": true,
+      "expected_locality": null,
+      "verification_notes": "Exact OSM feature PES University; centroid of named closed area; not a gate or entrance; independent of tested APIs, not independent of their underlying OSM data.",
+      "osm_version": 4,
+      "verified_on": "2026-11-19",
+      "candidate_sources": [
+        "https://www.openstreetmap.org/node/2093288411",
+        "https://www.openstreetmap.org/node/2093290604",
+        "https://www.openstreetmap.org/node/2093292636",
+        "https://www.openstreetmap.org/node/2401598415",
+        "https://www.openstreetmap.org/node/2800820360",
+        "https://www.openstreetmap.org/node/4243919621",
+        "https://www.openstreetmap.org/node/4243928006",
+        "https://www.openstreetmap.org/node/6449182703"
+      ],
+      "corroborating_source": "https://pes.edu/contact/"
+    },
+    {
+      "query": "RV College of Engineering, Mysuru Road",
+      "category": "college",
+      "category_group": "Colleges",
+      "tolerance_m": 200,
+      "reference_coordinates": {
+        "lat": 12.9237,
+        "lon": 77.4987
+      },
+      "ground_truth": {
+        "lat": 12.9230556,
+        "lon": 77.4988889
+      },
+      "source": "https://rvce.edu.in/sites/default/files/mandatory-disclosure/Mandatory-Disclosure-as-on-27-10-2017.pdf",
+      "verified": true,
+      "expected_locality": null,
+      "verification_notes": "Institution's mandatory disclosure gives 12Â°55â€²23â€³N 77Â°29â€²56â€³E; campus representative point, not entrance.",
+      "verified_on": "2026-11-19",
+      "candidate_sources": [
+        "https://www.openstreetmap.org/node/248677023",
+        "https://www.openstreetmap.org/node/699704227",
+        "https://www.openstreetmap.org/node/5558684066",
+        "https://www.openstreetmap.org/node/6226329977",
+        "https://www.openstreetmap.org/node/7132418216",
+        "https://www.openstreetmap.org/node/9199245472",
+        "https://www.openstreetmap.org/node/10124169615"
+      ]
+    },
+    {
+      "query": "BMS College of Engineering, Basavanagudi",
+      "category": "college",
+      "category_group": "Colleges",
+      "tolerance_m": 200,
+      "reference_coordinates": {
+        "lat": 12.941,
+        "lon": 77.5655
+      },
+      "ground_truth": {
+        "lat": 12.9415307,
+        "lon": 77.5659375
+      },
+      "source": "https://www.openstreetmap.org/way/172845845",
+      "verified": true,
+      "expected_locality": "Basavanagudi",
+      "verification_notes": "Exact OSM feature BMS College of Engineering; centroid of named closed area; not a gate or entrance; independent of tested APIs, not independent of their underlying OSM data.",
+      "osm_version": 6,
+      "verified_on": "2026-11-19",
+      "candidate_sources": [
+        "https://www.openstreetmap.org/node/2408446625",
+        "https://www.openstreetmap.org/node/3455342558",
+        "https://www.openstreetmap.org/node/12944464149",
+        "https://www.openstreetmap.org/node/12944464150",
+        "https://www.openstreetmap.org/node/12944464151",
+        "https://www.openstreetmap.org/node/12944464152",
+        "https://www.openstreetmap.org/node/12944464153",
+        "https://www.openstreetmap.org/way/133117440"
+      ]
+    },
+    {
+      "query": "Manipal Hospital, Old Airport Road",
+      "category": "hospital",
+      "category_group": "Hospitals",
+      "tolerance_m": 150,
+      "reference_coordinates": {
+        "lat": 12.9583,
+        "lon": 77.6488
+      },
+      "ground_truth": {
+        "lat": 12.9584458,
+        "lon": 77.6485342
+      },
+      "source": "https://www.openstreetmap.org/way/135262255",
+      "verified": true,
+      "expected_locality": "Old Airport",
+      "verification_notes": "Exact OSM feature Manipal Hospital; centroid of named closed area; not a gate or entrance; independent of tested APIs, not independent of their underlying OSM data.",
+      "osm_version": 10,
+      "verified_on": "2026-11-19",
+      "candidate_sources": [
+        "https://www.openstreetmap.org/node/2401266124",
+        "https://www.openstreetmap.org/node/2401266125",
+        "https://www.openstreetmap.org/node/3781004947",
+        "https://www.openstreetmap.org/node/4307391440",
+        "https://www.openstreetmap.org/node/6886594716",
+        "https://www.openstreetmap.org/node/7133498149",
+        "https://www.openstreetmap.org/way/133061664",
+        "https://www.openstreetmap.org/way/135262255"
+      ],
+      "corroborating_source": "https://www.manipalhospitals.com/oldairportroad/contact-us/"
+    },
+    {
+      "query": "NIMHANS, Hosur Road",
+      "category": "hospital",
+      "category_group": "Hospitals",
+      "tolerance_m": 250,
+      "reference_coordinates": {
+        "lat": 12.9432,
+        "lon": 77.5969
+      },
+      "ground_truth": {
+        "lat": 12.9400669,
+        "lon": 77.5931597
+      },
+      "source": "https://www.openstreetmap.org/node/4729472422",
+      "verified": true,
+      "expected_locality": null,
+      "verification_notes": "Benchmark target explicitly defined as the mapped main NIMHANS hospital feature (amenity=hospital, short_name=NIMHANS, source=OpenGovernmentData). Official NIMHANS site confirms the Hosur/Marigowda Road clinical campus. This target is neither the Brain Museum nor the bus stop; individual departments and entrances are not interchangeable.",
+      "candidate_sources": [
+        "https://www.openstreetmap.org/node/308922692",
+        "https://www.openstreetmap.org/node/1474472488",
+        "https://www.openstreetmap.org/node/1474472859",
+        "https://www.openstreetmap.org/node/2177268803",
+        "https://www.openstreetmap.org/node/4680014207",
+        "https://www.openstreetmap.org/node/4680181149",
+        "https://www.openstreetmap.org/node/4729472422",
+        "https://www.openstreetmap.org/node/4843100436"
+      ],
+      "verified_on": "2026-11-19",
+      "osm_version": 5,
+      "corroborating_source": "https://www.nimhans.ac.in/patient-care/emergency-services"
+    },
+    {
+      "query": "St. John's Medical College Hospital",
+      "category": "hospital",
+      "category_group": "Hospitals",
+      "tolerance_m": 150,
+      "reference_coordinates": {
+        "lat": 12.9306,
+        "lon": 77.6201
+      },
+      "ground_truth": {
+        "lat": 12.9294722,
+        "lon": 77.6186667
+      },
+      "source": "https://www.stjohns.in/hospital/our-story",
+      "verified": true,
+      "expected_locality": null,
+      "verification_notes": "Official hospital location gives 12Â°55â€²46.1â€³N 77Â°37â€²07.2â€³E; main hospital, not medical-college auditorium.",
+      "verified_on": "2026-11-19",
+      "candidate_sources": [
+        "https://www.openstreetmap.org/node/363758557",
+        "https://www.openstreetmap.org/node/1070361680",
+        "https://www.openstreetmap.org/node/2473602003",
+        "https://www.openstreetmap.org/node/4563420692",
+        "https://www.openstreetmap.org/node/4805856923",
+        "https://www.openstreetmap.org/node/6140712974",
+        "https://www.openstreetmap.org/node/6871418644",
+        "https://www.openstreetmap.org/node/6882713314"
+      ]
+    },
+    {
+      "query": "Domlur TTMC",
+      "category": "transit",
+      "category_group": "Small Landmarks & Transit",
+      "tolerance_m": 100,
+      "reference_coordinates": {
+        "lat": 12.961,
+        "lon": 77.6387
+      },
+      "ground_truth": {
+        "lat": 12.9618094,
+        "lon": 77.6387177
+      },
+      "source": "https://www.openstreetmap.org/way/31231545",
+      "verified": true,
+      "expected_locality": "Domlur",
+      "verification_notes": "Exact OSM feature Domlur Bus Station; centroid of named closed area; not a gate or entrance; independent of tested APIs, not independent of their underlying OSM data.",
+      "osm_version": 9,
+      "verified_on": "2026-11-19",
+      "candidate_sources": [
+        "https://www.openstreetmap.org/node/298815411",
+        "https://www.openstreetmap.org/node/312599850",
+        "https://www.openstreetmap.org/node/347261886",
+        "https://www.openstreetmap.org/node/513652499",
+        "https://www.openstreetmap.org/node/710095029",
+        "https://www.openstreetmap.org/node/710722699",
+        "https://www.openstreetmap.org/node/1282881207",
+        "https://www.openstreetmap.org/node/1420058875"
+      ]
+    },
+    {
+      "query": "Murugeshpalya Bus Stop",
+      "category": "transit",
+      "category_group": "Small Landmarks & Transit",
+      "tolerance_m": 100,
+      "reference_coordinates": {
+        "lat": 12.9592,
+        "lon": 77.6484
+      },
+      "ground_truth": {
+        "lat": 12.9592797,
+        "lon": 77.6580632
+      },
+      "source": "https://www.openstreetmap.org/node/3298916256",
+      "verified": true,
+      "expected_locality": null,
+      "verification_notes": "Resolved as two direction-specific BMTC platforms. Primary target node 3298916256 belongs to route 335E Kempegowda => Kadugodi (relation 14419835); alternative node 1426776304 belongs to citybound V-333E (relation 14595433). Because the original query specifies no direction, either verified platform is accepted, using minimum Haversine distance. Original 77.6484 reference is about 836m west of the westbound platform. The bundled 12.9585,77.6575 fixture is retained as a separately modeled access point; approximately 66m remains a graph regression, not a surveyed walk.",
+      "candidate_sources": [
+        "https://www.openstreetmap.org/node/1426776304",
+        "https://www.openstreetmap.org/way/30800447"
+      ],
+      "verified_on": "2026-11-19",
+      "ground_truth_candidates": [
+        {
+          "lat": 12.9592148,
+          "lon": 77.6561107,
+          "source": "https://www.openstreetmap.org/node/1426776304",
+          "verified": true,
+          "direction": "westbound / citybound"
+        }
+      ],
+      "corroborating_source": "https://www.openstreetmap.org/relation/14419835"
+    },
+    {
+      "query": "Graphite India Signal, Whitefield",
+      "category": "landmark",
+      "category_group": "Small Landmarks & Transit",
+      "tolerance_m": 150,
+      "reference_coordinates": {
+        "lat": 12.9765,
+        "lon": 77.713
+      },
+      "ground_truth": {
+        "lat": 12.9782519,
+        "lon": 77.7098094
+      },
+      "source": "https://www.openstreetmap.org/way/1251884741",
+      "verified": true,
+      "expected_locality": null,
+      "verification_notes": "Target explicitly defined as the centroid of the named Graphite India Junction closed area (junction=yes, area=yes). This resolves the colloquial Signal as the junction, not the nearby factory, road or bus platforms. Individual traffic-light poles are not the benchmark target.",
+      "candidate_sources": [
+        "https://www.openstreetmap.org/node/825452795",
+        "https://www.openstreetmap.org/node/1000885798",
+        "https://www.openstreetmap.org/node/2600915519",
+        "https://www.openstreetmap.org/node/4489728551",
+        "https://www.openstreetmap.org/way/29502606",
+        "https://www.openstreetmap.org/way/1251884741"
+      ],
+      "verified_on": "2026-11-19",
+      "osm_version": 1
+    },
+    {
+      "query": "Devanahalli",
+      "category": "outskirts",
+      "category_group": "Remote Outskirts",
+      "tolerance_m": 1500,
+      "reference_coordinates": {
+        "lat": 13.2473,
+        "lon": 77.7137
+      },
+      "ground_truth": {
+        "lat": 13.2483502,
+        "lon": 77.7134377
+      },
+      "source": "https://www.openstreetmap.org/node/282777706",
+      "verified": true,
+      "expected_locality": "Devanahalli",
+      "verification_notes": "Exact OSM feature Devanahalli; named locality node; independent of tested APIs, not independent of their underlying OSM data.",
+      "osm_version": 17,
+      "verified_on": "2026-11-19",
+      "candidate_sources": [
+        "https://www.openstreetmap.org/node/282777706",
+        "https://www.openstreetmap.org/node/1282829831",
+        "https://www.openstreetmap.org/node/6071990666"
+      ]
+    },
+    {
+      "query": "Anekal",
+      "category": "outskirts",
+      "category_group": "Remote Outskirts",
+      "tolerance_m": 1500,
+      "reference_coordinates": {
+        "lat": 12.711,
+        "lon": 77.695
+      },
+      "ground_truth": {
+        "lat": 12.7086373,
+        "lon": 77.6993972
+      },
+      "source": "https://www.openstreetmap.org/node/245609200",
+      "verified": true,
+      "expected_locality": "Anekal",
+      "verification_notes": "Exact OSM feature Anekal; named locality node; independent of tested APIs, not independent of their underlying OSM data.",
+      "osm_version": 16,
+      "verified_on": "2026-11-19",
+      "candidate_sources": [
+        "https://www.openstreetmap.org/node/245609200",
+        "https://www.openstreetmap.org/node/2417394349",
+        "https://www.openstreetmap.org/node/13019237631"
+      ]
+    },
+    {
+      "query": "Thavarekere, Magadi Road",
+      "category": "outskirts",
+      "category_group": "Remote Outskirts",
+      "tolerance_m": 1500,
+      "reference_coordinates": {
+        "lat": 12.9565,
+        "lon": 77.391
+      },
+      "ground_truth": {
+        "lat": 12.963694,
+        "lon": 77.4014239
+      },
+      "source": "https://www.openstreetmap.org/node/2595197392",
+      "verified": true,
+      "expected_locality": "Tavarekere",
+      "verification_notes": "Exact OSM feature Tavarekere; named locality node; independent of tested APIs, not independent of their underlying OSM data.",
+      "osm_version": 3,
+      "verified_on": "2026-11-19",
+      "candidate_sources": [
+        "https://www.openstreetmap.org/node/2417487970",
+        "https://www.openstreetmap.org/node/2595197392",
+        "https://www.openstreetmap.org/node/12462646824",
+        "https://www.openstreetmap.org/node/12462646825",
+        "https://www.openstreetmap.org/node/12989264934",
+        "https://www.openstreetmap.org/node/12989264935",
+        "https://www.openstreetmap.org/way/135416913"
+      ],
+      "expected_locality_aliases": [
+        "Thavarekere"
+      ]
+    }
+  ]
+}

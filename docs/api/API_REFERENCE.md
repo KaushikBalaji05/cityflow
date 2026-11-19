@@ -87,7 +87,7 @@ Computes and ranks feasible multimodal journeys between an origin and destinatio
 
 **Supported Objectives:**
 - `fastest`: Minimizes total elapsed journey duration.
-- `lowest_cost`: Minimizes financial fare in ₹ INR.
+- `lowest_cost`: Minimizes financial fare in â‚¹ INR.
 - `least_walking`: Minimizes total pedestrian walk distance.
 - `fewest_transfers`: Minimizes number of vehicle changes.
 - `balanced`: Multi-criteria weighted cost function.
@@ -148,7 +148,7 @@ CityFlow ingests streaming traffic telemetry and public transit delay events usi
 - `bengaluru.transit.delays.v1` (3 partitions): Dynamic vehicle delay events, causes, and route/stop identifiers.
 
 ### `GET /api/v1/live/corridors`
-Returns real-time mobility health index (0–100 scale), average observed speeds, congestion classification, and active transit delay seconds for key Bengaluru arterial corridors (Outer Ring Road, Whitefield ITPL, Hosur Road / Silk Board, Old Madras Road, Hebbal Flyover, and Central CBD).
+Returns real-time mobility health index (0â€“100 scale), average observed speeds, congestion classification, and active transit delay seconds for key Bengaluru arterial corridors (Outer Ring Road, Whitefield ITPL, Hosur Road / Silk Board, Old Madras Road, Hebbal Flyover, and Central CBD).
 
 **Response:** `200 OK`
 ```json
@@ -196,3 +196,9 @@ The API follows standard RFC 7807 error responses:
 - `400 Bad Request`: Invalid coordinates or missing mandatory fields.
 - `422 Unprocessable Entity`: Schema validation errors (handled automatically by Pydantic).
 - `500 Internal Server Error`: Computation or database access faults with diagnostic message.
+# Geocoding autocomplete
+
+`GET /api/v1/geocode/autocomplete?q=Kodihalli&limit=6` returns normalized provider
+results and `meta` with query, cache-hit, fallback and degraded status. Queries
+require 3â€“200 characters; limits are 1â€“10. Invalid input returns 422; a complete
+upstream outage returns sanitized 503. See [setup, response schema and licensing](../GEOCODING.md).

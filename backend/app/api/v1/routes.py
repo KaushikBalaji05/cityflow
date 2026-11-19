@@ -3,6 +3,7 @@ from fastapi import APIRouter, HTTPException, Query
 from app.core.config import settings
 from app.routing.graph import TransitNetwork
 from app.routing.engine import MultimodalRoutingEngine
+from app.db.postgis import PostgisStopLookup
 from app.schemas.journey import (
     Location,
     PlanRequest,
@@ -26,7 +27,8 @@ router = APIRouter()
 
 # Initialize transit network and engine
 network = TransitNetwork(settings.NETWORK_DATA_PATH)
-engine = MultimodalRoutingEngine(network)
+engine = MultimodalRoutingEngine(network, PostgisStopLookup(network, settings.DATABASE_URL)
+                                 if settings.USE_POSTGIS else None)
 
 
 @router.get("/health")
